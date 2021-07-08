@@ -16,17 +16,6 @@
 </script>
 
 <style>
-  h1 {
-    font-size: 2rem;
-    transition: font-size 1s;
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 3rem;
-    }
-  }
-
   .banner {
     padding: 1rem;
   }
@@ -50,10 +39,10 @@
 
   :global(.entry) {
     padding: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--muted);
     border-radius: 0.5rem;
     margin-bottom: 1rem;
-    background: white;
+    background: var(--main-background);
   }
 
   .about {
@@ -100,7 +89,7 @@
   </p>
 
   <p>
-    코칭을 받고 싶으시면 <a target="_blank" href="https://open.kakao.com/o/sMM8O6md"><span class="badge warning">오픈 카카오톡</span></a>으로 연락 주시면 편합니다.
+  코칭을 받고 싶으시면 <a target="_blank" href="https://open.kakao.com/o/sMM8O6md"><span style="color:black;" class="badge warning">오픈 카카오톡</span></a>으로 연락 주시면 편합니다.
     <a target="_blank" href="https://twitter.com/stelo_kim"> <span class="badge secondary">트위터 </span></a>DM이나 <span class="badge">rabolution@gmail.com</span> 으로 이메일을 주셔도 됩니다.
   </p>
   <p>

@@ -1,8 +1,10 @@
 <script>
   import style from '../../assets/style.css';
   import paper from '../../assets/paper.css';
+  import DarkCheckBox from "../components/DarkCheckBox.svelte";
 
   export let templateHtml, settings;
+
 </script>
 
 <style>
@@ -13,41 +15,51 @@
     padding: 1rem;
   }
 
-  h1 {
-    font-size: 8rem;
-  }
-
   :root {
-    --balloon-color: #06395a;
+    --balloon-color: var(--primary);
     --balloon-font-size: 14px;
     --codeblock-background-color: #333;
     --codeblock-color: #ddd;
   }
+
+  nav {
+    background-color: var(--primary);
+  }
+
   .footer {
     padding: 2rem 0;
-    background: #06395a;
+    background: #333;
     padding-top: 2rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
       'Helvetica Neue', sans-serif;
-    color: #f4f7fb;
+    color: #ddd;
     text-align: center;
     font-size: 14px;
   }
   .footer a {
-    color: #f4f7fb;
+    color: #ddd;
+    font-weight: bold;
   }
+
   :global(ul li),
   :global(ol li) {
     margin-bottom: 0.3rem;
   }
+
 </style>
 
 <svelte:head>
-  <!-- You can remove this balloon it is just for hover effects -->
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
-  <link rel="stylesheet" href="./paper.css">
+  <link rel="stylesheet" href="http://localhost:3000/paper.css">
+  <script>
+    let is_dark = localStorage.getItem("dark") == "true";
+    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
+  </script>
 </svelte:head>
+<nav>
+  <DarkCheckBox hydrate-client={{}}/>
+</nav>
 
 <article class="container">
   {@html templateHtml}

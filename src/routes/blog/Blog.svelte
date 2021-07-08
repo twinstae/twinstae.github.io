@@ -4,18 +4,6 @@
 </script>
 
 <style>
-
-  h1 {
-    font-size: 2rem;
-    transition: font-size 1s;
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 3rem;
-    }
-  }
-
   .title {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;

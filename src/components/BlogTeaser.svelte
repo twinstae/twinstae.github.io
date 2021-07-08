@@ -10,14 +10,20 @@
     width: fit-content;
   }
 
+  h3 {
+    margin: 0;
+    color: var(--primary);
+  }
+
   p {
     margin: 0.25rem;
+    color: var(--primary-text);
   }
 </style>
 
 <a href={helpers.permalinks.blog({ slug: blog.slug })}>
 <div class="entry card">
-    <h3 style="margin: 0; color: var(--secondary)">{blog.frontmatter.title}</h3>
+    <h3>{blog.frontmatter.title}</h3>
   <span class="date-badge">
     {new Intl.DateTimeFormat("ko-KR", {dateStyle: "long", timeStyle: "short"}).format(new Date(blog.frontmatter.date))}
   </span>

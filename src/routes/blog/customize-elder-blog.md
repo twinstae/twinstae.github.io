@@ -7,7 +7,7 @@ author: 탐정토끼(Taehee Kim)
 
 ## Elder 블로그 템플릿 프로젝트 구조 살펴보기
 
-## Noto Sans, Nanum Barun Pen 웹 폰트 적용하기
+## Noto Sans, Nanum 웹 폰트 적용하기
 
 ## 게시글 목록 날짜 순으로 정렬하기
 
