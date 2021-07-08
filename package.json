@@ -5,7 +5,7 @@
   "main": "./src/build.js",
   "scripts": {
     "start": "npm run dev",
-    "build": "node ./src/cleanPublic.js && npm run build:rollup && npm run build:html",
+    "build": "node ./src/cleanPublic.js && npm run build:rollup && npm run build:html && '' => ./docs/.nojekyll",
     "build:rollup": "rollup -c",
     "build:html": "node ./src/build.js",
     "dev": "rollup  -c -w --no-watch.clearScreen",

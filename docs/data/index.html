@@ -1,16 +1,16 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>data Hook Interface: Elder.js Example Project</title><meta name="description" content="Hook details for data in Elder.js from the Hook Interface" data-svelte="svelte-15cw1uv"><link href="/data/" rel="canonical" data-svelte="svelte-15cw1uv"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-1tkpvyy" data-svelte="svelte-hprhv2"><link rel="stylesheet" href="/_elderjs/assets/svelte-0e2f924e.css" media="all" /><style></style></head><body class="hooks">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>data Hook Interface: Elder.js Example Project</title><meta name="description" content="Hook details for data in Elder.js from the Hook Interface" data-svelte="svelte-15cw1uv"><link href="/data/" rel="canonical" data-svelte="svelte-15cw1uv"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-z02ivs" data-svelte="svelte-hprhv2"><link rel="stylesheet" href="/_elderjs/assets/svelte-1c43735b.css" media="all" /><style></style></head><body class="hooks">
 
-<div class="container svelte-1tkpvyy"><!-- HTML_TAG_START -->
+<div class="container svelte-z02ivs"><!-- HTML_TAG_START -->
 
-<a href="/" class="svelte-bvr7j8">← Home</a>
+<a href="/" class="svelte-6ghev4">← Home</a>
 
 <h1>Elder.js Hook: data</h1>
 
-<div class="hook svelte-azdmmt">
+<div class="hook svelte-obuov5">
 
-  <div class="overview svelte-azdmmt"><span class="hook-name">data</span>
+  <div class="overview svelte-obuov5"><span class="hook-name">data</span>
     : This hook is run after the route&#39;s &quot;data&quot; function has executed.</div>
-  <div class="use svelte-azdmmt"><!-- HTML_TAG_START --><p>This hook is mainly used by plugins/hooks to offer functionality at the route level that is dependent on the route's "data" function has returning but isn't suitable to live in multiple data function across many routes due to code duplication.</p>
+  <div class="use svelte-obuov5"><!-- HTML_TAG_START --><p>This hook is mainly used by plugins/hooks to offer functionality at the route level that is dependent on the route's "data" function has returning but isn't suitable to live in multiple data function across many routes due to code duplication.</p>
     <p>Examples of things we (ElderGuide.com) have done or have seen users do:</p>
     <ul>
       <li><strong>LD+JSON</strong>: Plugins/hooks that add LD+JSON may need the a route's "data" function to be executed before they have the data needed to run.</li>
@@ -22,29 +22,29 @@
     <p>Stacks are made available here so that strings can be added to the head or footer of the page easily.</p>
     <!-- HTML_TAG_END --></div>
 
-  <div class="list svelte-azdmmt"><strong>Props</strong> : <div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is passed to Svelte templates as the &quot;data&quot; prop.">data
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that represents the parameters required to generate a specific page on a specific route. This object originating from the all() query of a route.js file.">request
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An array of errors collected during the build process.">errors
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object of helpers loaded from `./src/helpers/index.js` in addition to the Elder.js provided helper functions.">helpers
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is initially empty but is reserved for plugins and sites to add database or api access to.">query
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that represents all of the routes registered with Elder.js.">routes
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together to create the the cssString prop. This is mainly uses to collect the css strings emitted by SSR&#39;d Svelte files.">cssStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together (along with cssStack) that are written to the &lt;head&gt; tag. If you are looking to customize the head you&#39;re probably better looking at the &quot;headString.&quot;">headStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of generally JS script tags that are required to be loaded before a Svelte component is hydrated. This is only written to the page when a Svelte component needs to be hydrated.">beforeHydrateStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; Svelte components that will be hydrated.">hydrateStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of user specific customJs strings that will to be merged together. This is written after the Svelte components.">customJsStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together that will be added to the footer tag.">footerStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object representing the elder.config.js and other details about the build.">settings
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="The &#39;next&#39; object from Express or Polka when Elder.js is being used as a server.">next
+  <div class="list svelte-obuov5"><strong>Props</strong> : <div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is passed to Svelte templates as the &quot;data&quot; prop.">data
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that represents the parameters required to generate a specific page on a specific route. This object originating from the all() query of a route.js file.">request
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An array of errors collected during the build process.">errors
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object of helpers loaded from `./src/helpers/index.js` in addition to the Elder.js provided helper functions.">helpers
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is initially empty but is reserved for plugins and sites to add database or api access to.">query
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that represents all of the routes registered with Elder.js.">routes
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together to create the the cssString prop. This is mainly uses to collect the css strings emitted by SSR&#39;d Svelte files.">cssStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together (along with cssStack) that are written to the &lt;head&gt; tag. If you are looking to customize the head you&#39;re probably better looking at the &quot;headString.&quot;">headStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of generally JS script tags that are required to be loaded before a Svelte component is hydrated. This is only written to the page when a Svelte component needs to be hydrated.">beforeHydrateStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; Svelte components that will be hydrated.">hydrateStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of user specific customJs strings that will to be merged together. This is written after the Svelte components.">customJsStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together that will be added to the footer tag.">footerStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object representing the elder.config.js and other details about the build.">settings
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="The &#39;next&#39; object from Express or Polka when Elder.js is being used as a server.">next
       </div></div>
-  <div class="list svelte-azdmmt"><strong>Mutable</strong> : <div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An array of errors collected during the build process.">errors
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is passed to Svelte templates as the &quot;data&quot; prop.">data
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together to create the the cssString prop. This is mainly uses to collect the css strings emitted by SSR&#39;d Svelte files.">cssStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together (along with cssStack) that are written to the &lt;head&gt; tag. If you are looking to customize the head you&#39;re probably better looking at the &quot;headString.&quot;">headStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of generally JS script tags that are required to be loaded before a Svelte component is hydrated. This is only written to the page when a Svelte component needs to be hydrated.">beforeHydrateStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; Svelte components that will be hydrated.">hydrateStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of user specific customJs strings that will to be merged together. This is written after the Svelte components.">customJsStack
-      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together that will be added to the footer tag.">footerStack
+  <div class="list svelte-obuov5"><strong>Mutable</strong> : <div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An array of errors collected during the build process.">errors
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is passed to Svelte templates as the &quot;data&quot; prop.">data
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together to create the the cssString prop. This is mainly uses to collect the css strings emitted by SSR&#39;d Svelte files.">cssStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together (along with cssStack) that are written to the &lt;head&gt; tag. If you are looking to customize the head you&#39;re probably better looking at the &quot;headString.&quot;">headStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of generally JS script tags that are required to be loaded before a Svelte component is hydrated. This is only written to the page when a Svelte component needs to be hydrated.">beforeHydrateStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; Svelte components that will be hydrated.">hydrateStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of user specific customJs strings that will to be merged together. This is written after the Svelte components.">customJsStack
+      </div><div class="code svelte-obuov5" data-balloon-length="medium" data-balloon-pos="up" aria-label="A &quot;stack&quot; of strings to be merged together that will be added to the footer tag.">footerStack
       </div></div>
 
   <div><small>This hook is an &#39;advanced&#39; hook meaning it geared towards advanced users or plugins.</small></div>
@@ -52,7 +52,7 @@
   <small>Stable · Location: Page.ts</small></div>
 
 <img src="https://elderguide.com/images/elderjs-hooks-v100.png" alt="Elder.js hook Lifecycle" style="max-width:100%; margin:1rem 0;"><!-- HTML_TAG_END --></div>
-<div class="footer svelte-1tkpvyy">Built with ❤ and <a href="https://elderguide.com/tech/elderjs/" class="svelte-1tkpvyy">Elder.js</a></div>
+<div class="footer svelte-z02ivs">Built with ❤ and <a href="https://elderguide.com/tech/elderjs/" class="svelte-z02ivs">Elder.js</a></div>
     
     
     
