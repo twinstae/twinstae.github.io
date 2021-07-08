@@ -8,6 +8,7 @@
 <style>
   .container {
     max-width: 900px;
+    min-height: 90vh;
     margin: 0 auto;
     padding: 1rem;
   }
@@ -43,12 +44,13 @@
 
 <svelte:head>
   <!-- You can remove this balloon it is just for hover effects -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
   <link rel="stylesheet" href="./paper.css">
 </svelte:head>
 
-<div class="container">
+<article class="container">
   {@html templateHtml}
-</div>
+</article>
 
-<div class="footer">이 블로그는 <a href="https://svelte.dev/">Svelte</a>와 <a class="secondary" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다. 디자인은 <a href="https://www.getpapercss.com/docs/">PaperCSS</a>를 기본으로 커스텀했습니다. <a href="https://pages.github.com/">Github Pages</a>로 호스팅하고 있습니다.</div>
+<footer class="footer">이 블로그는 <a href="https://svelte.dev/">Svelte</a>와 <a class="secondary" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다. 디자인은 <a href="https://www.getpapercss.com/docs/">PaperCSS</a>를 기본으로 커스텀했습니다. <a href="https://pages.github.com/">Github Pages</a>로 호스팅하고 있습니다.</footer>

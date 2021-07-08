@@ -15,12 +15,12 @@
   }
 </style>
 
+<a href={helpers.permalinks.blog({ slug: blog.slug })}>
 <div class="entry card">
-  <a href={helpers.permalinks.blog({ slug: blog.slug })}>
     <h3 style="margin: 0; color: var(--secondary)">{blog.frontmatter.title}</h3>
-  </a>
   <span class="date-badge">
     {new Intl.DateTimeFormat("ko-KR", {dateStyle: "long", timeStyle: "short"}).format(new Date(blog.frontmatter.date))}
   </span>
   <p>{blog.frontmatter.excerpt}</p>
 </div>
+</a>
