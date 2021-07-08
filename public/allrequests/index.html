@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>allRequests Hook Interface: Elder.js Example Project</title><meta name="description" content="Hook details for allRequests in Elder.js from the Hook Interface" data-svelte="svelte-15cw1uv"><link href="/allrequests/" rel="canonical" data-svelte="svelte-15cw1uv"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-1tkpvyy" data-svelte="svelte-hprhv2"><link rel="stylesheet" href="/_elderjs/assets/svelte-0e2f924e.css" media="all" /><style></style></head><body class="hooks">
+
+<div class="container svelte-1tkpvyy"><!-- HTML_TAG_START -->
+
+<a href="/" class="svelte-bvr7j8">← Home</a>
+
+<h1>Elder.js Hook: allRequests</h1>
+
+<div class="hook svelte-azdmmt">
+
+  <div class="overview svelte-azdmmt"><span class="hook-name">allRequests</span>
+    : allRequests which represents all of the request objects have been collected from route and plugins. This makes the &#39;allRequests&#39; array mutable.</div>
+  <div class="use svelte-azdmmt"><!-- HTML_TAG_START --><p>The main use here is to allow users to adjust the requests that Elder.js is aware of.</p><ul>
+    <li>This could be used for incremental builds. By filtering and overwriting the allRequests array building just a single route or even a single request is doable.</li>
+    <li>This hook is used by elderjs-plugin-random to register temporary requests that it later intercepts to redirect to a random page of a route.</li>
+    <li>This hook is used by elderjs-plugin-markdown to register processed markdown files and their slugs Elder.js</li>
+    </ul><p><strong>NOTE:</strong> If you are modifying 'allRequests' you <strong>must</strong> set 'request.route' key for each request.</p><!-- HTML_TAG_END --></div>
+
+  <div class="list svelte-azdmmt"><strong>Props</strong> : <div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object of helpers loaded from `./src/helpers/index.js` in addition to the Elder.js provided helper functions.">helpers
+      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is passed to Svelte templates as the &quot;data&quot; prop.">data
+      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object representing the elder.config.js and other details about the build.">settings
+      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="Every request object collected from all routes during bootstrap. It is important to note that &#39;allRequests&#39; will be different at the &#39;request&#39; hook during a build because the requests are split between different processes during build time using the allRequests object.">allRequests
+      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that represents all of the routes registered with Elder.js.">routes
+      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An object that is initially empty but is reserved for plugins and sites to add database or api access to.">query
+      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An array of errors collected during the build process.">errors
+      </div></div>
+  <div class="list svelte-azdmmt"><strong>Mutable</strong> : <div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="An array of errors collected during the build process.">errors
+      </div><div class="code svelte-azdmmt" data-balloon-length="medium" data-balloon-pos="up" aria-label="Every request object collected from all routes during bootstrap. It is important to note that &#39;allRequests&#39; will be different at the &#39;request&#39; hook during a build because the requests are split between different processes during build time using the allRequests object.">allRequests
+      </div></div>
+
+  
+
+  <small>Stable · Location: Elder.ts</small></div>
+
+<img src="https://elderguide.com/images/elderjs-hooks-v100.png" alt="Elder.js hook Lifecycle" style="max-width:100%; margin:1rem 0;"><!-- HTML_TAG_END --></div>
+<div class="footer svelte-1tkpvyy">Built with ❤ and <a href="https://elderguide.com/tech/elderjs/" class="svelte-1tkpvyy">Elder.js</a></div>
+    
+    
+    
+    
+    </body></html>
