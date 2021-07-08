@@ -3,7 +3,7 @@ module.exports = {
   origin: '', // TODO: update this.
   lang: 'en',
   srcDir: 'src',
-  distDir: 'public',
+  distDir: 'docs',
   rootDir: process.cwd(),
   build: {},
   prefix: '', // If you want your site to be built within a sub folder within your `distDir` you can use this.
