@@ -3,7 +3,24 @@
   export let helpers;
 </script>
 
-<div class="entry">
-  <a href={helpers.permalinks.blog({ slug: blog.slug })}>{blog.frontmatter.title}</a>
+<style>
+  span.date-badge {
+    color: gray;
+    font-size: 80%;
+    width: fit-content;
+  }
+
+  p {
+    margin: 0.25rem;
+  }
+</style>
+
+<div class="entry card">
+  <a href={helpers.permalinks.blog({ slug: blog.slug })}>
+    <h3 style="margin: 0; color: var(--secondary)">{blog.frontmatter.title}</h3>
+  </a>
+  <span class="date-badge">
+    {new Intl.DateTimeFormat("ko-KR", {dateStyle: "long", timeStyle: "short"}).format(new Date(blog.frontmatter.date))}
+  </span>
   <p>{blog.frontmatter.excerpt}</p>
 </div>

@@ -7,13 +7,12 @@
 
   h1 {
     font-size: 4rem;
-    margin-bottom: 10px;
   }
 
   .title {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #ddd;
   }
 

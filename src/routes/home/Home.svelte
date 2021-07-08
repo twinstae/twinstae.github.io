@@ -4,22 +4,22 @@
   import Clock from '../../components/Clock.svelte';
   export let data, helpers;
 
-  export let foo;
-
   // add permalinks to the hook list so we can link to the posts.
   const hooks = data.hookInterface.map((hook) => ({
     ...hook,
     link: helpers.permalinks.hooks({ slug: hook.hook.toLocaleLowerCase() }),
   }));
+
+  function compare_blog_date(a, b){
+    return Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
+  }
 </script>
 
 <style>
   .banner {
-    padding: 1rem 2rem;
-    background: #eee;
-    border-radius: 2rem;
-    margin-bottom: 1rem;
+    padding: 1rem;
   }
+
   .entries {
     display: grid;
     grid-template-columns: 1fr;
@@ -29,7 +29,7 @@
   @media (min-width: 768px) {
     .entries {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       margin: 3rem 0;
     }
     :global(.entries .entry) {
@@ -40,10 +40,11 @@
   :global(.entry) {
     padding: 1rem;
     border: 1px solid #ddd;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     margin-bottom: 1rem;
     background: white;
   }
+
   .about {
     margin-bottom: 2rem;
   }
@@ -68,150 +69,48 @@
 </style>
 
 <svelte:head>
-  <title>Elder.js Template: Home</title>
-  <meta name="description" content="Elder.js Starter Template: It's A Tutorial Too!" />
+  <title> 진리의 배 조선소 </title>
+  <meta name="description" content="탐정토끼가 만드는 진리의 배 블로그" />
   <link href="/" rel="canonical" />
 </svelte:head>
 
-{#if data.testingHooks}
-  <div class="banner">
-    <p>Testing hooks worked</p>
-    {#if data.cpus}
-      <p>If you use Elder.js to build your site, it will span all {data.cpus.length} cpus listed below:</p>
-      <ol>
-        {#each data.cpus as cpu}
-          <li>{cpu.model}</li>
-        {/each}
-      </ol>
-    {/if}
-  </div>
-{/if}
+<div>
+  <h1> 진리의 배 조선소 : Blog </h1>
 
-<div class="banner">
-  <h1>Hello World: Welcome to Elder.js!</h1>
-  <p>Woot! You've got Elder.js installed. This template is designed to show you the ropes of how things work.</p>
+  <img style=" width: 8rem; border-radius: 16rem;"
+       src="https://pbs.twimg.com/profile_images/1392049180571365376/NDtx4On3_400x400.jpg"
+       alt="갈색 코트를 입은 디즈니식 토끼 그림. 주토피아가 탐정물로 기획되던 시절 주인공 주디의 디자인이다."
+       data-balloon-length="medium" data-balloon-pos="up" aria-label="그림 출처 : 디즈니 애니메이션 주토피아가 탐정물로 기획되던 시절의 주디의 원안">
+  <h2>탐정토끼 (본체: Taehee Kim) </h2>
+  <a href="https://twitter.com/stelo_kim"> <span class="badge secondary">트위터 </span></a>
 
   <p>
-    We've tried to make this site a bit of a tutorial, but be sure to check out the full <a
-      href="https://elderguide.com/tech/elderjs/">Elder.js docs.</a>
+    진리의 배는 서로 다른 사람들이 함께 나아가기 위한 플랫폼입니다. 그 시작으로 작은 배를 만드는 조선소로서, 이 블로그를 열었습니다.
+    그냥 글만 올리는 블로그가 아니라, 여러 웹 서비스를 만들고 실험해보려 합니다.
   </p>
 
   <p>
-    Enjoy playing around with Elder.js and, if you hit a snag with the template, open a <a
-      href="https://github.com/Elderjs/template/issues">GitHub issue.</a>
+    코칭을 받고 싶으시면 <a href="https://open.kakao.com/o/sMM8O6md"><span class="badge warning">오픈 카카오톡</span></a>으로 연락 주시면 편합니다.
+    트위터 DM이나 <span class="badge">rabolution@gmail.com</span> 으로 이메일을 주셔도 됩니다.
   </p>
+  <p>
+    구직 중 입니다. 채용에 관심이 있으시면 역시 위에 적힌 연락처로 연락 주세요.
+  </p>
+
+  <ul>
+    <li> <strong>15분 만에 끝내는 개발환경</strong> : 여러 언어와 프레임워크를 쉽게 설치하고 세팅할 수 있게 도와드립니다 </li>
+    <li> <strong>제네릭&lt;언어&gt; </strong>: 여러 프로그래밍 언어들에서 공통되거나 특별한 개념들을 탐구합니다. </li>
+    <li> <strong>Svelte Elder.js로 블로그 만들기</strong> : 이런 블로그를 직접 만드는 방법을 소개합니다. </li>
+    <li> <strong>IZ*DOOR 개발 일지</strong> : 제목이 곧 내용입니다.</li>
+    <li> <strong>개념어 사전 </strong>: 어디서 들어보긴 했는데 정확하게는 모르고 있던 개념들을 설명합니다</li>
+    <li> 그 외에 TDD 테스트 주도 개발, DDD 도메인 주도 개발, 객체지향 X 함수형, Actor 모델... </li>
+  </ul>
 </div>
 
 <div class="blog">
   <div class="entries">
-    {#each data.markdown.blog as blog}
+    {#each data.markdown.blog.sort(compare_blog_date) as blog}
       <BlogTeaser {blog} {helpers} />
     {/each}
   </div>
-</div>
-
-<div class="about">
-  <h2>About This Template</h2>
-  <p>
-    This example project is made up of 5 routes; you can find them by looking within the <span class="code"
-      >./src/routes/</span> folder. They are:
-  </p>
-
-  <ul>
-    <li><a href={helpers.permalinks.simple({ slug: 'simple' })}>Simple</a> - A barebones route.</li>
-    <li>Home - The page you are on.</li>
-    <li>
-      Blog - Linked from above, but you can also see a blog post by checking out: <a
-        href={helpers.permalinks.blog({ slug: 'getting-started' })}>'Getting Started'</a> .
-    </li>
-    <li>
-      Hooks - These are how you customize Elder.js. Details are below, and we've used the <span class="code"
-        >hookInterface</span> to build out dedicated pages for each hook as well.
-    </li>
-    <li>
-      An SSR route which only works when Elder.js is in SSR mode. (<span class="code">npm run dev</span> or
-      <span class="code">npm run serve</span>)
-    </li>
-  </ul>
-
-  <p>
-    The goal in showing off these 3 routes is to give you enough of an example to see how a site is built with Elder.js
-    (but one that isn't too complex to overwhelm you).
-  </p>
-  <h3>Development Environment:</h3>
-  <p>
-    If you ran <span class="code">npm start</span> to see this page this is the same as
-    <span class="code">npm run dev</span> which will:
-  </p>
-  <ol>
-    <li>
-      Spawn a dev server on the port defined in your <span class="code">.env</span>. (Pro-tip: add
-      <span class="code">.env</span> to your .gitignore now)
-    </li>
-    <li>It will reload that dev server when changes are detected including rebundling your Svelte templates.</li>
-  </ol>
-
-  <h3>Other NPM commands</h3>
-  <ol>
-    <li>
-      <code>npm run build</code>: will statically generate this same site so that it can be deployed with a static site
-      host such as Netlify, Cloudflare Pages, Vercel, or S3.
-    </li>
-    <li>
-      <code>npm run serve</code>: will start the server in production SSR mode which can be used with cluster mode or
-      PM2 to host Elder.js in a SSR fashion.
-    </li>
-  </ol>
-</div>
-
-<div class="hydrate">
-  <div class="left">
-    <h2>Partial Hydration:</h2>
-    <p>Svelte.js shines at bringing interactivity to otherwise static websites.</p>
-    <p>
-      By default, Elder.js statically renders Svelte components, only mounting them in the browser when it encounters a
-      Svelte component which includes the
-      <!-- Note: the actual prop is 'hydrate-client={}' but Svelte doesn't render empty objects-->
-      <code>hydrate-client={JSON.stringify({})}</code> prop.
-    </p>
-    <p>
-      This means that if a page doesn't need dynamic JS it will have 0KB of JS code resulting in faster loading, lighter
-      weight websites.
-    </p>
-    <p>
-      The <a href="https://svelte.dev/examples#clock">clock</a> on this page is an example of a component that has been hydrated
-      on the client.
-    </p>
-    <p>This approach makes it easy to build SEO friendly websites, with Svelte for interactivity when needed.</p>
-    <p>
-      By default all hydrated components are lazy loaded with an intersection observer, but you can have full control
-      over how hydration is handled via <a href="https://elderguide.com/tech/elderjs/#hydration-options"
-        >several different hydration options</a
-      >.
-    </p>
-  </div>
-  <div class="right">
-    <Clock hydrate-client={{}} />
-  </div>
-</div>
-
-<h2>The Elder.js Hook Interface</h2>
-
-<p>
-  Once you've digested the guides above and understand how to handle client hydration, we encourage you to explore the
-  hook interface below.
-</p>
-<p>
-  Hooks are the primary way to customize Elder.js and the list below outlines exactly what each hook can be used for.
-</p>
-<div />
-<img
-  src="https://elderguide.com/images/elderjs-hook-lifecycle-v13.png"
-  alt="Elder.js hook Lifecycle v1.3"
-  style="max-width:100%; margin:1rem 0;" />
-
-<div class="hooks">
-  {#each hooks as hook, i}
-    <HookDetail {hook} {i} hookEntityDefinitions={data.hookEntityDefinitions} />
-  {/each}
 </div>

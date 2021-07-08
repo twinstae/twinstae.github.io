@@ -230,11 +230,6 @@ section {
   display: block;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 figcaption,
 figure,
 main {
@@ -963,58 +958,6 @@ pre code {
 html {
   color: #41403e;
   color: var(--primary);
-  font-family: "NanumBarunpen", sans-serif;
-  font-size: 20px;
-}
-
-p,
-a,
-button,
-table,
-thead,
-tbody,
-th,
-tr,
-td,
-input,
-textarea,
-select,
-option {
-  font-family: "Neucha", sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "NanumBarunpen", sans-serif;
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 4rem;
-}
-
-h2 {
-  font-size: 3rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
-h6 {
-  font-size: 0.8rem;
 }
 
 .text-left {
@@ -1030,7 +973,6 @@ h6 {
 }
 
 img {
-  border-bottom-left-radius: 15px 255px;
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
@@ -1696,10 +1638,7 @@ button.disabled, button[disabled],
 a {
   color: #41403e;
   color: var(--secondary);
-  background-image: linear-gradient(5deg, transparent 65%, #0071de 80%, transparent 90%), linear-gradient(165deg, transparent 5%, #0071de 15%, transparent 25%), linear-gradient(165deg, transparent 45%, #0071de 55%, transparent 65%), linear-gradient(15deg, transparent 25%, #0071de 35%, transparent 50%);
-  background-position: 0 90%;
-  background-repeat: repeat-x;
-  background-size: 4px 3px;
+  border-bottom: 1px doted #0071de;
   text-decoration: none;
 }
 a:visited {

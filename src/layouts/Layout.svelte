@@ -1,5 +1,7 @@
 <script>
   import style from '../../assets/style.css';
+  import paper from '../../assets/paper.css';
+
   export let templateHtml, settings;
 </script>
 
@@ -42,9 +44,11 @@
 <svelte:head>
   <!-- You can remove this balloon it is just for hover effects -->
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
+  <link rel="stylesheet" href="./paper.css">
 </svelte:head>
 
 <div class="container">
   {@html templateHtml}
 </div>
-<div class="footer">Built with ❤ and <a href="https://elderguide.com/tech/elderjs/">Elder.js</a></div>
+
+<div class="footer">이 블로그는 <a href="https://svelte.dev/">Svelte</a>와 <a class="secondary" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다. 디자인은 <a href="https://www.getpapercss.com/docs/">PaperCSS</a>를 기본으로 커스텀했습니다. <a href="https://pages.github.com/">Github Pages</a>로 호스팅하고 있습니다.</div>
