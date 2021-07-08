@@ -51,7 +51,7 @@
 <svelte:head>
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
-  <link rel="stylesheet" href="http://localhost:3000/paper.css">
+  <link rel="stylesheet" href="/paper.css">
   <script>
     let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
