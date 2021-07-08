@@ -53,4 +53,12 @@
   {@html templateHtml}
 </article>
 
-<footer class="footer">이 블로그는 <a href="https://svelte.dev/">Svelte</a>와 <a class="secondary" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다. 디자인은 <a href="https://www.getpapercss.com/docs/">PaperCSS</a>를 기본으로 커스텀했습니다. <a href="https://pages.github.com/">Github Pages</a>로 호스팅하고 있습니다.</footer>
+<footer class="footer">
+  이 블로그는 <a href="https://svelte.dev/">Svelte</a>와 <a class="secondary" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br>
+  디자인은 <a href="https://www.getpapercss.com/docs/">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br>
+  <a href="https://pages.github.com/">Github Pages</a>로 호스팅하고 있습니다.
+  <br>
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
