@@ -1,6 +1,6 @@
 require('dotenv').config();
 module.exports = {
-  origin: '', // TODO: update this.
+  origin: 'https://twinstae.github.io/', // TODO: update this.
   lang: 'en',
   srcDir: 'src',
   distDir: 'docs',

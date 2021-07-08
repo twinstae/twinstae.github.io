@@ -1,7 +1,7 @@
 ---
 title: 'Svelte Elder.js 블로그 만들기'
 excerpt: '검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다.'
-date: '2021-07-08T12:01:00.618Z'
+date: '2021-07-07T15:01:00.618Z'
 author: 탐정토끼(Taehee Kim)
 ---
 

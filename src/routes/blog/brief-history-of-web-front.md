@@ -1,7 +1,7 @@
 ---
 title: '웹 프런트 엔드의 간략한 역사(작성 중)'
 excerpt: '태초의 HTML 정적 파일부터, 템플릿 엔진, JQuery, React, Next, JAM 에 이르기까지 웹 프런트 엔드가 진화해온 과정'
-date: '2021-07-08T14:22:27.798Z'
+date: '2021-07-08T07:30:58.196Z'
 author: 탐정토끼(Taehee Kim)
 ---
 
