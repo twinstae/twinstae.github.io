@@ -43,6 +43,18 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
   <title>{frontmatter.title}</title>
   <meta name="description" content={frontmatter.excerpt} />
   <link href={request.permalink} rel="canonical" />
+
+  <meta property="og:site_name" content="진리의 배 조선소">
+  <meta property="og:url" content="https://twinstae.github.io{request.permalink}">
+  <meta property="og:title" content="{frontmatter.title}">
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/1392049180571365376/NDtx4On3_400x400.jpg">
+  <meta property="og:description" content="{frontmatter.excerpt}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://twinstae.github.io{request.permalink}">
+  <meta name="twitter:title" content="{frontmatter.title}">
+  <meta name="twitter:description" content="{frontmatter.excerpt}">
+  <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1392049180571365376/NDtx4On3_400x400.jpg">
 </svelte:head>
 
 <a href="/">&LeftArrow; Home</a>
