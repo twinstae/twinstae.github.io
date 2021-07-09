@@ -4,12 +4,6 @@
   import Clock from '../../components/Clock.svelte';
   export let data, helpers;
 
-  // add permalinks to the hook list so we can link to the posts.
-  const hooks = data.hookInterface.map((hook) => ({
-    ...hook,
-    link: helpers.permalinks.hooks({ slug: hook.hook.toLocaleLowerCase() }),
-  }));
-
   function compare_blog_date(a, b){
     return Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
   }
@@ -53,17 +47,6 @@
     .hydrate {
       display: grid;
       grid-template-columns: 80% 20%;
-    }
-  }
-
-  .hooks {
-    display: grid;
-    grid-template-columns: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .hooks {
-      grid-template-columns: 50% 50%;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 require('dotenv').config();
 module.exports = {
-  origin: 'https://twinstae.github.io/', // TODO: update this.
+  origin: 'http://localhost:3000/', // TODO: update this.
   lang: 'ko-KR',
   srcDir: 'src',
   distDir: 'docs',
@@ -35,6 +35,21 @@ module.exports = {
     '@elderjs/plugin-seo-check': {
       display: ['errors', 'warnings'], // If the errors are too verbose remove 'warnings'
       //writeLocation: './report.json', // if you want to write a report of errors
+    },
+    '@elderjs/plugin-sitemap': {
+      origin: 'https://twinstae.github.io', // the https://yourdomain.com
+      exclude: [], // an array of permalinks or permalink prefixes. So you can do ['500'] and it will match /500**
+      routeDetails: {
+        home: {
+          priority: 1.0,
+          changefreq: 'weekly',
+        },
+        blog: {
+          priority: 0.8,
+          changefreq: 'monthly',
+        }
+      }, // set custom priority and change freq if not it falls back to default
+      lastUpdate: {}, // configurable last update for each route type.
     },
   },
   shortcodes: { closePattern: '}}', openPattern: '{{' },

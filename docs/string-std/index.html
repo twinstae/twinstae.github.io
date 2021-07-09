@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Svelte Elder.js 블로그 만들기</title><meta name="description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-1m33ocn"><link href="/svelte-elder-create-blog/" rel="canonical" data-svelte="svelte-1m33ocn"><link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" class="svelte-198m2a" data-svelte="svelte-1clk4g5"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-198m2a" data-svelte="svelte-1clk4g5"><script type="application/javascript" src="/highlight.min.js" class="svelte-198m2a" data-svelte="svelte-1clk4g5"></script><script class="svelte-198m2a" data-svelte="svelte-1clk4g5">hljs.highlightAll();
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>언어들이 문자열 String을 다루는 방식</title><meta name="description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-1m33ocn"><link href="/string-std/" rel="canonical" data-svelte="svelte-1m33ocn"><link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" class="svelte-198m2a" data-svelte="svelte-1clk4g5"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-198m2a" data-svelte="svelte-1clk4g5"><script type="application/javascript" src="/highlight.min.js" class="svelte-198m2a" data-svelte="svelte-1clk4g5"></script><script class="svelte-198m2a" data-svelte="svelte-1clk4g5">hljs.highlightAll();
     setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);
@@ -15,7 +15,7 @@
   </script><script class="svelte-198m2a" data-svelte="svelte-1clk4g5">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   </script><link rel="stylesheet" href="/_elderjs/assets/svelte-cf83e1a8.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-198m2a"><div class="darkcheckbox-component" id="darkcheckboxvRzCpjvNff"><input type="checkbox" id="darkmode-checkbox" class="svelte-s86u72">
+<nav class="svelte-198m2a"><div class="darkcheckbox-component" id="darkcheckboxWkqYpjfxXc"><input type="checkbox" id="darkmode-checkbox" class="svelte-s86u72">
 <label for="darkmode-checkbox" class="svelte-s86u72"><span class="svelte-s86u72"></span>
   <span class="svelte-s86u72"></span>
 </label></div></nav>
@@ -23,22 +23,29 @@
 <article class="container svelte-198m2a"><!-- HTML_TAG_START -->
 <a href="/">← Home</a>
 
-<div class="title svelte-1i8eh8j"><h1>Svelte Elder.js 블로그 만들기</h1>
+<div class="title svelte-1i8eh8j"><h1>언어들이 문자열 String을 다루는 방식</h1>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<!-- HTML_TAG_START --><h2 id="svelte--가상-돔-없이-html-css에-가깝게-개발할-수-있는-프런트엔드-프레임워크입니다">Svelte : 가상 돔 없이 html, css에 가깝게 개발할 수 있는 프런트엔드 프레임워크입니다.</h2>
-<h2 id="elderjs--검색-엔진-최적화된-svetle-정적-페이지-생성기입니다">Elder.js : 검색 엔진 최적화된 Svetle 정적 페이지 생성기입니다.</h2>
-<h2 id="elderjs-템플릿-세팅하기">Elder.js 템플릿 세팅하기</h2>
-<h2 id="elderjs-github-pages에-배포하기">Elder.js Github Pages에 배포하기</h2>
-<h3 id="github-pages-저장소-만들기">github pages 저장소 만들기</h3>
-<h3 id="원격-저장소에-push-하기">원격 저장소에 push 하기</h3>
-<h3 id="배포되는-public-폴더-이름을-docs로-바꾸기">배포되는 public 폴더 이름을 docs로 바꾸기</h3>
-<h3 id="nojekyll-파일-넣어서-asset-서빙되게-하기">.nojekyll 파일 넣어서 asset 서빙되게 하기</h3>
-<h2 id="마크다운으로-새로운-글쓰기">마크다운으로 새로운 글쓰기</h2>
-<h3 id="마크다운은-쉽게-html로-변환할-수-있는-마크업-언어입니다">마크다운은 쉽게 html로 변환할 수 있는 마크업 언어입니다.</h3>
-<h2 id="cjk-slug-적용하기">cjk slug 적용하기</h2>
-<p>문제 : 한글로 된 마크다운 파일은 dev 서버를 쓸 수 없다...</p>
-<h2 id="빌드-commit-push-자동화하기">빌드 commit push 자동화하기</h2>
+<!-- HTML_TAG_START --><pre><code class="language-java">String foo = "abcde";
+StringBuffer sb = new StringBuffer(str);
+String reversedFoo = sb.reverse().toString();
+System.out.println(reversedFoo);
+</code></pre>
+<pre><code class="language-python">"탐정토끼"[::-1]
+</code></pre>
+<pre><code class="language-javascript">const foo = "탐정토끼";
+console.log(foo.split("").reverse().join());
+</code></pre>
+<pre><code class="language-rust">let foo = "탐정토끼";
+println!("{}", foo.chars().rev().collect::&#x3C;String>());
+</code></pre>
+<pre><code class="language-clojure">(require '[clojure.string :as s])
+(def foo "탐정토끼")
+(print (s/reverse foo))
+</code></pre>
+<pre><code class="language-elixir">foo = "탐정토끼"
+IO.puts String.reverse(foo)
+</code></pre>
 <!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script></div><!-- HTML_TAG_END --></article>
@@ -117,7 +124,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['darkcheckboxvRzCpjvNff','DarkCheckBox.393b7184.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['darkcheckboxWkqYpjfxXc','DarkCheckBox.393b7184.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

@@ -15,12 +15,6 @@
     margin-top: 2rem;
   }
 
-  :global(pre) {
-    background: var(--codeblock-background-color);
-    padding: 1rem;
-    border-radius: 1rem;
-  }
-
   :global(blockquote) {
     margin: 0;
     background: #ddd;
@@ -59,3 +53,8 @@
 {:else}
   <h1>Oops!! Markdown not found!</h1>
 {/if}
+
+<div>
+  <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async="">
+  </script>
+</div>

@@ -1,10 +1,11 @@
 <script>
   import style from '../../assets/style.css';
   import paper from '../../assets/paper.css';
+  import atom_one_dark from '../../assets/atom-one-dark.min.css';
+  import hijs_badge from '../../assets/hljs-badge.css';
   import DarkCheckBox from "../components/DarkCheckBox.svelte";
 
-  export let templateHtml, settings;
-
+  export let templateHtml; //, settings;
 </script>
 
 <style>
@@ -18,7 +19,7 @@
   :root {
     --balloon-color: var(--primary);
     --balloon-font-size: 14px;
-    --codeblock-background-color: #333;
+    --codeblock-background-color: #282c34;
     --codeblock-color: #ddd;
   }
 
@@ -45,13 +46,28 @@
   :global(ol li) {
     margin-bottom: 0.3rem;
   }
-
 </style>
 
 <svelte:head>
   <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
-  <link rel="stylesheet" href="/paper.css">
+  <script type="application/javascript" src="/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    setTimeout(()=>{
+      const codes = document.getElementsByTagName("code");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script>
   <script>
     let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";

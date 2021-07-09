@@ -325,13 +325,6 @@ strong {
   font-weight: bolder;
 }
 
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
 dfn {
   font-style: italic;
 }
@@ -957,16 +950,6 @@ hr::after {
   }
 }
 
-/* Content styling */
-code {
-  color: #41403e;
-  color: var(--secondary);
-  background-color: #41403e;
-  background-color: var(--primary-shaded-70);
-  border-radius: 3px;
-  font-size: 80%;
-  padding: 2px 4px;
-}
 
 kbd {
   color: #41403e;
@@ -978,34 +961,7 @@ kbd {
   padding: 2px 4px;
 }
 
-pre {
-  color: #41403e;
-  color: var(--inverse-primary);
-  background-color: #41403e;
-  background-color: var(--primary-shaded-70);
-  border-color: #41403e;
-  border-color: var(--primary-shaded-50);
-  border-radius: 3px;
-  border-style: solid;
-  border-width: 1px;
-  display: block;
-  font-size: 80%;
-  line-height: 1.5;
-  overflow-x: auto;
-  padding: 1em;
-  white-space: pre;
-  word-break: break-all;
-  word-wrap: break-word;
-}
-pre code {
-  color: #41403e;
-  color: var(--inverse-primary);
-  background: transparent;
-  display: block;
-  font-size: inherit;
-  padding: initial;
-  white-space: pre;
-}
+
 
 html {
   color: #41403e;

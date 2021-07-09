@@ -1,0 +1,74 @@
+pre code:before {
+    padding: 3px;
+    border-radius: 8px;
+    right: 24px;
+    transform: translateY(-12px);
+    position: absolute;
+    color: white;
+}
+
+pre code.language-java:before {
+    content: "Java";
+    background: red;
+}
+
+pre code.language-scala:before {
+  content: "Java";
+  background-color: red;
+}
+
+pre code.language-swift:before {
+  content: "Swift";
+  background-color: #F05138;
+}
+
+pre code.language-python:before {
+  content: "Python";
+  background: linear-gradient(to right bottom, #3776ab 30%, #ffd343);
+}
+
+pre code.language-javascript:before {
+  content: "JavaScript";
+  color: black;
+  background-color: yellow;
+}
+
+pre code.language-typescript:before {
+  content: "TypeScript";
+  background-color: #3178c6;
+}
+
+pre code.language-reasonml:before {
+  content: "ReScript";
+  background-color: #E6484f;
+}
+
+pre code.language-cpp:before {
+  content: "C++";
+  background-color: #4183c4;
+}
+
+pre code.language-go:before {
+  content: "GO";
+  background-color: #7fd5ea;
+}
+
+pre code.language-rust:before {
+  content: "Rust";
+  background-color: black;
+}
+
+pre code.language-clojure:before {
+  content: "Clojure";
+  background: linear-gradient(to right top, #39b54a 10%, #3452b1);
+}
+
+pre code.language-php:before {
+  content: "PHP";
+  background-color: #8892BF;
+}
+
+pre code.language-elixir:before {
+  content: "Elixir";
+  background-color: #591270;
+}

@@ -1,12 +1,26 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title> 진리의 배 조선소 </title><meta name="description" content="탐정토끼가 만드는 진리의 배 블로그" data-svelte="svelte-184m8wo"><link href="/" rel="canonical" data-svelte="svelte-184m8wo"><link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" class="svelte-s9qatx" data-svelte="svelte-z6ox2r"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-s9qatx" data-svelte="svelte-z6ox2r"><link rel="stylesheet" href="/paper.css" class="svelte-s9qatx" data-svelte="svelte-z6ox2r"><script class="svelte-s9qatx" data-svelte="svelte-z6ox2r">let is_dark = localStorage.getItem("dark") == "true";
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title> 진리의 배 조선소 </title><meta name="description" content="탐정토끼가 만드는 진리의 배 블로그" data-svelte="svelte-184m8wo"><link href="/" rel="canonical" data-svelte="svelte-184m8wo"><link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css" class="svelte-198m2a" data-svelte="svelte-1clk4g5"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-198m2a" data-svelte="svelte-1clk4g5"><script type="application/javascript" src="/highlight.min.js" class="svelte-198m2a" data-svelte="svelte-1clk4g5"></script><script class="svelte-198m2a" data-svelte="svelte-1clk4g5">hljs.highlightAll();
+    setTimeout(()=>{
+      const codes = document.getElementsByTagName("code");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script><script class="svelte-198m2a" data-svelte="svelte-1clk4g5">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="stylesheet" href="/_elderjs/assets/svelte-22ad98fe.css" media="all" /><style></style></head><body class="home">
-<nav class="svelte-s9qatx"><div class="darkcheckbox-component" id="darkcheckboxQSLQJxrbdx"><input type="checkbox" id="darkmode-checkbox" class="svelte-s86u72">
+  </script><link rel="stylesheet" href="/_elderjs/assets/svelte-cf83e1a8.css" media="all" /><style></style></head><body class="home">
+<nav class="svelte-198m2a"><div class="darkcheckbox-component" id="darkcheckboxxXZbXFxWYd"><input type="checkbox" id="darkmode-checkbox" class="svelte-s86u72">
 <label for="darkmode-checkbox" class="svelte-s86u72"><span class="svelte-s86u72"></span>
   <span class="svelte-s86u72"></span>
 </label></div></nav>
 
-<article class="container svelte-s9qatx"><!-- HTML_TAG_START -->
+<article class="container svelte-198m2a"><!-- HTML_TAG_START -->
 
 <div><h1>진리의 배 조선소 : Blog </h1>
 
@@ -23,7 +37,9 @@
   <p>구직 중 입니다. 채용에 관심이 있으시면 역시 위에 적힌 연락처로 연락 주세요.
   </p></div>
 
-<div class="blog"><div class="entries svelte-1ee0x6h"><a href="/brief-history-of-web-front/"><div class="entry card"><h3 class="svelte-he32l7">웹 프런트 엔드의 간략한 역사(작성 중)</h3>
+<div class="blog"><div class="entries svelte-198zq0f"><a href="/string-std/"><div class="entry card"><h3 class="svelte-he32l7">언어들이 문자열 String을 다루는 방식</h3>
+  <span class="date-badge svelte-he32l7">2021년 7월 9일 오전 12:26</span>
+  <p class="svelte-he32l7">Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다.</p></div></a><a href="/brief-history-of-web-front/"><div class="entry card"><h3 class="svelte-he32l7">웹 프런트 엔드의 간략한 역사(작성 중)</h3>
   <span class="date-badge svelte-he32l7">2021년 7월 8일 오후 4:30</span>
   <p class="svelte-he32l7">태초의 HTML 정적 파일부터, 템플릿 엔진, JQuery, React, Next, JAM 에 이르기까지 웹 프런트 엔드가 진화해온 과정</p></div></a><a href="/what-is-trade-off/"><div class="entry card"><h3 class="svelte-he32l7">Trade Off 트레이드 오프(작성 중)</h3>
   <span class="date-badge svelte-he32l7">2021년 7월 8일 오후 4:20</span>
@@ -33,12 +49,12 @@
   <span class="date-badge svelte-he32l7">2021년 7월 8일 오전 12:01</span>
   <p class="svelte-he32l7">검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다.</p></div></a></div></div><!-- HTML_TAG_END --></article>
 
-<footer class="footer svelte-s9qatx">이 블로그는 <a href="https://svelte.dev/" class="svelte-s9qatx">Svelte</a>와 <a class="secondary svelte-s9qatx" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br class="svelte-s9qatx">
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-s9qatx">PaperCSS</a>를 기본으로 커스텀했습니다.
-  <br class="svelte-s9qatx">
-  <a href="https://pages.github.com/" class="svelte-s9qatx">Github Pages</a>로 호스팅하고 있습니다.
-  <br class="svelte-s9qatx">
+<footer class="footer svelte-198m2a">이 블로그는 <a href="https://svelte.dev/" class="svelte-198m2a">Svelte</a>와 <a class="secondary svelte-198m2a" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br class="svelte-198m2a">
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-198m2a">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br class="svelte-198m2a">
+  <a href="https://pages.github.com/" class="svelte-198m2a">Github Pages</a>로 호스팅하고 있습니다.
+  <br class="svelte-198m2a">
   오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
 </footer>
     <script type="text/javascript">
@@ -107,7 +123,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['darkcheckboxQSLQJxrbdx','DarkCheckBox.393b7184.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['darkcheckboxxXZbXFxWYd','DarkCheckBox.393b7184.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

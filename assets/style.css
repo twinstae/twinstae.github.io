@@ -1,13 +1,22 @@
 .code,
 code {
-  padding: 0 0.25rem;
-  background: var(--codeblock-background-color);
-  color: var(--codeblock-color);
-  text-indent: 0px;
-  border-radius: 3px;
-  margin-right: 0.5rem;
   font-family: "D2Coding", monospace;
-  display: inline-block;
+}
+
+pre {
+  background: var(--codeblock-background-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+pre:hover:before {
+  content: "복사하려면 코드를 더블클릭!";
+  position: absolute;
+  right: 16px;
+  transform: translateY(-32px);
+  font-size: 80%;
+  color: gray;
+  transition: 1s;
 }
 
 h1 {
