@@ -43,6 +43,7 @@ html.light {
   --white: white;
   --main-background: white;
   --main-background-light: white;
+  --blockquote-bg: #fdd;
   --black: black;
   --primary-text: #272625;
   --secondary-text: #0057ab;
@@ -94,6 +95,7 @@ html.dark {
     --white: white;
     --main-background: #18191a;
     --main-background-light: #c1c0bd;
+    --blockquote-bg: #100;
     --black: black;
     --primary-text: rgb(245, 246, 247);
     --secondary-text: #0057ab;
@@ -146,6 +148,7 @@ html.dark {
     --white: white;
     --main-background: #111;
     --main-background-light: #c1c0bd;
+    --blockquote-bg: #100;
     --black: black;
     --primary-text: #ddd;
     --secondary-text: #0057ab;

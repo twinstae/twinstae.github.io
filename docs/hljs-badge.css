@@ -29,15 +29,18 @@ pre code.language-python:before {
 
 pre code.language-javascript:before {
   content: '';
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png');
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png');
   height: 24px;
   width: 24px;
   background-size: 24px 24px;
 }
 
 pre code.language-typescript:before {
-  content: "TypeScript";
-  background-color: #3178c6;
+  content: "";
+  background-image: url("https://www.typescriptlang.org/icons/icon-48x48.png?v=8944a05a8b601855de116c8a56d3b3ae");
+  height: 24px;
+  width: 24px;
+  background-size: 24px 24px;
 }
 
 pre code.language-reasonml:before {

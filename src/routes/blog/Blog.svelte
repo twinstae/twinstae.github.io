@@ -19,8 +19,9 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
   }
 
   :global(blockquote) {
+    color: var(--main-text-color);
     margin: 0;
-    background: #ddd;
+    background: var(--blockquote-bg);
     padding: 3px 1.5rem 3px 3rem;
     position: relative;
     border-radius: 1rem;
