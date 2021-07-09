@@ -7,13 +7,13 @@
     <span>목차</span>
     <ol>
     {#each tocTree as heading2}
-      <li>
+      <li style="font-size: 1.25rem;">
         <a href="#{heading2.id}">
           {heading2.text}
           {#if heading2.children}
           <ol>
             {#each heading2.children as heading3}
-              <li style="font-size: 80%"><a href="#{heading3.id}">{heading3.text}</a></li>
+              <li style="font-size: 1rem;"><a href="#{heading3.id}">{heading3.text}</a></li>
             {/each}
           </ol>
           {/if}

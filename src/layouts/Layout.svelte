@@ -42,7 +42,8 @@
 
   :global(ul li),
   :global(ol li) {
-    margin-bottom: 0.3rem;
+    margin-bottom: .5rem;
+    padding: .125rem 0px;
   }
 </style>
 
