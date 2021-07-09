@@ -49,7 +49,7 @@
 
 <svelte:head>
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
-  <ink href='https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap' rel='stylesheet'>l
+  <link href='https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap' rel='stylesheet'>
   <script type="application/javascript" src="/highlight.min.js"></script>
   <script>
     hljs.highlightAll();
