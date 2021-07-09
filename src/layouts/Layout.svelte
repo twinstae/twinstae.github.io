@@ -31,8 +31,6 @@
     padding: 2rem 0;
     background: #333;
     padding-top: 2rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-      'Helvetica Neue', sans-serif;
     color: #ddd;
     text-align: center;
     font-size: 14px;
@@ -49,8 +47,8 @@
 </style>
 
 <svelte:head>
-  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
   <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" />
+  <ink href='https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap' rel='stylesheet'>l
   <script type="application/javascript" src="/highlight.min.js"></script>
   <script>
     hljs.highlightAll();

@@ -13,8 +13,8 @@
   })
 </script>
 
-<input type="checkbox" id="darkmode-checkbox" bind:checked={is_dark} on:change={on_dark_change}>
 <label for="darkmode-checkbox">
+  <input type="checkbox" id="darkmode-checkbox" bind:checked={is_dark} on:change={on_dark_change}>
   <span></span>
   <span></span>
 </label>

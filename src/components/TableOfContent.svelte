@@ -4,7 +4,7 @@
 
 <nav>
   <div>
-    <h4>목차</h4>
+    <span>목차</span>
     <ol>
     {#each tocTree as heading2}
       <li>

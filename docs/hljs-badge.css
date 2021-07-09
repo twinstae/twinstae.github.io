@@ -29,7 +29,7 @@ pre code.language-python:before {
 
 pre code.language-javascript:before {
   content: '';
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png');
+  background-image: url('/javascript-logo.png');
   height: 24px;
   width: 24px;
   background-size: 24px 24px;
