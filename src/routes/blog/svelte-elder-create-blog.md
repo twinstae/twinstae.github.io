@@ -18,7 +18,7 @@ author: 탐정토끼(Taehee Kim)
 - GitHub 계정이 있고, Git을 사용할 줄 알아야 합니다.
   - [생활코딩 GIT1](https://opentutorials.org/course/3837), [생활코딩 GitHub](https://opentutorials.org/course/307/2475) 강좌도 있습니다. (없는 게 없네요!)
 
-## Svelte.js와 Elder.js를 소개합니다.
+## 이론 : Svelte.js와 Elder.js를 소개합니다.
 이 두 친구와 SEO, JAM Stack 등에 대해 이미 잘 알고 계신다면 바로 실전으로 넘어가셔도 됩니다.
 
 ### Svelte는 가상 돔 없이 바닐라JS에 가깝게 개발할 수 있는 웹 프레임워크입니다.
@@ -82,8 +82,6 @@ scope가 해당 컴포넌트 안으로 제한되기 때문에
   }
 </style>
 ```
-
-### Svelte 영어 튜토리얼, 한국어 가이드
 Svelte 홈페이지에는 따로 설치 없이 바로 해볼 수 있는 [영어 튜토리얼](https://svelte.dev/tutorial/basics)이 있습니다. 
 
 한국어 자료로는 [Svete.js 완벽 가이드](https://heropy.blog/2019/09/29/svelte/)도 있습니다. 저자 분이 인프런에서 유료 강의도 하고 계세요.
@@ -107,7 +105,7 @@ Elder.js는 이러한 JAM 스택에서도 특히 SEO 전문가들이 만든 프�
 
 이제 설명은 끝입니다. 실전으로 들어가보죠!
 
-## Elder.js 템플릿 세팅하기
+## 실전: Elder.js template 프로젝트 Github Pages에 배포하기
 
 그러면 공식 가이드를 따라서, 프로젝트를 세팅해봅시다.
 
@@ -118,6 +116,8 @@ Elder.js는 이러한 JAM 스택에서도 특히 SEO 전문가들이 만든 프�
 npx --version
 # 6.14.12 이런 식으로 나오면 설치가 되어 있는 겁니다.
 ```
+
+### npx로 Elderjs/template 세팅하기
 npx는 프로젝트 템플릿을 다운 받아 세팅해줍니다. 다음 명령어를 입력하면 <내 깃허브 아이디>.github.io 라는 이름의 폴더와 기본 파일들이 생성됩니다.
 
 ```bash
@@ -149,7 +149,6 @@ open http://localhost:3000
 
 ![웹 브라우저에 Elder.js 템플릿 사이트가 열린 모습. Hello World: Welcome to Elder.js 라는 제목이 큰 글씨로 적혀 있다.](https://res.cloudinary.com/practicaldev/image/fetch/s--A0xtvNLd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mksj4g4iuntzxkx5xdau.jpg)
 
-## Elder.js Github Pages에 배포하기
 개발용 localhost 서버는 내 컴퓨터에서만 볼 수 있습니다. 이제 저희 템플릿 프로젝트를 github pages에 올려서, 누구나 언제 어디서나 접속할 수 있게 만들어봅시다.
 
 영상이 편하신 분은 [생활코딩 WEBn 웹 호스팅](https://opentutorials.org/course/3084/18891) 강좌를 참고하세요. 약간 옛날 자료이긴 하지만 큰 개념을 잡는 데에는 무리가 없을 겁니다.

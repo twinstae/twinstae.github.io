@@ -61,6 +61,11 @@ pre code.language-rust:before {
   border: 2px dotted var(--codeblock-background-color);
 }
 
+pre code.language-bash:before {
+  content: ">_ Bash";
+  background-color: black;
+}
+
 pre code.language-clojure:before {
   content: "Clojure";
   background: linear-gradient(to right top, #39b54a 10%, #3452b1);
