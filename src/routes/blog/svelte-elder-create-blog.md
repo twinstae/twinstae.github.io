@@ -183,6 +183,8 @@ Pages 탭에 들어갑니다.
 
 Source 폴더를 `/(root)`에서 `/docs` 폴더로 바꾸고 저장(Save)해줍니다.
 
+![source 폴더의 사진. 메뉴에 /root와 /docs가 있다.](https://docs.github.com/assets/images/help/pages/publishing-source-folder-drop-down.png)
+
 ### .gitignore로 용량이 큰 파일, 보안에 민감한 파일 숨기기
 이제 아까 만들어둔 템플릿 프로젝트 폴더에 메모장이나 텍스트 에디터를 열고 `.gitignore` 라는 파일을 하나 만듭니다. txt 확장자로 저장하면 안 되고, 모든 파일 형식 으로 저장합니다.
 
