@@ -1013,16 +1013,10 @@ ol {
   list-style-type: decimal;
 }
 ol ol {
-  list-style-type: upper-alpha;
+  list-style-type: decimal;
 }
 ol ol ol {
-  list-style-type: upper-roman;
-}
-ol ol ol ol {
-  list-style-type: lower-alpha;
-}
-ol ol ol ol ol {
-  list-style-type: lower-roman;
+  list-style-type: decimal;
 }
 
 ul {
@@ -3160,21 +3154,9 @@ nav ul.inline li {
 nav a {
   color: #41403e;
   color: var(--primary);
-  border-bottom-color: #41403e;
-  border-bottom-color: var(--primary);
-  background-image: none;
-  border-bottom-left-radius: 15px 3px;
-  border-bottom-right-radius: 15px 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 5px;
   padding-bottom: 0.1rem;
 }
-nav a:hover {
-  border-color: #41403e;
-  border-color: var(--primary-light);
-  border-bottom-style: solid;
-  border-bottom-width: 5px;
-}
+
 nav ul.inline li a {
   font-size: 1.3rem;
 }

@@ -60,7 +60,7 @@
 <div>
   <h1> 진리의 배 조선소 : Blog </h1>
 
-  <img style=" width: 8rem; border-radius: 16rem;"
+  <img style=" width: 8rem; border-radius: 50%;"
        src="https://pbs.twimg.com/profile_images/1392049180571365376/NDtx4On3_400x400.jpg"
        alt="갈색 코트를 입은 디즈니식 토끼 그림. 주토피아가 탐정물로 기획되던 시절 주인공 주디의 디자인이다."
        data-balloon-length="medium" data-balloon-pos="up" aria-label="그림 출처 : 디즈니 애니메이션 주토피아가 탐정물로 기획되던 시절의 주디의 원안">

@@ -1,6 +1,9 @@
 <script>
+import ScrollTopButton from "../../components/ScrollTopButton.svelte";
+
+  import TableOfContent from "../../components/TableOfContent.svelte";
   export let data, request; // data is mainly being populated from the @elderjs/plugin-markdown
-  const { html, frontmatter } = data;
+  const { html, frontmatter, tocTree } = data;
 </script>
 
 <style>
@@ -41,12 +44,20 @@
   <meta name="description" content={frontmatter.excerpt} />
   <link href={request.permalink} rel="canonical" />
 </svelte:head>
+
 <a href="/">&LeftArrow; Home</a>
+
 
 <div class="title">
   <h1>{frontmatter.title}</h1>
   {#if frontmatter.author}<small>By {frontmatter.author}</small>{/if}
 </div>
+
+<ScrollTopButton hydrate-client={{}} hydrate-options={{preload: true }} />
+
+{#if tocTree && tocTree.length > 0}
+  <TableOfContent tocTree={tocTree}/>
+{/if}
 
 {#if html}
   {@html html}
