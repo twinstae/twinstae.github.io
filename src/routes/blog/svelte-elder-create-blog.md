@@ -22,6 +22,9 @@ author: 탐정토끼(Taehee Kim)
 이 두 친구와 SEO, JAM Stack 등에 대해 이미 잘 알고 계신다면 바로 실전으로 넘어가셔도 됩니다.
 
 ### Svelte는 가상 돔 없이 바닐라JS에 가깝게 개발할 수 있는 웹 프레임워크입니다.
+![](https://camo.githubusercontent.com/c0334ff12149f79bcf27d97aca688ddb72c989c09c3f6b9db0a93d59cb1bbc28/68747470733a2f2f7376656c74656a732e6769746875622e696f2f6173736574732f62616e6e65722e706e67)
+> 출처 : Svelte 깃허브 배너
+
 Svelte는 요즘 유명해졌습니다. Angular, React, Vue 3대장을 이은 다크호스로 주목 받고 있죠. 물론 Svelte가 뭔지 모르시는 분도 있을 겁니다.
 
 Svelte가 도대체 뭐길래? 공식 홈페이지에서는 다음 3가지 특징을 밀고 있습니다.
@@ -87,6 +90,10 @@ Svelte 홈페이지에는 따로 설치 없이 바로 해볼 수 있는 [영어 
 한국어 자료로는 [Svete.js 완벽 가이드](https://heropy.blog/2019/09/29/svelte/)도 있습니다. 저자 분이 인프런에서 유료 강의도 하고 계세요.
 
 ### Elder.js는 검색엔진에 최적화된 Svelte 정적 사이트 생성기(SSG)입니다.
+![할아버지를 그린 그림.](https://github.com/elderjs/elderjs/raw/master/elderjs.png)
+
+> 출처 : Elder.js 깃허브 배너. Elder.js는 노인 돌봄 서비스를 찾고 비교할 수 있는 https://elderguide.com 을 만들던 과정에서 탄생한 프레임워크다.
+
 Elder.js는 CSR(Client Side Rendering)과 SSR(Server Side Rendering)의 단점을 해결하기 위해 등장한 JAM stack 정적 사이트 생성기(Static Site Generator)입니다. Elder.js 는 Svelte 앱을 정적인 HTML과 자그마한 컴포넌트로 분할해서 정적 파일로 배포할 수 있게 해줍니다.
 
 SEO, 즉 검색 엔진 최적화(Search Engine Optimization)는 블로그나 사이트를 만드는 사람이라면 신경 쓸 수 밖에 없는 요소입니다. 구글이나 네이버의 크롤링 로봇들은 인터넷을 돌아다니면서 HTML 파일을 읽고 웹사이트에 어떤 내용이 있는지 정리합니다.

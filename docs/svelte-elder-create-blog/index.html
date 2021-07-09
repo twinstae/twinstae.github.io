@@ -14,8 +14,8 @@
     }, 500)
   </script><script class="svelte-198m2a" data-svelte="svelte-1clk4g5">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.f5c6442c.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-cecaf6bf.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-198m2a"><div class="darkcheckbox-component" id="darkcheckboxctbzsvwlWQ"><input type="checkbox" id="darkmode-checkbox" class="svelte-s86u72">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.f5c6442c.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-a8d1edc7.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-198m2a"><div class="darkcheckbox-component" id="darkcheckboxWsdKNrTQkc"><input type="checkbox" id="darkmode-checkbox" class="svelte-s86u72">
 <label for="darkmode-checkbox" class="svelte-s86u72"><span class="svelte-s86u72"></span>
   <span class="svelte-s86u72"></span>
 </label></div></nav>
@@ -28,7 +28,7 @@
 <div class="title svelte-1i8eh8j"><h1>Svelte Elder.js 블로그 만들기</h1>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonNnWRQRQSgY"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonRdSsGjDmwL"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-au67cy"><div><h4>목차</h4>
     <ol><li><a href="#필요한-것" class="svelte-au67cy">필요한 것
@@ -66,6 +66,10 @@
 <h2 id="이론--sveltejs와-elderjs를-소개합니다">이론 : Svelte.js와 Elder.js를 소개합니다.</h2>
 <p>이 두 친구와 SEO, JAM Stack 등에 대해 이미 잘 알고 계신다면 바로 실전으로 넘어가셔도 됩니다.</p>
 <h3 id="svelte는-가상-돔-없이-바닐라js에-가깝게-개발할-수-있는-웹-프레임워크입니다">Svelte는 가상 돔 없이 바닐라JS에 가깝게 개발할 수 있는 웹 프레임워크입니다.</h3>
+<p><img src="https://camo.githubusercontent.com/c0334ff12149f79bcf27d97aca688ddb72c989c09c3f6b9db0a93d59cb1bbc28/68747470733a2f2f7376656c74656a732e6769746875622e696f2f6173736574732f62616e6e65722e706e67" alt=""></p>
+<blockquote>
+<p>출처 : Svelte 깃허브 배너</p>
+</blockquote>
 <p>Svelte는 요즘 유명해졌습니다. Angular, React, Vue 3대장을 이은 다크호스로 주목 받고 있죠. 물론 Svelte가 뭔지 모르시는 분도 있을 겁니다.</p>
 <p>Svelte가 도대체 뭐길래? 공식 홈페이지에서는 다음 3가지 특징을 밀고 있습니다.</p>
 <ul>
@@ -126,6 +130,10 @@ scope가 해당 컴포넌트 안으로 제한되기 때문에
 <p>Svelte 홈페이지에는 따로 설치 없이 바로 해볼 수 있는 <a href="https://svelte.dev/tutorial/basics">영어 튜토리얼</a>이 있습니다.</p>
 <p>한국어 자료로는 <a href="https://heropy.blog/2019/09/29/svelte/">Svete.js 완벽 가이드</a>도 있습니다. 저자 분이 인프런에서 유료 강의도 하고 계세요.</p>
 <h3 id="elderjs는-검색엔진에-최적화된-svelte-정적-사이트-생성기ssg입니다">Elder.js는 검색엔진에 최적화된 Svelte 정적 사이트 생성기(SSG)입니다.</h3>
+<p><img src="https://github.com/elderjs/elderjs/raw/master/elderjs.png" alt="할아버지를 그린 그림."></p>
+<blockquote>
+<p>출처 : Elder.js 깃허브 배너. Elder.js는 노인 돌봄 서비스를 찾고 비교할 수 있는 https://elderguide.com 을 만들던 과정에서 탄생한 프레임워크다.</p>
+</blockquote>
 <p>Elder.js는 CSR(Client Side Rendering)과 SSR(Server Side Rendering)의 단점을 해결하기 위해 등장한 JAM stack 정적 사이트 생성기(Static Site Generator)입니다. Elder.js 는 Svelte 앱을 정적인 HTML과 자그마한 컴포넌트로 분할해서 정적 파일로 배포할 수 있게 해줍니다.</p>
 <p>SEO, 즉 검색 엔진 최적화(Search Engine Optimization)는 블로그나 사이트를 만드는 사람이라면 신경 쓸 수 밖에 없는 요소입니다. 구글이나 네이버의 크롤링 로봇들은 인터넷을 돌아다니면서 HTML 파일을 읽고 웹사이트에 어떤 내용이 있는지 정리합니다.</p>
 <p>하지만 React를 비롯해서 웹브라우저에서 렌더링 되는 프레임워크들은 검색 엔진이 읽기 어려워합니다. 식당에서 음식을 고르려는데, 식재료와 레시피만 적혀 있는 것과 다르지 않습니다. 사용자의 웹 브라우저가 직접 html을 계산해야 하기 때문에 속도도 느리죠.</p>
@@ -335,7 +343,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonNnWRQRQSgY','ScrollTopButton.f5c6442c.js', {}],['darkcheckboxctbzsvwlWQ','DarkCheckBox.be058367.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonRdSsGjDmwL','ScrollTopButton.f5c6442c.js', {}],['darkcheckboxWsdKNrTQkc','DarkCheckBox.be058367.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>
