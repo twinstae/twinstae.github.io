@@ -1,4 +1,13 @@
 require('dotenv').config();
+const frontmatter = require('remark-frontmatter');
+const extractFrontmatter = require('remark-extract-frontmatter');
+const yaml = require('yaml');
+const remarkSlug = require('remark-slug');
+const remarkHtml = require('remark-html');
+const remarkMath = require('remark-math');
+const remark2rehype = require('remark-rehype');
+const remarkKatex = require('rehype-katex');
+
 module.exports = {
   origin: 'https://twinstae.github.io', // TODO: update this.
   lang: 'ko-KR',
@@ -25,6 +34,14 @@ module.exports = {
   plugins: {
     '@elderjs/plugin-markdown': {
       routes: ['blog'],
+      remarkPlugins: [
+        frontmatter, // 'remark-frontmatter' package
+        [extractFrontmatter, { name: 'frontmatter', yaml: yaml.parse }], // 'remark-extract-frontmatter' and 'yaml' packages.
+        remarkSlug, // 'remark-slug' package
+        remarkMath,
+        remarkKatex,
+        remarkHtml, // 'remark-html' package
+      ],
       useTableOfContents: true,
     },
     '@elderjs/plugin-browser-reload': {
