@@ -1,19 +1,24 @@
 pre code:before {
-    padding: 3px;
-    border-radius: 8px;
-    right: 24px;
-    transform: translateY(-12px);
-    position: absolute;
-    color: white;
+  padding: 3px;
+  border-radius: 8px;
+  right: 24px;
+  transform: translateY(-12px);
+  position: absolute;
+  color: white;
 }
 
 pre code.language-java:before {
-    content: "Java";
-    background: red;
+  content: "Java";
+  background-color: red;
+}
+
+pre code.language-kotlin:before {
+  content: "Kotlin";
+  background-image: radial-gradient(at top right, #e71625, #7b40f2);
 }
 
 pre code.language-scala:before {
-  content: "Java";
+  content: "Scala";
   background-color: red;
 }
 

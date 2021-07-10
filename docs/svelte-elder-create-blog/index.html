@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Svelte Elder.js 블로그 만들기</title><meta name="description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-91ycrf"><link href="http://twinstae.github.io/svelte-elder-create-blog/" rel="canonical" data-svelte="svelte-91ycrf"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-91ycrf"><meta property="og:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-91ycrf"><meta property="og:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-91ycrf"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-91ycrf"><meta property="og:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-91ycrf"><meta name="twitter:card" content="summary" data-svelte="svelte-91ycrf"><meta name="twitter:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-91ycrf"><meta name="twitter:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-91ycrf"><meta name="twitter:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-91ycrf"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-91ycrf"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-uvou6c" data-svelte="svelte-9ia2et"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="stylesheet" class="svelte-uvou6c" data-svelte="svelte-9ia2et"><script type="application/javascript" src="/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-9ia2et"></script><script class="svelte-uvou6c" data-svelte="svelte-9ia2et">hljs.highlightAll();
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Svelte Elder.js 블로그 만들기</title><meta name="description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-1lws3bl"><link href="/svelte-elder-create-blog/" rel="canonical" data-svelte="svelte-1lws3bl"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-1lws3bl"><meta property="og:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-1lws3bl"><meta property="og:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-1lws3bl"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-1lws3bl"><meta property="og:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-1lws3bl"><meta name="twitter:card" content="summary" data-svelte="svelte-1lws3bl"><meta name="twitter:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-1lws3bl"><meta name="twitter:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-1lws3bl"><meta name="twitter:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-1lws3bl"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-1lws3bl"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-uvou6c" data-svelte="svelte-9ia2et"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="stylesheet" class="svelte-uvou6c" data-svelte="svelte-9ia2et"><script type="application/javascript" src="/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-9ia2et"></script><script class="svelte-uvou6c" data-svelte="svelte-9ia2et">hljs.highlightAll();
     setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);
@@ -14,10 +14,36 @@
     }, 500)
   </script><script class="svelte-uvou6c" data-svelte="svelte-9ia2et">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.f5c6442c.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-e2fd63af.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxwmcftxLsVn"><label for="darkmode-checkbox" class="svelte-s86u72"><input type="checkbox" id="darkmode-checkbox" class="svelte-s86u72">
-  <span class="svelte-s86u72"></span>
-  <span class="svelte-s86u72"></span>
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.f5c6442c.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-87a2b247.css" media="all" /><style>.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  max-width: 32rem;
+  height: auto;
+  text-align: left;
+  line-height: 1.2rem;
+  background-color: #555;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  transition: opacity 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}</style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxrGlGWvvZNy"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
+  <span class="svelte-1x528h4"></span>
 </label></div></nav>
 
 <article class="container svelte-uvou6c"><!-- HTML_TAG_START -->
@@ -28,10 +54,10 @@
 <div class="title svelte-18tmv0s"><h1>Svelte Elder.js 블로그 만들기</h1>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonqgNlMQwVVC"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttoncfCkLFbzqy"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-au67cy"><div><span>목차</span>
-    <ol><li style="font-size: 1.25rem;"><a href="#필요한-것" class="svelte-au67cy">필요한 것
+    <ol><li style="font-size: 1.25rem;"><a href="#필요한-것--html-css-js--nodejs-설치--github-계정" class="svelte-au67cy">필요한 것 : HTML, CSS, JS / Node.js 설치 / GitHub 계정
           <ol>
           </ol></a>
       </li><li style="font-size: 1.25rem;"><a href="#이론--sveltejs와-elderjs를-소개합니다" class="svelte-au67cy">이론 : Svelte.js와 Elder.js를 소개합니다.
@@ -44,7 +70,7 @@
 </nav>
 
 <!-- HTML_TAG_START --><p>이 블로그는 <a href="https://svelte.dev/">Svelte</a>와 <a href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다. 이 글에서는 여러분에게 Svelte와 Elder.js를 소개하고, 여러분도 비슷한 블로그를 만들 수 있게 도와드리려 합니다.</p>
-<h2 id="필요한-것">필요한 것</h2>
+<h2 id="필요한-것--html-css-js--nodejs-설치--github-계정">필요한 것 : HTML, CSS, JS / Node.js 설치 / GitHub 계정</h2>
 <p>제 블로그는 초보도 쉽게 따라할 수 있도록 자세하고 친절하게 쓰려 합니다. 이미 많이 알고 계시는 분들은 큰 제목 위주로 빠르게 읽어 내려가시면 되겠습니다.</p>
 <ul>
 <li>HTML, CSS, JS에 대해 기본적인 지식이 있어야합니다.
@@ -64,17 +90,29 @@
 </li>
 </ul>
 <h2 id="이론--sveltejs와-elderjs를-소개합니다">이론 : Svelte.js와 Elder.js를 소개합니다.</h2>
-<p>이 두 친구와 SEO, JAM Stack 등에 대해 이미 잘 알고 계신다면 바로 실전으로 넘어가셔도 됩니다.</p>
+<p>이 두 친구와 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            SEO
+            <span class="tooltiptext">Search Engine Optimization 검색엔진 최적화<br> 사이트를 검색엔진이 읽기 쉽게 구조화하는 것.</span>
+          </span>, 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            JAM Stack
+            <span class="tooltiptext">서버에서 렌더링한 사이트를<br>최대한 HTMl 같은 정적 파일로 변환해서 CDN으로 전달하고,<br> 사용자와 상호작용하는 동적인 부분만<br> JS와 마이크로서비스 API로 전달하는 현대적인 방식.</span>
+          </span> 등에 대해 이미 잘 알고 계신다면 바로 실전으로 넘어가셔도 됩니다.</p>
 <h3 id="svelte는-가상-돔-없이-바닐라js에-가깝게-개발할-수-있는-웹-프레임워크입니다">Svelte는 가상 돔 없이 바닐라JS에 가깝게 개발할 수 있는 웹 프레임워크입니다.</h3>
-<p><img src="https://camo.githubusercontent.com/c0334ff12149f79bcf27d97aca688ddb72c989c09c3f6b9db0a93d59cb1bbc28/68747470733a2f2f7376656c74656a732e6769746875622e696f2f6173736574732f62616e6e65722e706e67" alt=""></p>
+<p><img src="https://camo.githubusercontent.com/c0334ff12149f79bcf27d97aca688ddb72c989c09c3f6b9db0a93d59cb1bbc28/68747470733a2f2f7376656c74656a732e6769746875622e696f2f6173736574732f62616e6e65722e706e67" alt="Svelte 로고가 들어간 배너"></p>
 <blockquote>
 <p>출처 : Svelte 깃허브 배너</p>
 </blockquote>
 <p>Svelte는 요즘 유명해졌습니다. Angular, React, Vue 3대장을 이은 다크호스로 주목 받고 있죠. 물론 Svelte가 뭔지 모르시는 분도 있을 겁니다.</p>
 <p>Svelte가 도대체 뭐길래? 공식 홈페이지에서는 다음 3가지 특징을 밀고 있습니다.</p>
 <ul>
-<li>Write less code : HTML, CSS, 바닐라 JS에 가깝게 코딩할 수 있고요. 복잡한 보일러 플레이트가 거의 없습니다.</li>
-<li>No virtual DOM : 프레임워크 오버헤드 없이, 가벼운 바닐라 JS 코드로 컴파일됩니다. <a href="https://miro.medium.com/max/2000/1*6HK361f-UDqNpWuTA68jHw.png">번들 용량이 놀라울 정도로 작습니다</a>.</li>
+<li>Write less code : HTML, CSS, 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            바닐라JS
+            <span class="tooltiptext">React 같은 SPA 프레임워크를 쓰지 않는 순수JS.<br>그냥 JS라 하면 없어보니까 생긴 농담이다.</span>
+          </span>에 가깝게 코딩할 수 있고요. 복잡한 보일러 플레이트가 거의 없습니다.</li>
+<li>No virtual DOM : 가상 돔 같은 프레임워크 오버헤드 없이, 가벼운 바닐라 JS 코드로 컴파일됩니다. <a href="https://miro.medium.com/max/2000/1*6HK361f-UDqNpWuTA68jHw.png">번들 용량이 놀라울 정도로 작습니다</a>.</li>
 <li>Truly reactive : 복잡한 상태 관리 라이브러리 없이도, 쉽게 상태를 관리하고, 변화에 '반응'해서 빠르고 정확하게 UI를 변경합니다.</li>
 </ul>
 <p>다음은 이 블로그 게시글 목록에 있는 카드를 만드는 스벨트 컴포넌트입니다.</p>
@@ -130,18 +168,54 @@ scope가 해당 컴포넌트 안으로 제한되기 때문에
 <p>Svelte 홈페이지에는 따로 설치 없이 바로 해볼 수 있는 <a href="https://svelte.dev/tutorial/basics">영어 튜토리얼</a>이 있습니다.</p>
 <p>한국어 자료로는 <a href="https://heropy.blog/2019/09/29/svelte/">Svete.js 완벽 가이드</a>도 있습니다. 저자 분이 인프런에서 유료 강의도 하고 계세요.</p>
 <h3 id="elderjs는-검색엔진에-최적화된-svelte-정적-사이트-생성기ssg입니다">Elder.js는 검색엔진에 최적화된 Svelte 정적 사이트 생성기(SSG)입니다.</h3>
-<p><img src="https://github.com/elderjs/elderjs/raw/master/elderjs.png" alt="할아버지를 그린 그림."></p>
+<p><img src="https://github.com/elderjs/elderjs/raw/master/elderjs.png" alt="할아버지를 그린 그림"></p>
 <blockquote>
 <p>출처 : Elder.js 깃허브 배너. Elder.js는 노인 돌봄 서비스를 찾고 비교할 수 있는 https://elderguide.com 을 만들던 과정에서 탄생한 프레임워크다.</p>
 </blockquote>
-<p>Elder.js는 CSR(Client Side Rendering)과 SSR(Server Side Rendering)의 단점을 해결하기 위해 등장한 JAM stack 정적 사이트 생성기(Static Site Generator)입니다. Elder.js 는 Svelte 앱을 정적인 HTML과 자그마한 컴포넌트로 분할해서 정적 파일로 배포할 수 있게 해줍니다.</p>
-<p>SEO, 즉 검색 엔진 최적화(Search Engine Optimization)는 블로그나 사이트를 만드는 사람이라면 신경 쓸 수 밖에 없는 요소입니다. 구글이나 네이버의 크롤링 로봇들은 인터넷을 돌아다니면서 HTML 파일을 읽고 웹사이트에 어떤 내용이 있는지 정리합니다.</p>
-<p>하지만 React를 비롯해서 웹브라우저에서 렌더링 되는 프레임워크들은 검색 엔진이 읽기 어려워합니다. 식당에서 음식을 고르려는데, 식재료와 레시피만 적혀 있는 것과 다르지 않습니다. 사용자의 웹 브라우저가 직접 html을 계산해야 하기 때문에 속도도 느리죠.</p>
-<p>그래서 서버에서 html을 렌더링하기도 합니다. SSR 서버 사이드 렌더링이 바로 그것이죠. React 기반인 Next.js가 대표적입니다. 하지만 SSR은 상대적으로 비싼 서버를 굴려야하기 때문에, 저희 같은 일반인은 물론이고 회사에게도 부담입니다.</p>
-<p>여기서 <a href="https://jamstack.org/">JAM Stack</a>이 등장합니다. 미리 가능한 페이지들을 정적(static) HTML 파일로 만들어서 CDN(콘텐츠 배달 네트워크)에 올려놓고, 추가로 필요한 데이터만 작은 API 서버에서 받아오게 하는 것이죠.</p>
+<p>Elder.js는 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            CSR
+            <span class="tooltiptext">Client Side Rendering<br> 웹 브라우저에서 직접 Dom을 조작해서 동적으로 UI를 그리는 것.</span>
+          </span>과 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            SSR
+            <span class="tooltiptext">Server Side Rendering<br> 서버에서 동적으로 HTML과 CSS를 생성하는 것.</span>
+          </span>의 단점을 해결하기 위해 등장한 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            JAM Stack
+            <span class="tooltiptext">서버에서 렌더링한 사이트를<br>최대한 HTMl 같은 정적 파일로 변환해서 CDN으로 전달하고,<br> 사용자와 상호작용하는 동적인 부분만<br> JS와 마이크로서비스 API로 전달하는 현대적인 방식.</span>
+          </span> 정적 사이트 생성기
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            SSG
+            <span class="tooltiptext">Static Site Generator 정적 사이트 생성기<br> 템플릿이나 SPA를 HTML, CSS 등 정적 파일로 된 사이트로 빌드해준다.</span>
+          </span>입니다. Elder.js 는 Svelte 앱을 정적인 HTML과 자그마한 컴포넌트로 분할해서 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            Static File
+            <span class="tooltiptext">HTML, CSS, JS, 이미지처럼 자주 변하지 않는 파일. 덕분에 쉽게 캐싱할 수 있다.</span>
+          </span>로 배포할 수 있게 해줍니다.</p>
+<p>
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            SEO
+            <span class="tooltiptext">Search Engine Optimization 검색엔진 최적화<br> 사이트를 검색엔진이 읽기 쉽게 구조화하는 것.</span>
+          </span>는 블로그나 사이트를 만드는 사람이라면 신경 쓸 수 밖에 없죠. 구글이나 네이버의 크롤링 로봇들은 인터넷을 돌아다니면서 HTML 파일을 읽고 웹사이트에 어떤 내용이 있는지 정리합니다.</p>
+<p>하지만 React를 비롯한 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            SPA
+            <span class="tooltiptext">Single Page Application<br> 새로고침 없이 JS로 Dom을 조작해서 페이지를 라우팅하고 이동하는 웹 앱이다.</span>
+          </span> 프레임워크들은 검색 엔진이 읽기 어려워합니다. 식당에서 음식을 고르려는데, 식재료와 레시피만 적혀 있는 것과 다르지 않습니다. 사용자의 웹 브라우저가 직접 html을 계산해야 하기 때문에 속도도 느리죠.</p>
+<p>그래서 서버에서 html을 렌더링하기도 합니다. 바로 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            SSR
+            <span class="tooltiptext">Server Side Rendering<br> 서버에서 동적으로 HTML과 CSS를 생성하는 것.</span>
+          </span>이죠. React 기반인 Next.js가 대표적입니다. 하지만 SSR은 상대적으로 비싼 서버를 굴려야하기 때문에, 저희 같은 일반인은 물론이고 회사에게도 부담입니다.</p>
+<p>여기서 
+          <span class="badge tooltip" style="background-color: var(--primary)">
+            JAM Stack
+            <span class="tooltiptext">서버에서 렌더링한 사이트를<br>최대한 HTMl 같은 정적 파일로 변환해서 CDN으로 전달하고,<br> 사용자와 상호작용하는 동적인 부분만<br> JS와 마이크로서비스 API로 전달하는 현대적인 방식.</span>
+          </span>이 등장합니다. 미리 가능한 페이지들을 정적(static) HTML 파일로 만들어서 CDN(콘텐츠 배달 네트워크)에 올려놓고, 추가로 필요한 데이터만 작은 API 서버에서 받아오게 하는 것이죠.</p>
 <p>이러면 Svelte나 React 같은 최신 프런트엔드 프레임워크를 사용하면서도, 가볍게 블로그나 사이트를 운영할 수 있습니다.</p>
 <p>이야기를 더 듣고 싶으시다면 <a href="https://twinstae.github.io/brief-history-of-web-front/">웹 프런트 엔드의 간략한 역사</a>를 읽어주세요.</p>
-<p>Elder.js는 이러한 JAM 스택에서도 특히 SEO 전문가들이 만든 프레임워크입니다. 여러분의 블로그가 더 잘 검색될 수 있도록 사소한 것 하나하나 warning을 띄우고 Tip을 알려주죠. Sitemap을 비롯한 여러 요소도 알아서 생성해줍니다. 높은 조회수를 원하신다면, 정말 매력적인 셈이죠. :)</p>
+<p>Elder.js는 이러한 JAM 스택에서도 특히 SEO 전문가들이 만든 프레임워크입니다. 여러분의 블로그가 더 잘 검색될 수 있도록 사소한 것 하나하나 경고를 띄우고 Tip을 알려주죠. Sitemap등을 만들어주는 플러그인도 있습니다. 높은 조회수를 원하신다면, 정말 매력적인 셈이죠. :)</p>
 <p>이제 설명은 끝입니다. 실전으로 들어가보죠!</p>
 <h2 id="실전-elderjs-template-프로젝트-github-pages에-배포하기">실전: Elder.js template 프로젝트 Github Pages에 배포하기</h2>
 <p>그러면 공식 가이드를 따라서, 프로젝트를 세팅해봅시다.</p>
@@ -179,18 +253,19 @@ open http://localhost:3000
 <h3 id="github-저장소-만들기">github 저장소 만들기</h3>
 <p>깃허브에 가입하지 않으셨다면 먼저 <a href="https://github.com/signup">회원가입</a>(Sign Up), 로그인(Sign In)을 해주세요.</p>
 <p>이제 저희 코드가 올라갈 클라우드 저장소(Repository)를 만들어야 합니다. 보통 줄여서 레포(Repo)라고도 부릅니다. 왼쪽 위에 보시면 다음과 같이 생긴 초록 버튼이 있습니다. 누르면 새 레포를 만드는 페이지가 나옵니다.</p>
-<a href="https://github.com/new" target="_blank" style="padding: 4px; background-color: green; border-radius: 4px; color: white; border-color: transparent">
-<svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" style="color: white;">
-    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
-</svg>
- New
-</a> 사실 이 버튼을 눌러도 바로 이동합니다.
+<p>
+      <a href="https://github.com/new" target="_blank" style="padding: 4px; background-color: green; border-radius: 4px; color: white; border-color: transparent">
+        <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" style="color: white;">
+          <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+        </svg>
+      New
+      </a> 사실 이 버튼을 눌러도 바로 이동합니다.</p>
 <ol>
 <li>레포 이름은 앞서 정했던 <code>&#x3C;내 깃허브 아이디>.github.io</code> 로 합니다.</li>
 <li>Public과 Private가 있는데, Private로 하면 남들이 볼 수 없습니다. 사람들이 우리 사이트에 접속할 수 있게 하려면 Public을 선택합니다.</li>
 <li>README.md 파일이나 .gitignore 파일에 대해서는 다음 단계에서 설명합니다.</li>
 </ol>
-<p><img src="https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3135/7820.jpeg" alt="깃허브 new repo 생성 페이지의 모습. repository name에 1, public/private 에 2, README 체크박스에 3이라는 번호가 적혀져 있다. 출처는 생활코딩 WEBn 강좌"></p>
+<p><img src="https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3135/7820.jpeg" alt="깃허브 new repo 생성 페이지의 모습. repository name에 1, public/private 에 2, README 체크박스에 3이라는 번호가 적혀져 있다."></p>
 <h3 id="github-pages-설정하기">github pages 설정하기</h3>
 <p>이제 저장소를 만들었으니, 저장소의 파일을 서빙하도록 설정해야 합니다.</p>
 <p>저장소 메뉴에 보면 Settings(설정)이 있습니다.
@@ -343,7 +418,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonqgNlMQwVVC','ScrollTopButton.f5c6442c.js', {}],['darkcheckboxwmcftxLsVn','DarkCheckBox.720c3d04.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttoncfCkLFbzqy','ScrollTopButton.f5c6442c.js', {}],['darkcheckboxrGlGWvvZNy','DarkCheckBox.829e42aa.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>
