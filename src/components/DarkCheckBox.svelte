@@ -13,8 +13,8 @@
   })
 </script>
 
+<input type="checkbox" id="darkmode-checkbox" bind:checked={is_dark} on:change={on_dark_change}>
 <label for="darkmode-checkbox">
-  <input type="checkbox" id="darkmode-checkbox" bind:checked={is_dark} on:change={on_dark_change}>
   <span></span>
   <span></span>
 </label>
@@ -56,7 +56,7 @@ span:last-child::before {
 }
 
 span:last-child::after {
-  top: 0.5rem;
+  top: 0.25rem;
   right: 0.7rem;
   width: 12px;
   height: 12px;
@@ -82,7 +82,7 @@ span:last-child::after {
   height: 14px;
   /*right: auto;*/
   left: 0.2rem;
-  top: 3px;
+  top: 0.1rem;
   content: "🌜";
   transform: scale(.8);
 }
