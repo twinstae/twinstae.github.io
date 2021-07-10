@@ -43,7 +43,7 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
 <svelte:head>
   <title>{frontmatter.title}</title>
   <meta name="description" content={frontmatter.excerpt} />
-  <link href="{request.permalink}" rel="canonical" />
+  <link href="https://twinstae.github.io{request.permalink}" rel="canonical" />
 
   <meta property="og:site_name" content="진리의 배 조선소">
   <meta property="og:url" content="https://twinstae.github.io{request.permalink}">
