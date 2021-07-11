@@ -18,7 +18,7 @@ author: 탐정토끼(Taehee Kim)
 - GitHub 계정이 있고, Git을 사용할 줄 알아야 합니다.
   - [생활코딩 GIT1](https://opentutorials.org/course/3837), [생활코딩 GitHub](https://opentutorials.org/course/307/2475) 강좌도 있습니다. (없는 게 없네요!)
 
-## 이론 : Svelte.js와 Elder.js를 소개합니다.
+## 이론 : Svelte 와 Elder.js 를 소개합니다.
 이 두 친구와 {{keyword}}SEO{{/keyword}}, {{keyword}}JAM Stack{{/keyword}} 등에 대해 이미 잘 알고 계신다면 바로 실전으로 넘어가셔도 됩니다.
 
 ### Svelte는 가상 돔 없이 바닐라JS에 가깝게 개발할 수 있는 웹 프레임워크입니다.

@@ -6,7 +6,8 @@ const remarkSlug = require('remark-slug');
 const remarkHtml = require('remark-html');
 const remarkMath = require('remark-math');
 const remark2rehype = require('remark-rehype');
-const remarkKatex = require('rehype-katex');
+const rehypeKatex = require('rehype-katex');
+const rehypeStringify = require('rehype-stringify');
 
 module.exports = {
   origin: 'https://twinstae.github.io', // TODO: update this.
@@ -38,9 +39,11 @@ module.exports = {
         frontmatter, // 'remark-frontmatter' package
         [extractFrontmatter, { name: 'frontmatter', yaml: yaml.parse }], // 'remark-extract-frontmatter' and 'yaml' packages.
         remarkSlug, // 'remark-slug' package
-        remarkMath,
-        remarkKatex,
         remarkHtml, // 'remark-html' package
+        remarkMath,
+        remark2rehype,
+        rehypeKatex,
+        rehypeStringify,
       ],
       useTableOfContents: true,
     },

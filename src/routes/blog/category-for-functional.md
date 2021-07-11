@@ -11,16 +11,11 @@ latex 테스트
 
 ℎ ∘ (𝑔 ∘ 𝑓 ) = (ℎ ∘ 𝑔) ∘ 𝑓 = ℎ ∘ 𝑔 ∘ 𝑓
 
-$\sin 30$
-
-$$
-L = \frac{1}{2} \rho v^2 S C_L
-$$
 
 ## remark math katex
 
 $$
 
-\sin^2x + \cos^2x = 1
 h \circ (g \circ f) = (h \circ g) \circ f = h \circ g \circ f
+
 $$
