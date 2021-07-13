@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>언어들이 문자열 String을 다루는 방식(작성 중)</title><meta name="description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-std/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta property="og:title" content="언어들이 문자열 String을 다루는 방식(작성 중)" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="언어들이 문자열 String을 다루는 방식(작성 중)" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css" class="svelte-uvou6c" data-svelte="svelte-1e2v15t"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="stylesheet" class="svelte-uvou6c" data-svelte="svelte-1e2v15t"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" class="svelte-uvou6c" data-svelte="svelte-1e2v15t"><script type="application/javascript" src="/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-1e2v15t"></script><script class="svelte-uvou6c" data-svelte="svelte-1e2v15t">hljs.highlightAll();
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>언어들이 문자열 String을 다루는 방식</title><meta name="description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-std/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta property="og:title" content="언어들이 문자열 String을 다루는 방식" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="언어들이 문자열 String을 다루는 방식" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><script type="application/javascript" src="https://twinstae.github.io/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-lww7s0"></script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">hljs.highlightAll();
     setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);
@@ -12,10 +12,10 @@
         })
       }
     }, 500)
-  </script><script class="svelte-uvou6c" data-svelte="svelte-1e2v15t">let is_dark = localStorage.getItem("dark") == "true";
+  </script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.f5c6442c.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-87a2b247.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxqlkrmwKGtG"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.56df8b9f.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-aafda12f.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxTTVZQplTdw"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -24,11 +24,14 @@
 
 <a href="/">← Home</a>
 
-
-<div class="title svelte-18tmv0s"><h1>언어들이 문자열 String을 다루는 방식(작성 중)</h1>
+<div class="title svelte-1ikfedv"><h1>언어들이 문자열 String을 다루는 방식</h1>
+  <div><span class="hashtag">#작성 중
+        </span><span class="hashtag">#std
+        </span><span class="hashtag">#프로그래밍 언어
+        </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttoncsklWnZCXW"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonMzFQQMjtcs"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 
 
@@ -251,7 +254,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttoncsklWnZCXW','ScrollTopButton.f5c6442c.js', {}],['darkcheckboxqlkrmwKGtG','DarkCheckBox.829e42aa.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonMzFQQMjtcs','ScrollTopButton.56df8b9f.js', {}],['darkcheckboxTTVZQplTdw','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

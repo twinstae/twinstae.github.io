@@ -94,7 +94,7 @@ html.dark {
     --light-dark: rgba(255, 255, 255, 0.7);
     --white: white;
     --main-background: #18191a;
-    --main-background-light: #c1c0bd;
+    --main-background-light: #333;
     --blockquote-bg: #100;
     --black: black;
     --primary-text: rgb(245, 246, 247);

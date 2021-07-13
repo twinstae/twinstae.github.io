@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>API 계층</title><meta name="description" content="REST, gRPC, GraphQL, Socket, PubSub 등등... API 계층은 외부에서 들어온 요청을 작업으로 변환하고, 결과를 응답으로 변환하고 전달합니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/api-layer/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/api-layer/" data-svelte="svelte-18tnbae"><meta property="og:title" content="API 계층" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="REST, gRPC, GraphQL, Socket, PubSub 등등... API 계층은 외부에서 들어온 요청을 작업으로 변환하고, 결과를 응답으로 변환하고 전달합니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/api-layer/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="API 계층" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="REST, gRPC, GraphQL, Socket, PubSub 등등... API 계층은 외부에서 들어온 요청을 작업으로 변환하고, 결과를 응답으로 변환하고 전달합니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><script type="application/javascript" src="https://twinstae.github.io/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-lww7s0"></script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">hljs.highlightAll();
+    setTimeout(()=>{
+      const codes = document.getElementsByTagName("code");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">let is_dark = localStorage.getItem("dark") == "true";
+    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.56df8b9f.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-aafda12f.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxqNVNjcYWGb"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
+  <span class="svelte-1x528h4"></span>
+</label></div></nav>
+
+<article class="container svelte-uvou6c"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-1ikfedv"><h1>API 계층</h1>
+  <div><span class="hashtag">#작성 중
+        </span><span class="hashtag">#DDD
+        </span><span class="hashtag">#계층형 아키텍처
+        </span><span class="hashtag">#API
+        </span><span class="hashtag">#REST
+        </span><span class="hashtag">#gRPC
+        </span><span class="hashtag">#GraphQL
+        </span><span class="hashtag">#WebSocket
+        </span><span class="hashtag">#PubSub
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbuttonNMNwfLmybj"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+
+
+<!-- HTML_TAG_START --><h2 id="api는-서버가-외부와-통신하는-방법이자-계약입니다">API는 서버가 외부와 통신하는 방법이자, 계약입니다.</h2>
+<h2 id="수단과-양식-통신-프로토콜">수단과 양식, 통신 프로토콜</h2>
+<h3 id="http-hypertext-transfer-protocol-하이퍼-텍스트-전송-규약">HTTP: HyperText Transfer Protocol 하이퍼 텍스트 전송 규약</h3>
+<blockquote>
+<p>Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting hypermedia documents, such as HTML. It was designed for communication between web browsers and web servers, but it can also be used for other purposes. HTTP follows a classical client-server model, with a client opening a connection to make a request, then waiting until it receives a response. HTTP is a stateless protocol, meaning that the server does not keep any data (state) between two requests. Though often based on a TCP/IP layer, it can be used on any reliable transport layer, that is, a protocol that doesn't lose messages silently like UDP does. RUDP — the reliable update of UDP — is a suitable alternative.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">MDN HTTP 문서</a></p>
+</blockquote>
+<blockquote>
+<p>The Hypertext Transfer Protocol (HTTP) is an application-level protocol for distributed, collaborative, hypermedia information systems. It is a generic, stateless, protocol which can be used for many tasks beyond its use for hypertext, such as name servers and distributed object management systems, through extension of its request methods, error codes and headers [47]. A feature of HTTP is the typing and negotiation of data representation, allowing systems to be built independently of the data being transferred.</p>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc2616">RFC2616 Hypertext Transfer Protocol -- HTTP/1.1 스펙</a></p>
+</blockquote>
+<h4 id="restful-representational-state-transfer-표현적-상태-전이">RESTful: Representational state transfer 표현적 상태 전이</h4>
+<blockquote>
+<p>Client-Server, Stateless, Cache, Uniform Interface, Layered System
+REST API의 개념을 처음 발표한 Roy Thomas Fielding의 논문</p>
+<p><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Architectural Styles and the Design of Network-based Software Architectures</a></p>
+</blockquote>
+<h4 id="openapi">OpenAPI</h4>
+<blockquote>
+<p>The OpenAPI Specification (OAS) defines a standard, language-agnostic interface to RESTful APIs which allows both humans and computers to discover and understand the capabilities of the service without access to source code, documentation, or through network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with a minimal amount of implementation logic.
+An OpenAPI definition can then be used by documentation generation tools to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.</p>
+<p><a href="https://swagger.io/specification/">Swagger 공식 사이트의 OpenAPI 소개</a></p>
+</blockquote>
+<h4 id="동사로-api만들기-rest를-넘어서">동사로 API만들기: REST를 넘어서</h4>
+<h3 id="grpc-google-remote-procedure-call-구글-원격-프로시저-호출">gRPC: google Remote Procedure Call 구글 원격 프로시저 호출</h3>
+<blockquote>
+<p>gRPC is a modern open source high performance Remote Procedure Call (RPC) framework that can run in any environment. It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in last mile of distributed computing to connect devices, mobile applications and browsers to backend services.</p>
+<p><a href="https://grpc.io/about/">About gRPC 공식 홈페이지</a></p>
+</blockquote>
+<h3 id="graphql-graph-query-language-진화하는-api를-위한-질의-언어">GraphQL: Graph Query Language 진화하는 API를 위한 질의 언어</h3>
+<blockquote>
+<p>GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.</p>
+<p><a href="https://graphql.org/">GraphQL 공식 사이트</a></p>
+</blockquote>
+<h3 id="websocket-양방향-실시간-이벤트-기반-통신을-위한-api">WebSocket: 양방향, 실시간, 이벤트 기반 통신을 위한 API</h3>
+<blockquote>
+<p>The WebSocket API is an advanced technology that makes it possible to open a two-way interactive communication session between the user's browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">MDN The WebSocket API 문서</a></p>
+</blockquote>
+<blockquote>
+<p>Socket.IO enables real-time, bidirectional and event-based communication.
+It works on every platform, browser or device, focusing equally on reliability and speed.</p>
+<p>대표적인 소켓 통신 라이브러리. <a href="https://socket.io/">Socket.IO 공식 사이트</a></p>
+</blockquote>
+<h3 id="pubsub-게시자-구독자-패턴-비동기-메세징-api">PubSub: 게시자-구독자 패턴. 비동기 메세징 API</h3>
+<blockquote>
+<p>SUBSCRIBE, UNSUBSCRIBE and PUBLISH implement the Publish/Subscribe messaging paradigm where (citing Wikipedia) senders (publishers) are not programmed to send their messages to specific receivers (subscribers). Rather, published messages are characterized into channels, without knowledge of what (if any) subscribers there may be.
+Subscribers express interest in one or more channels, and only receive messages that are of interest, without knowledge of what (if any) publishers there are. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.</p>
+<p><a href="https://redis.io/topics/pubsub">Redis Pub/Sub 공식 문서</a></p>
+</blockquote><!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script></div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-uvou6c">이 블로그는 <a href="https://svelte.dev/" class="svelte-uvou6c">Svelte</a>와 <a class="secondary svelte-uvou6c" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br class="svelte-uvou6c">
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-uvou6c">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br class="svelte-uvou6c">
+  <a href="https://pages.github.com/" class="svelte-uvou6c">Github Pages</a>로 호스팅하고 있습니다.
+  <br class="svelte-uvou6c">
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    <script type="text/javascript">
+            var requestIdleCallback = window.requestIdleCallback ||
+            function (cb) {
+              var s = Date.now();
+              return setTimeout(function () {
+                cb({
+                  didTimeout: false,
+                  timeRemaining: function () {
+                    return Math.max(0, 50 - (Date.now() - s));
+                  },
+                });
+              }, 1);
+            };
+            if (!('IntersectionObserver' in window)) {
+                var script = document.createElement("script");
+                script.src = "/_elderjs/static/intersection-observer.js";
+                document.getElementsByTagName('head')[0].appendChild(script);
+            };
+      </script>
+      
+    <script type="module">
+      
+let IO, $$COMPONENTS={};
+const $$ejs = async (arr)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+
+  for (let i = 0; i < arr.length; i++) {
+    $$COMPONENTS[arr[i][0]] = {
+      elem: document.getElementById(arr[i][0]),
+      component: arr[i][1],
+      props: $ejs(arr[i][2]) || {},
+    };
+
+    if(typeof  $$COMPONENTS[arr[i][0]].props === 'string'){
+      const propsFile = await import(prefix+'/props/'+$$COMPONENTS[arr[i][0]].props);
+      $$COMPONENTS[arr[i][0]].props = $ejs(propsFile.default);
+    };
+
+    if (!IO) {
+      IO = new IntersectionObserver((entries, observer) => {
+        var objK = Object.keys(entries);
+        var objKl = objK.length;
+        var objKi = 0;
+        for (; objKi < objKl; objKi++) {
+          const entry = entries[objK[objKi]];
+          if (entry.isIntersecting) {
+            const selected = $$COMPONENTS[entry.target.id];
+            observer.unobserve(selected.elem);
+            import(prefix + '/svelte/components/' + selected.component).then((comp)=>{
+                new comp.default({ 
+                  target: selected.elem,
+                  props: selected.props,
+                  hydrate: true
+                });
+            });
+          }
+        }
+      });
+    };
+    IO.observe($$COMPONENTS[arr[i][0]].elem);
+  }
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs([['scrolltopbuttonNMNwfLmybj','ScrollTopButton.56df8b9f.js', {}],['darkcheckboxqNVNjcYWGb','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+    
+    
+    </body></html>

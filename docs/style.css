@@ -19,6 +19,11 @@ pre:hover:before {
   transition: 1s;
 }
 
+.hashtag {
+  color: var(--primary);
+  margin: 0.25rem;
+}
+
 h1 {
   font-size: 2rem;
   transition: font-size 1s;
