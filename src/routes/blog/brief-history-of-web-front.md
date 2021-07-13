@@ -1,8 +1,9 @@
 ---
-title: '웹 프런트 엔드의 간략한 역사(작성 중)'
+title: '웹 프런트 엔드의 간략한 역사'
 excerpt: '태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정'
 date: '2021-07-08T07:30:58.196Z'
 author: 탐정토끼(Taehee Kim)
+tag: '작성 중, front-end, CSR, SPA, SSR, JAM Stack'
 ---
 
 

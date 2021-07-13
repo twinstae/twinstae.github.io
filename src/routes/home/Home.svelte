@@ -1,63 +1,32 @@
 <script>
-  import HookDetail from '../../components/HookDetail.svelte';
-  import BlogTeaser from '../../components/BlogTeaser.svelte';
-  import Clock from '../../components/Clock.svelte';
+  import BlogList from '../../components/BlogList.svelte';
+  import TagNav from '../../components/TagNav.svelte';
+  import { tagStoreInit } from "../../stores/tag";
+
   export let data, helpers;
 
   function compare_blog_date(a, b){
     return Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
   }
+
+  const blog_list = data.markdown.blog
+    .sort(compare_blog_date)
+    .map(blog=>({
+      ...blog,
+      permanlink: helpers.permalinks.blog({ slug: blog.slug }),
+      tags: blog.frontmatter.tag ? blog.frontmatter.tag.split(", ") : []
+    }));
+
+  tagStoreInit(blog_list);
 </script>
-
-<style>
-  .banner {
-    padding: 1rem;
-  }
-
-  .entries {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 3rem 0;
-  }
-
-  @media (min-width: 768px) {
-    .entries {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin: 3rem 0;
-    }
-    :global(.entries .entry) {
-      margin-right: 1rem;
-    }
-  }
-
-  :global(.entry) {
-    padding: 1rem;
-    border: 1px solid var(--muted);
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-    background: var(--main-background);
-  }
-
-  .about {
-    margin-bottom: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .hydrate {
-      display: grid;
-      grid-template-columns: 80% 20%;
-    }
-  }
-</style>
 
 <svelte:head>
   <title> 진리의 배 조선소 </title>
   <meta name="description" content="탐정토끼가 만드는 진리의 배 블로그" />
-  <link href="/" rel="canonical" />
+  <link href="https:/twinstae.github.io/" rel="canonical" />
 </svelte:head>
 
-<div>
+<section id="banner">
   <h1> 진리의 배 조선소 : Blog </h1>
 
   <img style=" width: 8rem; height: 8rem; border-radius: 50%;"
@@ -78,12 +47,10 @@
   <p>
     구직 중 입니다. 채용에 관심이 있으시면 역시 위에 적힌 연락처로 연락 주세요.
   </p>
-</div>
+</section>
 
-<div class="blog">
-  <div class="entries">
-    {#each data.markdown.blog.sort(compare_blog_date) as blog}
-      <BlogTeaser {blog} {helpers} />
-    {/each}
-  </div>
-</div>
+
+<section class="blog">
+  <TagNav hydrate-client={{ blog_list: blog_list }} hydrate-options={{loading : 'eager'}} />
+  <BlogList hydrate-client={{ blog_list: blog_list }} hydrate-options={{loading: 'eager'}} />
+</section>

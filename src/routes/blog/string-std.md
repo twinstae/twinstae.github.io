@@ -1,8 +1,9 @@
 ---
-title: '언어들이 문자열 String을 다루는 방식(작성 중)'
+title: '언어들이 문자열 String을 다루는 방식'
 excerpt: 'Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다.'
 date: '2021-07-08T15:26:07.156Z'
 author: 탐정토끼(Taehee Kim)
+tag: '작성 중, std, 프로그래밍 언어'
 ---
 
 ## 언어 사이에 공통점과 차이점

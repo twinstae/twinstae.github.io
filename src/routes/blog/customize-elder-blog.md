@@ -1,8 +1,9 @@
 ---
-title: 'Elder 블로그 커스터마이징 하기(작성 중)'
+title: 'Elder 블로그 커스터마이징 하기'
 excerpt: 'Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다.'
 date: '2021-07-08T05:01:27.798Z'
 author: 탐정토끼(Taehee Kim)
+tag: '작성 중, Svelte, Elder.js, Blog'
 ---
 
 ## Elder 블로그 템플릿 프로젝트 구조 살펴보기

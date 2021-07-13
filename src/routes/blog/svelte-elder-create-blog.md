@@ -3,6 +3,7 @@ title: 'Svelte Elder.js 블로그 만들기'
 excerpt: '검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다.'
 date: '2021-07-07T15:01:00.618Z'
 author: 탐정토끼(Taehee Kim)
+tag: 'Svelte, Elder.js, Github Pages, Blog'
 ---
 
 이 블로그는 [Svelte](https://svelte.dev/)와 [Elder.js](https://elderguide.com/tech/elderjs/)로 만들었습니다. 이 글에서는 여러분에게 Svelte와 Elder.js를 소개하고, 여러분도 비슷한 블로그를 만들 수 있게 도와드리려 합니다.

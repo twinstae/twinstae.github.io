@@ -20,19 +20,15 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
 
   :global(blockquote) {
     color: var(--main-text-color);
-    margin: 0;
-    background: var(--blockquote-bg);
+    margin: 1rem;
     padding: 3px 1.5rem 3px 3rem;
     position: relative;
-    border-radius: 1rem;
-  }
-  :global(blockquote:after) {
-    content: '>';
-    color: #aaa;
-    font-size: 30px;
-    position: absolute;
-    top: 33%;
-    left: 1rem;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    border: 2px solid var(--muted);
+    box-shadow: 8px 16px 16px -12px var(--muted-dark);
   }
 
   :global(blockquote p) {
@@ -60,9 +56,17 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
 
 <a href="/">&LeftArrow; Home</a>
 
-
 <div class="title">
   <h1>{frontmatter.title}</h1>
+  <div>
+    {#if frontmatter.tag}
+      {#each frontmatter.tag.split(", ") as tag}
+        <span class="hashtag">
+          #{tag}
+        </span>
+      {/each}
+    {/if}
+  </div>
   {#if frontmatter.author}<small>By {frontmatter.author}</small>{/if}
 </div>
 

@@ -52,10 +52,6 @@ module.exports = {
       port: 8080,
       reload: false, // if you are having issues with reloading not working, change to true.
     },
-    '@elderjs/plugin-seo-check': {
-      display: ['errors'] //, 'warnings'], // If the errors are too verbose remove 'warnings'
-      //writeLocation: './report.json', // if you want to write a report of errors
-    },
     '@elderjs/plugin-sitemap': {
       origin: 'https://twinstae.github.io', // the https://yourdomain.com
       exclude: [], // an array of permalinks or permalink prefixes. So you can do ['500'] and it will match /500**
