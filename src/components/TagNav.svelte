@@ -47,8 +47,7 @@
   }
 
   div#tag-nav {
-    line-height: 150%;
-    font-size: 14px;
+    line-height: 125%;
     padding: 0.5rem;
     border: 1px solid var(--muted);
     border-radius: 0.5rem;

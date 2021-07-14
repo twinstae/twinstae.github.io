@@ -20,8 +20,8 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
 
   :global(blockquote) {
     color: var(--main-text-color);
-    margin: 1rem;
-    padding: 3px 1.5rem 3px 3rem;
+    margin: 0.5rem;
+    padding: 3px 1rem 3px 1rem;
     position: relative;
     border-bottom-left-radius: 15px 255px;
     border-bottom-right-radius: 225px 15px;

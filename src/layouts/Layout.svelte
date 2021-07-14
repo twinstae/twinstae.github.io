@@ -75,6 +75,8 @@
 </svelte:head>
 <nav>
   <DarkCheckBox hydrate-client={{}}/>
+  <script async src="https://cse.google.com/cse.js?cx=6802cef8349f945c1"></script>
+  <div class="gcse-search"></div>
 </nav>
 
 <article class="container">
