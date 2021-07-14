@@ -5,7 +5,7 @@
 */
 @import url("https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC");
 html.light {
-  --primary: #fe3e00;
+  --primary: #e34e00;
   --secondary: #0071de;
   --success: #86a361;
   --warning: #ddcd45;
@@ -1079,7 +1079,6 @@ table thead tr th {
   vertical-align: bottom;
 }
 table tbody tr td {
-  border-top: 1px dashed #d9d9d8;
   line-height: 1.5;
   padding: 8px;
   vertical-align: top;

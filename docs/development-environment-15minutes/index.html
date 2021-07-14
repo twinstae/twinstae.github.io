@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>개발환경 구축 지도</title><meta name="description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/development-environment-15minutes/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/development-environment-15minutes/" data-svelte="svelte-18tnbae"><meta property="og:title" content="개발환경 구축 지도" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/development-environment-15minutes/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="개발환경 구축 지도" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><script type="application/javascript" src="https://twinstae.github.io/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-lww7s0"></script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">hljs.highlightAll();
+    setTimeout(()=>{
+      const codes = document.getElementsByTagName("code");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">let is_dark = localStorage.getItem("dark") == "true";
+    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.56df8b9f.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-15c96a7a.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxDdTRZxWKJV"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
+  <span class="svelte-1x528h4"></span>
+</label></div>
+  <script async src="https://cse.google.com/cse.js?cx=6802cef8349f945c1" class="svelte-uvou6c"></script>
+  <div class="gcse-search svelte-uvou6c"></div></nav>
+
+<article class="container svelte-uvou6c"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-1d09elg"><h1>개발환경 구축 지도</h1>
+  <div><span class="hashtag">#작성 중
+        </span><span class="hashtag">#개발환경
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbuttongVYSYzzbvj"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+
+
+<!-- HTML_TAG_START --><h2 id="지도를-챙기고-필요한만큼-배우자">지도를 챙기고, 필요한만큼 배우자</h2>
+<h2 id="내가-이해할-수-있고-감당할-수-있나">내가 이해할 수 있고 감당할 수 있나?</h2>
+<h2 id="작고-단순한-것부터-시작하자">작고 단순한 것부터 시작하자</h2>
+<h2 id="가설을-세우고-실험으로-검증하기">가설을 세우고 실험으로 검증하기</h2>
+<h2 id="일반적이고-보편적인-개념을-배우자">일반적이고 보편적인 개념을 배우자</h2>
+<h2 id="프로그램을-어디에서도-실행하게-해주는-환경변수-path">프로그램을 어디에서도 실행하게 해주는 환경변수 PATH</h2>
+<h2 id="운영체제와-cpu에-맞는-프로그램-설치하기">운영체제와 CPU에 맞는 프로그램 설치하기</h2>
+<h2 id="사용하는-버전-확인하기">사용하는 버전 확인하기</h2>
+<p>Breaking Change</p>
+<h2 id="명령줄-command-line">명령줄 Command Line</h2>
+<h2 id="컴파일러-인터프리터-런타임">컴파일러, 인터프리터, 런타임</h2>
+<h3 id="gcc-리눅스-진영의-c-컴파일러">GCC: 리눅스 진영의 C 컴파일러</h3>
+<h3 id="javac-자바-컴파일러">javac: 자바 컴파일러</h3>
+<h3 id="cpython-파이썬-공식-인터프리터-구현체">CPython: 파이썬 공식 인터프리터 구현체</h3>
+<h4 id="pypy">PyPy</h4>
+<h3 id="node-js-런타임">Node: js 런타임</h3>
+<h4 id="deno-rust로-다시-만든-jsts-런타임">Deno: Rust로 다시 만든 Js/Ts 런타임</h4>
+<h3 id="babel-모던-자바스크립트를-위한-트랜스파일러">Babel: 모던 자바스크립트를 위한 트랜스파일러</h3>
+<h3 id="tsc-타입스크립트-트랜스파일러">TSC: 타입스크립트 트랜스파일러</h3>
+<h2 id="repl-console-명령줄에서-코드-실험하기">Repl, Console: 명령줄에서 코드 실험하기</h2>
+<h3 id="python">Python</h3>
+<h3 id="브라우저-개발자-도구-console">브라우저 개발자 도구 Console</h3>
+<h2 id="빌드-패키지-의존성-관리-도구">빌드, 패키지, 의존성 관리 도구</h2>
+<h3 id="gradle-java-패키지-관리-빌드-도구">gradle: Java 패키지 관리, 빌드 도구</h3>
+<h3 id="npm-yarn-js-패키지-관리-도구">npm, yarn: js 패키지 관리 도구</h3>
+<h3 id="webpack-rollup-vite-js-모듈-번들러">webpack, rollup, vite: js 모듈 번들러</h3>
+<h3 id="pip-파이썬-기본-패키지-관리-도구">pip: 파이썬 기본 패키지 관리 도구</h3>
+<h3 id="poetry-현대적인-파이썬-패키지-관리-도구">poetry: 현대적인 파이썬 패키지 관리 도구</h3>
+<h3 id="apt-get-우분투-리눅스-패키지-관리-도구">apt-get: 우분투 리눅스 패키지 관리 도구</h3>
+<h2 id="curl-wget-인터넷에서-파일-다운-받기">curl, wget: 인터넷에서 파일 다운 받기</h2>
+<h2 id="sh-쉘-스크립트">sh: 쉘 스크립트</h2>
+<h2 id="프로젝트-템플릿">프로젝트 템플릿</h2>
+<h2 id="프레임워크-라이브러리-모듈">프레임워크, 라이브러리, 모듈</h2>
+<h2 id="서로-다른-프로젝트-간에-버전-관리하기">서로 다른 프로젝트 간에 버전 관리하기</h2>
+<h2 id="docker-개발환경을-컨테이너-째로-다운-받으세요">Docker: 개발환경을 컨테이너 째로 다운 받으세요.</h2>
+<h2 id="각종-설정-config-파일">각종 설정 config 파일</h2>
+<h2 id="텍스트-편집기">텍스트 편집기</h2>
+<h3 id="vs-code-오픈소스-텍스트-에디터-플러그인-생태계">VS Code: 오픈소스 텍스트 에디터, 플러그인 생태계</h3>
+<h3 id="jetbrain-똑똑한-통합-개발-환경">JetBrain: 똑똑한 통합 개발 환경</h3>
+<h3 id="vim-강력한-단축키-커맨드-라인-최적화">Vim: 강력한 단축키, 커맨드 라인 최적화</h3>
+<h3 id="그-외-emacs-sublime-text-notepad-메모장">그 외: Emacs, Sublime Text, Notepad++, 메모장...</h3>
+<h2 id="문법-검사와-lsp">문법 검사와 LSP</h2>
+<h2 id="git-프로젝트-버전-관리">Git: 프로젝트 버전 관리</h2>
+<h2 id="배포-자동화">배포 자동화</h2>
+<h3 id="github-action">Github Action</h3>
+<h3 id="jenkins">Jenkins</h3>
+<h2 id="브라우저-에뮬레이터">브라우저, 에뮬레이터</h2>
+<h2 id="테스트-도구">테스트 도구</h2><!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script></div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-uvou6c">이 블로그는 <a href="https://svelte.dev/" class="svelte-uvou6c">Svelte</a>와 <a class="secondary svelte-uvou6c" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br class="svelte-uvou6c">
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-uvou6c">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br class="svelte-uvou6c">
+  <a href="https://pages.github.com/" class="svelte-uvou6c">Github Pages</a>로 호스팅하고 있습니다.
+  <br class="svelte-uvou6c">
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    <script type="text/javascript">
+            var requestIdleCallback = window.requestIdleCallback ||
+            function (cb) {
+              var s = Date.now();
+              return setTimeout(function () {
+                cb({
+                  didTimeout: false,
+                  timeRemaining: function () {
+                    return Math.max(0, 50 - (Date.now() - s));
+                  },
+                });
+              }, 1);
+            };
+            if (!('IntersectionObserver' in window)) {
+                var script = document.createElement("script");
+                script.src = "/_elderjs/static/intersection-observer.js";
+                document.getElementsByTagName('head')[0].appendChild(script);
+            };
+      </script>
+      
+    <script type="module">
+      
+let IO, $$COMPONENTS={};
+const $$ejs = async (arr)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+
+  for (let i = 0; i < arr.length; i++) {
+    $$COMPONENTS[arr[i][0]] = {
+      elem: document.getElementById(arr[i][0]),
+      component: arr[i][1],
+      props: $ejs(arr[i][2]) || {},
+    };
+
+    if(typeof  $$COMPONENTS[arr[i][0]].props === 'string'){
+      const propsFile = await import(prefix+'/props/'+$$COMPONENTS[arr[i][0]].props);
+      $$COMPONENTS[arr[i][0]].props = $ejs(propsFile.default);
+    };
+
+    if (!IO) {
+      IO = new IntersectionObserver((entries, observer) => {
+        var objK = Object.keys(entries);
+        var objKl = objK.length;
+        var objKi = 0;
+        for (; objKi < objKl; objKi++) {
+          const entry = entries[objK[objKi]];
+          if (entry.isIntersecting) {
+            const selected = $$COMPONENTS[entry.target.id];
+            observer.unobserve(selected.elem);
+            import(prefix + '/svelte/components/' + selected.component).then((comp)=>{
+                new comp.default({ 
+                  target: selected.elem,
+                  props: selected.props,
+                  hydrate: true
+                });
+            });
+          }
+        }
+      });
+    };
+    IO.observe($$COMPONENTS[arr[i][0]].elem);
+  }
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs([['scrolltopbuttongVYSYzzbvj','ScrollTopButton.56df8b9f.js', {}],['darkcheckboxDdTRZxWKJV','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+    
+    
+    </body></html>
