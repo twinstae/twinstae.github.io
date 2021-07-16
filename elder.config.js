@@ -50,7 +50,7 @@ module.exports = {
     '@elderjs/plugin-browser-reload': {
       // this reloads your browser when nodemon restarts your server.
       port: 8080,
-      reload: false, // if you are having issues with reloading not working, change to true.
+      reload: true, // if you are having issues with reloading not working, change to true.
     },
     '@elderjs/plugin-sitemap': {
       origin: 'https://twinstae.github.io', // the https://yourdomain.com

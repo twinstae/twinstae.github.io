@@ -2,7 +2,8 @@
   import style from '../../assets/style.css';
   import paper from '../../assets/paper.css';
   import atom_one_dark from '../../assets/atom-one-dark.min.css';
-  import hijs_badge from '../../assets/hljs-badge.css';
+  import hljs_badge from '../../assets/hljs-badge.css';
+
   import DarkCheckBox from "../components/DarkCheckBox.svelte";
 
   export let templateHtml; //, settings;
@@ -50,10 +51,7 @@
 <svelte:head>
   <link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" />
   <link href='https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap' rel="preload" as="style" />
-  <link href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" rel="preload" as="style">
-  <script type="application/javascript" src="https://twinstae.github.io/highlight.min.js"></script>
   <script>
-    hljs.highlightAll();
     setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);

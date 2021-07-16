@@ -1,40 +1,22 @@
 <script>
 import ScrollTopButton from "../../components/ScrollTopButton.svelte";
+import TableOfContent from "../../components/TableOfContent.svelte";
+const hljs = require("highlight.js");
 
-  import TableOfContent from "../../components/TableOfContent.svelte";
   export let data, request; // data is mainly being populated from the @elderjs/plugin-markdown
   const { html, frontmatter, tocTree } = data;
+
+  function highlight_code(html){
+    const match_iter = html.matchAll(/<pre><code[^>]+>([^<]+)<\/code><\/pre>/g);
+    const match_array = [...match_iter];
+    const hl_result = match_array.map(([_, content])=> [content, hljs.highlightAuto(content).value]);
+
+    return hl_result.reduce((acc, [content, result]) => acc.replace(content, result)
+    , html);
+  }
+
+  const html_after_highlight = highlight_code(html);
 </script>
-
-<style>
-  .title {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #ddd;
-  }
-
-  :global(h2) {
-    margin-top: 2rem;
-  }
-
-  :global(blockquote) {
-    color: var(--main-text-color);
-    margin: 0.5rem;
-    padding: 3px 1rem 3px 1rem;
-    position: relative;
-    border-bottom-left-radius: 15px 255px;
-    border-bottom-right-radius: 225px 15px;
-    border-top-left-radius: 255px 15px;
-    border-top-right-radius: 15px 225px;
-    border: 2px solid var(--muted);
-    box-shadow: 8px 16px 16px -12px var(--muted-dark);
-  }
-
-  :global(blockquote p) {
-    padding: 0;
-  }
-</style>
 
 <svelte:head>
   <title>{frontmatter.title}</title>
@@ -77,7 +59,7 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
 {/if}
 
 {#if html}
-  {@html html}
+  {@html html_after_highlight}
 {:else}
   <h1>Oops!! Markdown not found!</h1>
 {/if}
@@ -86,3 +68,13 @@ import ScrollTopButton from "../../components/ScrollTopButton.svelte";
   <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async="">
   </script>
 </div>
+
+
+<style>
+  .title {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+  }
+</style>
