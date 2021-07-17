@@ -18,9 +18,11 @@
 </script>
 
 <button id="scroll-top-button" on:click={function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}}>↑ 맨 위로</button>
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }}>↑ 맨 위로</button>
 
 <style>
   #scroll-top-button {
