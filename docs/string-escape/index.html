@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>영속성 계층</title><meta name="description" content="영속성 계층은 프로그램의 상태와 데이터를 관리, 저장, 복원합니다. 파일부터 데이터베이스, DDD의 레포지토리 패턴도 소개합니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/persistence-layer/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/persistence-layer/" data-svelte="svelte-18tnbae"><meta property="og:title" content="영속성 계층" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="영속성 계층은 프로그램의 상태와 데이터를 관리, 저장, 복원합니다. 파일부터 데이터베이스, DDD의 레포지토리 패턴도 소개합니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/persistence-layer/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="영속성 계층" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="영속성 계층은 프로그램의 상태와 데이터를 관리, 저장, 복원합니다. 파일부터 데이터베이스, DDD의 레포지토리 패턴도 소개합니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">setTimeout(()=>{
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열 escape, format, injection attack</title><meta name="description" content="SQL이나 HTML, JSON도 모두 문자열이죠. 코드를 문자열로 만들 때의 편리함과 취약점에 대해 알아봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-escape/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-escape/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열 escape, format, injection attack" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="SQL이나 HTML, JSON도 모두 문자열이죠. 코드를 문자열로 만들 때의 편리함과 취약점에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-escape/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열 escape, format, injection attack" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="SQL이나 HTML, JSON도 모두 문자열이죠. 코드를 문자열로 만들 때의 편리함과 취약점에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);
 
@@ -14,7 +14,7 @@
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-4a8e8755.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxYwNwqKFZNG"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxMbpkzGWySJ"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -23,33 +23,29 @@
 
 <a href="/">← Home</a>
 
-<div class="title svelte-7s3agc"><h1>영속성 계층</h1>
+<div class="title svelte-7s3agc"><h1>문자열 escape, format, injection attack</h1>
   <div><span class="hashtag">#작성 중
-        </span><span class="hashtag">#DDD
-        </span><span class="hashtag">#계층형 아키텍처
-        </span><span class="hashtag">#영속성
-        </span><span class="hashtag">#파일
-        </span><span class="hashtag">#데이터베이스
-        </span><span class="hashtag">#레포지토리 패턴
+        </span><span class="hashtag">#문자열
+        </span><span class="hashtag">#escape
+        </span><span class="hashtag">#format
+        </span><span class="hashtag">#injection attack
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonrfwWjnTTCZ"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonZQdSwLtDCT"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 
 
-<!-- HTML_TAG_START --><h2 id="영속성은-프로그램이-종료되어도-상태를-유지하고-다시-불러올-수-있게-합니다">영속성은 프로그램이 종료되어도 상태를 유지하고, 다시 불러올 수 있게 합니다.</h2>
-<h2 id="파일-시스템">파일 시스템</h2>
-<h2 id="데이터베이스">데이터베이스</h2>
-<h3 id="sql-관계형-데이터-베이스">SQL 관계형 데이터 베이스</h3>
-<h4 id="orm-객체-관계-맵핑">ORM 객체 관계 맵핑</h4>
-<h4 id="두-개의-모자">두 개의 모자</h4>
-<h3 id="nosql">NoSQL</h3>
-<h4 id="key-value">Key-Value</h4>
-<h4 id="document">Document</h4>
-<h4 id="graph">Graph</h4>
-<h4 id="search-engine">Search Engine</h4>
-<h2 id="repository-pattern">Repository Pattern</h2><!-- HTML_TAG_END -->
+<!-- HTML_TAG_START --><h3 id="escape-이건-코드인가-문자열인가">Escape: 이건 코드인가 문자열인가?</h3>
+<p>문자열 리터럴을 만들 때 머리 아픈 부분은... 엔터나 따옴표 같은 특수문자를 어떻게 처리하냐는 것입니다.</p>
+<h3 id="format-문자열-템플릿에-동적으로-데이터-넣기">format: 문자열 템플릿에 동적으로 데이터 넣기</h3>
+<h3 id="자동-형변환-다른-타입을-문자열로-변환하기">자동 형변환: 다른 타입을 문자열로 변환하기</h3>
+<h3 id="injection-공격--eval과-sql-injection">Injection 공격 : eval과 SQL Injection</h3>
+<h3 id="인덱스가-0부터-시작하는가">인덱스가 0부터 시작하는가?</h3>
+<p>포트란, Lua, Julia</p>
+<h3 id="인덱스-슬라이싱이-가능한가">인덱스 슬라이싱이 가능한가?</h3>
+<h3 id="인덱스-for-vs-iterator">인덱스 for vs Iterator</h3>
+<h3 id="정규표현식">정규표현식</h3><!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
@@ -128,7 +124,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonrfwWjnTTCZ','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxYwNwqKFZNG','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonZQdSwLtDCT','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxMbpkzGWySJ','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

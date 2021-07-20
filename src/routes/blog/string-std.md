@@ -1,49 +1,107 @@
 ---
-title: '언어들이 문자열 String을 다루는 방식'
-excerpt: 'Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다.'
+title: '문자열 String std 파고들기'
+excerpt: '문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다.'
 date: '2021-07-08T15:26:07.156Z'
 author: 탐정토끼(Taehee Kim)
-tag: '작성 중, std, 프로그래밍 언어'
+tag: '작성 중, std, 문자열, 표준 라이브러리'
 ---
 
-## 언어 사이에 공통점과 차이점
+std 시리즈에서는 서로 다른 언어들의 표준 라이브러리와 자료형, 문법을 비교해보고자합니다.
 
-### 문자열은 무엇인가?
+std는 standard 표준의 약자로, 보통 그 언어의 표준 라이브러리를 std라고 부릅니다. 언어마다 표준은 다르며, 각자 나름대로 그런 표준을 선택한 이유와 배경이 있습니다. 여기서는 다양한 언어들의 표준 라이브러리로 대표적인 작업을 처리하는 예시 코드를 보여드립니다. 직접 REPL 등에 하나씩 쳐보시면서 익혀보시면 더욱 좋겠죠.
 
-### 문자열 인코딩은 UTF-8인가?
+하지만 코드만 봐서는 원리는 알기 어렵습니다. 문자열은 언어마다 어떻게 구현되어 있으며, 이게 어떤 쓸모가 있을까요? 기본적으로는 재미로 알아 보자는 거지만. 이런 지식이 도움이 되는 때도 있을 겁니다.
 
-### 원시타입인가 객체인가?
+- [문자, 문자열, 한글 인코딩](/string-encoding/)
+- [문자열은 왜 불변인가?](/string-immutable/)
 
-### Char와 String을 구분하는가?
-
-### 자동 형변환이 가능한가?
-
-### 메서드인가, 모듈 함수인가?
-
-### 인덱스가 0부터 시작하는가?
-
-포트란, Lua, Julia
-
-### 인덱스 슬라이싱이 가능한가?
-
-### 인덱스 for vs Iterator
-
-### 정규표현식
-
-## 프로그래밍 언어별 String 코드 예시
+## 프로그래밍 언어별 String 표준 라이브러리
 ### Java: char, Char, String
 ```java
-String foo = "abcde";
+String foo = "탐정토끼";
+char f = '탐'; // 글자와 String을 구분한다.
+
+String foo_copy = foo;
+foo_copy += "입니다.";
+System.out.println(foo);
+// 탐정토끼  <- 원래 값은 불변
+System.out.println(foo_copy);
+// 탐정토끼입니다. 
+
+// 길이
+assertEqual(foo.length(), 4);
+
+assertEqual(foo.charAt(0), '탐');
+assertEqual(foo.substring(1), "정토끼");
+assertEqual(foo.substring(1, 3), "정토"); // 마지막 인덱스 미포함
+assertEqual(foo.substring(foo.length() - 2), "토끼"); // 마지막 2 글자
+
+// 뒤집기
 StringBuffer sb = new StringBuffer(str);
 String reversedFoo = sb.reverse().toString();
 System.out.println(reversedFoo);
+
+// 바꾸기
+assertEqual("2014/02/14".replaceAll("/", "-"), "2014-02-14");
+// 쪼개기
+for (String item: "2014/02/14".split("/")){
+  System.out.println(item);
+}
+assertEqual("2014/02/14".split("/"), ["2014", "02", "14"]);
+
+assertEqual(String.valueOf(24) + "시간이 모자라", "24시간이 모자라");
+// "1" < "3" <- 비교 불가
+// error: bad operand types for binary operator '<'
+
+assertEqual("taehee" + " " + "kim", "taehee kim"); // 합치기
+String[] arr = new String[] {"탐정", "토끼"};
+assertEqual(String.join("", arr), "탐정토끼");
+
+String html = """
+  <html>
+    <body>
+      <p>Hello, world</p>
+    </body>
+  </html>
+"""; // 자바15부터 가능
+
+// 주어진 문자열을 포함하는지?
+assertTrue(foo.contains("탐정"));
+
+// 주어진 문자열로 시작하는지?
+assertTrue("https://twinstae.github.io/".startswith("https"));
+// 주어진 문자열로 끝나는지?
+assertTrue("fiesta-izone.mp3".endswith(".mps"));
+
+String name = "kim";
+// 비어있는지?
+assertFalse(name.isBlank());
+
+assertEqual(String.format("hello, %s", name), "hello, kim");
+
+// 소문자로
+assertEqual('TAEhee Kim'.toLowerCase(), "taehee kim") 
+// 공백 자르기
+assertEqual('    내용     \n   '.trim(), "내용")
+
+// 메소드 체이닝
+String raw_text = "    \n         TeST HeLLo WORld      \n \n \t   ";
+String[] expected = new String[] {'test', 'hello', 'world'};
+assertEqual(raw_text.trim().toLowerCase().split(" "), expected);
 ```
 
 ### Python: str
 ```python
 foo = "탐정토끼" # 리터럴
-assert type(foo) == type("탐") # 글자 하나의 타입도 string이다.
+assert type(foo) == type("탐") # 글자 하나의 타입도 str
 # <class 'str'>
+
+foo_copy = foo // 값을 복사
+foo_copy += "입니다."
+print(foo) 
+// "탐정토끼" 원래 값은 불변
+print(foo_copy)
+// "탐정토끼입니다."
 
 assert len(foo) == 4 # 문자열의 길이
 
@@ -65,7 +123,7 @@ assert str(24) + "시간이 모자라" # int와 문자열 합치기
 assert "1" < "3" # 비교 가능
 
 assert "taehee" + " " + "kim" == "taehee kim" # 합치기
-assert "".join(["탐정", "토끼", "입니다."]) == "탐정토끼입니다." # 붙이기
+assert "".join(["탐정", "토끼"]) == "탐정토끼" # 연결하기
 
 long_csv = """12, 3, "빨강"
 13, 2, "파랑"
@@ -74,8 +132,10 @@ long_csv = """12, 3, "빨강"
 long_csv.split("\n") # 줄 단위로 자르기
 
 assert "탐정" in foo == True # foo가 "탐정"을 포함하는지? 
-assert "https://twinstae.github.io/".startswith("https") == True # 시작하는지?
-assert "fiesta-izone.mp3".endswith(".mps") # 끝나는지?
+# 주어진 문자열로 시작하는지?
+assert "https://twinstae.github.io/".startswith("https") == True
+# 주어진 문자열로 끝나는지?
+assert "fiesta-izone.mp3".endswith(".mps")
 
 name: str = 'kim' # 타입힌트, ' 홑 따옴표도 상관 없다.
 
@@ -91,6 +151,11 @@ print('TAEhee Kim'.lower()) # 소문자로
 # 'taehee kim'
 '    내용     \n   '.strip()  # 공백 자르기
 # '내용'
+
+# 메소드 체이닝
+raw_text = "    \n         TeST HeLLo WORld      \n \n \t   "
+raw_text.strip().lower().split(" ")
+# ['test', 'hello', 'world']
 
 m = re.search('([1-6])학년 ([0-9]{1,2})단원', '2학년 3단원')
 assert m.group(0) == '2학년 3단원'
@@ -130,7 +195,7 @@ println!("{}", foo.chars().rev().collect::<String>());
 
 (s/replace "2014/02/14" "/", "-") ; 바꾸기
 ; "2014-02-14"
-(s/split "2014/02/14" "/") ; 쪼개기
+(s/split "2014/02/14" #"/") ; 쪼개기 #은 정규표현식 표시
 ; ("2014" "02" "14")
 
 (def long-csv "12, 3, \"빨강\"
@@ -163,6 +228,11 @@ println!("{}", foo.chars().rev().collect::<String>());
 ; "taehee kim"
 (s/trim "    내용     \n   ")
 ; "내용"
+
+; 파이프
+(def raw_text "    \n         TeST HeLLo WORld      \n \n \t   ")
+(-> raw_text s/trim s/lower-case (s/split #" "))
+; ["test" "hello" "world"]
 ```
 
 ### Elixir: String.grapheme(), String.t()

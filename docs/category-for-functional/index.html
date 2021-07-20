@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>함수형 프로그래밍을 위한 카테고리 이론</title><meta name="description" content="수학까지 해야하나? 함수형 프로그래밍의 근간이 되는 카테고리 이론과 학습 자료를 소개합니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/category-for-functional/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/category-for-functional/" data-svelte="svelte-18tnbae"><meta property="og:title" content="함수형 프로그래밍을 위한 카테고리 이론" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="수학까지 해야하나? 함수형 프로그래밍의 근간이 되는 카테고리 이론과 학습 자료를 소개합니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/category-for-functional/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="함수형 프로그래밍을 위한 카테고리 이론" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="수학까지 해야하나? 함수형 프로그래밍의 근간이 되는 카테고리 이론과 학습 자료를 소개합니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><script type="application/javascript" src="https://twinstae.github.io/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-lww7s0"></script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">hljs.highlightAll();
-    setTimeout(()=>{
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>함수형 프로그래밍을 위한 카테고리 이론</title><meta name="description" content="수학까지 해야하나? 함수형 프로그래밍의 근간이 되는 카테고리 이론과 학습 자료를 소개합니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/category-for-functional/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/category-for-functional/" data-svelte="svelte-18tnbae"><meta property="og:title" content="함수형 프로그래밍을 위한 카테고리 이론" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="수학까지 해야하나? 함수형 프로그래밍의 근간이 되는 카테고리 이론과 학습 자료를 소개합니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/category-for-functional/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="함수형 프로그래밍을 위한 카테고리 이론" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="수학까지 해야하나? 함수형 프로그래밍의 근간이 되는 카테고리 이론과 학습 자료를 소개합니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);
 
@@ -12,10 +11,10 @@
         })
       }
     }, 500)
-  </script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">let is_dark = localStorage.getItem("dark") == "true";
+  </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.56df8b9f.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-15c96a7a.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxMqQgrbsLwm"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-4a8e8755.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxzGkwCZcWvk"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -24,14 +23,14 @@
 
 <a href="/">← Home</a>
 
-<div class="title svelte-1d09elg"><h1>함수형 프로그래밍을 위한 카테고리 이론</h1>
+<div class="title svelte-7s3agc"><h1>함수형 프로그래밍을 위한 카테고리 이론</h1>
   <div><span class="hashtag">#작성 중
         </span><span class="hashtag">#함수형
         </span><span class="hashtag">#카테고리 이론
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonrlDkwDLCRn"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonLgbXyXVrff"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 
 
@@ -41,7 +40,8 @@
 <h2 id="remark-math-katex">remark math katex</h2>
 <div class="math math-display"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>h</mi><mo>∘</mo><mo stretchy="false">(</mo><mi>g</mi><mo>∘</mo><mi>f</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>h</mi><mo>∘</mo><mi>g</mi><mo stretchy="false">)</mo><mo>∘</mo><mi>f</mi><mo>=</mo><mi>h</mi><mo>∘</mo><mi>g</mi><mo>∘</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">h \circ (g \circ f) = (h \circ g) \circ f = h \circ g \circ f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∘</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></span></div><!-- HTML_TAG_END -->
 
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script></div><!-- HTML_TAG_END --></article>
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
 
 <footer class="footer svelte-uvou6c">이 블로그는 <a href="https://svelte.dev/" class="svelte-uvou6c">Svelte</a>와 <a class="secondary svelte-uvou6c" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
   <br class="svelte-uvou6c">
@@ -117,7 +117,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonrlDkwDLCRn','ScrollTopButton.56df8b9f.js', {}],['darkcheckboxMqQgrbsLwm','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonLgbXyXVrff','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxzGkwCZcWvk','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

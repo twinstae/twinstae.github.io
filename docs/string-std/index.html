@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>언어들이 문자열 String을 다루는 방식</title><meta name="description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-std/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta property="og:title" content="언어들이 문자열 String을 다루는 방식" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="언어들이 문자열 String을 다루는 방식" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="Java, JS, Python, Rust, Clojure, Elixir 등등 다양한 언어들이 문자열을 다루는 방식을 비교하고 익혀봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><link href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-lww7s0"><script type="application/javascript" src="https://twinstae.github.io/highlight.min.js" class="svelte-uvou6c" data-svelte="svelte-lww7s0"></script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">hljs.highlightAll();
-    setTimeout(()=>{
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열 String std 파고들기</title><meta name="description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-std/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열 String std 파고들기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열 String std 파고들기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);
 
@@ -12,10 +11,10 @@
         })
       }
     }, 500)
-  </script><script class="svelte-uvou6c" data-svelte="svelte-lww7s0">let is_dark = localStorage.getItem("dark") == "true";
+  </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.56df8b9f.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-15c96a7a.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxWJNjcDbWzd"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-4a8e8755.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxvvVXmYLWvz"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -24,161 +23,243 @@
 
 <a href="/">← Home</a>
 
-<div class="title svelte-1d09elg"><h1>언어들이 문자열 String을 다루는 방식</h1>
+<div class="title svelte-7s3agc"><h1>문자열 String std 파고들기</h1>
   <div><span class="hashtag">#작성 중
         </span><span class="hashtag">#std
-        </span><span class="hashtag">#프로그래밍 언어
+        </span><span class="hashtag">#문자열
+        </span><span class="hashtag">#표준 라이브러리
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonMpcWQmGrWg"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttoncwClrfnzvn"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 
 
-<!-- HTML_TAG_START --><h2 id="언어-사이에-공통점과-차이점">언어 사이에 공통점과 차이점</h2>
-<h3 id="문자열은-무엇인가">문자열은 무엇인가?</h3>
-<h3 id="문자열-인코딩은-utf-8인가">문자열 인코딩은 UTF-8인가?</h3>
-<h3 id="원시타입인가-객체인가">원시타입인가 객체인가?</h3>
-<h3 id="char와-string을-구분하는가">Char와 String을 구분하는가?</h3>
-<h3 id="자동-형변환이-가능한가">자동 형변환이 가능한가?</h3>
-<h3 id="메서드인가-모듈-함수인가">메서드인가, 모듈 함수인가?</h3>
-<h3 id="인덱스가-0부터-시작하는가">인덱스가 0부터 시작하는가?</h3>
-<p>포트란, Lua, Julia</p>
-<h3 id="인덱스-슬라이싱이-가능한가">인덱스 슬라이싱이 가능한가?</h3>
-<h3 id="인덱스-for-vs-iterator">인덱스 for vs Iterator</h3>
-<h3 id="정규표현식">정규표현식</h3>
-<h2 id="프로그래밍-언어별-string-코드-예시">프로그래밍 언어별 String 코드 예시</h2>
+<!-- HTML_TAG_START --><p>std 시리즈에서는 서로 다른 언어들의 표준 라이브러리와 자료형, 문법을 비교해보고자합니다.</p>
+<p>std는 standard 표준의 약자로, 보통 그 언어의 표준 라이브러리를 std라고 부릅니다. 언어마다 표준은 다르며, 각자 나름대로 그런 표준을 선택한 이유와 배경이 있습니다. 여기서는 다양한 언어들의 표준 라이브러리로 대표적인 작업을 처리하는 예시 코드를 보여드립니다. 직접 REPL 등에 하나씩 쳐보시면서 익혀보시면 더욱 좋겠죠.</p>
+<p>하지만 코드만 봐서는 원리는 알기 어렵습니다. 문자열은 언어마다 어떻게 구현되어 있으며, 이게 어떤 쓸모가 있을까요? 기본적으로는 재미로 알아 보자는 거지만. 이런 지식이 도움이 되는 때도 있을 겁니다.</p>
+<ul>
+<li><a href="/string-encoding/">문자, 문자열, 한글 인코딩</a></li>
+<li><a href="/string-immutable/">문자열은 왜 불변인가?</a></li>
+</ul>
+<h2 id="프로그래밍-언어별-string-표준-라이브러리">프로그래밍 언어별 String 표준 라이브러리</h2>
 <h3 id="java-char-char-string">Java: char, Char, String</h3>
-<pre><code class="language-java">String foo = "abcde";
+<pre><code class="language-java">String foo = <span class="hljs-string">&quot;탐정토끼&quot;</span>;
+char f = <span class="hljs-string">&#x27;탐&#x27;</span>; <span class="hljs-regexp">//</span> 글자와 String을 구분한다.
+
+String foo_copy = foo;
+foo_copy += <span class="hljs-string">&quot;입니다.&quot;</span>;
+System.out.println(foo);
+<span class="hljs-regexp">//</span> 탐정토끼  &amp;<span class="hljs-comment">#x3C;- 원래 값은 불변</span>
+System.out.println(foo_copy);
+<span class="hljs-regexp">//</span> 탐정토끼입니다. 
+
+<span class="hljs-regexp">//</span> 길이
+assertEqual(foo.length(), <span class="hljs-number">4</span>);
+
+assertEqual(foo.charAt(<span class="hljs-number">0</span>), <span class="hljs-string">&#x27;탐&#x27;</span>);
+assertEqual(foo.substring(<span class="hljs-number">1</span>), <span class="hljs-string">&quot;정토끼&quot;</span>);
+assertEqual(foo.substring(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>), <span class="hljs-string">&quot;정토&quot;</span>); <span class="hljs-regexp">//</span> 마지막 인덱스 미포함
+assertEqual(foo.substring(foo.length() - <span class="hljs-number">2</span>), <span class="hljs-string">&quot;토끼&quot;</span>); <span class="hljs-regexp">//</span> 마지막 <span class="hljs-number">2</span> 글자
+
+<span class="hljs-regexp">//</span> 뒤집기
 StringBuffer sb = new StringBuffer(str);
 String reversedFoo = sb.reverse().toString();
 System.out.println(reversedFoo);
+
+<span class="hljs-regexp">//</span> 바꾸기
+assertEqual(<span class="hljs-string">&quot;2014/02/14&quot;</span>.replaceAll(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>), <span class="hljs-string">&quot;2014-02-14&quot;</span>);
+<span class="hljs-regexp">//</span> 쪼개기
+<span class="hljs-keyword">for</span> (String item: <span class="hljs-string">&quot;2014/02/14&quot;</span>.split(<span class="hljs-string">&quot;/&quot;</span>)){
+  System.out.println(item);
+}
+assertEqual(<span class="hljs-string">&quot;2014/02/14&quot;</span>.split(<span class="hljs-string">&quot;/&quot;</span>), [<span class="hljs-string">&quot;2014&quot;</span>, <span class="hljs-string">&quot;02&quot;</span>, <span class="hljs-string">&quot;14&quot;</span>]);
+
+assertEqual(String.valueOf(<span class="hljs-number">24</span>) + <span class="hljs-string">&quot;시간이 모자라&quot;</span>, <span class="hljs-string">&quot;24시간이 모자라&quot;</span>);
+<span class="hljs-regexp">//</span> <span class="hljs-string">&quot;1&quot;</span> &amp;<span class="hljs-comment">#x3C; &quot;3&quot; &amp;#x3C;- 비교 불가</span>
+<span class="hljs-regexp">//</span> error: bad operand types <span class="hljs-keyword">for</span> binary operator <span class="hljs-string">&#x27;&amp;#x3C;&#x27;</span>
+
+assertEqual(<span class="hljs-string">&quot;taehee&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;kim&quot;</span>, <span class="hljs-string">&quot;taehee kim&quot;</span>); <span class="hljs-regexp">//</span> 합치기
+String[] arr = new String[] {<span class="hljs-string">&quot;탐정&quot;</span>, <span class="hljs-string">&quot;토끼&quot;</span>};
+assertEqual(String.join(<span class="hljs-string">&quot;&quot;</span>, arr), <span class="hljs-string">&quot;탐정토끼&quot;</span>);
+
+String html = <span class="hljs-string">&quot;&quot;&quot;
+  &amp;#x3C;html&gt;
+    &amp;#x3C;body&gt;
+      &amp;#x3C;p&gt;Hello, world&amp;#x3C;/p&gt;
+    &amp;#x3C;/body&gt;
+  &amp;#x3C;/html&gt;
+&quot;&quot;&quot;</span>; <span class="hljs-regexp">//</span> 자바<span class="hljs-number">15</span>부터 가능
+
+<span class="hljs-regexp">//</span> 주어진 문자열을 포함하는지?
+assertTrue(foo.contains(<span class="hljs-string">&quot;탐정&quot;</span>));
+
+<span class="hljs-regexp">//</span> 주어진 문자열로 시작하는지?
+assertTrue(<span class="hljs-string">&quot;https://twinstae.github.io/&quot;</span>.startswith(<span class="hljs-string">&quot;https&quot;</span>));
+<span class="hljs-regexp">//</span> 주어진 문자열로 끝나는지?
+assertTrue(<span class="hljs-string">&quot;fiesta-izone.mp3&quot;</span>.endswith(<span class="hljs-string">&quot;.mps&quot;</span>));
+
+String name = <span class="hljs-string">&quot;kim&quot;</span>;
+<span class="hljs-regexp">//</span> 비어있는지?
+assertFalse(name.isBlank());
+
+assertEqual(String.format(<span class="hljs-string">&quot;hello, %s&quot;</span>, name), <span class="hljs-string">&quot;hello, kim&quot;</span>);
+
+<span class="hljs-regexp">//</span> 소문자로
+assertEqual(<span class="hljs-string">&#x27;TAEhee Kim&#x27;</span>.toLowerCase(), <span class="hljs-string">&quot;taehee kim&quot;</span>) 
+<span class="hljs-regexp">//</span> 공백 자르기
+assertEqual(<span class="hljs-string">&#x27;    내용     \n   &#x27;</span>.trim(), <span class="hljs-string">&quot;내용&quot;</span>)
+
+<span class="hljs-regexp">//</span> 메소드 체이닝
+String raw_text = <span class="hljs-string">&quot;    \n         TeST HeLLo WORld      \n \n \t   &quot;</span>;
+String[] expected = new String[] {<span class="hljs-string">&#x27;test&#x27;</span>, <span class="hljs-string">&#x27;hello&#x27;</span>, <span class="hljs-string">&#x27;world&#x27;</span>};
+assertEqual(raw_text.trim().toLowerCase().split(<span class="hljs-string">&quot; &quot;</span>), expected);
 </code></pre>
 <h3 id="python-str">Python: str</h3>
-<pre><code class="language-python">foo = "탐정토끼" # 리터럴
-assert type(foo) == type("탐") # 글자 하나의 타입도 string이다.
-# &#x3C;class 'str'>
+<pre><code class="language-python">foo = <span class="hljs-string">&quot;탐정토끼&quot;</span> <span class="hljs-comment"># 리터럴</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-built_in">type</span>(foo) == <span class="hljs-built_in">type</span>(<span class="hljs-string">&quot;탐&quot;</span>) <span class="hljs-comment"># 글자 하나의 타입도 str</span>
+<span class="hljs-comment"># &amp;#x3C;class &#x27;str&#x27;&gt;</span>
 
-assert len(foo) == 4 # 문자열의 길이
+foo_copy = foo // 값을 복사
+foo_copy += <span class="hljs-string">&quot;입니다.&quot;</span>
+<span class="hljs-built_in">print</span>(foo) 
+// <span class="hljs-string">&quot;탐정토끼&quot;</span> 원래 값은 불변
+<span class="hljs-built_in">print</span>(foo_copy)
+// <span class="hljs-string">&quot;탐정토끼입니다.&quot;</span>
 
-# 문자열[start : end : step]
-assert foo[0] == "탐"  # 문자 가져오기
-assert foo[1:] == "정토끼" # 자르기. start 부터 끝까지
-assert foo[1:3] == "정토"  # 마지막 인덱스는 미포함
-assert foo[-2:] == "토끼"  # 마지막 2글자
-assert "abcdefg"[::2] == "aceg" # step 2칸씩 
+<span class="hljs-keyword">assert</span> <span class="hljs-built_in">len</span>(foo) == <span class="hljs-number">4</span> <span class="hljs-comment"># 문자열의 길이</span>
 
-print(foo[::-1]) # 뒤집기
-# "끼토정탐"
+<span class="hljs-comment"># 문자열[start : end : step]</span>
+<span class="hljs-keyword">assert</span> foo[<span class="hljs-number">0</span>] == <span class="hljs-string">&quot;탐&quot;</span>  <span class="hljs-comment"># 문자 가져오기</span>
+<span class="hljs-keyword">assert</span> foo[<span class="hljs-number">1</span>:] == <span class="hljs-string">&quot;정토끼&quot;</span> <span class="hljs-comment"># 자르기. start 부터 끝까지</span>
+<span class="hljs-keyword">assert</span> foo[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>] == <span class="hljs-string">&quot;정토&quot;</span>  <span class="hljs-comment"># 마지막 인덱스는 미포함</span>
+<span class="hljs-keyword">assert</span> foo[-<span class="hljs-number">2</span>:] == <span class="hljs-string">&quot;토끼&quot;</span>  <span class="hljs-comment"># 마지막 2글자</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;abcdefg&quot;</span>[::<span class="hljs-number">2</span>] == <span class="hljs-string">&quot;aceg&quot;</span> <span class="hljs-comment"># step 2칸씩 </span>
 
-assert "2014/02/14".replace("/", "-") == "2014-02-14" # 치환
-assert "2014/02/14".split("/") == ["2014", "02", "14"] # 쪼개기
+<span class="hljs-built_in">print</span>(foo[::-<span class="hljs-number">1</span>]) <span class="hljs-comment"># 뒤집기</span>
+<span class="hljs-comment"># &quot;끼토정탐&quot;</span>
 
-assert str(24) + "시간이 모자라" # int와 문자열 합치기
-# "24시간이 모자라"
-assert "1" &#x3C; "3" # 비교 가능
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;2014/02/14&quot;</span>.replace(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>) == <span class="hljs-string">&quot;2014-02-14&quot;</span> <span class="hljs-comment"># 치환</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;2014/02/14&quot;</span>.split(<span class="hljs-string">&quot;/&quot;</span>) == [<span class="hljs-string">&quot;2014&quot;</span>, <span class="hljs-string">&quot;02&quot;</span>, <span class="hljs-string">&quot;14&quot;</span>] <span class="hljs-comment"># 쪼개기</span>
 
-assert "taehee" + " " + "kim" == "taehee kim" # 합치기
-assert "".join(["탐정", "토끼", "입니다."]) == "탐정토끼입니다." # 붙이기
+<span class="hljs-keyword">assert</span> <span class="hljs-built_in">str</span>(<span class="hljs-number">24</span>) + <span class="hljs-string">&quot;시간이 모자라&quot;</span> <span class="hljs-comment"># int와 문자열 합치기</span>
+<span class="hljs-comment"># &quot;24시간이 모자라&quot;</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;1&quot;</span> &amp;<span class="hljs-comment">#x3C; &quot;3&quot; # 비교 가능</span>
 
-long_csv = """12, 3, "빨강"
-13, 2, "파랑"
-14, 1, "초록"
-""" # 여러 줄 문자열
-long_csv.split("\n") # 줄 단위로 자르기
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;taehee&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;kim&quot;</span> == <span class="hljs-string">&quot;taehee kim&quot;</span> <span class="hljs-comment"># 합치기</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;&quot;</span>.join([<span class="hljs-string">&quot;탐정&quot;</span>, <span class="hljs-string">&quot;토끼&quot;</span>]) == <span class="hljs-string">&quot;탐정토끼&quot;</span> <span class="hljs-comment"># 연결하기</span>
 
-assert "탐정" in foo == True # foo가 "탐정"을 포함하는지? 
-assert "https://twinstae.github.io/".startswith("https") == True # 시작하는지?
-assert "fiesta-izone.mp3".endswith(".mps") # 끝나는지?
+long_csv = <span class="hljs-string">&quot;&quot;&quot;12, 3, &quot;빨강&quot;
+13, 2, &quot;파랑&quot;
+14, 1, &quot;초록&quot;
+&quot;&quot;&quot;</span> <span class="hljs-comment"># 여러 줄 문자열</span>
+long_csv.split(<span class="hljs-string">&quot;\n&quot;</span>) <span class="hljs-comment"># 줄 단위로 자르기</span>
 
-name: str = 'kim' # 타입힌트, ' 홑 따옴표도 상관 없다.
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;탐정&quot;</span> <span class="hljs-keyword">in</span> foo == <span class="hljs-literal">True</span> <span class="hljs-comment"># foo가 &quot;탐정&quot;을 포함하는지? </span>
+<span class="hljs-comment"># 주어진 문자열로 시작하는지?</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;https://twinstae.github.io/&quot;</span>.startswith(<span class="hljs-string">&quot;https&quot;</span>) == <span class="hljs-literal">True</span>
+<span class="hljs-comment"># 주어진 문자열로 끝나는지?</span>
+<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;fiesta-izone.mp3&quot;</span>.endswith(<span class="hljs-string">&quot;.mps&quot;</span>)
 
-assert not name == True;   # 비어 있는지? PEP8 가이드 권장
-# "name != ""               # 이렇게 할 수도 있긴 하다.
+name: <span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;kim&#x27;</span> <span class="hljs-comment"># 타입힌트, &#x27; 홑 따옴표도 상관 없다.</span>
 
-print('hello, %s' % name) # format
-# 'hello, kim'
-print(f'hello, {name}')   # interpolation
-# 'hello, kim'
+<span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> name == <span class="hljs-literal">True</span>;   <span class="hljs-comment"># 비어 있는지? PEP8 가이드 권장</span>
+<span class="hljs-comment"># &quot;name != &quot;&quot;               # 이렇게 할 수도 있긴 하다.</span>
 
-print('TAEhee Kim'.lower()) # 소문자로
-# 'taehee kim'
-'    내용     \n   '.strip()  # 공백 자르기
-# '내용'
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello, %s&#x27;</span> % name) <span class="hljs-comment"># format</span>
+<span class="hljs-comment"># &#x27;hello, kim&#x27;</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;hello, <span class="hljs-subst">{name}</span>&#x27;</span>)   <span class="hljs-comment"># interpolation</span>
+<span class="hljs-comment"># &#x27;hello, kim&#x27;</span>
 
-m = re.search('([1-6])학년 ([0-9]{1,2})단원', '2학년 3단원')
-assert m.group(0) == '2학년 3단원'
-assert m.group(1) == '2'
-assert m.group(2) == '3'
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;TAEhee Kim&#x27;</span>.lower()) <span class="hljs-comment"># 소문자로</span>
+<span class="hljs-comment"># &#x27;taehee kim&#x27;</span>
+<span class="hljs-string">&#x27;    내용     \n   &#x27;</span>.strip()  <span class="hljs-comment"># 공백 자르기</span>
+<span class="hljs-comment"># &#x27;내용&#x27;</span>
+
+<span class="hljs-comment"># 메소드 체이닝</span>
+raw_text = <span class="hljs-string">&quot;    \n         TeST HeLLo WORld      \n \n \t   &quot;</span>
+raw_text.strip().lower().split(<span class="hljs-string">&quot; &quot;</span>)
+<span class="hljs-comment"># [&#x27;test&#x27;, &#x27;hello&#x27;, &#x27;world&#x27;]</span>
+
+m = re.search(<span class="hljs-string">&#x27;([1-6])학년 ([0-9]{1,2})단원&#x27;</span>, <span class="hljs-string">&#x27;2학년 3단원&#x27;</span>)
+<span class="hljs-keyword">assert</span> m.group(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;2학년 3단원&#x27;</span>
+<span class="hljs-keyword">assert</span> m.group(<span class="hljs-number">1</span>) == <span class="hljs-string">&#x27;2&#x27;</span>
+<span class="hljs-keyword">assert</span> m.group(<span class="hljs-number">2</span>) == <span class="hljs-string">&#x27;3&#x27;</span>
 </code></pre>
 <h3 id="typescript-string">TypeScript: string</h3>
-<pre><code class="language-typescript">const foo: string = "탐정토끼";
-console.log(foo.split("").reverse().join());
+<pre><code class="language-typescript">const foo: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;탐정토끼&quot;</span>;
+console.<span class="hljs-built_in">log</span>(foo.<span class="hljs-built_in">split</span>(<span class="hljs-string">&quot;&quot;</span>).<span class="hljs-built_in">reverse</span>().<span class="hljs-built_in">join</span>());
 </code></pre>
 <h3 id="rust-str-stdstring">Rust: str, std::String</h3>
-<pre><code class="language-rust">let foo = "탐정토끼";
-println!("{}", foo.chars().rev().collect::&#x3C;String>());
+<pre><code class="language-rust"><span class="hljs-keyword">let</span> <span class="hljs-variable">foo</span> = <span class="hljs-string">&quot;탐정토끼&quot;</span>;
+<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, foo.<span class="hljs-title function_ invoke__">chars</span>().<span class="hljs-title function_ invoke__">rev</span>().collect::&amp;#x3C;<span class="hljs-type">String</span>&gt;());
 </code></pre>
 <h3 id="clojure-javalangcharacter-javalangstring">Clojure: java.lang.Character, java.lang.String</h3>
-<pre><code class="language-clojure">(require '[clojure.string :as s])
-(def foo "탐정토끼")
+<pre><code class="language-clojure">(<span class="hljs-name">require</span> &#x27;[clojure.string <span class="hljs-symbol">:as</span> s])
+(<span class="hljs-keyword">def</span> <span class="hljs-title">foo</span> <span class="hljs-string">&quot;탐정토끼&quot;</span>)
 
-(count foo) ; 길이
-; 4
+(<span class="hljs-name"><span class="hljs-built_in">count</span></span> foo) <span class="hljs-comment">; 길이</span>
+<span class="hljs-comment">; 4</span>
 
-(get foo 0) ; 문자 가져오기
-; \탐
-(subs foo 1) ; 자르기. start 부터 끝까지
-;"정토끼"
-(subs foo 1 3) ; 마지막 인덱스는 미포함
-;"정토"
-(subs foo (- (count foo) 2)) ; 마지막 2글자
-;"토끼"
+(<span class="hljs-name"><span class="hljs-built_in">get</span></span> foo <span class="hljs-number">0</span>) <span class="hljs-comment">; 문자 가져오기</span>
+<span class="hljs-comment">; \탐</span>
+(<span class="hljs-name">subs</span> foo <span class="hljs-number">1</span>) <span class="hljs-comment">; 자르기. start 부터 끝까지</span>
+<span class="hljs-comment">;&quot;정토끼&quot;</span>
+(<span class="hljs-name">subs</span> foo <span class="hljs-number">1</span> <span class="hljs-number">3</span>) <span class="hljs-comment">; 마지막 인덱스는 미포함</span>
+<span class="hljs-comment">;&quot;정토&quot;</span>
+(<span class="hljs-name">subs</span> foo (<span class="hljs-name"><span class="hljs-built_in">-</span></span> (<span class="hljs-name"><span class="hljs-built_in">count</span></span> foo) <span class="hljs-number">2</span>)) <span class="hljs-comment">; 마지막 2글자</span>
+<span class="hljs-comment">;&quot;토끼&quot;</span>
 
-(print (s/reverse foo)) ; 뒤집기
+(<span class="hljs-name">print</span> (<span class="hljs-name">s/reverse</span> foo)) <span class="hljs-comment">; 뒤집기</span>
 
-(s/replace "2014/02/14" "/", "-") ; 바꾸기
-; "2014-02-14"
-(s/split "2014/02/14" "/") ; 쪼개기
-; ("2014" "02" "14")
+(<span class="hljs-name">s/replace</span> <span class="hljs-string">&quot;2014/02/14&quot;</span> <span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>) <span class="hljs-comment">; 바꾸기</span>
+<span class="hljs-comment">; &quot;2014-02-14&quot;</span>
+(<span class="hljs-name">s/split</span> <span class="hljs-string">&quot;2014/02/14&quot;</span> #<span class="hljs-string">&quot;/&quot;</span>) <span class="hljs-comment">; 쪼개기 #은 정규표현식 표시</span>
+<span class="hljs-comment">; (&quot;2014&quot; &quot;02&quot; &quot;14&quot;)</span>
 
-(def long-csv "12, 3, \"빨강\"
-13, 2, \"파랑\"
-14, 1, \"초록\"
-")
-(s/split-lines long-csv)
+(<span class="hljs-keyword">def</span> <span class="hljs-title">long-csv</span> <span class="hljs-string">&quot;12, 3, \&quot;빨강\&quot;
+13, 2, \&quot;파랑\&quot;
+14, 1, \&quot;초록\&quot;
+&quot;</span>)
+(<span class="hljs-name">s/split-lines</span> long-csv)
 
-(s/includes? foo "탐정") ; foo가 "탐정"을 포함하는지?
-(s/startswith? "https://twinstae.github.io/" "https") ; 시작하는지?
-(s/ends-with? "fiesta-izone.mp3" ".mp3") ; 끝나는지?
+(<span class="hljs-name">s/includes?</span> foo <span class="hljs-string">&quot;탐정&quot;</span>) <span class="hljs-comment">; foo가 &quot;탐정&quot;을 포함하는지?</span>
+(<span class="hljs-name">s/startswith?</span> <span class="hljs-string">&quot;https://twinstae.github.io/&quot;</span> <span class="hljs-string">&quot;https&quot;</span>) <span class="hljs-comment">; 시작하는지?</span>
+(<span class="hljs-name">s/ends-with?</span> <span class="hljs-string">&quot;fiesta-izone.mp3&quot;</span> <span class="hljs-string">&quot;.mp3&quot;</span>) <span class="hljs-comment">; 끝나는지?</span>
 
-(s/blank? foo) ; 비어있는지?
+(<span class="hljs-name">s/blank?</span> foo) <span class="hljs-comment">; 비어있는지?</span>
 
-(str "taehee" " " "kim") ; 합치기
-; "taehee kim"
-(str 24 "시간이 모자라") ; int와 문자열 합치기. 자동 형 변환.
-; "24시간이 모자라"
+(<span class="hljs-name"><span class="hljs-built_in">str</span></span> <span class="hljs-string">&quot;taehee&quot;</span> <span class="hljs-string">&quot; &quot;</span> <span class="hljs-string">&quot;kim&quot;</span>) <span class="hljs-comment">; 합치기</span>
+<span class="hljs-comment">; &quot;taehee kim&quot;</span>
+(<span class="hljs-name"><span class="hljs-built_in">str</span></span> <span class="hljs-number">24</span> <span class="hljs-string">&quot;시간이 모자라&quot;</span>) <span class="hljs-comment">; int와 문자열 합치기. 자동 형 변환.</span>
+<span class="hljs-comment">; &quot;24시간이 모자라&quot;</span>
 
-; (&#x3C; "1" "3")
-; 비교 불가 .String cannot be cast to class java.lang.Number
+<span class="hljs-comment">; (&amp;#x3C; &quot;1&quot; &quot;3&quot;)</span>
+<span class="hljs-comment">; 비교 불가 .String cannot be cast to class java.lang.Number</span>
 
-(s/join " " ["탐정" "토끼" "입니다."]) ; 붙이기
-; "탐정 토끼 입니다."
+(<span class="hljs-name">s/join</span> <span class="hljs-string">&quot; &quot;</span> [<span class="hljs-string">&quot;탐정&quot;</span> <span class="hljs-string">&quot;토끼&quot;</span> <span class="hljs-string">&quot;입니다.&quot;</span>]) <span class="hljs-comment">; 붙이기</span>
+<span class="hljs-comment">; &quot;탐정 토끼 입니다.&quot;</span>
 
-(format "hello, %s" foo) ; 포맷
-; "hello, 탐정토끼"
+(<span class="hljs-name"><span class="hljs-built_in">format</span></span> <span class="hljs-string">&quot;hello, %s&quot;</span> foo) <span class="hljs-comment">; 포맷</span>
+<span class="hljs-comment">; &quot;hello, 탐정토끼&quot;</span>
 
-(s/lower "TAEhee Kim")
-; "taehee kim"
-(s/trim "    내용     \n   ")
-; "내용"
+(<span class="hljs-name">s/lower</span> <span class="hljs-string">&quot;TAEhee Kim&quot;</span>)
+<span class="hljs-comment">; &quot;taehee kim&quot;</span>
+(<span class="hljs-name">s/trim</span> <span class="hljs-string">&quot;    내용     \n   &quot;</span>)
+<span class="hljs-comment">; &quot;내용&quot;</span>
+
+<span class="hljs-comment">; 파이프</span>
+(<span class="hljs-keyword">def</span> <span class="hljs-title">raw_text</span> <span class="hljs-string">&quot;    \n         TeST HeLLo WORld      \n \n \t   &quot;</span>)
+(<span class="hljs-name"><span class="hljs-built_in">-&gt;</span></span> raw_text s/trim s/lower-case (<span class="hljs-name">s/split</span> #<span class="hljs-string">&quot; &quot;</span>))
+<span class="hljs-comment">; [&quot;test&quot; &quot;hello&quot; &quot;world&quot;]</span>
 </code></pre>
 <h3 id="elixir-stringgrapheme-stringt">Elixir: String.grapheme(), String.t()</h3>
-<pre><code class="language-elixir">foo = "탐정토끼"
+<pre><code class="language-elixir"><span class="hljs-attribute">foo</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;탐정토끼&quot;</span>
 IO.puts String.reverse(foo)
 </code></pre><!-- HTML_TAG_END -->
 
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script></div><!-- HTML_TAG_END --></article>
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
 
 <footer class="footer svelte-uvou6c">이 블로그는 <a href="https://svelte.dev/" class="svelte-uvou6c">Svelte</a>와 <a class="secondary svelte-uvou6c" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
   <br class="svelte-uvou6c">
@@ -254,7 +335,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonMpcWQmGrWg','ScrollTopButton.56df8b9f.js', {}],['darkcheckboxWJNjcDbWzd','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttoncwClrfnzvn','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxvvVXmYLWvz','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

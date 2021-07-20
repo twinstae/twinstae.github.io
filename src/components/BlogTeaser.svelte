@@ -31,7 +31,7 @@
         </span>
       {/each}
     </div>
-    <p>{blog.frontmatter.excerpt}</p>
+    <p class="excerpt">{blog.frontmatter.excerpt}</p>
   </div>
 </a>
 {/if}
@@ -64,5 +64,9 @@
     line-height: 100%;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .excerpt {
+    font-size: 80%;
   }
 </style>

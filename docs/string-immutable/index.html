@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열은 왜 불변인가?</title><meta name="description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-immutable/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">setTimeout(()=>{
+      const codes = document.getElementsByTagName("code");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
+    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-4a8e8755.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxrGtCZVywNR"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
+  <span class="svelte-1x528h4"></span>
+</label></div></nav>
+
+<article class="container svelte-uvou6c"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1>문자열은 왜 불변인가?</h1>
+  <div><span class="hashtag">#작성 중
+        </span><span class="hashtag">#문자열
+        </span><span class="hashtag">#불변
+        </span><span class="hashtag">#함수형
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbuttonbbYsyYRZSL"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+
+
+<!-- HTML_TAG_START --><h3 id="문자열은-보통-불변입니다">문자열은 보통 불변입니다.</h3>
+<p>대부분의 언어에서 문자열은 불변(Immutable)입니다. 변하지 않는다고 하면 이해하기 어려워하는 사람들이 있을텐데. 정확하게 말하면 문자열을 수정할 때, 새로운 문자열을 복사해서 만든다는 이야기다. 이걸 Copy on Write 라고도 한다. 파이썬에서 가변(mutable)한 자료형인 List와 비교해서 알아보자.</p>
+<pre><code class="language-python"># 문자열
+a = <span class="hljs-string">&quot;hello&quot;</span>
+# 문자 <span class="hljs-symbol">List</span>. 타입은 사실 <span class="hljs-symbol">List</span>[str] 이지만...
+b = [<span class="hljs-string">&#x27;h&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>, <span class="hljs-string">&#x27;o&#x27;</span>]
+
+# 값을 복사한다.
+a_copy = a
+# 레퍼런스를 복사한다.
+b_copy = b
+
+# <span class="hljs-string">&quot;, world&quot;</span>를 뒤에 붙인다.
+a_copy += <span class="hljs-string">&quot;, world&quot;</span>
+# 마찬가지. 이번에는 겹 따옴표를 써봤다.
+b_copy += [<span class="hljs-string">&quot;,&quot;</span>, <span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;w&quot;</span>, <span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, <span class="hljs-string">&quot;l&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>]
+
+print(a)
+# <span class="hljs-string">&quot;hello&quot;</span> 원본은 그대로
+print(a_copy)
+# <span class="hljs-string">&quot;hello, world&quot;</span> 복사본은 수정됐다.
+
+print(b)
+# [<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;,&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;w&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>] 원본도 같이 변했다!!!
+print(b_copy)
+# [<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;,&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;w&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>] 
+</code></pre>
+<p>변수는 메모리에 특정한 위치를 가리키는 레퍼런스를 들고 있다. 그런데 불변인 값은 메모리의 내용을 수정할 수 없다. 그래서 값을 수정하면 메모리에 새로운 위치에 값을 복사해서 쓰고, 변수에 새로운 위치를 가리키는 레퍼런스를 넣어놓는다. a_copy를 수정해도 a는 예전 위치를 가리키고 있기 때문에, 아무런 영향이 없다.</p>
+<p>반면에 리스트는 메모리의 값을 수정할 수 있어서, 항상 같은 위치를 가리키고 있다. 그러니 복사한 다른 변수가 값을 수정하면 원본도 바뀌는 것입니다.</p>
+<h3 id="불변성의-성능-이슈">불변성의 성능 이슈.</h3>
+<p>사실 불변 자료형은 함수형 프로그래밍에서는 많이 쓰지만, 다른 언어에는 흔하지 않습니다. 파이썬에서도 List는 가변입니다.</p>
+<p>불변 자료형은 매번 값을 새로 쓰기 때문에 성능에 불리한 면이 있었습니다. 내가 책을 하나 새로 샀다고 합시다. 가변 책장이라면 책을 새로 꽂으면 끝납니다. 하지만 불변 책장에서는 책장을 새로 만들어서 기존에 있던 책들을 모두 옮겨야 합니다...</p>
+<p>실제로 매우 많은 문자열을 합칠 때, 이 문제는 심각한 고민입니다. Python에서 문자열을 합칠 때 앞에서 본 + 연산자를 쓸 수 있습니다. 한 두 개는 이래도 괜찮지만, 문자열 수백 수천 개를 합칠 때에는 같은 문자열을 지우고 만들기를 수백 수천 번 반복하니 비효율적일 수 밖에 없습니다.</p>
+<p>그래서 Python에서는 이렇게 많은 문자열을 합칠 때에는 join을 쓰기를 권장합니다. join은 미리 모든 문자열을 합칠 수 있는 공간을 만들어두고, 한 번에 새 문자열을 만들기 때문에 빠릅니다. JS도 비슷하게 for이나 reduce보다 join을 사용하라 합니다. Java에서는 StringBuilder나 StringBuffer를 추천합니다.</p>
+<pre><code class="language-python"><span class="hljs-attr">very_large_data_list</span> = [<span class="hljs-string">&quot;장원영&quot;</span>, <span class="hljs-string">&quot;홍다희&quot;</span>, <span class="hljs-string">&quot;나북희&quot;</span>, ..., <span class="hljs-string">&quot;김민주&quot;</span>]
+
+<span class="hljs-attr">result_1</span> = <span class="hljs-string">&quot;&quot;</span>
+for name <span class="hljs-keyword">in</span> very_large_data_list:
+    <span class="hljs-comment"># 합쳐서 새 문자열을 만든다.</span>
+    <span class="hljs-attr">line</span> = name + <span class="hljs-string">&quot;\n&quot;</span>
+    <span class="hljs-comment"># result를 지우고 새 문자열을 또 만든다.</span>
+    result_1 += line
+
+<span class="hljs-comment"># 한 번에 모든 문자열을 합친다.</span>
+<span class="hljs-attr">result_2</span> = <span class="hljs-string">&quot;\n&quot;</span>.join(very_large_data_list)
+
+</code></pre>
+<p>하지만 애초에 String이 가변이었다면 이런 고민은 하지 않아도 됩니다. 그러면 왜 불변성을 유지하는 걸까요?</p>
+<h3 id="불변-자료구조는-해싱-캐싱할-수-있고-안전하다">불변 자료구조는 해싱, 캐싱할 수 있고, 안전하다.</h3>
+<p>앞서 말했듯이 함수형 프로그래밍에서는 적극적으로 불변 자료구조를 쓴다. 심지어 Clojure나 Elixir 같은 언어에서는 기본적으로 불변 Linked List를 사용한다. (대부분 주류 언어에서는 ArrayList를 쓴다.) 흔히 함수형의 장점이라 알려진 것들이 불변성의 장점인 경우가 많다.</p>
+<p>먼저 불변 값은 쉽게 Hash key로 쓸 수 있다. 문자열은 보통 HashMap이나 dict, HashSet 등등에서, key로 많이 쓰인다. 특히 js의 객체는 모두 HashTable로 되어 있다. 문자열이 가변이라면 매번 hash 값이 변할 수 있어서 믿을 수 없을 것입니다. 하지만 불변하는 값은 hash를 한 번 계산해두면 변할 일이 없어서 안심할 수 있다.</p>
+<p>그래서 불변 자료구조는 캐싱으로 재사용하기 쉽다. 똑같은 값을 가진 새로운 데이터를 만들 때, 메모리에 새로 공간을 만들 필요가 없다. 원래 있던 변수 중에 똑같은 값을 찾아서 메모리에 똑같은 위치를 가리키는 레퍼런스만 달아주면 끝입니다. 예를 들어 "Hello, World" 라는 문자열 1천 개를 만든다면 가변 자료구조는 1천 개의 공간이 필요하지만, 불변 자료구조는 원본 하나 저장할 공간만 있으면 된다. 앞서 말한 hash함수를 이용하면 O(1) 만에 값을 찾을 수 있으니 성능 상으로도 유리하다.</p>
+<p>또 멀티 쓰레드나 동시성을 쉽게 다룰 수 있다. 요즘처럼 멀티코어가 당연해지는 세상에서는 정말 중요한 성질입니다. 가변 상태는 디버깅하기 매우 귀찮기 때문입니다.</p>
+<p>이런 이유로 파이썬에서는 str 뿐만 아니라 int, float, bool, tuple 같은 많은 기본 데이터 타입을 모두 불변 객체로 쓰고 있다.</p>
+<p>이유는 이 밖에도 더 있겠지만. 일단 "불변이 생각보다 나쁘지 않구나, 함수형 언어도 좀 배워봐야겠다"는 정도만 알고 넘어가자.</p><!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-uvou6c">이 블로그는 <a href="https://svelte.dev/" class="svelte-uvou6c">Svelte</a>와 <a class="secondary svelte-uvou6c" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br class="svelte-uvou6c">
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-uvou6c">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br class="svelte-uvou6c">
+  <a href="https://pages.github.com/" class="svelte-uvou6c">Github Pages</a>로 호스팅하고 있습니다.
+  <br class="svelte-uvou6c">
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    <script type="text/javascript">
+            var requestIdleCallback = window.requestIdleCallback ||
+            function (cb) {
+              var s = Date.now();
+              return setTimeout(function () {
+                cb({
+                  didTimeout: false,
+                  timeRemaining: function () {
+                    return Math.max(0, 50 - (Date.now() - s));
+                  },
+                });
+              }, 1);
+            };
+            if (!('IntersectionObserver' in window)) {
+                var script = document.createElement("script");
+                script.src = "/_elderjs/static/intersection-observer.js";
+                document.getElementsByTagName('head')[0].appendChild(script);
+            };
+      </script>
+      
+    <script type="module">
+      
+let IO, $$COMPONENTS={};
+const $$ejs = async (arr)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+
+  for (let i = 0; i < arr.length; i++) {
+    $$COMPONENTS[arr[i][0]] = {
+      elem: document.getElementById(arr[i][0]),
+      component: arr[i][1],
+      props: $ejs(arr[i][2]) || {},
+    };
+
+    if(typeof  $$COMPONENTS[arr[i][0]].props === 'string'){
+      const propsFile = await import(prefix+'/props/'+$$COMPONENTS[arr[i][0]].props);
+      $$COMPONENTS[arr[i][0]].props = $ejs(propsFile.default);
+    };
+
+    if (!IO) {
+      IO = new IntersectionObserver((entries, observer) => {
+        var objK = Object.keys(entries);
+        var objKl = objK.length;
+        var objKi = 0;
+        for (; objKi < objKl; objKi++) {
+          const entry = entries[objK[objKi]];
+          if (entry.isIntersecting) {
+            const selected = $$COMPONENTS[entry.target.id];
+            observer.unobserve(selected.elem);
+            import(prefix + '/svelte/components/' + selected.component).then((comp)=>{
+                new comp.default({ 
+                  target: selected.elem,
+                  props: selected.props,
+                  hydrate: true
+                });
+            });
+          }
+        }
+      });
+    };
+    IO.observe($$COMPONENTS[arr[i][0]].elem);
+  }
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs([['scrolltopbuttonbbYsyYRZSL','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxrGtCZVywNR','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+    
+    
+    </body></html>
