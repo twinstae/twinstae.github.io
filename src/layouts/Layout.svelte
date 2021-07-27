@@ -1,7 +1,7 @@
 <script>
   import style from '../../assets/style.css';
   import paper from '../../assets/paper.css';
-  import atom_one_dark from '../../assets/atom-one-dark.min.css';
+  import katex from '../../assets/katex.min.css';
   import hljs_badge from '../../assets/hljs-badge.css';
 
   import DarkCheckBox from "../components/DarkCheckBox.svelte";

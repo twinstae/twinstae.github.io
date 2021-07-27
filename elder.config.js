@@ -2,12 +2,11 @@ require('dotenv').config();
 const frontmatter = require('remark-frontmatter');
 const extractFrontmatter = require('remark-extract-frontmatter');
 const yaml = require('yaml');
+
 const remarkSlug = require('remark-slug');
-const remarkHtml = require('remark-html');
 const remarkMath = require('remark-math');
-const remark2rehype = require('remark-rehype');
-const rehypeKatex = require('rehype-katex');
-const rehypeStringify = require('rehype-stringify');
+const remarkHtmlKatex = require('remark-html-katex');
+const remarkHtml = require('remark-html');
 
 module.exports = {
   origin: 'https://twinstae.github.io', // TODO: update this.
@@ -39,17 +38,12 @@ module.exports = {
         frontmatter, // 'remark-frontmatter' package
         [extractFrontmatter, { name: 'frontmatter', yaml: yaml.parse }], // 'remark-extract-frontmatter' and 'yaml' packages.
         remarkSlug, // 'remark-slug' package
-        remarkHtml, // 'remark-html' package
-     /* remarkMath,
-        remark2rehype,
-        rehypeKatex,
-        rehypeStringify, */
+        remarkMath,
+        remarkHtmlKatex,
+        remarkHtml,
       ],
       useSyntaxHighlighting: {
-        theme: 'material-theme-darker'
-      // available themes: https://github.com/shikijs/shiki/blob/master/packages/themes/README.md#literal-values
-      // - try material-theme-darker
-      // theme is the only option available - for now.
+        theme: 'material-theme-darker',
       },
       useTableOfContents: true,
     },

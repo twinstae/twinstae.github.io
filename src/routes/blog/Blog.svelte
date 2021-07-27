@@ -4,7 +4,6 @@ import TableOfContent from "../../components/TableOfContent.svelte";
 
   export let data, request; // data is mainly being populated from the @elderjs/plugin-markdown
   const { html, frontmatter, tocTree } = data;
-
 </script>
 
 <svelte:head>
