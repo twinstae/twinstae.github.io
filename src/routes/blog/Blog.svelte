@@ -1,21 +1,10 @@
 <script>
 import ScrollTopButton from "../../components/ScrollTopButton.svelte";
 import TableOfContent from "../../components/TableOfContent.svelte";
-const hljs = require("highlight.js");
 
   export let data, request; // data is mainly being populated from the @elderjs/plugin-markdown
   const { html, frontmatter, tocTree } = data;
 
-  function highlight_code(html){
-    const match_iter = html.matchAll(/<pre><code[^>]+>([^<]+)<\/code><\/pre>/g);
-    const match_array = [...match_iter];
-    const hl_result = match_array.map(([_, content])=> [content, hljs.highlightAuto(content).value]);
-
-    return hl_result.reduce((acc, [content, result]) => acc.replace(content, result)
-    , html);
-  }
-
-  const html_after_highlight = highlight_code(html);
 </script>
 
 <svelte:head>
@@ -59,7 +48,7 @@ const hljs = require("highlight.js");
 {/if}
 
 {#if html}
-  {@html html_after_highlight}
+  {@html html}
 {:else}
   <h1>Oops!! Markdown not found!</h1>
 {/if}

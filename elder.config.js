@@ -40,11 +40,17 @@ module.exports = {
         [extractFrontmatter, { name: 'frontmatter', yaml: yaml.parse }], // 'remark-extract-frontmatter' and 'yaml' packages.
         remarkSlug, // 'remark-slug' package
         remarkHtml, // 'remark-html' package
-        remarkMath,
+     /* remarkMath,
         remark2rehype,
         rehypeKatex,
-        rehypeStringify,
+        rehypeStringify, */
       ],
+      useSyntaxHighlighting: {
+        theme: 'material-theme-darker'
+      // available themes: https://github.com/shikijs/shiki/blob/master/packages/themes/README.md#literal-values
+      // - try material-theme-darker
+      // theme is the only option available - for now.
+      },
       useTableOfContents: true,
     },
     '@elderjs/plugin-browser-reload': {
