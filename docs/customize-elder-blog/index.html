@@ -40,7 +40,7 @@
   visibility: visible;
   opacity: 1;
 }</style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxjSmwjnjmfn"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxtkZWSZrFLk"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -57,9 +57,23 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonrLGVvWwryq"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonbywFXykNDc"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
-
+<nav class="svelte-au67cy"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#elderjs-프로젝트-구조" class="svelte-au67cy">Elder.js 프로젝트 구조
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#새로운-글쓰기-불필요한-글-지우기" class="svelte-au67cy">새로운 글쓰기. 불필요한 글 지우기.
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#게시글-목록-날짜-순으로-정렬하기" class="svelte-au67cy">게시글 목록 날짜 순으로 정렬하기
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#게시글-목록에-날짜-달기" class="svelte-au67cy">게시글 목록에 날짜 달기
+          <ol>
+          </ol></a>
+      </li></ol></div>
+</nav>
 
 <!-- HTML_TAG_START --><p>이번에는 Elder.js의 구조를 살펴보고 간단하게 레이아웃을 수정해보겠습니다.</p>
 <p>저번에는 Elder.js 템플릿을 가져와서 GitHub Pages에 배포도 해봤습니다. 이제 템플릿을 커스텀해서, 나만의 블로그를 만들 시간입니다.</p>
@@ -117,14 +131,13 @@
 <p>처음 배울 때에는 원래 정신이 없기 마련입니다. 일단 내게 필요한 기능을 만드는데 필요한 부분만 조금씩 배워보겠습니다.</p>
 <h2 id="새로운-글쓰기-불필요한-글-지우기">새로운 글쓰기. 불필요한 글 지우기.</h2>
 <p>먼저 src/routes/blog/route.js 를 열어보면 다음과 같은 내용이 보이실 겁니다.</p>
-<pre><code class="language-javascript">module.exports = {
- <span class="hljs-comment">// 마크다운 플러그인이</span>
- <span class="hljs-comment">// data와 all의 내용을 채워준다는 설명</span>
-  data: {},
-  <span class="hljs-attr">all</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> [],
-  <span class="hljs-attr">permalink</span>: <span class="hljs-string">&#x27;/:slug/&#x27;</span>,
-};
-</code></pre>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">module.exports</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #89DDFF"> </span><span style="color: #545454">// 마크다운 플러그인이</span></span>
+<span class="line"><span style="color: #89DDFF"> </span><span style="color: #545454">// data와 all의 내용을 채워준다는 설명</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">data</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{},</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #82AAFF">all</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">()</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #EEFFFF"> []</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">permalink</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">/:slug/</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #89DDFF">};</span></span></code></pre>
 <p>일단 permanent link는 앞으로 몇 년 동안 이 페이지로 접근할 수 있는 URL은 이곳임을 알려주는 표시입니다. 검색엔진은 이 URL을 믿고 사람들을 데려오기 때문에 때문에 마음대로 permalink가 바뀌면 안 됩니다. <span class="badge tooltip" style="background-color: var(--primary)">
      SEO
      <span class="tooltiptext">Search Engine Optimization 검색엔진 최적화<br> 사이트를 검색엔진이 읽기 쉽게 구조화하는 것.</span>
@@ -132,35 +145,32 @@
 <p>여기서는 permanlink 가 /:slug/ 모양이라고 템플릿을 만들어놨습니다. 여기서 slug는 url에 쓸 수 있게 띄어쓰기 대신 - 등으로 연결한 글 제목인데요. 영어로 쓴 마크다운 파일 제목이 slug가 됩니다. 예를들어 <code>getting-started.md</code> 파일은 .md 확장자를 빼버리고 <code>/getting-started/</code>가 url이 됩니다. 중요한 건 파일 이름을 일단 영문 알파벳으로 해줘야한다는 점입니다.</p>
 <p>그러면 Blog.svelte를 살펴보러 가겠습니다. data와 all을 마크다운 플러그인이 어떻게 채워줬을까요?</p>
 <p>코드를 열어보시면 맨 위에 script가 있습니다.</p>
-<pre><code class="language-html">&amp;#x3C;script&gt;
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> <span class="hljs-class"><span class="hljs-keyword">data</span>, request; // <span class="hljs-keyword">data</span>의 내용은 markdown plugin이 외부에서 넣어줌.</span>
-  const { html, frontmatter } = <span class="hljs-class"><span class="hljs-keyword">data</span>;</span>
-&amp;#x3C;/script&gt;
-</code></pre>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">export</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> request</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// data의 내용은 markdown plugin이 외부에서 넣어줌.</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> html</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
 <p>export let 으로 data와 request를 선언해놓으면, 마크다운 플러그인이 값을 넣어줍니다. data를 구조 분해할당해서 html과 frontmatter 를 꺼내오는데요. 구조 분해 할당을 잘 모르신다면 다음과 같은 코드를 줄여 쓴거라고 생각하시면 됩니다.</p>
-<pre><code class="language-javascript"><span class="hljs-comment">// 전통적인 방법.</span>
-<span class="hljs-keyword">const</span> html = <span class="hljs-keyword">data</span>.html;
-<span class="hljs-keyword">const</span> frontmatter = <span class="hljs-keyword">data</span>.html;
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454">// 전통적인 방법.</span></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> html </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">html</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">html</span><span style="color: #89DDFF">;</span></span>
 
-<span class="hljs-comment">// 구조 분해 할당</span>
-<span class="hljs-keyword">const</span> { html , frontmatter } = <span class="hljs-keyword">data</span>;
-</code></pre>
+<span class="line"><span style="color: #545454">// 구조 분해 할당</span></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> html </span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">;</span></span></code></pre>
 <p>그러면 html이랑 frontmatter는 어디서 왔을까요? 마크다운 플러그인이 blog 폴더에 있는 <code>.md</code> 파일들을 찾아서 변환한 겁니다.</p>
 <p><code>getting-started.md</code> 마크다운 파일을 하나 열어보면 이렇게 생겼습니다.</p>
 <p>위에 title부터 author 까지가 frontmatter입니다. 그 다음에 이어지는 본문 마크다운이 html로 변환됩니다. 마크다운은 html을 편리하게 쓰기 위한 문법입니다. 인터넷에 검색해보시면 마크다운 문법을 쓰는 방법을 설명한 글이 많으니, 잘 모르신다면 이번 기회에 한 번 배워보세요.</p>
-<pre><code>---
-title: 'Getting Started with Elder.js'
-excerpt: 'You have the starter template of Elder.js running. So what is next? This guide will help you explore the project.'
-date: '2020-03-16T05:35:07.322Z'
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">---
+title: &#39;Getting Started with Elder.js&#39;
+excerpt: &#39;You have the starter template of Elder.js running. So what is next? This guide will help you explore the project.&#39;
+date: &#39;2020-03-16T05:35:07.322Z&#39;
 author: Nick Reese
 ---
 
-Sweet! So you've got the Elder.js starter template up and running. What's next?
+Sweet! So you&#39;ve got the Elder.js starter template up and running. What&#39;s next?
 
 ## 4 Routes To Explore
 
-This project is structured to follow the required Elder.js folder structure which you can see below, but in short you've got several routes in the `./src/routes/` folder.
-</code></pre>
+This project is structured to follow the required Elder.js folder structure which you can see below, but in short you&#39;ve got several routes in the `./src/routes/` folder.</span></span></code></pre>
 <p>그러면 이렇게 변환한 html과 frontmatter로 뭘 어떻게 하는 걸까요? 다시 <code>Blog.svelte</code>로 돌아가 봅시다.</p>
 <p><code>&#x3C;style></code> 태그를 지나치면 <code>&#x3C;svelte:head></code>가 나옵니다. 이 친구는 역시 검색엔진에게 이런저런 정보를 알려주기 위한 정보를 html header에 추가해줍니다.</p>
 <p><code>&#x3C;title></code>은 말 그대로 글의 제목입니다. 탭에 제목이 뜨게 되고, frontmatter에 적어놨던 title을 가져옵니다. svelte에서는 html에 js 값을 넣을 때 {}로 감싸줍니다. 예를 들어 title에 값을 채워넣으면 다음과 같이 렌더링될 겁니다.</p>
@@ -168,24 +178,24 @@ This project is structured to follow the required Elder.js folder structure whic
 <p>다음으로 <code>&#x3C;meta name="description"</code>은 페이지가 어떤 내용인지 설명합니다. 여기서는 frontmatter에 적어놨던 excerpt를 가져옵니다. excerpt는 발췌라는 뜻인데. 보통 글의 첫 부분 내용을 가져옵니다. 검색엔진에 미리보기로 뜨는 그 내용입니다.</p>
 <p>마지막으로 <code>&#x3C;link></code>는 아까 정해뒀던 permanlink를 넣어줍니다. 검색엔진에게 premanlink는 이거라고 알려주는 부분입니다.</p>
 <p>그 다음은 이제 화면의 내용을 HTML로 본격적으로 그리게 됩니다.</p>
-<pre><code class="language-html"><span class="language-xml"><span class="hljs-symbol">&amp;#x3C;</span>a href=&quot;/&quot;&gt;<span class="hljs-symbol">&amp;#x26;</span>LeftArrow; Home<span class="hljs-symbol">&amp;#x3C;</span>/a&gt; // 블로그 홈으로 돌아가기
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">&amp;LeftArrow; Home</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF"> // 블로그 홈으로 돌아가기</span></span>
 
-<span class="hljs-symbol">&amp;#x3C;</span>div class=&quot;title&quot;&gt;
-  <span class="hljs-symbol">&amp;#x3C;</span>h1&gt;</span><span class="hljs-template-variable">{frontmatter.title}</span><span class="language-xml"><span class="hljs-symbol">&amp;#x3C;</span>/h1&gt; // 제목
-  </span><span class="hljs-template-tag">{#<span class="hljs-name">if</span> frontmatter.author}</span><span class="language-xml"><span class="hljs-symbol">&amp;#x3C;</span>small&gt;By </span><span class="hljs-template-variable">{frontmatter.author}</span><span class="language-xml"><span class="hljs-symbol">&amp;#x3C;</span>/small&gt;</span><span class="hljs-template-tag">{/<span class="hljs-name">if</span>}</span><span class="language-xml"> // 글쓴이가 있으면 표시
-<span class="hljs-symbol">&amp;#x3C;</span>/div&gt;
+<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">div</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">class</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">title</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">{frontmatter.title}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF"> // 제목</span></span>
+<span class="line"><span style="color: #EEFFFF">  {#if frontmatter.author}</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">small</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">By {frontmatter.author}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">small</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">{/if} // 글쓴이가 있으면 표시</span></span>
+<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">div</span><span style="color: #89DDFF">&gt;</span></span>
 
-</span><span class="hljs-template-tag">{#<span class="hljs-name">if</span> html}</span><span class="language-xml"> // html이 있으면
-  </span><span class="hljs-template-variable">{@html html}</span><span class="language-xml"> // html을 표시
-</span><span class="hljs-template-variable">{:else}</span><span class="language-xml">
-  <span class="hljs-symbol">&amp;#x3C;</span>h1&gt;Oops!! Markdown not found!<span class="hljs-symbol">&amp;#x3C;</span>/h1&gt;
-</span><span class="hljs-template-tag">{/<span class="hljs-name">if</span>}</span><span class="language-xml">
-</span></code></pre>
+<span class="line"><span style="color: #EEFFFF">{#if html} // html이 있으면</span></span>
+<span class="line"><span style="color: #EEFFFF">  {@html html} // html을 표시</span></span>
+<span class="line"><span style="color: #EEFFFF">{:else}</span></span>
+<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">Oops!! Markdown not found!</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #EEFFFF">{/if}</span></span></code></pre>
 <p>여기서 중요한 친구는 {#if 조건} 내용 {/if} 구문입니다. 스벨트는 옛날 템플릿 언어들을 닮았습니다. html에 리액트처럼 ? 삼항 연산자나 &#x26;&#x26; 문을 쓰지 않고, 이렇게 if 템플릿 안에 html을 넣어줍니다.</p>
 <p>마찬가지로 frontmatter에서 title과 author를 꺼내서 넣었고요. 아까 같이 data에서 꺼냈던 html도 넣어줬습니다.</p>
 <p>@html 은 html을 있는 그대로 삽입하기 위한 명령어입니다. 시험삼아 @html을 지우고 npm run dev로 서버를 실행해보세요. 글로 들어가면 렌더링 되지 않은 HTML 코드 자체가 보일 겁니다. @html이 있어야 html을 내용 그대로 삽입할 수 있습니다.</p>
 <h2 id="게시글-목록-날짜-순으로-정렬하기">게시글 목록 날짜 순으로 정렬하기</h2>
-<h2 id="게시글-목록에-날짜-달기">게시글 목록에 날짜 달기</h2><!-- HTML_TAG_END -->
+<h2 id="게시글-목록에-날짜-달기">게시글 목록에 날짜 달기</h2>
+<!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
@@ -264,7 +274,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonrLGVvWwryq','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxjSmwjnjmfn','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonbywFXykNDc','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxtkZWSZrFLk','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

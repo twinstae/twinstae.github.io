@@ -14,7 +14,7 @@
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-b1b8cda3.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxWYqjlFtprF"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxWlrwNgLNkn"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -31,9 +31,14 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonjRWWMkxbKC"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonVqDlgQSKbV"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
-
+<nav class="svelte-au67cy"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#프로그래밍-언어별-string-표준-라이브러리" class="svelte-au67cy">프로그래밍 언어별 String 표준 라이브러리
+          <ol><li style="font-size: 1rem;"><a href="#java-char-char-string" class="svelte-au67cy">Java: char, Char, String</a></li><li style="font-size: 1rem;"><a href="#python-str" class="svelte-au67cy">Python: str</a></li><li style="font-size: 1rem;"><a href="#typescript-string" class="svelte-au67cy">TypeScript: string</a></li><li style="font-size: 1rem;"><a href="#rust-str-stdstring" class="svelte-au67cy">Rust: str, std::String</a></li><li style="font-size: 1rem;"><a href="#clojure-javalangcharacter-javalangstring" class="svelte-au67cy">Clojure: java.lang.Character, java.lang.String</a></li><li style="font-size: 1rem;"><a href="#elixir-stringgrapheme-stringt" class="svelte-au67cy">Elixir: String.grapheme(), String.t()</a></li>
+          </ol></a>
+      </li></ol></div>
+</nav>
 
 <!-- HTML_TAG_START --><p>std 시리즈에서는 서로 다른 언어들의 표준 라이브러리와 자료형, 문법을 비교해보고자합니다.</p>
 <p>std는 standard 표준의 약자로, 보통 그 언어의 표준 라이브러리를 std라고 부릅니다. 언어마다 표준은 다르며, 각자 나름대로 그런 표준을 선택한 이유와 배경이 있습니다. 여기서는 다양한 언어들의 표준 라이브러리로 대표적인 작업을 처리하는 예시 코드를 보여드립니다. 직접 REPL 등에 하나씩 쳐보시면서 익혀보시면 더욱 좋겠죠.</p>
@@ -44,219 +49,214 @@
 </ul>
 <h2 id="프로그래밍-언어별-string-표준-라이브러리">프로그래밍 언어별 String 표준 라이브러리</h2>
 <h3 id="java-char-char-string">Java: char, Char, String</h3>
-<pre><code class="language-java">String foo = <span class="hljs-string">&quot;탐정토끼&quot;</span>;
-char f = <span class="hljs-string">&#x27;탐&#x27;</span>; <span class="hljs-regexp">//</span> 글자와 String을 구분한다.
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #C792EA">char</span><span style="color: #EEFFFF"> f </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 글자와 String을 구분한다.</span></span>
 
-String foo_copy = foo;
-foo_copy += <span class="hljs-string">&quot;입니다.&quot;</span>;
-System.out.println(foo);
-<span class="hljs-regexp">//</span> 탐정토끼  &amp;<span class="hljs-comment">#x3C;- 원래 값은 불변</span>
-System.out.println(foo_copy);
-<span class="hljs-regexp">//</span> 탐정토끼입니다. 
+<span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> foo_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">입니다.</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #EEFFFF">System</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">out</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">println</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #545454">// 탐정토끼  &lt;- 원래 값은 불변</span></span>
+<span class="line"><span style="color: #EEFFFF">System</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">out</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">println</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo_copy</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #545454">// 탐정토끼입니다. </span></span>
 
-<span class="hljs-regexp">//</span> 길이
-assertEqual(foo.length(), <span class="hljs-number">4</span>);
+<span class="line"><span style="color: #545454">// 길이</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">length</span><span style="color: #89DDFF">(),</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">4</span><span style="color: #89DDFF">);</span></span>
 
-assertEqual(foo.charAt(<span class="hljs-number">0</span>), <span class="hljs-string">&#x27;탐&#x27;</span>);
-assertEqual(foo.substring(<span class="hljs-number">1</span>), <span class="hljs-string">&quot;정토끼&quot;</span>);
-assertEqual(foo.substring(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>), <span class="hljs-string">&quot;정토&quot;</span>); <span class="hljs-regexp">//</span> 마지막 인덱스 미포함
-assertEqual(foo.substring(foo.length() - <span class="hljs-number">2</span>), <span class="hljs-string">&quot;토끼&quot;</span>); <span class="hljs-regexp">//</span> 마지막 <span class="hljs-number">2</span> 글자
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">charAt</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">substring</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">substring</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">3</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">정토</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 마지막 인덱스 미포함</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">substring</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">length</span><span style="color: #89DDFF">()</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">-</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 마지막 2 글자</span></span>
 
-<span class="hljs-regexp">//</span> 뒤집기
-StringBuffer sb = new StringBuffer(str);
-String reversedFoo = sb.reverse().toString();
-System.out.println(reversedFoo);
+<span class="line"><span style="color: #545454">// 뒤집기</span></span>
+<span class="line"><span style="color: #C792EA">StringBuffer</span><span style="color: #EEFFFF"> sb </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">new</span><span style="color: #EEFFFF"> </span><span style="color: #82AAFF">StringBuffer</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">str</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> reversedFoo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> sb</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">reverse</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">toString</span><span style="color: #89DDFF">();</span></span>
+<span class="line"><span style="color: #EEFFFF">System</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">out</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">println</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">reversedFoo</span><span style="color: #89DDFF">);</span></span>
 
-<span class="hljs-regexp">//</span> 바꾸기
-assertEqual(<span class="hljs-string">&quot;2014/02/14&quot;</span>.replaceAll(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>), <span class="hljs-string">&quot;2014-02-14&quot;</span>);
-<span class="hljs-regexp">//</span> 쪼개기
-<span class="hljs-keyword">for</span> (String item: <span class="hljs-string">&quot;2014/02/14&quot;</span>.split(<span class="hljs-string">&quot;/&quot;</span>)){
-  System.out.println(item);
-}
-assertEqual(<span class="hljs-string">&quot;2014/02/14&quot;</span>.split(<span class="hljs-string">&quot;/&quot;</span>), [<span class="hljs-string">&quot;2014&quot;</span>, <span class="hljs-string">&quot;02&quot;</span>, <span class="hljs-string">&quot;14&quot;</span>]);
+<span class="line"><span style="color: #545454">// 바꾸기</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">replaceAll</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">-</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014-02-14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #545454">// 쪼개기</span></span>
+<span class="line"><span style="color: #89DDFF">for</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">(</span><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> item</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)){</span></span>
+<span class="line"><span style="color: #EEFFFF">  System</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">out</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">println</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">item</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">02</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]);</span></span>
 
-assertEqual(String.valueOf(<span class="hljs-number">24</span>) + <span class="hljs-string">&quot;시간이 모자라&quot;</span>, <span class="hljs-string">&quot;24시간이 모자라&quot;</span>);
-<span class="hljs-regexp">//</span> <span class="hljs-string">&quot;1&quot;</span> &amp;<span class="hljs-comment">#x3C; &quot;3&quot; &amp;#x3C;- 비교 불가</span>
-<span class="hljs-regexp">//</span> error: bad operand types <span class="hljs-keyword">for</span> binary operator <span class="hljs-string">&#x27;&amp;#x3C;&#x27;</span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">valueOf</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">24</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">시간이 모자라</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">24시간이 모자라</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #545454">// &quot;1&quot; &lt; &quot;3&quot; &lt;- 비교 불가</span></span>
+<span class="line"><span style="color: #545454">// error: bad operand types for binary operator &#39;&lt;&#39;</span></span>
 
-assertEqual(<span class="hljs-string">&quot;taehee&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;kim&quot;</span>, <span class="hljs-string">&quot;taehee kim&quot;</span>); <span class="hljs-regexp">//</span> 합치기
-String[] arr = new String[] {<span class="hljs-string">&quot;탐정&quot;</span>, <span class="hljs-string">&quot;토끼&quot;</span>};
-assertEqual(String.join(<span class="hljs-string">&quot;&quot;</span>, arr), <span class="hljs-string">&quot;탐정토끼&quot;</span>);
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 합치기</span></span>
+<span class="line"><span style="color: #C792EA">String</span><span style="color: #89DDFF">[]</span><span style="color: #EEFFFF"> arr </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">new</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">String</span><span style="color: #89DDFF">[]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">};</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">join</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> arr</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span></span>
 
-String html = <span class="hljs-string">&quot;&quot;&quot;
-  &amp;#x3C;html&gt;
-    &amp;#x3C;body&gt;
-      &amp;#x3C;p&gt;Hello, world&amp;#x3C;/p&gt;
-    &amp;#x3C;/body&gt;
-  &amp;#x3C;/html&gt;
-&quot;&quot;&quot;</span>; <span class="hljs-regexp">//</span> 자바<span class="hljs-number">15</span>부터 가능
+<span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> html </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;&quot;&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">  &lt;html&gt;</span></span>
+<span class="line"><span style="color: #C3E88D">    &lt;body&gt;</span></span>
+<span class="line"><span style="color: #C3E88D">      &lt;p&gt;Hello, world&lt;/p&gt;</span></span>
+<span class="line"><span style="color: #C3E88D">    &lt;/body&gt;</span></span>
+<span class="line"><span style="color: #C3E88D">  &lt;/html&gt;</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;&quot;&quot;</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 자바15부터 가능</span></span>
 
-<span class="hljs-regexp">//</span> 주어진 문자열을 포함하는지?
-assertTrue(foo.contains(<span class="hljs-string">&quot;탐정&quot;</span>));
+<span class="line"><span style="color: #545454">// 주어진 문자열을 포함하는지?</span></span>
+<span class="line"><span style="color: #82AAFF">assertTrue</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">contains</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">));</span></span>
 
-<span class="hljs-regexp">//</span> 주어진 문자열로 시작하는지?
-assertTrue(<span class="hljs-string">&quot;https://twinstae.github.io/&quot;</span>.startswith(<span class="hljs-string">&quot;https&quot;</span>));
-<span class="hljs-regexp">//</span> 주어진 문자열로 끝나는지?
-assertTrue(<span class="hljs-string">&quot;fiesta-izone.mp3&quot;</span>.endswith(<span class="hljs-string">&quot;.mps&quot;</span>));
+<span class="line"><span style="color: #545454">// 주어진 문자열로 시작하는지?</span></span>
+<span class="line"><span style="color: #82AAFF">assertTrue</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https://twinstae.github.io/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">startswith</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">));</span></span>
+<span class="line"><span style="color: #545454">// 주어진 문자열로 끝나는지?</span></span>
+<span class="line"><span style="color: #82AAFF">assertTrue</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">fiesta-izone.mp3</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">endswith</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">.mps</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">));</span></span>
 
-String name = <span class="hljs-string">&quot;kim&quot;</span>;
-<span class="hljs-regexp">//</span> 비어있는지?
-assertFalse(name.isBlank());
+<span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> name </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #545454">// 비어있는지?</span></span>
+<span class="line"><span style="color: #82AAFF">assertFalse</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">name</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">isBlank</span><span style="color: #89DDFF">());</span></span>
 
-assertEqual(String.format(<span class="hljs-string">&quot;hello, %s&quot;</span>, name), <span class="hljs-string">&quot;hello, kim&quot;</span>);
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">format</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">hello, %s</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> name</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">hello, kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">);</span></span>
 
-<span class="hljs-regexp">//</span> 소문자로
-assertEqual(<span class="hljs-string">&#x27;TAEhee Kim&#x27;</span>.toLowerCase(), <span class="hljs-string">&quot;taehee kim&quot;</span>) 
-<span class="hljs-regexp">//</span> 공백 자르기
-assertEqual(<span class="hljs-string">&#x27;    내용     \n   &#x27;</span>.trim(), <span class="hljs-string">&quot;내용&quot;</span>)
+<span class="line"><span style="color: #545454">// 소문자로</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">TAEhee Kim</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toLowerCase</span><span style="color: #89DDFF">(),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span></span>
+<span class="line"><span style="color: #545454">// 공백 자르기</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">    내용     </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D">   </span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">trim</span><span style="color: #89DDFF">(),</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">내용</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
 
-<span class="hljs-regexp">//</span> 메소드 체이닝
-String raw_text = <span class="hljs-string">&quot;    \n         TeST HeLLo WORld      \n \n \t   &quot;</span>;
-String[] expected = new String[] {<span class="hljs-string">&#x27;test&#x27;</span>, <span class="hljs-string">&#x27;hello&#x27;</span>, <span class="hljs-string">&#x27;world&#x27;</span>};
-assertEqual(raw_text.trim().toLowerCase().split(<span class="hljs-string">&quot; &quot;</span>), expected);
-</code></pre>
+<span class="line"><span style="color: #545454">// 메소드 체이닝</span></span>
+<span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> raw_text </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">    </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D">         TeST HeLLo WORld      </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D"> </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D"> </span><span style="color: #EEFFFF">\t</span><span style="color: #C3E88D">   </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #C792EA">String</span><span style="color: #89DDFF">[]</span><span style="color: #EEFFFF"> expected </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">new</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">String</span><span style="color: #89DDFF">[]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">test</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">hello</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">world</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">};</span></span>
+<span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">raw_text</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">trim</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">toLowerCase</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> expected</span><span style="color: #89DDFF">);</span></span></code></pre>
 <h3 id="python-str">Python: str</h3>
-<pre><code class="language-python">foo = <span class="hljs-string">&quot;탐정토끼&quot;</span> <span class="hljs-comment"># 리터럴</span>
-<span class="hljs-keyword">assert</span> <span class="hljs-built_in">type</span>(foo) == <span class="hljs-built_in">type</span>(<span class="hljs-string">&quot;탐&quot;</span>) <span class="hljs-comment"># 글자 하나의 타입도 str</span>
-<span class="hljs-comment"># &amp;#x3C;class &#x27;str&#x27;&gt;</span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 리터럴</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">type</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">type</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 글자 하나의 타입도 str</span></span>
+<span class="line"><span style="color: #545454"># &lt;class &#39;str&#39;&gt;</span></span>
 
-foo_copy = foo // 값을 복사
-foo_copy += <span class="hljs-string">&quot;입니다.&quot;</span>
-<span class="hljs-built_in">print</span>(foo) 
-// <span class="hljs-string">&quot;탐정토끼&quot;</span> 원래 값은 불변
-<span class="hljs-built_in">print</span>(foo_copy)
-// <span class="hljs-string">&quot;탐정토끼입니다.&quot;</span>
+<span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">//</span><span style="color: #EEFFFF"> 값을 복사</span></span>
+<span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">입니다.</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span></span>
+<span class="line"><span style="color: #89DDFF">//</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> 원래 값은 불변</span></span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo_copy</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #89DDFF">//</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼입니다.</span><span style="color: #89DDFF">&quot;</span></span>
 
-<span class="hljs-keyword">assert</span> <span class="hljs-built_in">len</span>(foo) == <span class="hljs-number">4</span> <span class="hljs-comment"># 문자열의 길이</span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #82AAFF">len</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">4</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 문자열의 길이</span></span>
 
-<span class="hljs-comment"># 문자열[start : end : step]</span>
-<span class="hljs-keyword">assert</span> foo[<span class="hljs-number">0</span>] == <span class="hljs-string">&quot;탐&quot;</span>  <span class="hljs-comment"># 문자 가져오기</span>
-<span class="hljs-keyword">assert</span> foo[<span class="hljs-number">1</span>:] == <span class="hljs-string">&quot;정토끼&quot;</span> <span class="hljs-comment"># 자르기. start 부터 끝까지</span>
-<span class="hljs-keyword">assert</span> foo[<span class="hljs-number">1</span>:<span class="hljs-number">3</span>] == <span class="hljs-string">&quot;정토&quot;</span>  <span class="hljs-comment"># 마지막 인덱스는 미포함</span>
-<span class="hljs-keyword">assert</span> foo[-<span class="hljs-number">2</span>:] == <span class="hljs-string">&quot;토끼&quot;</span>  <span class="hljs-comment"># 마지막 2글자</span>
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;abcdefg&quot;</span>[::<span class="hljs-number">2</span>] == <span class="hljs-string">&quot;aceg&quot;</span> <span class="hljs-comment"># step 2칸씩 </span>
+<span class="line"><span style="color: #545454"># 문자열[start : end : step]</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">[</span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">  </span><span style="color: #545454"># 문자 가져오기</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">[</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">:]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 자르기. start 부터 끝까지</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">[</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">:</span><span style="color: #F78C6C">3</span><span style="color: #89DDFF">]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">정토</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">  </span><span style="color: #545454"># 마지막 인덱스는 미포함</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">[-</span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">:]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">  </span><span style="color: #545454"># 마지막 2글자</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">abcdefg</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">[::</span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">aceg</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># step 2칸씩 </span></span>
 
-<span class="hljs-built_in">print</span>(foo[::-<span class="hljs-number">1</span>]) <span class="hljs-comment"># 뒤집기</span>
-<span class="hljs-comment"># &quot;끼토정탐&quot;</span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">[::-</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">])</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 뒤집기</span></span>
+<span class="line"><span style="color: #545454"># &quot;끼토정탐&quot;</span></span>
 
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;2014/02/14&quot;</span>.replace(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>) == <span class="hljs-string">&quot;2014-02-14&quot;</span> <span class="hljs-comment"># 치환</span>
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;2014/02/14&quot;</span>.split(<span class="hljs-string">&quot;/&quot;</span>) == [<span class="hljs-string">&quot;2014&quot;</span>, <span class="hljs-string">&quot;02&quot;</span>, <span class="hljs-string">&quot;14&quot;</span>] <span class="hljs-comment"># 쪼개기</span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">replace</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #82AAFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">-</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014-02-14</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 치환</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">02</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 쪼개기</span></span>
 
-<span class="hljs-keyword">assert</span> <span class="hljs-built_in">str</span>(<span class="hljs-number">24</span>) + <span class="hljs-string">&quot;시간이 모자라&quot;</span> <span class="hljs-comment"># int와 문자열 합치기</span>
-<span class="hljs-comment"># &quot;24시간이 모자라&quot;</span>
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;1&quot;</span> &amp;<span class="hljs-comment">#x3C; &quot;3&quot; # 비교 가능</span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">str</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">24</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">시간이 모자라</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># int와 문자열 합치기</span></span>
+<span class="line"><span style="color: #545454"># &quot;24시간이 모자라&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">1</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">3</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 비교 가능</span></span>
 
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;taehee&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;kim&quot;</span> == <span class="hljs-string">&quot;taehee kim&quot;</span> <span class="hljs-comment"># 합치기</span>
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;&quot;</span>.join([<span class="hljs-string">&quot;탐정&quot;</span>, <span class="hljs-string">&quot;토끼&quot;</span>]) == <span class="hljs-string">&quot;탐정토끼&quot;</span> <span class="hljs-comment"># 연결하기</span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 합치기</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">join</span><span style="color: #89DDFF">([</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #82AAFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">])</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 연결하기</span></span>
 
-long_csv = <span class="hljs-string">&quot;&quot;&quot;12, 3, &quot;빨강&quot;
-13, 2, &quot;파랑&quot;
-14, 1, &quot;초록&quot;
-&quot;&quot;&quot;</span> <span class="hljs-comment"># 여러 줄 문자열</span>
-long_csv.split(<span class="hljs-string">&quot;\n&quot;</span>) <span class="hljs-comment"># 줄 단위로 자르기</span>
+<span class="line"><span style="color: #EEFFFF">long_csv </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;&quot;&quot;</span><span style="color: #C3E88D">12, 3, &quot;빨강&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">13, 2, &quot;파랑&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">14, 1, &quot;초록&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;&quot;&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 여러 줄 문자열</span></span>
+<span class="line"><span style="color: #EEFFFF">long_csv</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">\n</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 줄 단위로 자르기</span></span>
 
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;탐정&quot;</span> <span class="hljs-keyword">in</span> foo == <span class="hljs-literal">True</span> <span class="hljs-comment"># foo가 &quot;탐정&quot;을 포함하는지? </span>
-<span class="hljs-comment"># 주어진 문자열로 시작하는지?</span>
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;https://twinstae.github.io/&quot;</span>.startswith(<span class="hljs-string">&quot;https&quot;</span>) == <span class="hljs-literal">True</span>
-<span class="hljs-comment"># 주어진 문자열로 끝나는지?</span>
-<span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;fiesta-izone.mp3&quot;</span>.endswith(<span class="hljs-string">&quot;.mps&quot;</span>)
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">in</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">True</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># foo가 &quot;탐정&quot;을 포함하는지? </span></span>
+<span class="line"><span style="color: #545454"># 주어진 문자열로 시작하는지?</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https://twinstae.github.io/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">startswith</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">True</span></span>
+<span class="line"><span style="color: #545454"># 주어진 문자열로 끝나는지?</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">fiesta-izone.mp3</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">endswith</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">.mps</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
 
-name: <span class="hljs-built_in">str</span> = <span class="hljs-string">&#x27;kim&#x27;</span> <span class="hljs-comment"># 타입힌트, &#x27; 홑 따옴표도 상관 없다.</span>
+<span class="line"><span style="color: #EEFFFF">name</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">str</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">kim</span><span style="color: #89DDFF">&#39;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 타입힌트, &#39; 홑 따옴표도 상관 없다.</span></span>
 
-<span class="hljs-keyword">assert</span> <span class="hljs-keyword">not</span> name == <span class="hljs-literal">True</span>;   <span class="hljs-comment"># 비어 있는지? PEP8 가이드 권장</span>
-<span class="hljs-comment"># &quot;name != &quot;&quot;               # 이렇게 할 수도 있긴 하다.</span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">not</span><span style="color: #EEFFFF"> name </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">True</span><span style="color: #EEFFFF">;   </span><span style="color: #545454"># 비어 있는지? PEP8 가이드 권장</span></span>
+<span class="line"><span style="color: #545454"># &quot;name != &quot;&quot;               # 이렇게 할 수도 있긴 하다.</span></span>
 
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;hello, %s&#x27;</span> % name) <span class="hljs-comment"># format</span>
-<span class="hljs-comment"># &#x27;hello, kim&#x27;</span>
-<span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;hello, <span class="hljs-subst">{name}</span>&#x27;</span>)   <span class="hljs-comment"># interpolation</span>
-<span class="hljs-comment"># &#x27;hello, kim&#x27;</span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">hello, %s</span><span style="color: #89DDFF">&#39;</span><span style="color: #82AAFF"> </span><span style="color: #89DDFF">%</span><span style="color: #82AAFF"> name</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># format</span></span>
+<span class="line"><span style="color: #545454"># &#39;hello, kim&#39;</span></span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #C792EA">f</span><span style="color: #C3E88D">&#39;hello, </span><span style="color: #82AAFF">{name}</span><span style="color: #C3E88D">&#39;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF">   </span><span style="color: #545454"># interpolation</span></span>
+<span class="line"><span style="color: #545454"># &#39;hello, kim&#39;</span></span>
 
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;TAEhee Kim&#x27;</span>.lower()) <span class="hljs-comment"># 소문자로</span>
-<span class="hljs-comment"># &#x27;taehee kim&#x27;</span>
-<span class="hljs-string">&#x27;    내용     \n   &#x27;</span>.strip()  <span class="hljs-comment"># 공백 자르기</span>
-<span class="hljs-comment"># &#x27;내용&#x27;</span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">TAEhee Kim</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">lower</span><span style="color: #89DDFF">())</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 소문자로</span></span>
+<span class="line"><span style="color: #545454"># &#39;taehee kim&#39;</span></span>
+<span class="line"><span style="color: #89DDFF">&#39;</span><span style="color: #545454">    내용     </span><span style="color: #EEFFFF">\n</span><span style="color: #545454">   </span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">strip</span><span style="color: #89DDFF">()</span><span style="color: #EEFFFF">  </span><span style="color: #545454"># 공백 자르기</span></span>
+<span class="line"><span style="color: #545454"># &#39;내용&#39;</span></span>
 
-<span class="hljs-comment"># 메소드 체이닝</span>
-raw_text = <span class="hljs-string">&quot;    \n         TeST HeLLo WORld      \n \n \t   &quot;</span>
-raw_text.strip().lower().split(<span class="hljs-string">&quot; &quot;</span>)
-<span class="hljs-comment"># [&#x27;test&#x27;, &#x27;hello&#x27;, &#x27;world&#x27;]</span>
+<span class="line"><span style="color: #545454"># 메소드 체이닝</span></span>
+<span class="line"><span style="color: #EEFFFF">raw_text </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">    </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D">         TeST HeLLo WORld      </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D"> </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D"> </span><span style="color: #EEFFFF">\t</span><span style="color: #C3E88D">   </span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #EEFFFF">raw_text</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">strip</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">lower</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># [&#39;test&#39;, &#39;hello&#39;, &#39;world&#39;]</span></span>
 
-m = re.search(<span class="hljs-string">&#x27;([1-6])학년 ([0-9]{1,2})단원&#x27;</span>, <span class="hljs-string">&#x27;2학년 3단원&#x27;</span>)
-<span class="hljs-keyword">assert</span> m.group(<span class="hljs-number">0</span>) == <span class="hljs-string">&#x27;2학년 3단원&#x27;</span>
-<span class="hljs-keyword">assert</span> m.group(<span class="hljs-number">1</span>) == <span class="hljs-string">&#x27;2&#x27;</span>
-<span class="hljs-keyword">assert</span> m.group(<span class="hljs-number">2</span>) == <span class="hljs-string">&#x27;3&#x27;</span>
-</code></pre>
+<span class="line"><span style="color: #EEFFFF">m </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> re</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">search</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">([1-6])학년 ([0-9]{1,2})단원</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #82AAFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">2학년 3단원</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> m</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">group</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">2학년 3단원</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> m</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">group</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">2</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> m</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">group</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">3</span><span style="color: #89DDFF">&#39;</span></span></code></pre>
 <h3 id="typescript-string">TypeScript: string</h3>
-<pre><code class="language-typescript">const foo: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;탐정토끼&quot;</span>;
-console.<span class="hljs-built_in">log</span>(foo.<span class="hljs-built_in">split</span>(<span class="hljs-string">&quot;&quot;</span>).<span class="hljs-built_in">reverse</span>().<span class="hljs-built_in">join</span>());
-</code></pre>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">string</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #EEFFFF">console</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">log</span><span style="color: #EEFFFF">(foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">split</span><span style="color: #EEFFFF">(</span><span style="color: #89DDFF">&quot;&quot;</span><span style="color: #EEFFFF">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">reverse</span><span style="color: #EEFFFF">()</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">join</span><span style="color: #EEFFFF">())</span><span style="color: #89DDFF">;</span></span></code></pre>
 <h3 id="rust-str-stdstring">Rust: str, std::String</h3>
-<pre><code class="language-rust"><span class="hljs-keyword">let</span> <span class="hljs-variable">foo</span> = <span class="hljs-string">&quot;탐정토끼&quot;</span>;
-<span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;{}&quot;</span>, foo.<span class="hljs-title function_ invoke__">chars</span>().<span class="hljs-title function_ invoke__">rev</span>().collect::&amp;#x3C;<span class="hljs-type">String</span>&gt;());
-</code></pre>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #82AAFF">println!</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;{}&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">chars</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">rev</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">collect</span><span style="color: #89DDFF">::&lt;</span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">&gt;());</span></span></code></pre>
 <h3 id="clojure-javalangcharacter-javalangstring">Clojure: java.lang.Character, java.lang.String</h3>
-<pre><code class="language-clojure">(<span class="hljs-name">require</span> &#x27;[clojure.string <span class="hljs-symbol">:as</span> s])
-(<span class="hljs-keyword">def</span> <span class="hljs-title">foo</span> <span class="hljs-string">&quot;탐정토끼&quot;</span>)
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">(</span><span style="color: #89DDFF">require</span><span style="color: #EEFFFF"> &#39;</span><span style="color: #89DDFF">[</span><span style="color: #EEFFFF">clojure.string </span><span style="color: #89DDFF">:as</span><span style="color: #EEFFFF"> s</span><span style="color: #89DDFF">])</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #89DDFF">def</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
 
-(<span class="hljs-name"><span class="hljs-built_in">count</span></span> foo) <span class="hljs-comment">; 길이</span>
-<span class="hljs-comment">; 4</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">count</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 길이</span></span>
+<span class="line"><span style="color: #545454">; 4</span></span>
 
-(<span class="hljs-name"><span class="hljs-built_in">get</span></span> foo <span class="hljs-number">0</span>) <span class="hljs-comment">; 문자 가져오기</span>
-<span class="hljs-comment">; \탐</span>
-(<span class="hljs-name">subs</span> foo <span class="hljs-number">1</span>) <span class="hljs-comment">; 자르기. start 부터 끝까지</span>
-<span class="hljs-comment">;&quot;정토끼&quot;</span>
-(<span class="hljs-name">subs</span> foo <span class="hljs-number">1</span> <span class="hljs-number">3</span>) <span class="hljs-comment">; 마지막 인덱스는 미포함</span>
-<span class="hljs-comment">;&quot;정토&quot;</span>
-(<span class="hljs-name">subs</span> foo (<span class="hljs-name"><span class="hljs-built_in">-</span></span> (<span class="hljs-name"><span class="hljs-built_in">count</span></span> foo) <span class="hljs-number">2</span>)) <span class="hljs-comment">; 마지막 2글자</span>
-<span class="hljs-comment">;&quot;토끼&quot;</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">get</span><span style="color: #EEFFFF"> foo </span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 문자 가져오기</span></span>
+<span class="line"><span style="color: #545454">; \탐</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">subs</span><span style="color: #EEFFFF"> foo </span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 자르기. start 부터 끝까지</span></span>
+<span class="line"><span style="color: #545454">;&quot;정토끼&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">subs</span><span style="color: #EEFFFF"> foo </span><span style="color: #F78C6C">1</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">3</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 마지막 인덱스는 미포함</span></span>
+<span class="line"><span style="color: #545454">;&quot;정토&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">subs</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">-</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">count</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">))</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 마지막 2글자</span></span>
+<span class="line"><span style="color: #545454">;&quot;토끼&quot;</span></span>
 
-(<span class="hljs-name">print</span> (<span class="hljs-name">s/reverse</span> foo)) <span class="hljs-comment">; 뒤집기</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">print</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/reverse</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">))</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 뒤집기</span></span>
 
-(<span class="hljs-name">s/replace</span> <span class="hljs-string">&quot;2014/02/14&quot;</span> <span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-string">&quot;-&quot;</span>) <span class="hljs-comment">; 바꾸기</span>
-<span class="hljs-comment">; &quot;2014-02-14&quot;</span>
-(<span class="hljs-name">s/split</span> <span class="hljs-string">&quot;2014/02/14&quot;</span> #<span class="hljs-string">&quot;/&quot;</span>) <span class="hljs-comment">; 쪼개기 #은 정규표현식 표시</span>
-<span class="hljs-comment">; (&quot;2014&quot; &quot;02&quot; &quot;14&quot;)</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/replace</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">, </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">-</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 바꾸기</span></span>
+<span class="line"><span style="color: #545454">; &quot;2014-02-14&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/split</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">#&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 쪼개기 #은 정규표현식 표시</span></span>
+<span class="line"><span style="color: #545454">; (&quot;2014&quot; &quot;02&quot; &quot;14&quot;)</span></span>
 
-(<span class="hljs-keyword">def</span> <span class="hljs-title">long-csv</span> <span class="hljs-string">&quot;12, 3, \&quot;빨강\&quot;
-13, 2, \&quot;파랑\&quot;
-14, 1, \&quot;초록\&quot;
-&quot;</span>)
-(<span class="hljs-name">s/split-lines</span> long-csv)
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #89DDFF">def</span><span style="color: #EEFFFF"> long-csv </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">12, 3, </span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">빨강</span><span style="color: #EEFFFF">\&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">13, 2, </span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">파랑</span><span style="color: #EEFFFF">\&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">14, 1, </span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">초록</span><span style="color: #EEFFFF">\&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/split-lines</span><span style="color: #EEFFFF"> long-csv</span><span style="color: #89DDFF">)</span></span>
 
-(<span class="hljs-name">s/includes?</span> foo <span class="hljs-string">&quot;탐정&quot;</span>) <span class="hljs-comment">; foo가 &quot;탐정&quot;을 포함하는지?</span>
-(<span class="hljs-name">s/startswith?</span> <span class="hljs-string">&quot;https://twinstae.github.io/&quot;</span> <span class="hljs-string">&quot;https&quot;</span>) <span class="hljs-comment">; 시작하는지?</span>
-(<span class="hljs-name">s/ends-with?</span> <span class="hljs-string">&quot;fiesta-izone.mp3&quot;</span> <span class="hljs-string">&quot;.mp3&quot;</span>) <span class="hljs-comment">; 끝나는지?</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/includes?</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; foo가 &quot;탐정&quot;을 포함하는지?</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/startswith?</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https://twinstae.github.io/</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 시작하는지?</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/ends-with?</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">fiesta-izone.mp3</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">.mp3</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 끝나는지?</span></span>
 
-(<span class="hljs-name">s/blank?</span> foo) <span class="hljs-comment">; 비어있는지?</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/blank?</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 비어있는지?</span></span>
 
-(<span class="hljs-name"><span class="hljs-built_in">str</span></span> <span class="hljs-string">&quot;taehee&quot;</span> <span class="hljs-string">&quot; &quot;</span> <span class="hljs-string">&quot;kim&quot;</span>) <span class="hljs-comment">; 합치기</span>
-<span class="hljs-comment">; &quot;taehee kim&quot;</span>
-(<span class="hljs-name"><span class="hljs-built_in">str</span></span> <span class="hljs-number">24</span> <span class="hljs-string">&quot;시간이 모자라&quot;</span>) <span class="hljs-comment">; int와 문자열 합치기. 자동 형 변환.</span>
-<span class="hljs-comment">; &quot;24시간이 모자라&quot;</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">str</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 합치기</span></span>
+<span class="line"><span style="color: #545454">; &quot;taehee kim&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">str</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">24</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">시간이 모자라</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; int와 문자열 합치기. 자동 형 변환.</span></span>
+<span class="line"><span style="color: #545454">; &quot;24시간이 모자라&quot;</span></span>
 
-<span class="hljs-comment">; (&amp;#x3C; &quot;1&quot; &quot;3&quot;)</span>
-<span class="hljs-comment">; 비교 불가 .String cannot be cast to class java.lang.Number</span>
+<span class="line"><span style="color: #545454">; (&lt; &quot;1&quot; &quot;3&quot;)</span></span>
+<span class="line"><span style="color: #545454">; 비교 불가 .String cannot be cast to class java.lang.Number</span></span>
 
-(<span class="hljs-name">s/join</span> <span class="hljs-string">&quot; &quot;</span> [<span class="hljs-string">&quot;탐정&quot;</span> <span class="hljs-string">&quot;토끼&quot;</span> <span class="hljs-string">&quot;입니다.&quot;</span>]) <span class="hljs-comment">; 붙이기</span>
-<span class="hljs-comment">; &quot;탐정 토끼 입니다.&quot;</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/join</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">입니다.</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">])</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 붙이기</span></span>
+<span class="line"><span style="color: #545454">; &quot;탐정 토끼 입니다.&quot;</span></span>
 
-(<span class="hljs-name"><span class="hljs-built_in">format</span></span> <span class="hljs-string">&quot;hello, %s&quot;</span> foo) <span class="hljs-comment">; 포맷</span>
-<span class="hljs-comment">; &quot;hello, 탐정토끼&quot;</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">format</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">hello, %s</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 포맷</span></span>
+<span class="line"><span style="color: #545454">; &quot;hello, 탐정토끼&quot;</span></span>
 
-(<span class="hljs-name">s/lower</span> <span class="hljs-string">&quot;TAEhee Kim&quot;</span>)
-<span class="hljs-comment">; &quot;taehee kim&quot;</span>
-(<span class="hljs-name">s/trim</span> <span class="hljs-string">&quot;    내용     \n   &quot;</span>)
-<span class="hljs-comment">; &quot;내용&quot;</span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/lower</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">TAEhee Kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454">; &quot;taehee kim&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/trim</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">    내용     </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D">   </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454">; &quot;내용&quot;</span></span>
 
-<span class="hljs-comment">; 파이프</span>
-(<span class="hljs-keyword">def</span> <span class="hljs-title">raw_text</span> <span class="hljs-string">&quot;    \n         TeST HeLLo WORld      \n \n \t   &quot;</span>)
-(<span class="hljs-name"><span class="hljs-built_in">-&gt;</span></span> raw_text s/trim s/lower-case (<span class="hljs-name">s/split</span> #<span class="hljs-string">&quot; &quot;</span>))
-<span class="hljs-comment">; [&quot;test&quot; &quot;hello&quot; &quot;world&quot;]</span>
-</code></pre>
+<span class="line"><span style="color: #545454">; 파이프</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #89DDFF">def</span><span style="color: #EEFFFF"> raw_text </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">    </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D">         TeST HeLLo WORld      </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D"> </span><span style="color: #EEFFFF">\n</span><span style="color: #C3E88D"> </span><span style="color: #EEFFFF">\t</span><span style="color: #C3E88D">   </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">-&gt;</span><span style="color: #EEFFFF"> raw_text s/trim s/lower-case </span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/split</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">#&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">))</span></span>
+<span class="line"><span style="color: #545454">; [&quot;test&quot; &quot;hello&quot; &quot;world&quot;]</span></span></code></pre>
 <h3 id="elixir-stringgrapheme-stringt">Elixir: String.grapheme(), String.t()</h3>
-<pre><code class="language-elixir"><span class="hljs-attribute">foo</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;탐정토끼&quot;</span>
-IO.puts String.reverse(foo)
-</code></pre><!-- HTML_TAG_END -->
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #FFCB6B">IO</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">puts</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">reverse</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">)</span></span></code></pre>
+<!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
@@ -335,7 +335,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonjRWWMkxbKC','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxWYqjlFtprF','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonVqDlgQSKbV','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxWlrwNgLNkn','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

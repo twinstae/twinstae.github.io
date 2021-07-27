@@ -14,7 +14,7 @@
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-b1b8cda3.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxlGXNSSFKvY"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxqpcyTfDjgw"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -31,37 +31,47 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonQFZkGmwXKd"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonGzlJLpNdXK"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
-
+<nav class="svelte-au67cy"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#문자열은-보통-불변입니다" class="svelte-au67cy">문자열은 보통 불변입니다.
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#불변성의-성능-이슈" class="svelte-au67cy">불변성의 성능 이슈.
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#불변-자료구조는-해싱-캐싱할-수-있고-안전하다" class="svelte-au67cy">불변 자료구조는 해싱, 캐싱할 수 있고, 안전하다.
+          <ol>
+          </ol></a>
+      </li></ol></div>
+</nav>
 
 <!-- HTML_TAG_START --><h3 id="문자열은-보통-불변입니다">문자열은 보통 불변입니다.</h3>
 <p>대부분의 언어에서 문자열은 불변(Immutable)입니다. 변하지 않는다고 하면 이해하기 어려워하는 사람들이 있을텐데. 정확하게 말하면 문자열을 수정할 때, 새로운 문자열을 복사해서 만든다는 이야기다. 이걸 Copy on Write 라고도 한다. 파이썬에서 가변(mutable)한 자료형인 List와 비교해서 알아보자.</p>
-<pre><code class="language-python"># 문자열
-a = <span class="hljs-string">&quot;hello&quot;</span>
-# 문자 <span class="hljs-symbol">List</span>. 타입은 사실 <span class="hljs-symbol">List</span>[str] 이지만...
-b = [<span class="hljs-string">&#x27;h&#x27;</span>, <span class="hljs-string">&#x27;e&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>, <span class="hljs-string">&#x27;l&#x27;</span>, <span class="hljs-string">&#x27;o&#x27;</span>]
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454"># 문자열</span></span>
+<span class="line"><span style="color: #EEFFFF">a </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">hello</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #545454"># 문자 List. 타입은 사실 List[str] 이지만...</span></span>
+<span class="line"><span style="color: #EEFFFF">b </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">h</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">e</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">o</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">]</span></span>
 
-# 값을 복사한다.
-a_copy = a
-# 레퍼런스를 복사한다.
-b_copy = b
+<span class="line"><span style="color: #545454"># 값을 복사한다.</span></span>
+<span class="line"><span style="color: #EEFFFF">a_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> a</span></span>
+<span class="line"><span style="color: #545454"># 레퍼런스를 복사한다.</span></span>
+<span class="line"><span style="color: #EEFFFF">b_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> b</span></span>
 
-# <span class="hljs-string">&quot;, world&quot;</span>를 뒤에 붙인다.
-a_copy += <span class="hljs-string">&quot;, world&quot;</span>
-# 마찬가지. 이번에는 겹 따옴표를 써봤다.
-b_copy += [<span class="hljs-string">&quot;,&quot;</span>, <span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;w&quot;</span>, <span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, <span class="hljs-string">&quot;l&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>]
+<span class="line"><span style="color: #545454"># &quot;, world&quot;를 뒤에 붙인다.</span></span>
+<span class="line"><span style="color: #EEFFFF">a_copy </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">, world</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #545454"># 마찬가지. 이번에는 겹 따옴표를 써봤다.</span></span>
+<span class="line"><span style="color: #EEFFFF">b_copy </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">,</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">o</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">r</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">d</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
 
-print(a)
-# <span class="hljs-string">&quot;hello&quot;</span> 원본은 그대로
-print(a_copy)
-# <span class="hljs-string">&quot;hello, world&quot;</span> 복사본은 수정됐다.
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">a</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># &quot;hello&quot; 원본은 그대로</span></span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">a_copy</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># &quot;hello, world&quot; 복사본은 수정됐다.</span></span>
 
-print(b)
-# [<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;,&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;w&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>] 원본도 같이 변했다!!!
-print(b_copy)
-# [<span class="hljs-string">&#x27;h&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;,&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;w&#x27;</span>,<span class="hljs-string">&#x27;o&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;d&#x27;</span>] 
-</code></pre>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">b</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># [&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;,&#39;,&#39; &#39;,&#39;w&#39;,&#39;o&#39;,&#39;r&#39;,&#39;l&#39;,&#39;d&#39;] 원본도 같이 변했다!!!</span></span>
+<span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">b_copy</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># [&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;,&#39;,&#39; &#39;,&#39;w&#39;,&#39;o&#39;,&#39;r&#39;,&#39;l&#39;,&#39;d&#39;] </span></span></code></pre>
 <p>변수는 메모리에 특정한 위치를 가리키는 레퍼런스를 들고 있다. 그런데 불변인 값은 메모리의 내용을 수정할 수 없다. 그래서 값을 수정하면 메모리에 새로운 위치에 값을 복사해서 쓰고, 변수에 새로운 위치를 가리키는 레퍼런스를 넣어놓는다. a_copy를 수정해도 a는 예전 위치를 가리키고 있기 때문에, 아무런 영향이 없다.</p>
 <p>반면에 리스트는 메모리의 값을 수정할 수 있어서, 항상 같은 위치를 가리키고 있다. 그러니 복사한 다른 변수가 값을 수정하면 원본도 바뀌는 것입니다.</p>
 <h3 id="불변성의-성능-이슈">불변성의 성능 이슈.</h3>
@@ -69,19 +79,17 @@ print(b_copy)
 <p>불변 자료형은 매번 값을 새로 쓰기 때문에 성능에 불리한 면이 있었습니다. 내가 책을 하나 새로 샀다고 합시다. 가변 책장이라면 책을 새로 꽂으면 끝납니다. 하지만 불변 책장에서는 책장을 새로 만들어서 기존에 있던 책들을 모두 옮겨야 합니다...</p>
 <p>실제로 매우 많은 문자열을 합칠 때, 이 문제는 심각한 고민입니다. Python에서 문자열을 합칠 때 앞에서 본 + 연산자를 쓸 수 있습니다. 한 두 개는 이래도 괜찮지만, 문자열 수백 수천 개를 합칠 때에는 같은 문자열을 지우고 만들기를 수백 수천 번 반복하니 비효율적일 수 밖에 없습니다.</p>
 <p>그래서 Python에서는 이렇게 많은 문자열을 합칠 때에는 join을 쓰기를 권장합니다. join은 미리 모든 문자열을 합칠 수 있는 공간을 만들어두고, 한 번에 새 문자열을 만들기 때문에 빠릅니다. JS도 비슷하게 for이나 reduce보다 join을 사용하라 합니다. Java에서는 StringBuilder나 StringBuffer를 추천합니다.</p>
-<pre><code class="language-python"><span class="hljs-attr">very_large_data_list</span> = [<span class="hljs-string">&quot;장원영&quot;</span>, <span class="hljs-string">&quot;홍다희&quot;</span>, <span class="hljs-string">&quot;나북희&quot;</span>, ..., <span class="hljs-string">&quot;김민주&quot;</span>]
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">very_large_data_list </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">장원영</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">홍다희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">나북희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> ...</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">김민주</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
 
-<span class="hljs-attr">result_1</span> = <span class="hljs-string">&quot;&quot;</span>
-for name <span class="hljs-keyword">in</span> very_large_data_list:
-    <span class="hljs-comment"># 합쳐서 새 문자열을 만든다.</span>
-    <span class="hljs-attr">line</span> = name + <span class="hljs-string">&quot;\n&quot;</span>
-    <span class="hljs-comment"># result를 지우고 새 문자열을 또 만든다.</span>
-    result_1 += line
+<span class="line"><span style="color: #EEFFFF">result_1 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">for</span><span style="color: #EEFFFF"> name </span><span style="color: #89DDFF">in</span><span style="color: #EEFFFF"> very_large_data_list</span><span style="color: #89DDFF">:</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #545454"># 합쳐서 새 문자열을 만든다.</span></span>
+<span class="line"><span style="color: #EEFFFF">    line </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> name </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">\n</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #545454"># result를 지우고 새 문자열을 또 만든다.</span></span>
+<span class="line"><span style="color: #EEFFFF">    result_1 </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> line</span></span>
 
-<span class="hljs-comment"># 한 번에 모든 문자열을 합친다.</span>
-<span class="hljs-attr">result_2</span> = <span class="hljs-string">&quot;\n&quot;</span>.join(very_large_data_list)
-
-</code></pre>
+<span class="line"><span style="color: #545454"># 한 번에 모든 문자열을 합친다.</span></span>
+<span class="line"><span style="color: #EEFFFF">result_2 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">\n</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">join</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">very_large_data_list</span><span style="color: #89DDFF">)</span></span></code></pre>
 <p>하지만 애초에 String이 가변이었다면 이런 고민은 하지 않아도 됩니다. 그러면 왜 불변성을 유지하는 걸까요?</p>
 <h3 id="불변-자료구조는-해싱-캐싱할-수-있고-안전하다">불변 자료구조는 해싱, 캐싱할 수 있고, 안전하다.</h3>
 <p>앞서 말했듯이 함수형 프로그래밍에서는 적극적으로 불변 자료구조를 쓴다. 심지어 Clojure나 Elixir 같은 언어에서는 기본적으로 불변 Linked List를 사용한다. (대부분 주류 언어에서는 ArrayList를 쓴다.) 흔히 함수형의 장점이라 알려진 것들이 불변성의 장점인 경우가 많다.</p>
@@ -89,7 +97,8 @@ for name <span class="hljs-keyword">in</span> very_large_data_list:
 <p>그래서 불변 자료구조는 캐싱으로 재사용하기 쉽다. 똑같은 값을 가진 새로운 데이터를 만들 때, 메모리에 새로 공간을 만들 필요가 없다. 원래 있던 변수 중에 똑같은 값을 찾아서 메모리에 똑같은 위치를 가리키는 레퍼런스만 달아주면 끝입니다. 예를 들어 "Hello, World" 라는 문자열 1천 개를 만든다면 가변 자료구조는 1천 개의 공간이 필요하지만, 불변 자료구조는 원본 하나 저장할 공간만 있으면 된다. 앞서 말한 hash함수를 이용하면 O(1) 만에 값을 찾을 수 있으니 성능 상으로도 유리하다.</p>
 <p>또 멀티 쓰레드나 동시성을 쉽게 다룰 수 있다. 요즘처럼 멀티코어가 당연해지는 세상에서는 정말 중요한 성질입니다. 가변 상태는 디버깅하기 매우 귀찮기 때문입니다.</p>
 <p>이런 이유로 파이썬에서는 str 뿐만 아니라 int, float, bool, tuple 같은 많은 기본 데이터 타입을 모두 불변 객체로 쓰고 있다.</p>
-<p>이유는 이 밖에도 더 있겠지만. 일단 "불변이 생각보다 나쁘지 않구나, 함수형 언어도 좀 배워봐야겠다"는 정도만 알고 넘어가자.</p><!-- HTML_TAG_END -->
+<p>이유는 이 밖에도 더 있겠지만. 일단 "불변이 생각보다 나쁘지 않구나, 함수형 언어도 좀 배워봐야겠다"는 정도만 알고 넘어가자.</p>
+<!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
@@ -168,7 +177,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonQFZkGmwXKd','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxlGXNSSFKvY','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonGzlJLpNdXK','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxqpcyTfDjgw','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

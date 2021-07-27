@@ -14,7 +14,7 @@
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-b1b8cda3.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxdmnWNsyLXR"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxGcNKTnmsyq"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -31,9 +31,23 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonyrCKSWwLCs"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonmYGvzVlYMS"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
-
+<nav class="svelte-au67cy"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#asyncio-db를-다양한-방식으로-구현해보고-비교합니다" class="svelte-au67cy">AsyncIO DB를 다양한 방식으로 구현해보고 비교합니다.
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#비동기는-쓰레드-하나single-thread로도-차단blocking-없이-더-많은-요청을-처리할-수-있습니다" class="svelte-au67cy">비동기는 쓰레드 하나(single thread)로도 차단(Blocking) 없이 더 많은 요청을 처리할 수 있습니다.
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#파이썬에서는-asyncio와-asyncawait-키워드로-비동기를-처리합니다" class="svelte-au67cy">파이썬에서는 AsyncIO와 async/await 키워드로 비동기를 처리합니다.
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#다양한-db를-사용해서-구현해보고-비교해봅니다" class="svelte-au67cy">다양한 DB를 사용해서 구현해보고 비교해봅니다.
+          <ol><li style="font-size: 1rem;"><a href="#sql-driver--sqliteaiosqlite-postgresqlasyncpg" class="svelte-au67cy">SQL Driver : SQLite/aiosqlite, PostgreSQL/asyncpg</a></li><li style="font-size: 1rem;"><a href="#orm-객체-관계-맵퍼--sqlalchemy-tortoise" class="svelte-au67cy">ORM 객체 관계 맵퍼 : SQLAlchemy, Tortoise</a></li><li style="font-size: 1rem;"><a href="#next-generation--edgedb" class="svelte-au67cy">Next-Generation? : EdgeDB</a></li><li style="font-size: 1rem;"><a href="#key-value-키-값--redisasync-redis" class="svelte-au67cy">Key-Value 키-값 : Redis/async-redis</a></li><li style="font-size: 1rem;"><a href="#document--mongodbmotor" class="svelte-au67cy">Document : MongoDB/Motor</a></li><li style="font-size: 1rem;"><a href="#graph--neo4jaioneo4j" class="svelte-au67cy">Graph : Neo4j/aioneo4j</a></li>
+          </ol></a>
+      </li></ol></div>
+</nav>
 
 <!-- HTML_TAG_START --><h2 id="asyncio-db를-다양한-방식으로-구현해보고-비교합니다">AsyncIO DB를 다양한 방식으로 구현해보고 비교합니다.</h2>
 <h2 id="비동기는-쓰레드-하나single-thread로도-차단blocking-없이-더-많은-요청을-처리할-수-있습니다">비동기는 쓰레드 하나(single thread)로도 차단(Blocking) 없이 더 많은 요청을 처리할 수 있습니다.</h2>
@@ -44,7 +58,8 @@
 <h3 id="next-generation--edgedb">Next-Generation? : EdgeDB</h3>
 <h3 id="key-value-키-값--redisasync-redis">Key-Value 키-값 : Redis/async-redis</h3>
 <h3 id="document--mongodbmotor">Document : MongoDB/Motor</h3>
-<h3 id="graph--neo4jaioneo4j">Graph : Neo4j/aioneo4j</h3><!-- HTML_TAG_END -->
+<h3 id="graph--neo4jaioneo4j">Graph : Neo4j/aioneo4j</h3>
+<!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
@@ -123,7 +138,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonyrCKSWwLCs','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxdmnWNsyLXR','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonmYGvzVlYMS','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxGcNKTnmsyq','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

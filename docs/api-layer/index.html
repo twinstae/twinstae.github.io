@@ -14,7 +14,7 @@
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-b1b8cda3.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxzzrcnQVvSX"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxmdkRKnlbMG"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -36,9 +36,17 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonMvJgtlLvvT"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonsSSkSglMtd"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
-
+<nav class="svelte-au67cy"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#api는-서버가-외부와-통신하는-방법이자-계약입니다" class="svelte-au67cy">API는 서버가 외부와 통신하는 방법이자, 계약입니다.
+          <ol>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#수단과-양식-통신-프로토콜" class="svelte-au67cy">수단과 양식, 통신 프로토콜
+          <ol><li style="font-size: 1rem;"><a href="#http-hypertext-transfer-protocol-하이퍼-텍스트-전송-규약" class="svelte-au67cy">HTTP: HyperText Transfer Protocol 하이퍼 텍스트 전송 규약</a></li><li style="font-size: 1rem;"><a href="#grpc-google-remote-procedure-call-구글-원격-프로시저-호출" class="svelte-au67cy">gRPC: google Remote Procedure Call 구글 원격 프로시저 호출</a></li><li style="font-size: 1rem;"><a href="#graphql-graph-query-language-진화하는-api를-위한-질의-언어" class="svelte-au67cy">GraphQL: Graph Query Language 진화하는 API를 위한 질의 언어</a></li><li style="font-size: 1rem;"><a href="#websocket-양방향-실시간-이벤트-기반-통신을-위한-api" class="svelte-au67cy">WebSocket: 양방향, 실시간, 이벤트 기반 통신을 위한 API</a></li><li style="font-size: 1rem;"><a href="#pubsub-게시자-구독자-패턴-비동기-메세징-api" class="svelte-au67cy">PubSub: 게시자-구독자 패턴. 비동기 메세징 API</a></li>
+          </ol></a>
+      </li></ol></div>
+</nav>
 
 <!-- HTML_TAG_START --><h2 id="api는-서버가-외부와-통신하는-방법이자-계약입니다">API는 서버가 외부와 통신하는 방법이자, 계약입니다.</h2>
 <h2 id="수단과-양식-통신-프로토콜">수단과 양식, 통신 프로토콜</h2>
@@ -89,7 +97,8 @@ It works on every platform, browser or device, focusing equally on reliability a
 <p>SUBSCRIBE, UNSUBSCRIBE and PUBLISH implement the Publish/Subscribe messaging paradigm where (citing Wikipedia) senders (publishers) are not programmed to send their messages to specific receivers (subscribers). Rather, published messages are characterized into channels, without knowledge of what (if any) subscribers there may be.
 Subscribers express interest in one or more channels, and only receive messages that are of interest, without knowledge of what (if any) publishers there are. This decoupling of publishers and subscribers can allow for greater scalability and a more dynamic network topology.</p>
 <p><a href="https://redis.io/topics/pubsub">Redis Pub/Sub 공식 문서</a></p>
-</blockquote><!-- HTML_TAG_END -->
+</blockquote>
+<!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
@@ -168,7 +177,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonMvJgtlLvvT','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxzzrcnQVvSX','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonsSSkSglMtd','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxmdkRKnlbMG','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>
