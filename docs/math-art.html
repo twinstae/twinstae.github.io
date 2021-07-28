@@ -1,32 +1,41 @@
-<label for="n-slider">
- 숫자 n
-  <input id="n-slider" type="range" min="0" max="128" value="9">
-</label>
-<div id="now">(x ^ y) % 9</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <label for="n-slider">
+     숫자 n
+      <input id="n-slider" type="range" min="0" max="32" value="9">
+    </label>
+    <div id="now">(x ^ y) % 9</div>
 
-<canvas id="result-canvas" width="512" height="512">
+    <canvas id="result-canvas" width="1024" height="1024">
 
-<script>
-  function render(func){
-	const canvas = document.getElementById('result-canvas');
-    const context = canvas.getContext('2d');
-	for (let x = 0; x < 128; x++) {
-	  for (let y = 0; y < 128; y++) {
-		context.clearRect(x*4, y*4, 4, 4);
-		if (func(x, y)) {
-		  context.fillRect(x*4, y*4, 4, 4);
-		}
-	  }
-    }
-  }
-  
-  const nSlider = document.getElementById('n-slider');
-  const nowSpan = document.getElementById('now');
-  
-  nSlider.addEventListener("change", (e)=>{
-	const n = e.target.value;
-	
-	render((x, y) => (x ^ y) % n);
-	nowSpan.innerHTML = `(x ^ y) % ${n}`;
-  })
-</script>
+    <script>
+      function render(func){
+      const canvas = document.getElementById('result-canvas');
+      const context = canvas.getContext('2d');
+      for (let x = 0; x < 256; x++) {
+        for (let y = 0; y < 256; y++) {
+          context.clearRect(x*4, y*4, 4, 4);
+          if (func(x, y)) {
+            context.fillRect(x*4, y*4, 4, 4);
+            }
+          }
+        }
+      }
+      
+      const nSlider = document.getElementById('n-slider');
+      const nowSpan = document.getElementById('now');
+      
+      render((x, y) => (x ^ y) % 9);
+
+      nSlider.addEventListener("change", (e)=>{
+        const n = e.target.value;
+        render((x, y) => (x ^ y) % n);
+        nowSpan.innerHTML = `(x ^ y) % ${n}`;
+      })
+    </script>
+  </body>
+</html>
