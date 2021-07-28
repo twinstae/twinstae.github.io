@@ -13,7 +13,7 @@
     }, 500)
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-9463a7b1.css" media="all" /><style>.tooltip {
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-e9a8a278.css" media="all" /><style>.tooltip {
   position: relative;
 }
 
@@ -40,7 +40,7 @@
   visibility: visible;
   opacity: 1;
 }</style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxSlRNCKcpzR"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxYDdqqNNmCV"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -57,7 +57,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonbKDLtVwzmQ"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonrrsknVvjVF"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-au67cy"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#elderjs-프로젝트-구조" class="svelte-au67cy">Elder.js 프로젝트 구조
@@ -131,7 +131,7 @@
 <p>처음 배울 때에는 원래 정신이 없기 마련입니다. 일단 내게 필요한 기능을 만드는데 필요한 부분만 조금씩 배워보겠습니다.</p>
 <h2 id="새로운-글쓰기-불필요한-글-지우기">새로운 글쓰기. 불필요한 글 지우기.</h2>
 <p>먼저 src/routes/blog/route.js 를 열어보면 다음과 같은 내용이 보이실 겁니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">module.exports</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
+<pre class="shiki" style="background-color: #212121"><code class="language-javascript"><span class="line"><span style="color: #89DDFF">module.exports</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
 <span class="line"><span style="color: #89DDFF"> </span><span style="color: #545454">// 마크다운 플러그인이</span></span>
 <span class="line"><span style="color: #89DDFF"> </span><span style="color: #545454">// data와 all의 내용을 채워준다는 설명</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">data</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{},</span></span>
@@ -145,12 +145,12 @@
 <p>여기서는 permanlink 가 /:slug/ 모양이라고 템플릿을 만들어놨습니다. 여기서 slug는 url에 쓸 수 있게 띄어쓰기 대신 - 등으로 연결한 글 제목인데요. 영어로 쓴 마크다운 파일 제목이 slug가 됩니다. 예를들어 <code>getting-started.md</code> 파일은 .md 확장자를 빼버리고 <code>/getting-started/</code>가 url이 됩니다. 중요한 건 파일 이름을 일단 영문 알파벳으로 해줘야한다는 점입니다.</p>
 <p>그러면 Blog.svelte를 살펴보러 가겠습니다. data와 all을 마크다운 플러그인이 어떻게 채워줬을까요?</p>
 <p>코드를 열어보시면 맨 위에 script가 있습니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
+<pre class="shiki" style="background-color: #212121"><code class="language-html"><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">export</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> request</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// data의 내용은 markdown plugin이 외부에서 넣어줌.</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> html</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
 <p>export let 으로 data와 request를 선언해놓으면, 마크다운 플러그인이 값을 넣어줍니다. data를 구조 분해할당해서 html과 frontmatter 를 꺼내오는데요. 구조 분해 할당을 잘 모르신다면 다음과 같은 코드를 줄여 쓴거라고 생각하시면 됩니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454">// 전통적인 방법.</span></span>
+<pre class="shiki" style="background-color: #212121"><code class="language-javascript"><span class="line"><span style="color: #545454">// 전통적인 방법.</span></span>
 <span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> html </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">html</span><span style="color: #89DDFF">;</span></span>
 <span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">html</span><span style="color: #89DDFF">;</span></span>
 
@@ -159,7 +159,7 @@
 <p>그러면 html이랑 frontmatter는 어디서 왔을까요? 마크다운 플러그인이 blog 폴더에 있는 <code>.md</code> 파일들을 찾아서 변환한 겁니다.</p>
 <p><code>getting-started.md</code> 마크다운 파일을 하나 열어보면 이렇게 생겼습니다.</p>
 <p>위에 title부터 author 까지가 frontmatter입니다. 그 다음에 이어지는 본문 마크다운이 html로 변환됩니다. 마크다운은 html을 편리하게 쓰기 위한 문법입니다. 인터넷에 검색해보시면 마크다운 문법을 쓰는 방법을 설명한 글이 많으니, 잘 모르신다면 이번 기회에 한 번 배워보세요.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">---
+<pre class="shiki" style="background-color: #212121"><code class="language-null"><span class="line"><span style="color: #EEFFFF">---
 title: &#39;Getting Started with Elder.js&#39;
 excerpt: &#39;You have the starter template of Elder.js running. So what is next? This guide will help you explore the project.&#39;
 date: &#39;2020-03-16T05:35:07.322Z&#39;
@@ -178,7 +178,7 @@ This project is structured to follow the required Elder.js folder structure whic
 <p>다음으로 <code>&#x3C;meta name="description"</code>은 페이지가 어떤 내용인지 설명합니다. 여기서는 frontmatter에 적어놨던 excerpt를 가져옵니다. excerpt는 발췌라는 뜻인데. 보통 글의 첫 부분 내용을 가져옵니다. 검색엔진에 미리보기로 뜨는 그 내용입니다.</p>
 <p>마지막으로 <code>&#x3C;link></code>는 아까 정해뒀던 permanlink를 넣어줍니다. 검색엔진에게 premanlink는 이거라고 알려주는 부분입니다.</p>
 <p>그 다음은 이제 화면의 내용을 HTML로 본격적으로 그리게 됩니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">&amp;LeftArrow; Home</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF"> // 블로그 홈으로 돌아가기</span></span>
+<pre class="shiki" style="background-color: #212121"><code class="language-html"><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">&amp;LeftArrow; Home</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF"> // 블로그 홈으로 돌아가기</span></span>
 
 <span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">div</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">class</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">title</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">{frontmatter.title}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF"> // 제목</span></span>
@@ -274,7 +274,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonbKDLtVwzmQ','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxSlRNCKcpzR','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonrrsknVvjVF','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxYDdqqNNmCV','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

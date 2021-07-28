@@ -13,8 +13,8 @@
     }, 500)
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-9463a7b1.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxdZWkzRRVXJ"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-e9a8a278.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxtkVtNXlwJR"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -31,7 +31,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonMZDQvgnSWy"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonykvFrsQKLK"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-au67cy"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#문자열은-보통-불변입니다" class="svelte-au67cy">문자열은 보통 불변입니다.
@@ -48,7 +48,7 @@
 
 <!-- HTML_TAG_START --><h3 id="문자열은-보통-불변입니다">문자열은 보통 불변입니다.</h3>
 <p>대부분의 언어에서 문자열은 불변(Immutable)입니다. 변하지 않는다고 하면 이해하기 어려워하는 사람들이 있을텐데. 정확하게 말하면 문자열을 수정할 때, 새로운 문자열을 복사해서 만든다는 이야기다. 이걸 Copy on Write 라고도 한다. 파이썬에서 가변(mutable)한 자료형인 List와 비교해서 알아보자.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454"># 문자열</span></span>
+<pre class="shiki" style="background-color: #212121"><code class="language-python"><span class="line"><span style="color: #545454"># 문자열</span></span>
 <span class="line"><span style="color: #EEFFFF">a </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">hello</span><span style="color: #89DDFF">&quot;</span></span>
 <span class="line"><span style="color: #545454"># 문자 List. 타입은 사실 List[str] 이지만...</span></span>
 <span class="line"><span style="color: #EEFFFF">b </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">h</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">e</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">o</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">]</span></span>
@@ -79,7 +79,7 @@
 <p>불변 자료형은 매번 값을 새로 쓰기 때문에 성능에 불리한 면이 있었습니다. 내가 책을 하나 새로 샀다고 합시다. 가변 책장이라면 책을 새로 꽂으면 끝납니다. 하지만 불변 책장에서는 책장을 새로 만들어서 기존에 있던 책들을 모두 옮겨야 합니다...</p>
 <p>실제로 매우 많은 문자열을 합칠 때, 이 문제는 심각한 고민입니다. Python에서 문자열을 합칠 때 앞에서 본 + 연산자를 쓸 수 있습니다. 한 두 개는 이래도 괜찮지만, 문자열 수백 수천 개를 합칠 때에는 같은 문자열을 지우고 만들기를 수백 수천 번 반복하니 비효율적일 수 밖에 없습니다.</p>
 <p>그래서 Python에서는 이렇게 많은 문자열을 합칠 때에는 join을 쓰기를 권장합니다. join은 미리 모든 문자열을 합칠 수 있는 공간을 만들어두고, 한 번에 새 문자열을 만들기 때문에 빠릅니다. JS도 비슷하게 for이나 reduce보다 join을 사용하라 합니다. Java에서는 StringBuilder나 StringBuffer를 추천합니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">very_large_data_list </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">장원영</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">홍다희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">나북희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> ...</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">김민주</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
+<pre class="shiki" style="background-color: #212121"><code class="language-python"><span class="line"><span style="color: #EEFFFF">very_large_data_list </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">장원영</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">홍다희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">나북희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> ...</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">김민주</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
 
 <span class="line"><span style="color: #EEFFFF">result_1 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;&quot;</span></span>
 <span class="line"><span style="color: #89DDFF">for</span><span style="color: #EEFFFF"> name </span><span style="color: #89DDFF">in</span><span style="color: #EEFFFF"> very_large_data_list</span><span style="color: #89DDFF">:</span></span>
@@ -177,7 +177,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonMZDQvgnSWy','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxdZWkzRRVXJ','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonykvFrsQKLK','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxtkVtNXlwJR','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>
