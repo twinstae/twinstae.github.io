@@ -96,12 +96,12 @@ foo = "탐정토끼" # 리터럴
 assert type(foo) == type("탐") # 글자 하나의 타입도 str
 # <class 'str'>
 
-foo_copy = foo // 값을 복사
+foo_copy = foo # 값을 복사
 foo_copy += "입니다."
 print(foo) 
-// "탐정토끼" 원래 값은 불변
+# "탐정토끼" 원래 값은 불변
 print(foo_copy)
-// "탐정토끼입니다."
+# "탐정토끼입니다."
 
 assert len(foo) == 4 # 문자열의 길이
 
@@ -311,6 +311,111 @@ println!("{}", foo.chars().rev().collect::<String>());
 
 ### Elixir: String.grapheme(), String.t()
 ```elixir
-foo = "탐정토끼"
-IO.puts String.reverse(foo)
+foo = "탐정토끼" # 리터럴
+i "탐" # String 탐
+"""
+Term
+  "탐"
+Data type
+  BitString
+Byte size
+  3
+Description
+  This is a string: a UTF-8 encoded binary. It's printed surrounded by
+  "double quotes" because all UTF-8 encoded code points in it are printable.
+Raw representation
+  <<237, 131, 144>>
+Reference modules
+  String, :binary
+Implemented protocols
+  Collectable, IEx.Info, Inspect, List.Chars, String.Chars
+"""
+i '탐' # 글자 탐
+"""
+Term
+  [53456]
+Data type
+  List
+Reference modules
+  List
+Implemented protocols
+  Collectable, Enumerable, IEx.Info, Inspect, List.Chars, String.Chars
+"""
+
+foo_copy = foo # 값을 복사
+foo_copy = foo_copy <> "입니다."
+# "탐정토끼입니다."
+foo
+# "탐정토끼" 원래 값은 그대로
+foo_copy
+# "탐정토끼입니다."
+
+String.length(foo) # 문자열의 길이
+# 4
+byte_size(foo) 
+# 12 한글은 한 글자에 3바이트
+String.codepoints(foo)
+
+String.at(foo, 0) # 가져오기
+# "탐"
+String.slice(foo, 1, String.length(foo)) # 자르기
+# "정토끼"
+String.slice(foo, 1, 3) # 마지막 인덱스 포함한다!!!
+# "정토끼"
+String.slice(foo, String.length(foo) - 2..String.length(foo)) # range로 마지막 2글자
+# "토끼" 
+
+String.reverse(foo) # 뒤집기
+# "끼토정탐"
+
+String.replace("2014/02/14", "/", "-") # 바꾸기
+# "2014-02-14"
+String.split("2014/02/14", "/") # 쪼개기
+# ["2014", "02", "14"]
+
+Integer.to_string(24) <> "시간이 모자라" # 명시적으로 형변환
+# "24시간이 모자라"
+"1" < "3" # 비교 가능
+# true
+
+"taehee" <> " " <> "kim" == "taehee kim" # 합치기
+Enum.join(["탐정", "토끼"], "") # 이어붙이기
+# "탐정토끼"
+
+String.contains?(foo, "탐정") # foo가 "탐정"을 포함하는지? 
+# true
+
+# 주어진 문자열로 시작하는지?
+String.starts_with?("https://twinstae.github.io/", "https")
+# true
+
+# 주어진 문자열로 끝나는지?
+String.ends_with?("fiesta-izone.mp3", ".mp3")
+# true
+
+
+name = "kim"
+"name != "" #  비어 있는지?
+
+"hello, #{name}"   # interpolation
+# 'hello, kim'
+
+String.downcase("TAEhee Kim") # 소문자로
+# "taehee kim"
+String.trim("    내용     \n   ")  # 공백 자르기
+# "내용"
+
+# 파이프
+raw_text = "    \n         TeST HeLLo WORld      \n \n \t   "
+raw_text |> String.trim |>String.downcase |> String.split(" ")
+# ["test", "hello", "world"]
+
+m = Regex.run(~r/([1-6])학년 ([0-9]{1,2})단원/, "2학년 3단원")
+# ["2학년 3단원", "2", "3"]
+
+[전체, 학년, 단원] = m
+학년
+# "2"
+단원
+# "3"
 ```

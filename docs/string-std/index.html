@@ -13,8 +13,8 @@
     }, 500)
   </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-fd0cb787.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxbWRyZpFFTF"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-0c2005d7.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxgsgbMCVDQf"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -31,7 +31,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonMxXGzTCdYM"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttondNMjntpgzF"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-au67cy"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#프로그래밍-언어별-string-표준-라이브러리" class="svelte-au67cy">프로그래밍 언어별 String 표준 라이브러리
@@ -124,12 +124,12 @@
 <span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">type</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">type</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 글자 하나의 타입도 str</span></span>
 <span class="line"><span style="color: #545454"># &lt;class &#39;str&#39;&gt;</span></span>
 
-<span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">//</span><span style="color: #EEFFFF"> 값을 복사</span></span>
+<span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> foo </span><span style="color: #545454"># 값을 복사</span></span>
 <span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">입니다.</span><span style="color: #89DDFF">&quot;</span></span>
 <span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span></span>
-<span class="line"><span style="color: #89DDFF">//</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> 원래 값은 불변</span></span>
+<span class="line"><span style="color: #545454"># &quot;탐정토끼&quot; 원래 값은 불변</span></span>
 <span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo_copy</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #89DDFF">//</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼입니다.</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #545454"># &quot;탐정토끼입니다.&quot;</span></span>
 
 <span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #82AAFF">len</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">4</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 문자열의 길이</span></span>
 
@@ -328,8 +328,113 @@
 <span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">-&gt;</span><span style="color: #EEFFFF"> raw_text s/trim s/lower-case </span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/split</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">#&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">))</span></span>
 <span class="line"><span style="color: #545454">; [&quot;test&quot; &quot;hello&quot; &quot;world&quot;]</span></span></code></pre>
 <h3 id="elixir-stringgrapheme-stringt">Elixir: String.grapheme(), String.t()</h3>
-<pre class="shiki" style="background-color: #212121"><code class="language-elixir"><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #FFCB6B">IO</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">puts</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">reverse</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">)</span></span></code></pre>
+<pre class="shiki" style="background-color: #212121"><code class="language-elixir"><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 리터럴</span></span>
+<span class="line"><span style="color: #EEFFFF">i </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># String 탐</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;&quot;&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">Term</span></span>
+<span class="line"><span style="color: #C3E88D">  &quot;탐&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">Data type</span></span>
+<span class="line"><span style="color: #C3E88D">  BitString</span></span>
+<span class="line"><span style="color: #C3E88D">Byte size</span></span>
+<span class="line"><span style="color: #C3E88D">  3</span></span>
+<span class="line"><span style="color: #C3E88D">Description</span></span>
+<span class="line"><span style="color: #C3E88D">  This is a string: a UTF-8 encoded binary. It&#39;s printed surrounded by</span></span>
+<span class="line"><span style="color: #C3E88D">  &quot;double quotes&quot; because all UTF-8 encoded code points in it are printable.</span></span>
+<span class="line"><span style="color: #C3E88D">Raw representation</span></span>
+<span class="line"><span style="color: #C3E88D">  &lt;&lt;237, 131, 144&gt;&gt;</span></span>
+<span class="line"><span style="color: #C3E88D">Reference modules</span></span>
+<span class="line"><span style="color: #C3E88D">  String, :binary</span></span>
+<span class="line"><span style="color: #C3E88D">Implemented protocols</span></span>
+<span class="line"><span style="color: #C3E88D">  Collectable, IEx.Info, Inspect, List.Chars, String.Chars</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;&quot;&quot;</span></span>
+<span class="line"><span style="color: #EEFFFF">i </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&#39;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 글자 탐</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;&quot;&quot;</span></span>
+<span class="line"><span style="color: #C3E88D">Term</span></span>
+<span class="line"><span style="color: #C3E88D">  [53456]</span></span>
+<span class="line"><span style="color: #C3E88D">Data type</span></span>
+<span class="line"><span style="color: #C3E88D">  List</span></span>
+<span class="line"><span style="color: #C3E88D">Reference modules</span></span>
+<span class="line"><span style="color: #C3E88D">  List</span></span>
+<span class="line"><span style="color: #C3E88D">Implemented protocols</span></span>
+<span class="line"><span style="color: #C3E88D">  Collectable, Enumerable, IEx.Info, Inspect, List.Chars, String.Chars</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;&quot;&quot;</span></span>
+
+<span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> foo </span><span style="color: #545454"># 값을 복사</span></span>
+<span class="line"><span style="color: #EEFFFF">foo_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> foo_copy </span><span style="color: #89DDFF">&lt;&gt;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">입니다.</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #545454"># &quot;탐정토끼입니다.&quot;</span></span>
+<span class="line"><span style="color: #EEFFFF">foo</span></span>
+<span class="line"><span style="color: #545454"># &quot;탐정토끼&quot; 원래 값은 그대로</span></span>
+<span class="line"><span style="color: #EEFFFF">foo_copy</span></span>
+<span class="line"><span style="color: #545454"># &quot;탐정토끼입니다.&quot;</span></span>
+
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">length</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 문자열의 길이</span></span>
+<span class="line"><span style="color: #545454"># 4</span></span>
+<span class="line"><span style="color: #82AAFF">byte_size</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span></span>
+<span class="line"><span style="color: #545454"># 12 한글은 한 글자에 3바이트</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">codepoints</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">)</span></span>
+
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">at</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 가져오기</span></span>
+<span class="line"><span style="color: #545454"># &quot;탐&quot;</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">slice</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">length</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">))</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 자르기</span></span>
+<span class="line"><span style="color: #545454"># &quot;정토끼&quot;</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">slice</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">3</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 마지막 인덱스 포함한다!!!</span></span>
+<span class="line"><span style="color: #545454"># &quot;정토끼&quot;</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">slice</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">length</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">-</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">..</span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">length</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">))</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># range로 마지막 2글자</span></span>
+<span class="line"><span style="color: #545454"># &quot;토끼&quot; </span></span>
+
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">reverse</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 뒤집기</span></span>
+<span class="line"><span style="color: #545454"># &quot;끼토정탐&quot;</span></span>
+
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">replace</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">-</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 바꾸기</span></span>
+<span class="line"><span style="color: #545454"># &quot;2014-02-14&quot;</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2014/02/14</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 쪼개기</span></span>
+<span class="line"><span style="color: #545454"># [&quot;2014&quot;, &quot;02&quot;, &quot;14&quot;]</span></span>
+
+<span class="line"><span style="color: #FFCB6B">Integer</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">to_string</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">24</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;&gt;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">시간이 모자라</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 명시적으로 형변환</span></span>
+<span class="line"><span style="color: #545454"># &quot;24시간이 모자라&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">1</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">3</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 비교 가능</span></span>
+<span class="line"><span style="color: #545454"># true</span></span>
+
+<span class="line"><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;&gt;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;&gt;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">taehee kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 합치기</span></span>
+<span class="line"><span style="color: #FFCB6B">Enum</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">join</span><span style="color: #89DDFF">([</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">],</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 이어붙이기</span></span>
+<span class="line"><span style="color: #545454"># &quot;탐정토끼&quot;</span></span>
+
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">contains?</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">foo</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># foo가 &quot;탐정&quot;을 포함하는지? </span></span>
+<span class="line"><span style="color: #545454"># true</span></span>
+
+<span class="line"><span style="color: #545454"># 주어진 문자열로 시작하는지?</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">starts_with?</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https://twinstae.github.io/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">https</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># true</span></span>
+
+<span class="line"><span style="color: #545454"># 주어진 문자열로 끝나는지?</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">ends_with?</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">fiesta-izone.mp3</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">.mp3</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># true</span></span>
+
+
+<span class="line"><span style="color: #EEFFFF">name </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">kim</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">name != </span><span style="color: #89DDFF">&quot;&quot;</span><span style="color: #C3E88D"> #  비어 있는지?</span></span>
+
+<span class="line"><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">hello</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #545454">#{name}&quot;   # interpolation</span></span>
+<span class="line"><span style="color: #545454"># &#39;hello, kim&#39;</span></span>
+
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">downcase</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">TAEhee Kim</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 소문자로</span></span>
+<span class="line"><span style="color: #545454"># &quot;taehee kim&quot;</span></span>
+<span class="line"><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">trim</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">    내용     \n   </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF">  </span><span style="color: #545454"># 공백 자르기</span></span>
+<span class="line"><span style="color: #545454"># &quot;내용&quot;</span></span>
+
+<span class="line"><span style="color: #545454"># 파이프</span></span>
+<span class="line"><span style="color: #EEFFFF">raw_text </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">    \n         TeST HeLLo WORld      \n \n \t   </span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #EEFFFF">raw_text </span><span style="color: #89DDFF">|&gt;</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">trim</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">|&gt;</span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">downcase</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">|&gt;</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># [&quot;test&quot;, &quot;hello&quot;, &quot;world&quot;]</span></span>
+
+<span class="line"><span style="color: #EEFFFF">m </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">Regex</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">run</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">~r/</span><span style="color: #C3E88D">([1-6])학년 ([0-9]{1,2})단원</span><span style="color: #89DDFF">/</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2학년 3단원</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #545454"># [&quot;2학년 3단원&quot;, &quot;2&quot;, &quot;3&quot;]</span></span>
+
+<span class="line"><span style="color: #89DDFF">[</span><span style="color: #EEFFFF">전체</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> 학년</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> 단원</span><span style="color: #89DDFF">]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> m</span></span>
+<span class="line"><span style="color: #EEFFFF">학년</span></span>
+<span class="line"><span style="color: #545454"># &quot;2&quot;</span></span>
+<span class="line"><span style="color: #EEFFFF">단원</span></span>
+<span class="line"><span style="color: #545454"># &quot;3&quot;</span></span></code></pre>
 <!-- HTML_TAG_END -->
 
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
@@ -409,7 +514,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonMxXGzTCdYM','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxbWRyZpFFTF','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttondNMjntpgzF','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxgsgbMCVDQf','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>
