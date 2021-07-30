@@ -1,12 +1,12 @@
 ---
-title: 'API 계층'
+title: '웹 인터페이스 계층'
 excerpt: 'REST, gRPC, GraphQL, Socket, PubSub 등등... API 계층은 외부에서 들어온 요청을 작업으로 변환하고, 결과를 응답으로 변환하고 전달합니다.'
 date: '2021-07-13T18:30:36.653907'
 author: 탐정토끼(Taehee Kim)
 tag: '작성 중, DDD, 계층형 아키텍처, API, REST, gRPC, GraphQL, WebSocket, PubSub'
 ---
 
-## API는 서버가 외부와 통신하는 방법이자, 계약입니다.
+## 웹 인터페이스는 서버가 외부와 통신하는 방법이자, 계약입니다.
 
 ## 수단과 양식, 통신 프로토콜
 

@@ -71,7 +71,7 @@ assertTrue(foo.contains("탐정"));
 // 주어진 문자열로 시작하는지?
 assertTrue("https://twinstae.github.io/".startswith("https"));
 // 주어진 문자열로 끝나는지?
-assertTrue("fiesta-izone.mp3".endswith(".mps"));
+assertTrue("fiesta-izone.mp3".endswith(".mp3"));
 
 String name = "kim";
 // 비어있는지?
@@ -115,7 +115,7 @@ assert "abcdefg"[::2] == "aceg" # step 2칸씩
 print(foo[::-1]) # 뒤집기
 # "끼토정탐"
 
-assert "2014/02/14".replace("/", "-") == "2014-02-14" # 치환
+assert "2014/02/14".replace("/", "-") == "2014-02-14" # 바꾸기
 assert "2014/02/14".split("/") == ["2014", "02", "14"] # 쪼개기
 
 assert str(24) + "시간이 모자라" # int와 문자열 합치기
@@ -123,7 +123,7 @@ assert str(24) + "시간이 모자라" # int와 문자열 합치기
 assert "1" < "3" # 비교 가능
 
 assert "taehee" + " " + "kim" == "taehee kim" # 합치기
-assert "".join(["탐정", "토끼"]) == "탐정토끼" # 연결하기
+assert "".join(["탐정", "토끼"]) == "탐정토끼" # 이어붙이기
 
 long_csv = """12, 3, "빨강"
 13, 2, "파랑"
@@ -135,11 +135,12 @@ assert "탐정" in foo == True # foo가 "탐정"을 포함하는지?
 # 주어진 문자열로 시작하는지?
 assert "https://twinstae.github.io/".startswith("https") == True
 # 주어진 문자열로 끝나는지?
-assert "fiesta-izone.mp3".endswith(".mps")
+assert "fiesta-izone.mp3".endswith(".mp3")
+
 
 name: str = 'kim' # 타입힌트, ' 홑 따옴표도 상관 없다.
 
-assert not name == True;   # 비어 있는지? PEP8 가이드 권장
+assert not name == False;   # 비어 있는지? PEP8 가이드 권장
 # "name != ""               # 이렇게 할 수도 있긴 하다.
 
 print('hello, %s' % name) # format
@@ -165,7 +166,80 @@ assert m.group(2) == '3'
 ### TypeScript: string
 ```typescript
 const foo: string = "탐정토끼";
-console.log(foo.split("").reverse().join());
+typeof foo == typeof "탐"; // 글자 하나도 string
+// "string"
+
+let foo_copy = foo;
+foo_copy += "입니다.";
+console.log(foo);
+// "탐정토끼" 원래 값은 불변
+console.log(foo_copy);
+// "탐정토끼입니다." 새로운 값만 변함
+
+foo.length == 4 // 길이
+
+foo[0] == "탐"  // 가져오기
+foo.slice(1) == "정토끼" // 자르기
+foo.slice(1, 3) == "정토" // 마지막 인덱스 미포함
+foo.slice(foo.length - 2) == "토끼" // 마지막 2글자
+
+// 문자열 뒤집기
+console.log([...foo].reverse().join());
+// "끼토정탐"
+
+"2014/02/14".replace(/\//g, "-") == "2014-02-14"; // 모두 바꾸기
+"2014/02/14".split("/") // 쪼개기
+// ["2014", "02", "14"]
+
+24 + "시간이 모자라" // 자동 형변환
+// "24시간이 모자라"
+"1" < "3" // 비교 가능
+// true
+
+"taehee" + " " + "kim" == "taehee kim" // 합치기
+["탐정", "토끼"].join("") == "탐정토끼" // 이어붙이기
+
+const long_csv = `12, 3, "빨강"
+13, 2, "파랑"
+14, 1, "초록"` // 여러 줄 문자열
+const lines = long_csv.split("\n") # 줄 단위로 자르기
+
+foo.includes("탐정")  
+// true  주어진 문자열을 포함하는지?
+
+"https://twinstae.github.io/".startsWith("https")
+// true  주어진 문자열로 시작하는지?
+
+"fiesta-izone.mp3".endsWith(".mp3")
+// 주어진 문자열로 끝나는지?
+
+name: string = 'kim' // 명시적 타입
+
+! name;   // 비어 있는지?
+// false
+name !== ""               // 이렇게 할 수도 있긴 하다.
+
+`hello, ${name}`   // interpolation
+// 'hello, kim'
+
+'TAEhee Kim'.toLowerCase() // 소문자로
+// 'taehee kim'
+'    내용     \n   '.trim()  // 앞뒤 공백 자르기
+// '내용'
+
+// 메소드 체이닝
+raw_text = "    \n         TeST HeLLo WORld      \n \n \t   "
+raw_text.trim().toLowerCase().split(" ")
+// ['test', 'hello', 'world']
+
+m = '2학년 3단원'.match('([1-6])학년 ([0-9]{1,2})단원');
+m[0] == '2학년 3단원';
+m[1] == '2';
+m[1] == '3';
+const [라벨, 학년, 단원] = m; // 구조 분해 할당
+라벨 // "2학년 3단원"
+학년 // "2"
+단원 // "3"
 ```
 
 ### Rust: str, std::String
