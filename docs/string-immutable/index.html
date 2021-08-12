@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열은 왜 불변인가?</title><meta name="description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-immutable/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><link href="https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-14lmytn"><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">setTimeout(()=>{
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열은 왜 불변인가?</title><meta name="description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-immutable/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-1jjovud"><link href="./pretendard-subset.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-1jjovud"><script class="svelte-uvou6c" data-svelte="svelte-1jjovud">setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
       console.log(codes);
 
@@ -11,10 +11,10 @@
         })
       }
     }, 500)
-  </script><script class="svelte-uvou6c" data-svelte="svelte-14lmytn">let is_dark = localStorage.getItem("dark") == "true";
+  </script><script class="svelte-uvou6c" data-svelte="svelte-1jjovud">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-0c2005d7.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxjJDcnpDgSg"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-c9eba67b.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxFqzxQsjTJG"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
 <label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
   <span class="svelte-1x528h4"></span>
 </label></div></nav>
@@ -31,7 +31,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttoncXWzdfQzFb"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonVxKbgYxmgr"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-au67cy"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#문자열은-보통-불변입니다" class="svelte-au67cy">문자열은 보통 불변입니다.
@@ -177,7 +177,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttoncXWzdfQzFb','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxjJDcnpDgSg','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonVxKbgYxmgr','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxFqzxQsjTJG','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

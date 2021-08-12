@@ -50,7 +50,7 @@
 
 <svelte:head>
   <link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" />
-  <link href='https://fonts.googleapis.com/css?family=Noto Sans KR:400,600&display=swap' rel="preload" as="style" />
+  <link href='./pretendard-subset.css' rel="preload" as="style" />
   <script>
     setTimeout(()=>{
       const codes = document.getElementsByTagName("code");
