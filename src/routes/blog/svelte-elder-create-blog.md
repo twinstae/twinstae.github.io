@@ -3,7 +3,7 @@ title: 'Svelte Elder.js 블로그 만들기'
 excerpt: '검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다.'
 date: '2021-07-07T15:01:00.618Z'
 author: 탐정토끼(Taehee Kim)
-tag: 'Svelte, Elder.js, Github Pages, Blog'
+tag: 'Svelte, Elder.js, GitHub Pages, Blog'
 ---
 
 이 블로그는 [Svelte](https://svelte.dev/)와 [Elder.js](https://elderguide.com/tech/elderjs/)로 만들었습니다. 이 글에서는 여러분에게 Svelte와 Elder.js를 소개하고, 여러분도 비슷한 블로그를 만들 수 있게 도와드리려 합니다.
@@ -113,7 +113,7 @@ Elder.js는 이러한 JAM 스택에서도 특히 SEO 전문가들이 만든 프�
 
 이제 설명은 끝입니다. 실전으로 들어가보죠!
 
-## 실전: Elder.js template 프로젝트 Github Pages에 배포하기
+## 실전: Elder.js template 프로젝트 GitHub Pages에 배포하기
 
 그러면 공식 가이드를 따라서, 프로젝트를 세팅해봅시다.
 
@@ -178,7 +178,7 @@ open http://localhost:3000
 이제 저장소를 만들었으니, 저장소의 파일을 서빙하도록 설정해야 합니다.
 
 저장소 메뉴에 보면 Settings(설정)이 있습니다.
-![Github 저장소 메뉴 사진. Settings 가 강조되어 있다.](https://docs.github.com/assets/images/help/repository/repo-actions-settings.png)
+![GitHub 저장소 메뉴 사진. Settings 가 강조되어 있다.](https://docs.github.com/assets/images/help/repository/repo-actions-settings.png)
 
 Pages 탭에 들어갑니다.
 
@@ -207,7 +207,7 @@ ___ELDER___
 
 ### .nojekyll 파일 넣어서 asset 서빙되게 하기
 
-Github Pages는 원래 Jekyll 이라는 루비 정적 사이트 생성기를 사용하는 게 기본입니다. 저희는 Elder.js 를 쓰기 때문에 .nojekyll 설정을 해줘야 합니다. 이 설정을 안 해주면 사이트 css나 이미지 같은 asset을 불러오지 못하게 됩니다. 디자인이 모두 날아간 황량한 HTML을 보지 않으려면...
+GitHub Pages는 원래 Jekyll 이라는 루비 정적 사이트 생성기를 사용하는 게 기본입니다. 저희는 Elder.js 를 쓰기 때문에 .nojekyll 설정을 해줘야 합니다. 이 설정을 안 해주면 사이트 css나 이미지 같은 asset을 불러오지 못하게 됩니다. 디자인이 모두 날아간 황량한 HTML을 보지 않으려면...
 
 .nojekyll 파일을 만들어줍시다. 메모장으로 파일을 만들고 저장하면 됩니다. 내용은 비어 있어도 상관 없습니다.
 
@@ -263,7 +263,7 @@ git push -u origin main
 고생하셨습니다. 저희가 이번에 한 일을 정리해봅시다.
 
 - Elder.js 템플릿 프로젝트를 세팅했습니다.
-- 템플릿 프로젝트를 Github 저장소에 올려서 배포했습니다.
+- 템플릿 프로젝트를 GitHub 저장소에 올려서 배포했습니다.
 
 물론 이제 시작입니다. ;) 이제부터...
 
