@@ -8,6 +8,7 @@ pre {
   background: var(--codeblock-background-color);
   padding: 1rem;
   border-radius: 0.5rem;
+  overflow-x: auto;
 }
 
 pre:hover:before {

@@ -81,7 +81,7 @@ Breaking Change
 ## Git: 프로젝트 버전 관리
 
 ## 배포 자동화
-### Github Action
+### GitHub Action
 ### Jenkins
 
 ## 브라우저, 에뮬레이터
