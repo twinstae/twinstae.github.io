@@ -1,0 +1,213 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>써보면서 배우는 HTTP 서버와 네트워크</title><meta name="description" content="0.0.0.0 은 무슨 뜻일까요? IP부터 CORS, method와 status 까지... 면접 질문이 아닙니다. 실제로 필요한 HTTP 네트워크에 대한 지식을 간단한 HTTP 서버를 만들어보며 배워봅시다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/understanding-simple-server-network/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/understanding-simple-server-network/" data-svelte="svelte-18tnbae"><meta property="og:title" content="써보면서 배우는 HTTP 서버와 네트워크" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="0.0.0.0 은 무슨 뜻일까요? IP부터 CORS, method와 status 까지... 면접 질문이 아닙니다. 실제로 필요한 HTTP 네트워크에 대한 지식을 간단한 HTTP 서버를 만들어보며 배워봅시다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/understanding-simple-server-network/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="써보면서 배우는 HTTP 서버와 네트워크" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="0.0.0.0 은 무슨 뜻일까요? IP부터 CORS, method와 status 까지... 면접 질문이 아닙니다. 실제로 필요한 HTTP 네트워크에 대한 지식을 간단한 HTTP 서버를 만들어보며 배워봅시다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-1skfx2c"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" class="svelte-uvou6c" data-svelte="svelte-1skfx2c"><script class="svelte-uvou6c" data-svelte="svelte-1skfx2c">setTimeout(()=>{
+      const codes = document.getElementsByTagName("code");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script><script class="svelte-uvou6c" data-svelte="svelte-1skfx2c">let is_dark = localStorage.getItem("dark") == "true";
+    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-40c93bdb.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxmcJLcYmNzQ"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
+  <span class="svelte-1x528h4"></span>
+</label></div></nav>
+
+<article class="container svelte-uvou6c"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1>써보면서 배우는 HTTP 서버와 네트워크</h1>
+  <div><span class="hashtag">#작성 중
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbuttonWqXFGyJbcg"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+<nav class="svelte-au67cy"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#이게-왜-필요하지---실제로-해보면서-배워요" class="svelte-au67cy">&quot;이게 왜 필요하지?&quot; -&gt; 실제로 해보면서 배워요
+          <ol><li style="font-size: 1rem;"><a href="#생활코딩-web1-심화편" class="svelte-au67cy">생활코딩 WEB1 심화편</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#한-줄로-static-파일-서버-열기" class="svelte-au67cy">한 줄로 static 파일 서버 열기
+          <ol><li style="font-size: 1rem;"><a href="#파이썬-설치하기" class="svelte-au67cy">파이썬 설치하기</a></li><li style="font-size: 1rem;"><a href="#터미널-돌아다니기--cli-세계에-오신-걸-환영합니다" class="svelte-au67cy">터미널 돌아다니기 : CLI 세계에 오신 걸 환영합니다</a></li><li style="font-size: 1rem;"><a href="#html-파일을-만들기" class="svelte-au67cy">HTML 파일을 만들기</a></li><li style="font-size: 1rem;"><a href="#python--m-httpserver-실행하기" class="svelte-au67cy">python -m http.server 실행하기</a></li><li style="font-size: 1rem;"><a href="#pc-웹-브라우저에서-서버-접속하기" class="svelte-au67cy">PC 웹 브라우저에서 서버 접속하기</a></li><li style="font-size: 1rem;"><a href="#핸드폰-웹-브라우저에서-서버-접속하기" class="svelte-au67cy">핸드폰 웹 브라우저에서 서버 접속하기</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#under-the-hood-도대체-무슨-일이-일어난-거죠" class="svelte-au67cy">Under the Hood... 도대체 무슨 일이 일어난 거죠?
+          <ol><li style="font-size: 1rem;"><a href="#큰-그림--브라우저와-서버가-요청과-응답을-주고-받았어요" class="svelte-au67cy">큰 그림 : 브라우저와 서버가 요청과 응답을 주고 받았어요</a></li><li style="font-size: 1rem;"><a href="#개발자도구-network-탭-열어보기" class="svelte-au67cy">개발자도구 Network 탭 열어보기</a></li><li style="font-size: 1rem;"><a href="#route-path--계층적-파일-경로" class="svelte-au67cy">Route Path : 계층적 파일 경로</a></li><li style="font-size: 1rem;"><a href="#host--0000-은-무슨-뜻이죠" class="svelte-au67cy">Host : 0.0.0.0 은 무슨 뜻이죠?</a></li><li style="font-size: 1rem;"><a href="#port-포트--80-3000-8000-이게-무슨-뜻이죠" class="svelte-au67cy">Port 포트 : 80, 3000, 8000... 이게 무슨 뜻이죠?</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#집-밖에서-내-서버에-접속하려면" class="svelte-au67cy">집 밖에서 내 서버에 접속하려면?
+          <ol><li style="font-size: 1rem;"><a href="#192168-사설-ip--공유기가-할당해주는-주소" class="svelte-au67cy">192.168... 사설 IP : 공유기가 할당해주는 주소</a></li><li style="font-size: 1rem;"><a href="#port-forwarding-포트-포워딩--공인-ip와-사설-ip를-연결하기" class="svelte-au67cy">Port Forwarding 포트 포워딩 : 공인 IP와 사설 IP를 연결하기</a></li><li style="font-size: 1rem;"><a href="#라즈베리파이--미니-컴퓨터" class="svelte-au67cy">라즈베리파이 : 미니 컴퓨터</a></li><li style="font-size: 1rem;"><a href="#termux--안-쓰는-안드로이드-폰을-리눅스-서버로-쓰기" class="svelte-au67cy">Termux : 안 쓰는 안드로이드 폰을 리눅스 서버로 쓰기</a></li><li style="font-size: 1rem;"><a href="#클라우드-호스팅-서비스-서버리스-이용하기" class="svelte-au67cy">클라우드, 호스팅 서비스, 서버리스 이용하기</a></li><li style="font-size: 1rem;"><a href="#status-code-상태-코드" class="svelte-au67cy">Status Code 상태 코드</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#swagger-open-api-로-http-요청과-응답-이해하기" class="svelte-au67cy">Swagger Open API 로 HTTP 요청과 응답 이해하기
+          <ol><li style="font-size: 1rem;"><a href="#http-api-란" class="svelte-au67cy">HTTP API 란?</a></li><li style="font-size: 1rem;"><a href="#http-method--get-post-patch-put-delete" class="svelte-au67cy">HTTP Method : Get, Post, Patch, Put, Delete</a></li><li style="font-size: 1rem;"><a href="#query-params--" class="svelte-au67cy">Query Params : ?</a></li><li style="font-size: 1rem;"><a href="#request-body--요청-본문" class="svelte-au67cy">Request Body : 요청 본문</a></li><li style="font-size: 1rem;"><a href="#request-header" class="svelte-au67cy">Request Header</a></li><li style="font-size: 1rem;"><a href="#response-header" class="svelte-au67cy">Response Header</a></li><li style="font-size: 1rem;"><a href="#상태코드-심화편" class="svelte-au67cy">상태코드 심화편</a></li><li style="font-size: 1rem;"><a href="#cache-control" class="svelte-au67cy">cache control</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#현실-세상의-사이트를-돌아다녀보자" class="svelte-au67cy">현실 세상의 사이트를 돌아다녀보자
+          <ol><li style="font-size: 1rem;"><a href="#도메인-이름과-dns" class="svelte-au67cy">도메인 이름과 DNS</a></li><li style="font-size: 1rem;"><a href="#https-vs-http--ssl-인증서와-보안" class="svelte-au67cy">https vs http : SSL 인증서와 보안</a></li><li style="font-size: 1rem;"><a href="#gzip" class="svelte-au67cy">gzip</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#이제-어디로" class="svelte-au67cy">이제 어디로?
+          <ol><li style="font-size: 1rem;"><a href="#커맨드라인-배워보기" class="svelte-au67cy">커맨드라인 배워보기</a></li><li style="font-size: 1rem;"><a href="#서버-만들어-보기" class="svelte-au67cy">서버 만들어 보기</a></li><li style="font-size: 1rem;"><a href="#내가-쓰는-플랫폼과-언어에서-http-요청-보내기" class="svelte-au67cy">내가 쓰는 플랫폼과 언어에서 http 요청 보내기</a></li><li style="font-size: 1rem;"><a href="#http-스펙을-더-깊게-파고들기" class="svelte-au67cy">HTTP 스펙을 더 깊게 파고들기</a></li><li style="font-size: 1rem;"><a href="#http-20--http-30" class="svelte-au67cy">HTTP 2.0 / HTTP 3.0</a></li>
+          </ol></a>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h2 id="이게-왜-필요하지---실제로-해보면서-배워요">"이게 왜 필요하지?" -> 실제로 해보면서 배워요</h2>
+<h3 id="생활코딩-web1-심화편">생활코딩 WEB1 심화편</h3>
+<h2 id="한-줄로-static-파일-서버-열기">한 줄로 static 파일 서버 열기</h2>
+<h3 id="파이썬-설치하기">파이썬 설치하기</h3>
+<h3 id="터미널-돌아다니기--cli-세계에-오신-걸-환영합니다">터미널 돌아다니기 : CLI 세계에 오신 걸 환영합니다</h3>
+<p>pwd</p>
+<p>ls (dir)</p>
+<p>cd</p>
+<h3 id="html-파일을-만들기">HTML 파일을 만들기</h3>
+<h3 id="python--m-httpserver-실행하기">python -m http.server 실행하기</h3>
+<h3 id="pc-웹-브라우저에서-서버-접속하기">PC 웹 브라우저에서 서버 접속하기</h3>
+<h3 id="핸드폰-웹-브라우저에서-서버-접속하기">핸드폰 웹 브라우저에서 서버 접속하기</h3>
+<h2 id="under-the-hood-도대체-무슨-일이-일어난-거죠">Under the Hood... 도대체 무슨 일이 일어난 거죠?</h2>
+<h3 id="큰-그림--브라우저와-서버가-요청과-응답을-주고-받았어요">큰 그림 : 브라우저와 서버가 요청과 응답을 주고 받았어요</h3>
+<h3 id="개발자도구-network-탭-열어보기">개발자도구 Network 탭 열어보기</h3>
+<h3 id="route-path--계층적-파일-경로">Route Path : 계층적 파일 경로</h3>
+<p>디렉토리를 만들어요.</p>
+<p>디렉토리 안에 index.html을 만들어요.</p>
+<p>파일 경로 vs URL 경로</p>
+<h3 id="host--0000-은-무슨-뜻이죠">Host : 0.0.0.0 은 무슨 뜻이죠?</h3>
+<p>호스트를 정해봅시다.</p>
+<h3 id="port-포트--80-3000-8000-이게-무슨-뜻이죠">Port 포트 : 80, 3000, 8000... 이게 무슨 뜻이죠?</h3>
+<p>같은 포트에 서버를 하나 더 열어봅시다.</p>
+<h2 id="집-밖에서-내-서버에-접속하려면">집 밖에서 내 서버에 접속하려면?</h2>
+<h3 id="192168-사설-ip--공유기가-할당해주는-주소">192.168... 사설 IP : 공유기가 할당해주는 주소</h3>
+<h3 id="port-forwarding-포트-포워딩--공인-ip와-사설-ip를-연결하기">Port Forwarding 포트 포워딩 : 공인 IP와 사설 IP를 연결하기</h3>
+<h3 id="라즈베리파이--미니-컴퓨터">라즈베리파이 : 미니 컴퓨터</h3>
+<h3 id="termux--안-쓰는-안드로이드-폰을-리눅스-서버로-쓰기">Termux : 안 쓰는 안드로이드 폰을 리눅스 서버로 쓰기</h3>
+<h3 id="클라우드-호스팅-서비스-서버리스-이용하기">클라우드, 호스팅 서비스, 서버리스 이용하기</h3>
+<h3 id="status-code-상태-코드">Status Code 상태 코드</h3>
+<p>304 Not Modified : 새로고침을 해봅시다.</p>
+<p>200 OK : 파일을 수정해봐요.</p>
+<p>404 Not Found : 없는 파일을 요청해봅시다.</p>
+<h2 id="swagger-open-api-로-http-요청과-응답-이해하기">Swagger Open API 로 HTTP 요청과 응답 이해하기</h2>
+<h3 id="http-api-란">HTTP API 란?</h3>
+<h3 id="http-method--get-post-patch-put-delete">HTTP Method : Get, Post, Patch, Put, Delete</h3>
+<h3 id="query-params--">Query Params : ?</h3>
+<h3 id="request-body--요청-본문">Request Body : 요청 본문</h3>
+<p>요즘은 보통 json을 사용하지만, XML이나 protobuff도 있습니다.</p>
+<h3 id="request-header">Request Header</h3>
+<h3 id="response-header">Response Header</h3>
+<h3 id="상태코드-심화편">상태코드 심화편</h3>
+<p>400 Bad Request : 잘못된 요청</p>
+<p>401 Unauthorized : 인증 필요</p>
+<p>403 Forbidden : 접근 거부</p>
+<p>Authorization 헤더를 달아봅시다</p>
+<h3 id="cache-control">cache control</h3>
+<h2 id="현실-세상의-사이트를-돌아다녀보자">현실 세상의 사이트를 돌아다녀보자</h2>
+<h3 id="도메인-이름과-dns">도메인 이름과 DNS</h3>
+<h3 id="https-vs-http--ssl-인증서와-보안">https vs http : SSL 인증서와 보안</h3>
+<h3 id="gzip">gzip</h3>
+<h2 id="이제-어디로">이제 어디로?</h2>
+<h3 id="커맨드라인-배워보기">커맨드라인 배워보기</h3>
+<p>WSL2 사용하기
+리눅스 커맨드라인 생존 가이드</p>
+<p>curl</p>
+<h3 id="서버-만들어-보기">서버 만들어 보기</h3>
+<h3 id="내가-쓰는-플랫폼과-언어에서-http-요청-보내기">내가 쓰는 플랫폼과 언어에서 http 요청 보내기</h3>
+<p>js : axios, fetch, ky
+python : requests, httpx</p>
+<h3 id="http-스펙을-더-깊게-파고들기">HTTP 스펙을 더 깊게 파고들기</h3>
+<p>MDN
+RFC</p>
+<p>그림으로 배우는 HTTP &#x26; Network Basic
+HTTP 완벽 가이드
+네트워크 하향식 접근</p>
+<p>김영한님 강의 <a href="https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC">모든 개발자를 위한 HTTP 웹 기본 지식</a></p>
+<h3 id="http-20--http-30">HTTP 2.0 / HTTP 3.0</h3>
+<p>Open API와 Swagger
+gRPC
+GraphQL</p>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-uvou6c">이 블로그는 <a href="https://svelte.dev/" class="svelte-uvou6c">Svelte</a>와 <a class="secondary svelte-uvou6c" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br class="svelte-uvou6c">
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-uvou6c">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br class="svelte-uvou6c">
+
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-uvou6c">Pretendard</a>를 사용합니다.
+  <a href="https://pages.github.com/" class="svelte-uvou6c">Github Pages</a>로 호스팅하고 있습니다.
+  <br class="svelte-uvou6c">
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    <script type="text/javascript">
+            var requestIdleCallback = window.requestIdleCallback ||
+            function (cb) {
+              var s = Date.now();
+              return setTimeout(function () {
+                cb({
+                  didTimeout: false,
+                  timeRemaining: function () {
+                    return Math.max(0, 50 - (Date.now() - s));
+                  },
+                });
+              }, 1);
+            };
+            if (!('IntersectionObserver' in window)) {
+                var script = document.createElement("script");
+                script.src = "/_elderjs/static/intersection-observer.js";
+                document.getElementsByTagName('head')[0].appendChild(script);
+            };
+      </script>
+      
+    <script type="module">
+      
+let IO, $$COMPONENTS={};
+const $$ejs = async (arr)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+
+  for (let i = 0; i < arr.length; i++) {
+    $$COMPONENTS[arr[i][0]] = {
+      elem: document.getElementById(arr[i][0]),
+      component: arr[i][1],
+      props: $ejs(arr[i][2]) || {},
+    };
+
+    if(typeof  $$COMPONENTS[arr[i][0]].props === 'string'){
+      const propsFile = await import(prefix+'/props/'+$$COMPONENTS[arr[i][0]].props);
+      $$COMPONENTS[arr[i][0]].props = $ejs(propsFile.default);
+    };
+
+    if (!IO) {
+      IO = new IntersectionObserver((entries, observer) => {
+        var objK = Object.keys(entries);
+        var objKl = objK.length;
+        var objKi = 0;
+        for (; objKi < objKl; objKi++) {
+          const entry = entries[objK[objKi]];
+          if (entry.isIntersecting) {
+            const selected = $$COMPONENTS[entry.target.id];
+            observer.unobserve(selected.elem);
+            import(prefix + '/svelte/components/' + selected.component).then((comp)=>{
+                new comp.default({ 
+                  target: selected.elem,
+                  props: selected.props,
+                  hydrate: true
+                });
+            });
+          }
+        }
+      });
+    };
+    IO.observe($$COMPONENTS[arr[i][0]].elem);
+  }
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs([['scrolltopbuttonWqXFGyJbcg','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxmcJLcYmNzQ','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+    
+    
+    </body></html>
