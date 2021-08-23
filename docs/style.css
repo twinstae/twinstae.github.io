@@ -46,7 +46,7 @@ blockquote p {
   padding: .125rem .5rem;
   border-radius: 1rem;
   line-height: 150%;
-  transition: .25s border;
+  transition: .25s all;
 }
 
 h1 {

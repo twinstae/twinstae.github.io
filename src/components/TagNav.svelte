@@ -25,16 +25,16 @@
 </script>
 <div id="tag-nav">
   <header>해시태그 목록</header>
-  <span class="hashtag" class:selected={$selected_tag == ""} on:click={function(){ selected_tag.set(""); }}>
+  <button class="hashtag" class:selected={$selected_tag == ""} on:click={function(){ selected_tag.set(""); }}>
     전체
-  </span>
-  <span class="hashtag" class:selected={$selected_tag == "작성 중"} on:click={function(){ selected_tag.set("작성 중"); }}>
+  </button>
+  <button class="hashtag" class:selected={$selected_tag == "작성 중"} on:click={function(){ selected_tag.set("작성 중"); }}>
     작성 중🚧
-  </span>
+  </button>
   {#each tag_count_list as [tag, count] }
-    <span class="hashtag" class:selected={$selected_tag == tag} on:click={function(){ selected_tag.set(tag); }}>
+    <button class="hashtag" class:selected={$selected_tag == tag} on:click={function(){ selected_tag.set(tag); }}>
       #{tag} {count}
-    </span>
+    </button>
   {/each}
 </div>
 
