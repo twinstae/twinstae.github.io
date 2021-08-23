@@ -49,7 +49,7 @@
   div#tag-nav {
     line-height: 100%;
     padding: .5rem;
-    border: 1px solid var(--primary-border);
+    border: 1px solid var(--muted);
     border-radius: .5rem;
     display: flex;
     flex-wrap: wrap;

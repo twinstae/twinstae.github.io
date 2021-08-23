@@ -1865,7 +1865,7 @@ button.btn-muted-outline:hover:active,
 .card {
   transition: all 235ms ease 0s;
   box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
-  border-color: var(--primary-border);
+  border-color: var(--muted);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border-style: solid;
