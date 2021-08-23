@@ -30,7 +30,7 @@ blockquote {
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
-  border: 2px solid var(--muted);
+  border: 2px solid var(--primary-border);
   box-shadow: 8px 16px 16px -12px var(--muted-dark);
 }
 
@@ -41,7 +41,12 @@ blockquote p {
 .hashtag {
   font-size: 75%;
   color: var(--primary);
-  margin: 0.25rem;
+  margin: .25rem .125rem;
+  border: 1px solid var(--primary-border);
+  padding: .125rem .5rem;
+  border-radius: 1rem;
+  line-height: 150%;
+  transition: .25s border;
 }
 
 h1 {
