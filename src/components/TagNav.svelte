@@ -47,17 +47,15 @@
   }
 
   div#tag-nav {
-    line-height: 125%;
-    padding: 0.5rem;
-    border: 1px solid var(--muted);
-    border-radius: 0.5rem;
+    line-height: 100%;
+    padding: .5rem;
+    border: 1px solid var(--primary-border);
+    border-radius: .5rem;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .selected {
     border: 2px solid orange;
-    border-radius: 4px;
-    padding: 0.125rem;
-    margin:  0.125rem;
-    line-height: 150%;
   }
 </style>
