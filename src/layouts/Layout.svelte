@@ -53,7 +53,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" />
   <script>
     setTimeout(()=>{
-      const codes = document.getElementsByTagName("code");
+      const codes = document.getElementsByTagName("pre");
       console.log(codes);
 
       for (const code of codes){
@@ -84,8 +84,8 @@
   <br>
   디자인은 <a href="https://www.getpapercss.com/docs/">PaperCSS</a>를 기본으로 커스텀했습니다.
   <br>
-
   폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.
+  <br>
   <a href="https://pages.github.com/">Github Pages</a>로 호스팅하고 있습니다.
   <br>
   오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
