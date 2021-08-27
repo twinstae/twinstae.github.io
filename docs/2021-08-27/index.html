@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>2021-08-27 (금) 회고</title><meta name="description" content="코칭을 문서로 관리, 낯선 함수형 개념을 어떻게, 리액트TDD, 코딩 테스트 전략" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/2021-08-27/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/2021-08-27/" data-svelte="svelte-18tnbae"><meta property="og:title" content="2021-08-27 (금) 회고" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="코칭을 문서로 관리, 낯선 함수형 개념을 어떻게, 리액트TDD, 코딩 테스트 전략" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/2021-08-27/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="2021-08-27 (금) 회고" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="코칭을 문서로 관리, 낯선 함수형 개념을 어떻게, 리액트TDD, 코딩 테스트 전략" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-uvou6c" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" class="svelte-uvou6c" data-svelte="svelte-1yifjfe"><script class="svelte-uvou6c" data-svelte="svelte-1yifjfe">setTimeout(()=>{
+      const codes = document.getElementsByTagName("pre");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script><script class="svelte-uvou6c" data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
+    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-a4a9b9be.css" media="all" /><style></style></head><body class="review">
+<nav class="svelte-uvou6c"><div class="darkcheckbox-component" id="darkcheckboxwVCMLCmxxw"><input type="checkbox" id="darkmode-checkbox" class="svelte-1x528h4">
+<label for="darkmode-checkbox" class="svelte-1x528h4"><span class="svelte-1x528h4"></span>
+  <span class="svelte-1x528h4"></span>
+</label></div></nav>
+
+<article class="container svelte-uvou6c"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1>2021-08-27 (금) 회고</h1>
+  <div><span class="hashtag">#잠
+        </span><span class="hashtag">#코딩 테스트
+        </span><span class="hashtag">#함수형
+        </span><span class="hashtag">#리액트 TDD
+        </span><span class="hashtag">#문서화
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbuttonWTLqKRQRzb"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+<nav class="svelte-au67cy"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#잠을-잘-자기" class="svelte-au67cy">잠을 잘 자기
+          <ol><li style="font-size: 1rem;"><a href="#배움--조금씩-조금씩-나아지고-있다" class="svelte-au67cy">배움 : 조금씩 조금씩 나아지고 있다</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#코칭을-문서로-관리하자" class="svelte-au67cy">코칭을 문서로 관리하자
+          <ol><li style="font-size: 1rem;"><a href="#배움--일정을-같이-툴에-반영하기-시작" class="svelte-au67cy">배움 : 일정을 같이 툴에 반영하기 시작</a></li><li style="font-size: 1rem;"><a href="#문제--어떤-분과-어디까지-했는지-기억이-안-난다" class="svelte-au67cy">문제 : 어떤 분과 어디까지 했는지 기억이 안 난다</a></li><li style="font-size: 1rem;"><a href="#계획--코칭-내용을-문서로-정리하고-공유하자" class="svelte-au67cy">계획 : 코칭 내용을 문서로 정리하고, 공유하자</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#낯선-함수형-개념을-이해시키자" class="svelte-au67cy">낯선 함수형 개념을 이해시키자
+          <ol><li style="font-size: 1rem;"><a href="#문제--나에게는-익숙한-개념이-듣는-사람에게는-익숙하지-않다" class="svelte-au67cy">문제 : 나에게는 익숙한 개념이 듣는 사람에게는 익숙하지 않다</a></li><li style="font-size: 1rem;"><a href="#계획--함수형-초보자의-멘탈-모델페르소나를-만들자" class="svelte-au67cy">계획 : 함수형 초보자의 멘탈 모델/페르소나를 만들자.</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#리액트-tdd" class="svelte-au67cy">리액트 TDD
+          <ol><li style="font-size: 1rem;"><a href="#배움--cypress-storybook-vite-swc-karma" class="svelte-au67cy">배움 : Cypress, Storybook, Vite, SWC, Karma...</a></li><li style="font-size: 1rem;"><a href="#계획--이제-실전-tdd다" class="svelte-au67cy">계획 : 이제 실전 TDD다.</a></li>
+          </ol></a>
+      </li><li style="font-size: 1.25rem;"><a href="#코딩-문제로-언어-공부하기" class="svelte-au67cy">코딩 문제로 언어 공부하기
+          <ol><li style="font-size: 1rem;"><a href="#문제--관심-있는-언어의-문법과-표준api-사용법을-어떻게-배워야할까" class="svelte-au67cy">문제 : 관심 있는 언어의 문법과 표준API 사용법을 어떻게 배워야할까?</a></li><li style="font-size: 1rem;"><a href="#계획--매일-23-문제를-풀어서-해설해보자" class="svelte-au67cy">계획 : 매일 2~3 문제를 풀어서 해설해보자.</a></li>
+          </ol></a>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h2 id="잠을-잘-자기">잠을 잘 자기</h2>
+<h3 id="배움--조금씩-조금씩-나아지고-있다">배움 : 조금씩 조금씩 나아지고 있다</h3>
+<p>오늘은 10시 25분 현재 회고를 쓰기 시작했는데. 어제는 11시에 시작해서 더 늦게 잔 걸 생각하니... 매일 신경 쓰니까 조금씩 나아지고 있다고 생각합니다.</p>
+<h2 id="코칭을-문서로-관리하자">코칭을 문서로 관리하자</h2>
+<h3 id="배움--일정을-같이-툴에-반영하기-시작">배움 : 일정을 같이 툴에 반영하기 시작</h3>
+<p>어제 계획한대로 일정을 같이 반영하고 있고요. 누락된 것들도 찾아서 고쳤습니다. 당분간은 괜찮을 거라 기대해봅니다.</p>
+<h3 id="문제--어떤-분과-어디까지-했는지-기억이-안-난다">문제 : 어떤 분과 어디까지 했는지 기억이 안 난다</h3>
+<p>요즘 강의에 코칭까지 늘어나고 있어서. 이제 어떤 분과 어디까지 했는지 기억하기가 힘들 정도가 되었습니다. 한 분 한 분 관리해드리기도 어려워졌고요.</p>
+<h3 id="계획--코칭-내용을-문서로-정리하고-공유하자">계획 : 코칭 내용을 문서로 정리하고, 공유하자</h3>
+<p>마침 일일회고가 좋은 문서가 되어주고 있습니다. 일일회고에 드린 피드백도 노션으로 정리해보고 있고요. 강의 듣는 분도 각각 진도나 어려워하신 부분들을 정리하고, 다음에 강조하고 싶은 부분이나 목표도 알려드리고 싶어요.</p>
+<h2 id="낯선-함수형-개념을-이해시키자">낯선 함수형 개념을 이해시키자</h2>
+<h3 id="문제--나에게는-익숙한-개념이-듣는-사람에게는-익숙하지-않다">문제 : 나에게는 익숙한 개념이 듣는 사람에게는 익숙하지 않다</h3>
+<p>사실 테스트 강의를 하는 이유이기도 한데. 저에게는 너무 당연해서 사람들에게는 이게 당연하지 않다는 걸 자꾸 까먹게 됩니다. 오늘 어려워하신 부분은 () => T 는 매개변수가 없는 함수고 T => () 는 부수효과를 일으키는 함수라는 거였는데요. 전자를 자바의 함수형 인터페이스에서는 Publisher라고 하고 후자는 Consumer라고 하죠. 함수형에서는 이런 용어 없이 그 자체로 추상화해서 다루는 자료가 많아서, 처음 보는 분은 충격을 받으시더군요.</p>
+<h3 id="계획--함수형-초보자의-멘탈-모델페르소나를-만들자">계획 : 함수형 초보자의 멘탈 모델/페르소나를 만들자.</h3>
+<p>애자일에는 페르소나라고, 추상적인 사용자를 구체적인 캐릭터처럼 만드는 방법이 있습니다. "함수형 초보자 TH씨" 같은 거죠. 이렇게 구체적인 사람을 상상하게 되면 더 쉽게 공감하고 이해할 수 있거든요. 저는 TRPG와 연기를 배운 적도 있어서 나름 괜찮을 것 같습니다.</p>
+<p>그래서 함수형을 잘 모르는 분들의 입장에서 낯선 개념들을 더 쪼개보고, 실제 피드백을 바탕으로 페르소나를 풍부하게 하면서 다듬어보고 싶어요.</p>
+<h2 id="리액트-tdd">리액트 TDD</h2>
+<h3 id="배움--cypress-storybook-vite-swc-karma">배움 : Cypress, Storybook, Vite, SWC, Karma...</h3>
+<p>오늘은 다양한 testing 툴을 적용해보고, WebPack은 Vite로 Babel도 SWC로 바꿔봤습니다. 아직 프로젝트 크기가 크지 않고, 의존성도 많지 않아서 큰 차이는 안 느껴지네요.</p>
+<p>Karma는 뭔가 대차게 망했는데. yarn이 그냥 설치하다 꼬이는 걸 보면 뭔가 WSL 특유의 문제인 건지 아직 원인 파악은 안 됩니다. Mocha랑 같이 브라우저에서 유닛 테스트를 돌려보고 싶은데. 사실 브라우저 호환성이 깨지는 건 그냥 E2E로 잡아보면 되지 않을까 싶습니다.</p>
+<h3 id="계획--이제-실전-tdd다">계획 : 이제 실전 TDD다.</h3>
+<p>환경 구축을 하다보니 환경 구축이 잘 됐는지 테스트할 필요도 느껴지더라고요. 간단한 건 잘 돌아가는데, 과연 이게 실제로 잘 돌아갈지 의문이 들기 시작했습니다. 전에도 Tailwind 를 Vite랑 쓰다가 중간에 꼬여서 귀찮았던 적이 많았거든요. 이제 실제로 간단한 과제를 다양한 방식으로 만들어보면서 실험을 해보고 싶어요. 특히 요즘 속성 기반 검사 같은 걸 써보고 싶은데, 여러 예제를 돌려보면서 감을 잡아보려 합니다.</p>
+<h2 id="코딩-문제로-언어-공부하기">코딩 문제로 언어 공부하기</h2>
+<h3 id="문제--관심-있는-언어의-문법과-표준api-사용법을-어떻게-배워야할까">문제 : 관심 있는 언어의 문법과 표준API 사용법을 어떻게 배워야할까?</h3>
+<p>요즘 이런저런 이유로 Kotlin, Scala, Clojure, Go나 Rust, Elixir, Haskell, Lua 같은 언어들에 관심을 가지고 있습니다. 제가 지금 자신 있게 쓸 수 있는 언어는 아직 Python이랑 TypeScript 정도인데요. 요즘 보는 인터프리터 만들기 책은 Go로 되어 있고, 7가지 동시성 모델 책에서는 Clojure와 Elixir를 사용하고, 주변에 뭔가 지혜로운 분들은 Scala와 Kotlin을 좋아하시더라고요. (주관적인 느낌입니다만)</p>
+<p>이런 언어들을 공부하고 싶기는 한데 좋은 책을 못 구한 경우도 많고, 책이 있어도 직접 해볼 수 있는 과제가 있었으면 좋겠다는 생각이 들었습니다.</p>
+<p>또 한편으로는 코칭 받는 분들도 취업을 위해 코딩 테스트를 준비하시는 분들도 많더라고요. 코딩테스트를 어떻게 공부하면 좋을지 질문도 많이 받는데... 좋은 책이나 강의도 있지만, 학습 원리나 문제해결전략을 체계적으로 적용하고 단순한 단계로 쪼개는 법을 알려주는 책은 많이 없습니다. 저도 데브매칭 코테는 가볍게 만점을 받지만, 카카오 코테에서는 오랜만에 자바로 시험을 보길래 고배를 마셨던 기억이 있습니다.</p>
+<h3 id="계획--매일-23-문제를-풀어서-해설해보자">계획 : 매일 2~3 문제를 풀어서 해설해보자.</h3>
+<p>언어별로 기본적인 알고리즘이나 자료구조를 어떻게 사용하는지 익혀보는데 코딩 문제만한 게 없죠. 요즘 코테 난이도도 올라가고 있고 이번 기회에 같이 공부해보면 좋겠다 싶었습니다.</p>
+<p>그래서 매일 2~3 문제를 풀이만 하는 게 아니라, 문제 해결 전략을 어떻게 사용하는지 해설해보려 합니다. 이왕이면 다양한 방식 + 언어로 풀이해보고 장,단점을 비교해보면 좋을 것 같아요.</p>
+<p>원래 프로그래머스 문제를 풀어볼까 했는데 저작권 문제가 있더라고요.</p>
+<blockquote>
+<p>코딩테스트 연습 문제의 지문, 테스트케이스, 풀이 등과 같은 정보는 비상업적, 비영리적 용도로 게시할 수 있습니다.</p>
+<p>[상업적, 영리적 용도]의 예</p>
+<ul>
+<li>수익 창출(ex. 광고, 후원, 바이럴 마케팅, ...)을 위해 운영하는 블로그, YouTube 채널 등에 문제 풀이 게시</li>
+<li>유료 온라인 강의 사이트에 문제 풀이 게재 및 판매</li>
+<li>도서 출판</li>
+</ul>
+</blockquote>
+<p>따로 돈을 안 받는다고 해도 저는 개인 사업자니까 탈락! 다른 곳을 찾아보기로 했습니다.</p>
+<p>생각난 곳은 2곳인데요. 하나는 [Advent Of Code]라고 전에 Rescript를 공부하면서 문제를 풀어봤던 곳이 있고. 이번에는 [Exercism] 이라는 사이트를 찾았는데. 이쪽은 언어를 배우기 위해서 여러 문제들을 제공해주고 있으며, 무엇보다 매우 다양한 언어를 지원합니다. CLI 설정이 귀찮긴한데 프로그래머라면 할만하고요. 5일 뒤에 버전3이 나오면서 온라인 에디터도 생길 거라는 모양이에요. 무엇보다 문제를 몇 개 풀어보니까 흥미롭고 괜찮더라고요. MIT 라이센스 하에 배포하고 있어요.</p>
+<p>다만 이 친구들은 코딩테스트에 적합한 문제는 아니라서, 그냥 요즘 유행하는 [백준]에 solved에서 추천해주는 문제들을 풀어볼까도 싶습니다.</p>
+<p>오늘 회고는 회고라기보다는 장황한 계획처럼 됐네요. 아직 못 적은 고민들도 많지만... 이 역시 상자에 넣어두고 오늘은 자겠습니다.</p>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-uvou6c">이 블로그는 <a href="https://svelte.dev/" class="svelte-uvou6c">Svelte</a>와 <a class="secondary svelte-uvou6c" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br class="svelte-uvou6c">
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-uvou6c">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br class="svelte-uvou6c">
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-uvou6c">Pretendard</a>를 사용합니다.
+  <br class="svelte-uvou6c">
+  <a href="https://pages.github.com/" class="svelte-uvou6c">Github Pages</a>로 호스팅하고 있습니다.
+  <br class="svelte-uvou6c">
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    <script type="text/javascript">
+            var requestIdleCallback = window.requestIdleCallback ||
+            function (cb) {
+              var s = Date.now();
+              return setTimeout(function () {
+                cb({
+                  didTimeout: false,
+                  timeRemaining: function () {
+                    return Math.max(0, 50 - (Date.now() - s));
+                  },
+                });
+              }, 1);
+            };
+            if (!('IntersectionObserver' in window)) {
+                var script = document.createElement("script");
+                script.src = "/_elderjs/static/intersection-observer.js";
+                document.getElementsByTagName('head')[0].appendChild(script);
+            };
+      </script>
+      
+    <script type="module">
+      
+let IO, $$COMPONENTS={};
+const $$ejs = async (arr)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+
+  for (let i = 0; i < arr.length; i++) {
+    $$COMPONENTS[arr[i][0]] = {
+      elem: document.getElementById(arr[i][0]),
+      component: arr[i][1],
+      props: $ejs(arr[i][2]) || {},
+    };
+
+    if(typeof  $$COMPONENTS[arr[i][0]].props === 'string'){
+      const propsFile = await import(prefix+'/props/'+$$COMPONENTS[arr[i][0]].props);
+      $$COMPONENTS[arr[i][0]].props = $ejs(propsFile.default);
+    };
+
+    if (!IO) {
+      IO = new IntersectionObserver((entries, observer) => {
+        var objK = Object.keys(entries);
+        var objKl = objK.length;
+        var objKi = 0;
+        for (; objKi < objKl; objKi++) {
+          const entry = entries[objK[objKi]];
+          if (entry.isIntersecting) {
+            const selected = $$COMPONENTS[entry.target.id];
+            observer.unobserve(selected.elem);
+            import(prefix + '/svelte/components/' + selected.component).then((comp)=>{
+                new comp.default({ 
+                  target: selected.elem,
+                  props: selected.props,
+                  hydrate: true
+                });
+            });
+          }
+        }
+      });
+    };
+    IO.observe($$COMPONENTS[arr[i][0]].elem);
+  }
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs([['scrolltopbuttonWTLqKRQRzb','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxwVCMLCmxxw','DarkCheckBox.58e2aa2f.js', {}],])}, {timeout: 1000});</script>
+    
+    
+    </body></html>
