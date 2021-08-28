@@ -34,6 +34,7 @@ module.exports = {
   plugins: {
     '@elderjs/plugin-markdown': {
       routes: ['blog', 'review'],
+      /*
       remarkPlugins: [
         frontmatter, // 'remark-frontmatter' package
         [extractFrontmatter, { name: 'frontmatter', yaml: yaml.parse }], // 'remark-extract-frontmatter' and 'yaml' packages.
@@ -42,6 +43,7 @@ module.exports = {
         remarkHtmlKatex,
         remarkHtml,
       ],
+      */
       useSyntaxHighlighting: {
         theme: 'material-theme-darker',
       },
