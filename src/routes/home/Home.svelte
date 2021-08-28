@@ -5,12 +5,12 @@
 
   export let data, helpers;
 
-  function compare_blog_date(a, b){
+  function compare_frontmatter_date_latest(a, b){
     return Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date);
   }
 
   const blog_list = data.markdown.blog
-    .sort(compare_blog_date)
+    .sort(compare_frontmatter_date_latest)
     .map(blog=>({
       ...blog,
       permanlink: helpers.permalinks.blog({ slug: blog.slug }),
@@ -36,19 +36,20 @@
   <h2>탐정토끼 (본체: Taehee Kim) </h2>
 
   <p>
-    진리의 배는 서로 다른 사람들이 함께 나아가기 위한 플랫폼입니다. 그 시작으로 작은 배를 만드는 조선소로서, 이 블로그를 열었습니다.
-    그냥 글만 올리는 블로그가 아니라, 여러 웹 서비스를 만들고 실험해보려 합니다.
+    진리의 배는 서로 다른 사람들이 함께 나아가기 위한 플랫폼입니다. 그 시작으로 작은 배를 만드는 조선소로서, 이 블로그를 만들었습니다. 현재 연재 중인 시리즈는 4가지입니다.
   </p>
 
+  <ul>
+    <li>(월) 아이즈원 프라이빗 메일 백업의 계보</li>
+    <li>(수) 프런트 엔드 테스트 주도 개발</li>
+    <li>(금) Svelte Elder.js로 블로그 만들기</li>
+    <li>(수시) 코딩테스트 문제 풀이 전략 </li>
+  </ul>
+
   <p>
-  코칭을 받고 싶으시면 <a target="_blank" href="https://open.kakao.com/o/sMM8O6md"><span style="color:black;" class="badge warning">오픈 카카오톡</span></a>으로 연락 주시면 편합니다.
-    <a target="_blank" href="https://twitter.com/stelo_kim"> <span class="badge secondary">트위터 </span></a>DM이나 <span class="badge">rabolution@gmail.com</span> 으로 이메일을 주셔도 됩니다.
-  </p>
-  <p>
-    구직 중 입니다. 채용에 관심이 있으시면 역시 위에 적힌 연락처로 연락 주세요.
+  코칭이나 강의 공동제작, 채용에 관심 있으시면<a target="_blank" href="./lec"><span class="badge primary">삶을 풍요롭게 하는 코칭</span></a> 페이지를 참고해주세요.
   </p>
 </section>
-
 
 <section class="blog">
   <TagNav hydrate-client={{ blog_list: blog_list }} hydrate-options={{loading : 'eager'}} />
