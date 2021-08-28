@@ -75,8 +75,8 @@
 </svelte:head>
 <nav>
   <DarkCheckBox hydrate-client={{}}/>
-  <a href="/"> 진리의 배 조선소 </a>
-  <a href="/lec/"> 삶을 풍요롭게 하는 코칭 </a>
+  <a href="/"     style="color:white;"> 진리의 배 조선소 </a>
+  <a href="/lec/" style="color:white;"> 삶을 풍요롭게 하는 코칭 </a>
 </nav>
 
 <article class="container">
