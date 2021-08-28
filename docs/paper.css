@@ -3151,9 +3151,8 @@ nav ul.inline li {
   }
 }
 nav a {
-  color: #41403e;
-  color: var(--primary);
-  padding-bottom: 0.1rem;
+  color: white !important;
+  padding: 1rem;
 }
 
 nav ul.inline li a {
