@@ -25,6 +25,8 @@
   }
 
   nav {
+    display: flex;
+    align-items: center;
     background-color: var(--primary);
   }
 

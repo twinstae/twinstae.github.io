@@ -3086,7 +3086,7 @@ nav {
   background-color: #41403e;
   background-color: var(--main-background);
   display: flex;
-  padding: 0.3rem;
+  padding: 1rem;
   position: relative;
   width: 100%;
   z-index: 100;
@@ -3133,6 +3133,7 @@ nav.fixed {
   top: 0;
 }
 nav div {
+  display: inline-block;
   margin: 0 1rem;
 }
 nav ul.inline {
@@ -3151,8 +3152,9 @@ nav ul.inline li {
   }
 }
 nav a {
+  font-size: 18px;
   color: white !important;
-  padding: 1rem;
+  margin: 0 .5rem;
 }
 
 nav ul.inline li a {
