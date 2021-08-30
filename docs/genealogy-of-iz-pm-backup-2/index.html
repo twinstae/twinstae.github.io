@@ -13,8 +13,8 @@
     }, 500)
   </script><script class="svelte-14g7hep" data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-f1ebd24d.css" media="all" /><style></style></head><body class="blog">
-<nav class="svelte-14g7hep"><div class="darkcheckbox-component" id="darkcheckboxmSXkzjRpLt"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-a390e275.css" media="all" /><style></style></head><body class="blog">
+<nav class="svelte-14g7hep"><div class="darkcheckbox-component" id="darkcheckboxlgqktjJpVc"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -35,7 +35,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonDvVqKmsbfN"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonScmnttfxCc"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-au67cy"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#지난-이야기" class="svelte-au67cy">지난 이야기</a>
@@ -100,14 +100,14 @@
 <li>토큰이 포함된 설정 파일과 스크립트를 다운 받을 수 있게 했습니다.</li>
 </ol>
 <p>이 방식은 그나마 좀 합리적이었습니다. 1번은 페이님이 직접 서버를 운영하셨으니. 일반 사용자는 복제앱을 다운 받아서, 와이파이로 프록시만 설정하고 로그인만 하면 스크립트를 다운 받을 수 있었죠. 사용 설명서도 친절하게 하나하나 따라할 수 있게 만들었습니다.
-<img src="./%ED%8E%98%EC%9D%B4-%EC%82%AC%EC%9D%B4%ED%8A%B8.webp" alt="프메 백업 사이트. 복제 앱에서 받은 핀코드를 입력하면 설정파일과 스크립트를 다운 받을 수 있다."></p>
+<img src="https://twinstae.github.io/img/%ED%8E%98%EC%9D%B4-%EC%82%AC%EC%9D%B4%ED%8A%B8.webp" alt="프메 백업 사이트. 복제 앱에서 받은 핀코드를 입력하면 설정파일과 스크립트를 다운 받을 수 있다."></p>
 <h3 id="프록시-다-썼으면-접속-끊어주세요">"프록시 다 썼으면 접속 끊어주세요..."</h3>
 <blockquote>
 <p>어제부터 사용자가 많이 몰리고 있습니다..
 어제 하루 접속자 통계가 하루 1300명 정도 나왔습니다.</p>
-<p>[프메 백업 프록시 서버 접속 오류 관련] - 페이
-하지만 이 방식에는 큰 결함이 있었습니다. 서버가 자꾸 터진다는 것이었죠. 프록시 서버를 천 명 넘게 접속하는 것만 문제가 아니었습니다. 이미 접속한 사람이 와이파이 프록시를 끊어주지 않으면... 프록시에 연결된 채로 게임을 하고 웹서핑을 하는 등. 엄청난 트래픽이 몰리게 된 것이죠.</p>
+<p>[프메 백업 프록시 서버 접속 오류 관련] - 페이</p>
 </blockquote>
+<p>하지만 이 방식에는 큰 결함이 있었습니다. 서버가 자꾸 터진다는 것이었죠. 프록시 서버를 천 명 넘게 접속하는 것만 문제가 아니었습니다. 이미 접속한 사람이 와이파이 프록시를 끊어주지 않으면... 프록시에 연결된 채로 게임을 하고 웹서핑을 하는 등. 엄청난 트래픽이 몰리게 된 것이죠.</p>
 <p>서버가 자꾸 터지다보니, "서버 또 죽은 건가요? ㅠㅠ"하는 문의가 빗발쳤습니다. 페이님이 뭘 어떻게 할 방법이 없었고, 이 방식에 한계를 느끼는 분들이 나왔습니다.</p>
 <h2 id="스크립트-자동화">스크립트 자동화</h2>
 <h3 id="원클릭-스크립트가-알아서-다-해줘요">원클릭 스크립트가 알아서 다 해줘요~</h3>
@@ -244,7 +244,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonDvVqKmsbfN','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxmSXkzjRpLt','DarkCheckBox.e0b0dc39.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonScmnttfxCc','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxlgqktjJpVc','DarkCheckBox.e0b0dc39.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>

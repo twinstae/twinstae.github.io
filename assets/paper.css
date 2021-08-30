@@ -995,7 +995,8 @@ img {
   border-width: 2px;
   display: block;
   height: auto;
-  max-width: 100%;
+  max-width: 32rem;
+  margin: auto;
 }
 img.float-left {
   float: left;
