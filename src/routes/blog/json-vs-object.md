@@ -18,7 +18,7 @@ json은 문자열입니다. 글자죠. 제가 종이에 json을 적을 수도 �
 
 다음 코드는 브라우저에서 F12를 누르시면 나오는 개발자 도구 Console 탭에서 직접 쳐보실 수 있어요.
 ```javascript
-const sakuMailJson1 = "{\"name\":\"미야와키 사쿠라\",\"message\":\"안녕하세요. \\\\(^ ^\"}";
+const sakuMailJson = "{\"name\":\"미야와키 사쿠라\",\"message\":\"안녕하세요. \\\\(^ ^\"}";
 
 sakuMailJson
 // "{\"name\":\"미야와키 사쿠라\",\"message\":\"안녕하세요. \\\\(^ ^\"}" 가 출력됩니다.

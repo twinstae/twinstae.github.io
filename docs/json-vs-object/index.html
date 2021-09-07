@@ -13,8 +13,8 @@
     }, 500)
   </script><script class="svelte-14g7hep" data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-6cbf3c62.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-14g7hep"><div class="darkcheckbox-component" id="darkcheckboxpjqpVWsSnC"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-4bd73912.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-14g7hep"><div class="darkcheckbox-component" id="darkcheckboxsfZcCNtzkK"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -33,7 +33,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttongMqxKJKQwy"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonYdCWsZqWkj"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 
 
@@ -45,7 +45,7 @@
 <p>json은 문자열입니다. 글자죠. 제가 종이에 json을 적을 수도 있습니다. 그래서 따옴표( ' )로 감싸놓습니다. 문자열을 감싸는 따옴표와 문자열 안에 있는 따옴표를 구분하기 위해서 \ 역슬래시를 이용해서 escape(빠져나가기, 무시) 처리를 해줍니다. 한국 키보드에서는 엔터 위에 원(화폐단위) 문자로 보이기도 해요.</p>
 <p>이런 문자열은 HTTP 네트워크를 타고 서버나 다른 기기와 데이터를 주고 받을 때에도 쓰이고요. 텍스트 파일로 데이터를 저장할 때도 씁니다. 제가 만든 프메 백업 뷰어도 데이터를 JSON으로 저장하고 있어요.</p>
 <p>다음 코드는 브라우저에서 F12를 누르시면 나오는 개발자 도구 Console 탭에서 직접 쳐보실 수 있어요.</p>
-<pre class="shiki" style="background-color: #212121"><code class="language-javascript"><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailJson1 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #EEFFFF">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code class="language-javascript"><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailJson </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #EEFFFF">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 
 <span class="line"><span style="color: #EEFFFF">sakuMailJson</span></span>
 <span class="line"><span style="color: #545454">// &quot;{\&quot;name\&quot;:\&quot;미야와키 사쿠라\&quot;,\&quot;message\&quot;:\&quot;안녕하세요. \\\\(^ ^\&quot;}&quot; 가 출력됩니다.</span></span></code></pre>
@@ -164,7 +164,7 @@ const $$ejs = async (arr)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttongMqxKJKQwy','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxpjqpVWsSnC','DarkCheckBox.e0b0dc39.js', {}],])}, {timeout: 1000});</script>
+        $$ejs([['scrolltopbuttonYdCWsZqWkj','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxsfZcCNtzkK','DarkCheckBox.e0b0dc39.js', {}],])}, {timeout: 1000});</script>
     
     
     </body></html>
