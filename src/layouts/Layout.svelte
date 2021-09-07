@@ -6,7 +6,11 @@
 
   import DarkCheckBox from "../components/DarkCheckBox.svelte";
 
-  export let templateHtml; //, settings;
+  export let templateHtml, request; //, settings;
+
+  function current(href){
+    return request.slug === href ? 'current' : '';
+  }
 </script>
 
 <style>
@@ -73,10 +77,10 @@
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   </script>
 </svelte:head>
-<nav>
+<nav id="top-nav-bar">
   <DarkCheckBox hydrate-client={{}}/>
-  <a href="/"     style="color:white;"> 진리의 배 조선소 </a>
-  <a href="/lec/" style="color:white;"> 삶을 풍요롭게 하는 코칭 </a>
+  <a href="/"     class={current('/')}     style="color: white;"> 진리의 배 조선소 </a>
+  <a href="/lec/" class={current('/lec/')} style="color: white;"> 삶을 풍요롭게 하는 코칭 </a>
 </nav>
 
 <article class="container">

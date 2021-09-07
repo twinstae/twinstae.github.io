@@ -8,14 +8,14 @@
     <ol>
     {#each tocTree as heading2}
       <li style="font-size: 1.25rem;">
-        <a href="#{heading2.id}">
+        <a href="#{heading2.id}" style="color: #868e96;">
           {heading2.text}
         </a>
         {#if heading2.children}
         <ol>
           {#each heading2.children as heading3}
             <li style="font-size: 1rem;">
-              <a href="#{heading3.id}">
+              <a href="#{heading3.id}" style="color: #868e96;">
                 {heading3.text}
               </a>
             </li>
@@ -29,10 +29,6 @@
 </nav>
 
 <style>
-  a {
-    color: var(--muted);
-  }
-
   nav {
     z-index: 1;
     margin-top: 1rem;
