@@ -17,6 +17,7 @@
   .container {
     max-width: 900px;
     min-height: 90vh;
+    width: 100%;
     margin: 0 auto;
     padding: 1rem;
   }
