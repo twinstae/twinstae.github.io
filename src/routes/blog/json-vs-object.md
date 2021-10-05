@@ -54,7 +54,7 @@ sakuMailObject
 
 const sakuMailJson3 = JSON.stringify(sakuMailObject);
 sakuMailJson3
-// "{\"name\":\"미야와키 사쿠라\",\"message\":\"안녕하세요. \\\\(^ ^\"}
+// "{\"name\":\"미야와키 사쿠라\",\"message\":\"안녕하세요. \\\\(^ ^\"}"
 ```
 
 요즘 대부분의 언어에서는 JSON을 다룰 수 있는 모듈이나 라이브러리를 제공합니다. JS는 웹 브라우저의 표준 언어고, 왠만한 언어는 모두 서버를 만드니까요. 예를 들어 파이썬에는 json.dumps와 json.loads 가 있고요. 객체보다는 dict (사전) 자료구조를 이용합니다. Java Spring에서는 보통 DTO라는 클래스로 객체를 만들어 넣지만, key-value를 저장하는 HashMap을 선호하는 분도 간혹 있습니다.

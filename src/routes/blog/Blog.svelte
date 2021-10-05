@@ -58,7 +58,6 @@ import TableOfContent from "../../components/TableOfContent.svelte";
   </script>
 </div>
 
-
 <style>
   .title {
     margin-top: 0.5rem;
