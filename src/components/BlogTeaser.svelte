@@ -15,25 +15,27 @@
 </script>
 
 {#if is_selected}
-<a href={blog.permanlink} class:selected={is_selected}>
-  <div class="entry card">
-    <h3>
-      {blog.frontmatter.title}
-      {#if in_progress}🚧{/if}
-    </h3>
-    <span class="date-badge">
-      {formattedDate}
-    </span>
-    <div class="tag-list">
-      {#each blog.tags as tag}
-        <span class="hashtag">
-          #{tag}        
-        </span>
-      {/each}
+<li>
+  <a href={blog.permanlink} class:selected={is_selected}>
+    <div class="entry card">
+      <h3>
+        {blog.frontmatter.title}
+        {#if in_progress}🚧{/if}
+      </h3>
+      <span class="date-badge">
+        {formattedDate}
+      </span>
+      <div class="tag-list">
+        {#each blog.tags as tag}
+          <span class="hashtag">
+            #{tag}        
+          </span>
+        {/each}
+      </div>
+      <p class="excerpt">{blog.frontmatter.excerpt}</p>
     </div>
-    <p class="excerpt">{blog.frontmatter.excerpt}</p>
-  </div>
-</a>
+  </a>
+</li>
 {/if}
 
 <style>

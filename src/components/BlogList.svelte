@@ -5,11 +5,11 @@
 </script>
 
 
-<div class="entries">
+<ul class="entries">
   {#each blog_list as blog (blog.frontmatter.title)}
     <BlogTeaser {blog} />
   {/each}
-</div>
+</ul>
 
 
 <style>
