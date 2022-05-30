@@ -2,11 +2,8 @@ require('dotenv').config();
 const frontmatter = require('remark-frontmatter');
 const extractFrontmatter = require('remark-extract-frontmatter');
 const yaml = require('yaml');
-
-const remarkSlug = require('remark-slug');
-const remarkMath = require('remark-math');
-const remarkHtmlKatex = require('remark-html-katex');
-const remarkHtml = require('remark-html');
+const remarkSlug = require('remark-slug')
+const remarkHtml = require('remark-html')
 
 module.exports = {
   origin: 'https://twinstae.github.io', // TODO: update this.
@@ -34,18 +31,15 @@ module.exports = {
   plugins: {
     '@elderjs/plugin-markdown': {
       routes: ['blog', 'review'],
-      /*
       remarkPlugins: [
         frontmatter, // 'remark-frontmatter' package
         [extractFrontmatter, { name: 'frontmatter', yaml: yaml.parse }], // 'remark-extract-frontmatter' and 'yaml' packages.
         remarkSlug, // 'remark-slug' package
-        remarkMath,
-        remarkHtmlKatex,
-        remarkHtml,
+        [remarkHtml, { sanitize: false }], // 'remark-html' package
       ],
-      */
       useSyntaxHighlighting: {
-        theme: 'material-theme-darker',
+        theme: 'material-theme-darker' // available themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md - try dark-plus or github-light
+      // theme is the only option available - for now.
       },
       useTableOfContents: true,
     },

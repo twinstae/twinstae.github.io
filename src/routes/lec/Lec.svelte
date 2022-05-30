@@ -133,9 +133,3 @@
   저 김태희(aka 탐정토끼)의 개인사업자로, 온라인 교육 서비스업으로 신고하고 영업? 중입니다. 현금 영수증 발급도 가능하고요. 회사 차원에서 코칭을 신청해서 받고 계신 분도 있으며, 회계 처리에 필요한 전자 계산서를 발급해드립니다.
 </p>
 
-<aside id="noti" style="position: fixed; left: 0; bottom: 0; width: 100%; padding: 1rem; background-color: #333; color:white;">
-  <h2 style="margin: 0;"> 문의 </h2>
-  <p>
-    코칭이나 강의 공동 제작, 채용 등을 문의하시려면 <a target="_blank" href="https://open.kakao.com/o/sMM8O6md"><span style="color:black;" class="badge warning">오픈 카카오톡</span></a>으로 연락을 주시면 좋습니다. <a target="_blank" href="https://twitter.com/stelo_kim"> <span class="badge secondary">트위터</span></a> DM이나 이메일 <span class="badge">rabolution@gmail.com</span>도 가능하고요. 하루에 한 번씩은 확인하고 있습니다.
-  </p>
-</aside>

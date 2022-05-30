@@ -52,6 +52,6 @@
 </section>
 
 <section class="blog">
-  <TagNav hydrate-client={{ blog_list: blog_list }} hydrate-options={{loading : 'eager'}} />
-  <BlogList hydrate-client={{ blog_list: blog_list }} hydrate-options={{loading: 'eager'}} />
+  <TagNav hydrate-client={{ blog_list: blog_list }} hydrate-options={{ "loading" : "eager" }} />
+  <BlogList hydrate-client={{ blog_list: blog_list }} hydrate-options={{ "loading" : "eager" }} />
 </section>

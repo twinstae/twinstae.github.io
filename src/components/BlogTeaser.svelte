@@ -15,7 +15,7 @@
 </script>
 
 {#if is_selected}
-<li>
+<li class="blog-teaser">
   <a href={blog.permanlink} class:selected={is_selected}>
     <div class="entry card">
       <h3>
@@ -25,13 +25,13 @@
       <span class="date-badge">
         {formattedDate}
       </span>
-      <div class="tag-list">
+      <ul class="tag-list" style="padding: 0;">
         {#each blog.tags as tag}
-          <span class="hashtag">
+          <li class="hashtag">
             #{tag}        
-          </span>
+          </li>
         {/each}
-      </div>
+      </ul>
       <p class="excerpt">{blog.frontmatter.excerpt}</p>
     </div>
   </a>
@@ -39,6 +39,10 @@
 {/if}
 
 <style>
+  li.blog-teaser:before {
+    content: '';
+  }
+
   span.date-badge {
     color: gray;
     font-size: 80%;
@@ -65,6 +69,14 @@
     line-height: 100%;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .hashtag:before {
+    content: ' ';
+  }
+
+  .hashtag {
+    padding-left: 1rem;
   }
 
   .excerpt {
