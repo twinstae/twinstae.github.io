@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열 String std 파고들기</title><meta name="description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-std/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열 String std 파고들기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열 String std 파고들기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" class="svelte-p5qu1m" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" class="svelte-p5qu1m" data-svelte="svelte-1yifjfe"><script class="svelte-p5qu1m" data-svelte="svelte-1yifjfe">setTimeout(()=>{
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열 String std 파고들기</title><meta name="description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-std/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열 String std 파고들기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-std/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열 String std 파고들기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" data-svelte="svelte-1yifjfe"><script data-svelte="svelte-1yifjfe">setTimeout(()=>{
       const codes = document.getElementsByTagName("pre");
       console.log(codes);
 
@@ -11,10 +11,10 @@
         })
       }
     }, 500)
-  </script><script class="svelte-p5qu1m" data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
+  </script><script data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.4ea9f929.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-136bcf00.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-p5qu1m"><div class="darkcheckbox-component" id="darkcheckboxXZxDvCnvwr"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.b343f7d4.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ccdfc737.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-ea6f7750.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-p5qu1m"><div class="darkcheckbox-component" id="darkcheckboxJjNJxWQLLL"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -33,7 +33,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonjFSQTlwrvb"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbuttonFgNXnGRFLL"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-s59jxg"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#프로그래밍-언어별-string-표준-라이브러리" style="color: #868e96;">프로그래밍 언어별 String 표준 라이브러리</a>
@@ -57,7 +57,7 @@
 </ul>
 <h2 id="프로그래밍-언어별-string-표준-라이브러리">프로그래밍 언어별 String 표준 라이브러리</h2>
 <h3 id="java-char-char-string">Java: char, Char, String</h3>
-<pre class="shiki" style="background-color: #212121"><code class="language-java"><span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"><span style="color: #C792EA">char</span><span style="color: #EEFFFF"> f </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 글자와 String을 구분한다.</span></span>
 
 <span class="line"><span style="color: #C792EA">String</span><span style="color: #EEFFFF"> foo_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">;</span></span>
@@ -128,7 +128,7 @@
 <span class="line"><span style="color: #C792EA">String</span><span style="color: #89DDFF">[]</span><span style="color: #EEFFFF"> expected </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">new</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">String</span><span style="color: #89DDFF">[]</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">test</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">hello</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">world</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">};</span></span>
 <span class="line"><span style="color: #82AAFF">assertEqual</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">raw_text</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">trim</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">toLowerCase</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">split</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">),</span><span style="color: #EEFFFF"> expected</span><span style="color: #89DDFF">);</span></span></code></pre>
 <h3 id="python-str">Python: str</h3>
-<pre class="shiki" style="background-color: #212121"><code class="language-python"><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 리터럴</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 리터럴</span></span>
 <span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">type</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">type</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 글자 하나의 타입도 str</span></span>
 <span class="line"><span style="color: #545454"># &lt;class &#39;str&#39;&gt;</span></span>
 
@@ -199,7 +199,7 @@
 <span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> m</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">group</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">2</span><span style="color: #89DDFF">&#39;</span></span>
 <span class="line"><span style="color: #89DDFF">assert</span><span style="color: #EEFFFF"> m</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">group</span><span style="color: #89DDFF">(</span><span style="color: #F78C6C">2</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">3</span><span style="color: #89DDFF">&#39;</span></span></code></pre>
 <h3 id="typescript-string">TypeScript: string</h3>
-<pre class="shiki" style="background-color: #212121"><code class="language-typescript"><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">string</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">string</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"><span style="color: #89DDFF">typeof</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">==</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">typeof</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 글자 하나도 string</span></span>
 <span class="line"><span style="color: #545454">// &quot;string&quot;</span></span>
 
@@ -275,10 +275,10 @@
 <span class="line"><span style="color: #EEFFFF">학년 </span><span style="color: #545454">// &quot;2&quot;</span></span>
 <span class="line"><span style="color: #EEFFFF">단원 </span><span style="color: #545454">// &quot;3&quot;</span></span></code></pre>
 <h3 id="rust-str-stdstring">Rust: str, std::String</h3>
-<pre class="shiki" style="background-color: #212121"><code class="language-rust"><span class="line"><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
 <span class="line"><span style="color: #82AAFF">println!</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;{}&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">chars</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">rev</span><span style="color: #89DDFF">().</span><span style="color: #82AAFF">collect</span><span style="color: #89DDFF">::&lt;</span><span style="color: #FFCB6B">String</span><span style="color: #89DDFF">&gt;());</span></span></code></pre>
 <h3 id="clojure-javalangcharacter-javalangstring">Clojure: java.lang.Character, java.lang.String</h3>
-<pre class="shiki" style="background-color: #212121"><code class="language-clojure"><span class="line"><span style="color: #89DDFF">(</span><span style="color: #89DDFF">require</span><span style="color: #EEFFFF"> &#39;</span><span style="color: #89DDFF">[</span><span style="color: #EEFFFF">clojure.string </span><span style="color: #89DDFF">:as</span><span style="color: #EEFFFF"> s</span><span style="color: #89DDFF">])</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">(</span><span style="color: #89DDFF">require</span><span style="color: #EEFFFF"> &#39;</span><span style="color: #89DDFF">[</span><span style="color: #EEFFFF">clojure.string </span><span style="color: #89DDFF">:as</span><span style="color: #EEFFFF"> s</span><span style="color: #89DDFF">])</span></span>
 <span class="line"><span style="color: #89DDFF">(</span><span style="color: #89DDFF">def</span><span style="color: #EEFFFF"> foo </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span></span>
 
 <span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">count</span><span style="color: #EEFFFF"> foo</span><span style="color: #89DDFF">)</span><span style="color: #EEFFFF"> </span><span style="color: #545454">; 길이</span></span>
@@ -336,7 +336,7 @@
 <span class="line"><span style="color: #89DDFF">(</span><span style="color: #82AAFF">-&gt;</span><span style="color: #EEFFFF"> raw_text s/trim s/lower-case </span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">s/split</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">#&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">))</span></span>
 <span class="line"><span style="color: #545454">; [&quot;test&quot; &quot;hello&quot; &quot;world&quot;]</span></span></code></pre>
 <h3 id="elixir-stringgrapheme-stringt">Elixir: String.grapheme(), String.t()</h3>
-<pre class="shiki" style="background-color: #212121"><code class="language-elixir"><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 리터럴</span></span>
+<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">foo </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐정토끼</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># 리터럴</span></span>
 <span class="line"><span style="color: #EEFFFF">i </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">탐</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF"> </span><span style="color: #545454"># String 탐</span></span>
 <span class="line"><span style="color: #89DDFF">&quot;&quot;&quot;</span></span>
 <span class="line"><span style="color: #C3E88D">Term</span></span>
@@ -449,82 +449,56 @@
 </div><!-- HTML_TAG_END --></article>
 
 <footer class="footer svelte-p5qu1m">이 블로그는 <a href="https://svelte.dev/" class="svelte-p5qu1m">Svelte</a>와 <a class="secondary svelte-p5qu1m" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br class="svelte-p5qu1m">
+  <br>
   디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-p5qu1m">PaperCSS</a>를 기본으로 커스텀했습니다.
-  <br class="svelte-p5qu1m">
+  <br>
   폰트는 <a href="https://cactus.tistory.com/306" class="svelte-p5qu1m">Pretendard</a>를 사용합니다.
-  <br class="svelte-p5qu1m">
+  <br>
   <a href="https://pages.github.com/" class="svelte-p5qu1m">Github Pages</a>로 호스팅하고 있습니다.
-  <br class="svelte-p5qu1m">
+  <br>
   오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
 </footer>
-    <script type="text/javascript">
-            var requestIdleCallback = window.requestIdleCallback ||
-            function (cb) {
-              var s = Date.now();
-              return setTimeout(function () {
-                cb({
-                  didTimeout: false,
-                  timeRemaining: function () {
-                    return Math.max(0, 50 - (Date.now() - s));
-                  },
-                });
-              }, 1);
-            };
-            if (!('IntersectionObserver' in window)) {
-                var script = document.createElement("script");
-                script.src = "/_elderjs/static/intersection-observer.js";
-                document.getElementsByTagName('head')[0].appendChild(script);
-            };
-      </script>
-      
+    
     <script type="module">
+            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
       
-let IO, $$COMPONENTS={};
-const $$ejs = async (arr)=>{
+const $$ejs = (par,eager)=>{
   const $ejs = function(_ejs){return _ejs};
   const prefix = '/_elderjs';
+  const initComponent = (target, component) => {
+    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
+    const compProm = import(prefix + '/svelte/components/' + component.component);
 
-  for (let i = 0; i < arr.length; i++) {
-    $$COMPONENTS[arr[i][0]] = {
-      elem: document.getElementById(arr[i][0]),
-      component: arr[i][1],
-      props: $ejs(arr[i][2]) || {},
-    };
-
-    if(typeof  $$COMPONENTS[arr[i][0]].props === 'string'){
-      const propsFile = await import(prefix+'/props/'+$$COMPONENTS[arr[i][0]].props);
-      $$COMPONENTS[arr[i][0]].props = $ejs(propsFile.default);
-    };
-
-    if (!IO) {
-      IO = new IntersectionObserver((entries, observer) => {
-        var objK = Object.keys(entries);
-        var objKl = objK.length;
-        var objKi = 0;
-        for (; objKi < objKl; objKi++) {
-          const entry = entries[objK[objKi]];
-          if (entry.isIntersecting) {
-            const selected = $$COMPONENTS[entry.target.id];
-            observer.unobserve(selected.elem);
-            import(prefix + '/svelte/components/' + selected.component).then((comp)=>{
-                new comp.default({ 
-                  target: selected.elem,
-                  props: selected.props,
-                  hydrate: true
-                });
-            });
-          }
-        }
+    Promise.all([compProm,propProm]).then(([comp,props])=>{
+      new comp.default({ 
+        target: target,
+        props: props,
+        hydrate: true
       });
-    };
-    IO.observe($$COMPONENTS[arr[i][0]].elem);
-  }
+    });
+  };
+  const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        const selected = par[entry.target.id];
+        initComponent(entry.target,selected)
+      }
+    });
+  }, { rootMargin: "200px",threshold: 0}) : undefined;
+  Object.keys(par).forEach(k => {
+    const el = document.getElementById(k);
+    if (!eager && IO) {
+        IO.observe(el);
+    } else {
+        initComponent(el,par[k]);
+    }
+  });
 };
 
       
       requestIdleCallback(function(){
-        $$ejs([['scrolltopbuttonjFSQTlwrvb','ScrollTopButton.4ea9f929.js', {}],['darkcheckboxXZxDvCnvwr','DarkCheckBox.e0b0dc39.js', {}],])}, {timeout: 1000});</script>
+        $$ejs({'scrolltopbuttonFgNXnGRFLL' : { 'component' : 'ScrollTopButton.b343f7d4.js', 'props' : {}},'darkcheckboxJjNJxWQLLL' : { 'component' : 'DarkCheckBox.ccdfc737.js', 'props' : {}},})}, {timeout: 1000});</script>
     
     
     </body></html>
