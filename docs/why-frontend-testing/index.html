@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>우리에게는 프런트 테스트가 필요할지도 모릅니다.</title><meta name="description" content="프런트 테스트는 정말 필요할까요? 어떤 이득이 있을까요? 어떻게 해야할까요? " data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/why-frontend-testing/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/why-frontend-testing/" data-svelte="svelte-18tnbae"><meta property="og:title" content="우리에게는 프런트 테스트가 필요할지도 모릅니다." data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="프런트 테스트는 정말 필요할까요? 어떤 이득이 있을까요? 어떻게 해야할까요? " data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/why-frontend-testing/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="우리에게는 프런트 테스트가 필요할지도 모릅니다." data-svelte="svelte-18tnbae"><meta name="twitter:description" content="프런트 테스트는 정말 필요할까요? 어떤 이득이 있을까요? 어떻게 해야할까요? " data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" data-svelte="svelte-1yifjfe"><script data-svelte="svelte-1yifjfe">setTimeout(()=>{
+      const codes = document.getElementsByTagName("pre");
+      console.log(codes);
+
+      for (const code of codes){
+        code.addEventListener("dblclick", function(e){
+          navigator.clipboard.writeText(code.innerText)
+            .then(() => {
+              alert('코드를 클립보드에 복사했습니다.')
+            });
+        })
+      }
+    }, 500)
+  </script><script data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
+    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.b343f7d4.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ccdfc737.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-d17b6151.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-p5qu1m"><div class="darkcheckbox-component" id="darkcheckboxyJrnjjtWpx"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
+  <span class="svelte-ixwbnm"></span>
+</label></div>
+  <a href="/" class=" svelte-p5qu1m" style="color: white;">진리의 배 조선소 </a>
+  <a href="/lec/" class=" svelte-p5qu1m" style="color: white;">삶을 풍요롭게 하는 코칭 </a></nav>
+
+<article class="container svelte-p5qu1m"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1>우리에게는 프런트 테스트가 필요할지도 모릅니다.</h1>
+  <div><span class="hashtag">#작성중
+        </span><span class="hashtag">#프런트엔드
+        </span><span class="hashtag">#TDD
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbuttonDGlVWMXdtd"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+<nav class="svelte-s59jxg"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#프런트엔드에도-자바처럼-테스트가-필요할까" style="color: #868e96;">프런트엔드에도 자바처럼 테스트가 필요할까?</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#여러분도-테스트는-필요-없다-생각하시나요" style="color: #868e96;">여러분도 테스트는 필요 없다 생각하시나요?</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#잘못-짠-테스트는-우리를-힘들게-합니다" style="color: #868e96;">잘못 짠 테스트는 우리를 힘들게 합니다</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#우리에게-필요한-테스트를-짭시다" style="color: #868e96;">우리에게 필요한 테스트를 짭시다</a>
+        <ol><li style="font-size: 1rem;"><a href="#1-외부에서-기대하는대로-값이-들어오는지-검증하기" style="color: #868e96;">1. 외부에서 기대하는대로 값이 들어오는지 검증하기</a>
+            </li><li style="font-size: 1rem;"><a href="#2-귀찮은-작업을-자동화하기" style="color: #868e96;">2. 귀찮은 작업을 자동화하기</a>
+            </li><li style="font-size: 1rem;"><a href="#3-버전업과-기술-변경에-대응하기" style="color: #868e96;">3. 버전업과 기술 변경에 대응하기</a>
+            </li>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#저는-테스트를-짜고-더-행복해졌어요" style="color: #868e96;">저는 테스트를 짜고 더 행복해졌어요</a>
+        <ol>
+        </ol>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h2 id="프런트엔드에도-자바처럼-테스트가-필요할까">프런트엔드에도 자바처럼 테스트가 필요할까?</h2>
+<p><a href="https://medium.com/lunit/%EB%8B%B9%EC%8B%A0%EC%97%90%EA%B2%8C-redux%EB%8A%94-%ED%95%84%EC%9A%94-%EC%97%86%EC%9D%84%EC%A7%80%EB%8F%84-%EB%AA%A8%EB%A6%85%EB%8B%88%EB%8B%A4-b88dcd175754">리덕스와 달리</a>, 여러분의 팀에는 정말 프런트 엔드 테스트가 필요할지도 모릅니다. 아닐 수도 있고요.</p>
+<p>(리액트 팀의 댄이 말한 것처럼) 불필요하게 만연한 리덕스와 달리, 한국에서 프런트 테스트는 불모지에 가깝습니다. 자바나 파이썬으로 TDD하는 법을 다루는 책과 자료는 비교적 많은 편입니다. 당장 켄트 벡이 쓴 <a href="http://www.yes24.com/Product/Goods/12246033">테스트 주도 개발 by example</a> 같은 책도 예시는 자바니까요.</p>
+<p>프런트엔드의 주류인 리액트는 객체지향보다는 함수형에서 영향을 받았습니다. 클래스 컴포넌트는 역사 뒤로 사라지고 있고요. 그러면 함수형에도 테스트가 필요할까요? 아니, UI는 시시각각 변하는데 테스트를 만들어 봤자 다 깨지는 건 아닐까요?</p>
+<h2 id="여러분도-테스트는-필요-없다-생각하시나요">여러분도 테스트는 필요 없다 생각하시나요?</h2>
+<p>잠깐 여러분은 테스트에 대해 어떤 생각을 가지고 계신가요? 지루하게 테스트의 역사와 정의를 파고들 생각은 없습니다. 그보다는 제가 듣고 읽어온 말들을 늘어놓을 건데요. 여러분의 생각과 비슷한 의견이 있는지 살펴보시죠.</p>
+<blockquote>
+<p>테스트는...</p>
+<ul>
+<li>앱의 안정성을 보증하고, 유지보수를 쉽게 해준다.</li>
+<li>에러를 잡는 QA를 위한 일이고, 개발자에게는 도움이 되지 않는다.</li>
+<li>귀찮고 어렵다. 만들어 봤자 보수하는데 비용이 더 든다.</li>
+<li>생산성이 떨어진다. 기능 구현도 바쁜데 테스트를 짤 시간이 없다.</li>
+</ul>
+</blockquote>
+<p>저는 면접을 보러 다니면서 테스트를 짠다고 하면, 방어적으로 나오는 분들을 많이 봤습니다. 저라고 100% TDD로만 짜는 순수주의자도 아닌데요. 채식주의자를 본 것처럼 대우를 받곤 했습니다. 아마 여러분도 이제 제가 저런 주장들에 반박하면서 "테스트는 쉽고 행복한 거라고!" 설파할 거라 생각하시겠죠.</p>
+<h2 id="잘못-짠-테스트는-우리를-힘들게-합니다">잘못 짠 테스트는 우리를 힘들게 합니다</h2>
+<p>저는 작년에 함수형 프로그래밍 강의를 만들었고요. 지금 회사에서는 프런트엔드 개발자 겸 테스트 엔지니어로 일하고 있습니다. 저 역시 프런트 테스트를 탐구하면서 많은 삽질을 했습니다.</p>
+<p>그러다보니 이런저런 의견들을 이해하는 부분도 많고, 안타까운 부분도 많았습니다.</p>
+<p>테스트는 <a href="https://ko.wikipedia.org/wiki/%EC%9D%80%EB%B9%9B_%EC%B4%9D%EC%95%8C%EC%9D%80_%EC%97%86%EB%8B%A4">은총알</a>이 아닙니다. 그러니까 <a href="https://jestjs.io/">Jest</a>나 <a href="https://www.cypress.io/">Cypress</a> 같은 걸 깔고 테스트를 짜기 시작하시면 일단 좌절부터 하실 거에요. 앞서 말씀드렸듯이 한국에서 프런트 테스트 생태계는 빈약하기 때문입니다.</p>
+<p>사실 잘못 짠 테스트는 가치를 더하는 게 아니라, 오히려 일을 두 배로 만듭니다. 간단한 예를 들어볼까요? 테스트를 짜보신 적이 있다면, 기능을 수정할 때 테스트도 같이 수정해야했던 적이 있으실 겁니다. 테스트를 꾸역꾸역 붙이지만 점점 일은 늘어나고요. 그러니 테스트 때문에 생산성이 떨어진다고 느끼는 것도 당연합니다.</p>
+<p>이는 테스트 뿐만이 아니고, 우리가 좋은 개발 문화라 생각하는 대부분에 비슷하게 적용되는 이야기입니다. 잘못된 타입, 문서, 회의 등에 고통 받아보신 분도 많으실 거에요. 우리는 일을 더 편하게 하려고 공부를 하려는 거지, 사서 고생하려는 건 아니죠...</p>
+<h2 id="우리에게-필요한-테스트를-짭시다">우리에게 필요한 테스트를 짭시다</h2>
+<p>그러면 이제 저는 '올바른' 테스트 짜는 법을 알려드리게 될까요? 그건 아닙니다. 팀마다 상황이 다르기 때문에, 필요한 테스트 방법도 다르니까요. 하지만 "우리는 테스트를 짜기에 좋은 상황이 아니야~"라고 말하는 대부분의 상황에, 오히려 테스트가 필요한 경우가 많습니다. 그런 상황 몇 가지를 이야기해볼게요.</p>
+<h3 id="1-외부에서-기대하는대로-값이-들어오는지-검증하기">1. 외부에서 기대하는대로 값이 들어오는지 검증하기</h3>
+<p>외부에서 들어온 값에는 타입을 달아도 보장이 되지 않습니다.</p>
+<p>자바스크립트는 동적 타입 언어입니다. 하지만 요즘은 타입스크립트로 타입 검증을 하는 경우가 늘고 있습니다. 타입스크립트를 잘 사용하면 불필요한 테스트를 대부분 없앨 수 있어요. 타입은 수학처럼 가정이 성립한다면, 논리적으로 문제가 없다는 걸 보장해줍니다.</p>
+<p>하지만 외부에서 들어온 값은 변덕스럽고 가정이 깨지기 쉽습니다. 우리는 보통 HTTP를 통해 API 서버에서 데이터를 받아오지요? 가져온 데이터는 보통 any 타입이 달리는데, 우리는 임의의 가정으로 type을 달아주곤 합니다.</p>
+<p>서버 개발자가 문서도 만들어주고 타입도 생성해준다면 좋겠지만, 안 그런 회사가 더 많습니다. 문서는 업데이트가 안 되고요. openapi로 자동 생성된 문서가 있어도 날짜인데 string이나 number 타입이 달려 있는 경우도 많죠. 백엔드에서 공유하지 않고 잠수함 패치를 하거나, 의도치 않게 API가 변하면서 프런트 코드가 깨지기도 합니다.</p>
+<p>이런 때 좋은 게 API 테스트나 프런트 E2E 테스트입니다. E2E 테스트는 실제 브라우저에서 돌아가는 테스트인데요. 되도록이면 api는 귀찮게 mocking하지 않는 게 좋습니다. 이런 e2e테스트를 CI 도구 등으로 매일 자동으로 돌아가게 해주면, 백엔드의 변경으로 기능이 깨졌을 때 바로 문제를 감지할 수 있습니다.</p>
+<h3 id="2-귀찮은-작업을-자동화하기">2. 귀찮은 작업을 자동화하기</h3>
+<p>제가 처음 인턴으로 회사에 들어갔을 때, 제품을 시연하는데 줌 기능에 버그가 생겼습니다. CTO는 원인을 찾으려고 콘솔을 보더니, 코드를 조금 수정했습니다. 그리고...</p>
+<blockquote>
+<ol>
+<li>홈 화면이 뜨면 로그인 버튼을 누릅니다.</li>
+<li>아이디와 비밀번호를 입력합니다.</li>
+<li>로그인을 하고 기능 페이지로 넘어갑니다.</li>
+<li>파일을 업로드합니다.</li>
+<li>스크롤을 해서 줌 기능이 작동하는지 확인합니다.</li>
+</ol>
+</blockquote>
+<p>당연하지만 버그는 한 번에 고쳐지지 않았습니다. 자동로그인 기능도 없어서 로그인을 몇 번이나 반복해야 했습니다.</p>
+<p>저는 이런 일을 수 없이 겪었습니다. 4분이 넘게 걸리는 일렉트론 빌드를 기다린다던가. 카드 추가 폼의 결과 페이지의 에러를 잡기 위해서, 카드 정보를 하나하나 입력한다던가요!</p>
+<p>마이크로소프트에서 만든 E2E 테스트 도구인 <a href="https://playwright.dev/docs/codegen">Playwright</a>는 테스트 녹화 기능을 제공합니다. 브라우저에서 클릭을 하고 타이핑을 하면 이걸 테스트 코드로 찍어줍니다. 그 다음부터는 녹화된 테스트 코드를 재생할 수 있고요. 컴퓨터는 인간보다 수십 배 빠르게 이 똑같은 일을 반복할 수 있습니다.</p>
+<p>하지만 이런 e2e 테스트도 기나긴 빌드 시간을 피해갈 수는 없습니다. 이때 <a href="https://testing-library.com/">testing-library</a>를 이용한 컴포넌트 테스트나, 유닛 테스트가 도움이 됩니다. 컴포넌트 하나나 순수 함수를 테스트하기는 쉽고, 원인을 찾기 어려운 e2e에 비해서 각 단계를 하나씩 빠르게 점검할 수 있어서 좋습니다. 저는 그래서 TDD로 상태 로직을 구현할 때에는 브라우저를 열지 않고 개발하는 날도 많습니다.</p>
+<h3 id="3-버전업과-기술-변경에-대응하기">3. 버전업과 기술 변경에 대응하기</h3>
+<p>저는 지금 Vue를 쓰는 회사에 다니는데요. Vue는 최근에 Vue2에서 Vue3로 버전업을 했습니다. 이제 곧 Vue2의 마지막 버전을 발표하고, 뷰2 지원은 종료될 예정입니다. 리액트의 클래스 컴포넌트와 비슷한 options api에서 hook과 비슷한 composition api로 파괴적인 변화를 겪었습니다. options api도 지원한다 하지만, 리액트에서 클래스 컴포넌트가 사라져가듯이... 앞으로 이런저런 도구들의 뷰2 지원도 끊어지고, 새로운 라이브러리도 뷰3로 나올텐데요.</p>
+<p>이렇게 버전업을 하거나 기술을 전환(migration)할 때 기존 기능들이 깨지지 않았는지 하나하나 테스트해야한다면 정말 귀찮겠죠. 이런 때 안전망이 되어주는 게 테스트입니다.</p>
+<p>슬프게도 테스트가 특정 프레임워크의 특정 버전에 의존한다면, 테스트는 안전망이 되기는 커녕 짐이 됩니다. 그래서 저는 테스트를 짤 때 그 프레임워크에 특수한 기능은 되도록 쓰지 않거나 인터페이스로 감싸놓는 편입니다.</p>
+<p>저는 최근에 <a href="https://twinstae.github.io/genealogy-of-iz-pm-backup-1/">아이즈원 프메백업뷰어</a>를 새로 만들고 있는데요. 적합한 기술을 찾아 웹 서버에서 시작해 Tauri, React Native, Capacitor 등을 전전하며 여러 실험을 해보고 있습니다. 이런 의존성들은 모두 Provider로 의존성 주입을 해두었고, Test 시에는 fake 구현체로 쉽게 교체할 수 있어요.</p>
+<p>회사에서는 Express로 만든 HTTP 서버를, Electron으로 옮기면서 방화벽 때문에 IPC로 전환해야할 일이 있었는데요. 웹서버에 모의 http 요청을 날려주는 도구인 supertest를 이용해서, IPC로 http 요청을 보낼 수 있게 만들었고요. http 서버일 때와 동일하게 동작하는지 unit, component, e2e 테스트로 검증을 했습니다.</p>
+<h2 id="저는-테스트를-짜고-더-행복해졌어요">저는 테스트를 짜고 더 행복해졌어요</h2>
+<p>여전히 막연하게 느껴지시는 분도 많을 거라 생각합니다. 앞서 말씀 드린 것처럼 위에서 말한 문제들을 꼭 테스트로 해결해야하는 것도 아닙니다. 변경하기 쉬우려면 결국 일부 모듈을 교체가능하게 설계해야 합니다. 타입이나 문서가 더 잘 하는 종류의 일도 있고요. 외부에서 들어오는 값을 검증하는 것도 프런트 혼자 해결할 수 있는 문제는 아닙니다.</p>
+<p>예를 들어 저는 일렉트론 환경변수 문제로 5일 간 삽질을 했는데, 테스트가 큰 도움이 되진 않았습니다. 오히려 새로 빌드하지 않고도 이런저런 코드를 실행할 수 있는 리플을 구현한 게 더 도움이 되었어요.</p>
+<p>하지만 아직 시작일 뿐입니다. 다음부터는 더 구체적인 예시와 코드를 가지고 테스트를 짜는 다양한 방법들을 보여드리려 해요.</p>
+<p>저는 2년 전에 첫 팀 프로젝트를 하고 나서 테스트 짜는 법을 배웠습니다. 삽질하고 고통 받으면서 원래 있던 우울증이 더 심각해지는 느낌이었지요.</p>
+<p>하지만 테스트를 배우면서 저는 더 자주 피드백을 받을 수 있게 되었고요. 더 빠르게 성장하고 배울 수 있게 되었습니다. 잘 짠 테스트는 일을 줄여줍니다. 일하는 속도를 빠르게 합니다. 코드의 구현보다는 인터페이스를 먼저 생각하게 하고요. 사용하기 편하고 교체하기 쉬운 설계를 장려합니다.</p>
+<p>좋은 테스트의 가치는 함수형에서나 객체지향에서나 다르지 않습니다. 단지 그 방식이 다를 뿐이지요. 백엔드와 프런트, React와 Svelte를 비슷하게 생각할 수록 유연한 설계를 얻을 수 있어요. 예를 들어 저는 이번 회사에서 Vue를 처음 써보는데도 테스트를 짜는 건 어렵지 않았고, 오히려 그 과정에서 Vue를 더 잘 배울 수 있었습니다.</p>
+<p>저는 여러분도 이런 행복을 느끼실 수 있었으면 좋겠습니다. 테스트 같은 거 배워보겠다고 시간 낭비했다는 기분이 안 드는 좋은 글을 써볼게요. 앞으로 자주 찾아오겠습니다.</p>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-p5qu1m">이 블로그는 <a href="https://svelte.dev/" class="svelte-p5qu1m">Svelte</a>와 <a class="secondary svelte-p5qu1m" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br>
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-p5qu1m">PaperCSS</a>를 기본으로 커스텀했습니다.
+  <br>
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-p5qu1m">Pretendard</a>를 사용합니다.
+  <br>
+  <a href="https://pages.github.com/" class="svelte-p5qu1m">Github Pages</a>로 호스팅하고 있습니다.
+  <br>
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    
+    <script type="module">
+            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
+      
+const $$ejs = (par,eager)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+  const initComponent = (target, component) => {
+    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
+    const compProm = import(prefix + '/svelte/components/' + component.component);
+
+    Promise.all([compProm,propProm]).then(([comp,props])=>{
+      new comp.default({ 
+        target: target,
+        props: props,
+        hydrate: true
+      });
+    });
+  };
+  const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        const selected = par[entry.target.id];
+        initComponent(entry.target,selected)
+      }
+    });
+  }, { rootMargin: "200px",threshold: 0}) : undefined;
+  Object.keys(par).forEach(k => {
+    const el = document.getElementById(k);
+    if (!eager && IO) {
+        IO.observe(el);
+    } else {
+        initComponent(el,par[k]);
+    }
+  });
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs({'scrolltopbuttonDGlVWMXdtd' : { 'component' : 'ScrollTopButton.b343f7d4.js', 'props' : {}},'darkcheckboxyJrnjjtWpx' : { 'component' : 'DarkCheckBox.ccdfc737.js', 'props' : {}},})}, {timeout: 1000});</script>
+    
+    
+    </body></html>
