@@ -99,7 +99,7 @@ Vue 생태계 역시 Vue2에서 Vue3로 올라가면서 Class와 비슷한 Optio
   - `TauriFsMailRepository` (데스크탑 앱 환경)
   - `CapacitorFsMailRepository` (모바일 앱)
 
-```ts
+```typescript
 // 인터페이스
 export interface MailRepository {
   getAllMailList: () => Promise<RawMailT[]>;
@@ -138,7 +138,7 @@ const fakeMailRepository: IMailRepository = {
 
 다음 코드 예시를 봐주시죠. 코드의 구체적인 로직보다는 모양만 봐주셔도 충분합니다.
 
-```ts
+```typescript
 // before: jotai 의존성이 로직과 뒤섞인 코드
 const mailToTagDictAtom = atom((get) => {
   const tagToMailDict = get(tagToMailDictAtom);
