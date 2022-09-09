@@ -2,15 +2,15 @@
   import BlogTeaser from "./BlogTeaser.svelte";
 
   export let blog_list;
+
 </script>
 
 
 <ul class="entries">
   {#each blog_list as blog (blog.frontmatter.title)}
-    <BlogTeaser {blog} />
+    <BlogTeaser {blog}/>
   {/each}
 </ul>
-
 
 <style>
   .entries {

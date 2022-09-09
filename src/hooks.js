@@ -59,27 +59,6 @@ const hooks = [
     },
   },
 
-  // Below are some hooks to try and play with to get a better feel of what is possible.
-
-  // {
-  //   hook: 'data',
-  //   name: 'addSomethingToData',
-  //   description: 'Use this hook to add a key to the "data" object on the "home" route. ',
-  //   priority: 50,
-  //   run: async ({ request, data }) => {
-  //     // when you uncomment this, check the homepage for a new box at the top.
-  //     // IMPORTANT: If you want to add data to a specific route only, you should probably do it in your /route.js for that route.
-  //     if (request.route === 'home') {
-  //       return {
-  //         data: {
-  //           ...data,
-  //           testingHooks: true,
-  //         },
-  //       };
-  //     }
-  //   },
-  // },
-
   // {
   //   hook: 'bootstrap',
   //   name: 'populateDataForAllRequests',

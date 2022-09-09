@@ -3158,20 +3158,18 @@ nav a {
   transition: color 0.25s ease-in-out 0s;
 }
 
-#top-nav-bar a {
-  margin: 0 0.5rem;
-  color: #fc9;
-}
-
-#top-nav-bar a.current {
+nav#top-nav-bar a {
+  padding: 0.25rem;
   color: white;
+  transition: border 0.25s;
+  border-radius: 1rem;
+  border: 2px solid var(--primary);
 }
 
-#top-nav-bar a:hover {
-  color: white;
+nav#top-nav-bar a:hover, nav#top-nav-bar a:focus, nav#top-nav-bar a:target {
+  border: 2px solid var(--primary-light);
 }
-
-nav a:focus {
+nav#top-nav-bar a:visited {
   color: white;
 }
 

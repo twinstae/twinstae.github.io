@@ -2,8 +2,8 @@ require('dotenv').config();
 const frontmatter = require('remark-frontmatter');
 const extractFrontmatter = require('remark-extract-frontmatter');
 const yaml = require('yaml');
-const remarkSlug = require('remark-slug')
-const remarkHtml = require('remark-html')
+const remarkSlug = require('remark-slug');
+const remarkHtml = require('remark-html');
 
 module.exports = {
   origin: 'https://twinstae.github.io', // TODO: update this.
@@ -38,15 +38,9 @@ module.exports = {
         [remarkHtml, { sanitize: false }], // 'remark-html' package
       ],
       useSyntaxHighlighting: {
-        theme: 'material-theme-darker' // available themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md - try dark-plus or github-light
-      // theme is the only option available - for now.
+        theme: 'material-palenight',
       },
       useTableOfContents: true,
-    },
-    '@elderjs/plugin-browser-reload': {
-      // this reloads your browser when nodemon restarts your server.
-      port: 8080,
-      reload: true, // if you are having issues with reloading not working, change to true.
     },
     '@elderjs/plugin-sitemap': {
       origin: 'https://twinstae.github.io', // the https://yourdomain.com
@@ -59,7 +53,7 @@ module.exports = {
         blog: {
           priority: 0.8,
           changefreq: 'monthly',
-        }
+        },
       }, // set custom priority and change freq if not it falls back to default
       lastUpdate: {}, // configurable last update for each route type.
     },

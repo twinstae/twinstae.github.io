@@ -34,7 +34,7 @@ pre code.language-python:before {
 
 pre code.language-javascript:before {
   content: '';
-  background-image: url('/javascript-logo.png');
+  background-image: url('./javascript-logo.png');
   height: 24px;
   width: 24px;
   background-size: 24px 24px;

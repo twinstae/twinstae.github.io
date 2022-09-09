@@ -1,4 +1,5 @@
 var keyword_tooltip = require("./keyword_tooltip.js");
+const katex = require('katex');
 /**
  * Shortcodes are a useful way of making content that lives in a CMS or in markdown files dynamic.
  *
@@ -72,4 +73,12 @@ module.exports = [
       };
     },
   },
+  {
+    shortcode: 'tex',
+    run: ({ content }) => {
+      return katex.renderToString(content, {
+        throwOnError: false
+      });
+    }
+  }
 ];
