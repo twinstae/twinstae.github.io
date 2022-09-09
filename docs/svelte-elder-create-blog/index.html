@@ -1,19 +1,19 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Svelte Elder.js 블로그 만들기</title><meta name="description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/svelte-elder-create-blog/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-18tnbae"><meta property="og:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" data-svelte="svelte-1yifjfe"><script data-svelte="svelte-1yifjfe">setTimeout(()=>{
-      const codes = document.getElementsByTagName("pre");
-      console.log(codes);
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Svelte Elder.js 블로그 만들기</title><meta name="description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/svelte-elder-create-blog/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-18tnbae"><meta property="og:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/svelte-elder-create-blog/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="Svelte Elder.js 블로그 만들기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="검색 엔진 최적화(SEO)된 Svelte 정적 페이지 생성기인 ElderJS로 블로그 만드는 과정을 설명합니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
 
-      for (const code of codes){
-        code.addEventListener("dblclick", function(e){
-          navigator.clipboard.writeText(code.innerText)
-            .then(() => {
-              alert('코드를 클립보드에 복사했습니다.')
-            });
-        })
+      for (const code of codes) {
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
       }
-    }, 500)
-  </script><script data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
-    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.b343f7d4.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ccdfc737.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-afab2afd.css" media="all" /><style>.tooltip {
+    }, 500);
+  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-78ff48cc.css" media="all" /><style>.tooltip {
   position: relative;
 }
 
@@ -40,14 +40,15 @@
   visibility: visible;
   opacity: 1;
 }</style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-p5qu1m"><div class="darkcheckbox-component" id="darkcheckboxkpvpzVkrgR"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-kzWKjprrWk"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
-  <a href="/" class=" svelte-p5qu1m" style="color: white;">진리의 배 조선소 </a>
-  <a href="/lec/" class=" svelte-p5qu1m" style="color: white;">삶을 풍요롭게 하는 코칭 </a></nav>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
 
-<article class="container svelte-p5qu1m"><!-- HTML_TAG_START -->
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
 
 <a href="/">← Home</a>
 
@@ -59,7 +60,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonpmnQZjGvnt"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-TyfRTvCjvl"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-s59jxg"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#필요한-것--html-css-js--nodejs-설치--github-계정" style="color: #868e96;">필요한 것 : HTML, CSS, JS / Node.js 설치 / GitHub 계정</a>
@@ -127,53 +128,53 @@
 <li>Truly reactive : 복잡한 상태 관리 라이브러리 없이도, 쉽게 상태를 관리하고, 변화에 '반응'해서 빠르고 정확하게 UI를 변경합니다.</li>
 </ul>
 <p>다음은 이 블로그 게시글 목록에 있는 카드를 만드는 스벨트 컴포넌트입니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">// BlogTeaser.svelte</span></span>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">// BlogTeaser.svelte</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">export</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> blog</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 컴포넌트의 prop입니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">export</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> helpers</span><span style="color: #89DDFF">;</span></span>
-
-<span class="line"><span style="color: #89DDFF">  </span><span style="color: #545454">// ISO 포맷인 날짜를 사람이 읽을 수 있는 모양으로 변환합니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> formattedDate </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">new</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">Intl</span><span style="color: #89DDFF">.</span><span style="color: #FFCB6B">DateTimeFormat</span><span style="color: #EEFFFF">(</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">ko-KR</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #EEFFFF">      </span><span style="color: #F07178">dateStyle</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">long</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span></span>
-<span class="line"><span style="color: #EEFFFF">      </span><span style="color: #F07178">timeStyle</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">short</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF">)</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">format</span><span style="color: #EEFFFF">(</span><span style="color: #89DDFF">new</span><span style="color: #EEFFFF"> </span><span style="color: #FFCB6B">Date</span><span style="color: #EEFFFF">(blog</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">frontmatter</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">date))</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">let</span><span style="color: #A6ACCD"> blog</span><span style="color: #89DDFF">;</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// 컴포넌트의 prop입니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">let</span><span style="color: #A6ACCD"> helpers</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">  </span><span style="color: #676E95; font-style: italic">// ISO 포맷인 날짜를 사람이 읽을 수 있는 모양으로 변환합니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> formattedDate </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">new</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Intl</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">DateTimeFormat</span><span style="color: #A6ACCD">(</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">ko-KR</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">      </span><span style="color: #F07178">dateStyle</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">long</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">      </span><span style="color: #F07178">timeStyle</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">short</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">format</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">new</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Date</span><span style="color: #A6ACCD">(blog</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">frontmatter</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">date))</span><span style="color: #89DDFF">;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
-
-<span class="line"><span style="color: #545454">&lt;!-- 리액트처럼 {} 안에 js 코드를 넣을 수 있습니다. --&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic">&lt;!-- 리액트처럼 {} 안에 js 코드를 넣을 수 있습니다. --&gt;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">=</span><span style="color: #C3E88D">{helpers.permalinks.blog({</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">slug:</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">blog.slug</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">})}</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">div</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">class</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">entry card</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h3</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">{blog.frontmatter.title}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h3</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">span</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">class</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">date-badge</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">    {formattedDate}</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">span</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">p</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">{blog.frontmatter.excerpt}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">p</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h3</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">{blog.frontmatter.title}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h3</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">span</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">class</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">date-badge</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">    {formattedDate}</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">span</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">p</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">{blog.frontmatter.excerpt}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">p</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">div</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span></span>
-
-
-<span class="line"><span style="color: #545454">&lt;!--</span></span>
-<span class="line"><span style="color: #545454">css도 평범하게 사용하면 됩니다.</span></span>
-<span class="line"><span style="color: #545454">scope가 해당 컴포넌트 안으로 제한되기 때문에</span></span>
-<span class="line"><span style="color: #545454">복잡한 className 없이도 selector를 간단하게 유지할 수 있습니다.</span></span>
-<span class="line"><span style="color: #545454">--&gt;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic">&lt;!--</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">css도 평범하게 사용하면 됩니다.</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">scope가 해당 컴포넌트 안으로 제한되기 때문에</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">복잡한 className 없이도 selector를 간단하게 유지할 수 있습니다.</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">--&gt;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">style</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #FFCB6B">span</span><span style="color: #89DDFF">.</span><span style="color: #FFCB6B">date-badge</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #B2CCD6">color</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> gray</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #B2CCD6">font-size</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">80%</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #B2CCD6">width</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> fit-content</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">}</span></span>
-
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #FFCB6B">h3</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #B2CCD6">margin</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #B2CCD6">color</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #82AAFF">var</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">--primary</span><span style="color: #89DDFF">);</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">}</span></span>
-
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #FFCB6B">p</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #B2CCD6">margin</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #F78C6C">0.25rem</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #B2CCD6">color</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #82AAFF">var</span><span style="color: #89DDFF">(</span><span style="color: #EEFFFF">--primary-text</span><span style="color: #89DDFF">);</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #FFCB6B">span</span><span style="color: #89DDFF">.</span><span style="color: #FFCB6B">date-badge</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #B2CCD6">color</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> gray</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #B2CCD6">font-size</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">80%</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #B2CCD6">width</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> fit-content</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #FFCB6B">h3</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #B2CCD6">margin</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">0</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #B2CCD6">color</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">var</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">--primary</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #FFCB6B">p</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #B2CCD6">margin</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">0.25rem</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #B2CCD6">color</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">var</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">--primary-text</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">}</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">style</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
 <p>Svelte 홈페이지에는 따로 설치 없이 바로 해볼 수 있는 <a href="https://svelte.dev/tutorial/basics">영어 튜토리얼</a>이 있습니다.</p>
 <p>한국어 자료로는 <a href="https://heropy.blog/2019/09/29/svelte/">Svete.js 완벽 가이드</a>도 있습니다. 저자 분이 인프런에서 유료 강의도 하고 계세요.</p>
@@ -222,28 +223,28 @@
 <p>그러면 공식 가이드를 따라서, 프로젝트를 세팅해봅시다.</p>
 <p>앞서 말씀드렸듯 node.js와 함께 npm 이 설치되어 있어야합니다.</p>
 <p>잘 모르겠다면 명령 프롬프트나 터미널을 열고 다음 명령어를 쳐보세요.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">npx --version</span></span>
-<span class="line"><span style="color: #545454"># 6.14.12 이런 식으로 나오면 설치가 되어 있는 겁니다.</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">npx --version</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 6.14.12 이런 식으로 나오면 설치가 되어 있는 겁니다.</span></span></code></pre>
 <h3 id="npx로-elderjstemplate-세팅하기">npx로 Elderjs/template 세팅하기</h3>
 <p>npx는 프로젝트 템플릿을 다운 받아 세팅해줍니다. 다음 명령어를 입력하면 &#x3C;내 깃허브 아이디>.github.io 라는 이름의 폴더와 기본 파일들이 생성됩니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">npx degit Elderjs/template </span><span style="color: #89DDFF">&lt;</span><span style="color: #EEFFFF">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">.github.io</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">npx degit Elderjs/template </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">.github.io</span></span></code></pre>
 <p>저는 깃허브 아이디가 <code>twinstae</code> 이기 때문에 <code>twinstae.github.io</code>로 만들었습니다.</p>
 <p>이제 다음 명령어들을 차례차례 입력합니다. # 은 주석이니 무시하셔도 됩니다. 잘 모르는 터미널 명령어가 있다면 인터넷에 더 자세한 내용을 검색해보세요.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454"># cd는 change directory의 줄임말입니다.</span></span>
-<span class="line"><span style="color: #545454"># 방금 만든 프로젝트 폴더 안으로 이동합니다.</span></span>
-<span class="line"><span style="color: #82AAFF">cd</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #EEFFFF">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">.github.io</span></span>
-
-<span class="line"><span style="color: #545454"># package.json 파일에 적혀 있는 라이브러리들을 다운 받습니다.</span></span>
-<span class="line"><span style="color: #545454"># svelte와 elder.js 등등의 모듈이 node_modules 폴더에 설치 됩니다.</span></span>
-<span class="line"><span style="color: #545454"># yarn 을 사용한다면 yarn install도 가능합니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">npm install</span></span>
-
-<span class="line"><span style="color: #545454"># package.json에 있는 start 스크립트를 실행합니다.</span></span>
-<span class="line"><span style="color: #545454"># dev 스크립트가 프로젝트를 빌드하고, 개발용 서버를 실행합니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">npm start</span></span>
-
-<span class="line"><span style="color: #545454"># 웹 브라우저에서 http://localhost:3000 으로 들어가면 사이트를 볼 수 있습니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">open http://localhost:3000</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic"># cd는 change directory의 줄임말입니다.</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 방금 만든 프로젝트 폴더 안으로 이동합니다.</span></span>
+<span class="line"><span style="color: #82AAFF">cd</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">.github.io</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># package.json 파일에 적혀 있는 라이브러리들을 다운 받습니다.</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># svelte와 elder.js 등등의 모듈이 node_modules 폴더에 설치 됩니다.</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># yarn 을 사용한다면 yarn install도 가능합니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">npm install</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># package.json에 있는 start 스크립트를 실행합니다.</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># dev 스크립트가 프로젝트를 빌드하고, 개발용 서버를 실행합니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">npm start</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 웹 브라우저에서 http://localhost:3000 으로 들어가면 사이트를 볼 수 있습니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">open http://localhost:3000</span></span></code></pre>
 <p>정상적으로 프로젝트가 세팅이 되었다면, 웹 브라우저에서 다음과 같은 템플릿 사이트를 볼 수 있습니다.</p>
 <p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--A0xtvNLd--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/mksj4g4iuntzxkx5xdau.jpg" alt="웹 브라우저에 Elder.js 템플릿 사이트가 열린 모습. Hello World: Welcome to Elder.js 라는 제목이 큰 글씨로 적혀 있다."></p>
 <p>개발용 localhost 서버는 내 컴퓨터에서만 볼 수 있습니다. 이제 저희 템플릿 프로젝트를 github pages에 올려서, 누구나 언제 어디서나 접속할 수 있게 만들어봅시다.</p>
@@ -280,7 +281,7 @@
 <li>___ELDER___는 컴파일된 중간 파일들이라서</li>
 <li>.env는 보안에 중요한 key 등이 들어가기 때문에 제외했습니다.</li>
 </ul>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF"># .gitignore 파일 내용
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD"># .gitignore 파일 내용
 
 node_modules
 ___ELDER___
@@ -293,33 +294,33 @@ ___ELDER___
 <p><code>elder.config.js</code> 파일을 텍스트 편집기로 열어보세요. 설정이 많지만 저희가 신경 쓸 건 딱 두 가지, 'origin'과 'distDir'입니다.</p>
 <p><code>origin</code>은 비어 있을 겁니다. 내 사이트의 host 도메인을 넣어줘야 하는데요. <code>https://&#x3C;내 깃허브 아이디>.github.io</code>를 적어주면 됩니다.</p>
 <p><code>distDir</code>은 <code>public</code>으로 되어 있을 겁니다. <code>docs</code> 로 바꿔줍니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">module.exports</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">origin</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">https://&lt;내 깃허브 아이디&gt;.github.io</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// &lt;- 여기에 내 깃허브 pages 주소를 넣어줍니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">lang</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">ko-KR</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">srcDir</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">src</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">distDir</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">docs</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// &lt;- 여기를 docs로 바꿔 줍니다.</span></span>
-<span class="line"><span style="color: #89DDFF">  </span><span style="color: #545454">// 길어서 생략</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">module.exports</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">origin</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">https://&lt;내 깃허브 아이디&gt;.github.io</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// &lt;- 여기에 내 깃허브 pages 주소를 넣어줍니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">lang</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">ko-KR</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">srcDir</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">src</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">distDir</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">docs</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// &lt;- 여기를 docs로 바꿔 줍니다.</span></span>
+<span class="line"><span style="color: #89DDFF">  </span><span style="color: #676E95; font-style: italic">// 길어서 생략</span></span></code></pre>
 <h3 id="원격-저장소에-push-하기">원격 저장소에 push 하기</h3>
 <p>이제 git으로 저희의 github 원격(remote) 저장소에 프로젝트를 올려보겠습니다. 혹시 빼먹고 넘어간 건 없는지 한 번 점검해보세요.</p>
 <p>문제가 없는 것 같다면 이제 터미널을 열고, 아까 저희가 만들어둔 템플릿 프로젝트 폴더로 이동합니다. cd 명령어를 이용하면 됩니다. 잘 모르겠다면 <a href="https://www.google.com/search?q=cd+%EB%AA%85%EB%A0%B9%EC%96%B4">cd 명령어를 검색</a>해보세요</p>
 <p>이제 다음 명령어를 차례대로 실행합니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454"># 현재 폴더를 깃 프로젝트로 설정합니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">git init</span></span>
-
-<span class="line"><span style="color: #545454"># 현재 폴더의 모든 파일을 git stage로 올려서 선택합니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">git add </span><span style="color: #82AAFF">.</span></span>
-
-<span class="line"><span style="color: #545454"># stage에 선택된 파일들을 커밋해서 확정합니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">git commit -m </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">Initial commit</span><span style="color: #89DDFF">&quot;</span></span>
-
-<span class="line"><span style="color: #545454"># main 이라는 브랜치 버전을 만듭니다. </span></span>
-<span class="line"><span style="color: #EEFFFF">git branch -M main</span></span>
-
-<span class="line"><span style="color: #545454"># 내 깃허브 원격 저장소를 추가해서 연결합니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">git remote add origin https://github.com/</span><span style="color: #89DDFF">&lt;</span><span style="color: #EEFFFF">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">/</span><span style="color: #89DDFF">&lt;</span><span style="color: #EEFFFF">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">.github.io.git</span></span>
-
-<span class="line"><span style="color: #545454"># 내 깃허브 원격 저장소에 커밋한 파일들을 올립니다!</span></span>
-<span class="line"><span style="color: #EEFFFF">git push -u origin main</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic"># 현재 폴더를 깃 프로젝트로 설정합니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">git init</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 현재 폴더의 모든 파일을 git stage로 올려서 선택합니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">git add </span><span style="color: #82AAFF">.</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># stage에 선택된 파일들을 커밋해서 확정합니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">git commit -m </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">Initial commit</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># main 이라는 브랜치 버전을 만듭니다. </span></span>
+<span class="line"><span style="color: #A6ACCD">git branch -M main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 내 깃허브 원격 저장소를 추가해서 연결합니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">git remote add origin https://github.com/</span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">/</span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">내 깃허브 아이디</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">.github.io.git</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 내 깃허브 원격 저장소에 커밋한 파일들을 올립니다!</span></span>
+<span class="line"><span style="color: #A6ACCD">git push -u origin main</span></span></code></pre>
 <p>성공적으로 push가 끝났으면, 내 github 페이지에 들어가서 파일이 잘 올라갔는지 확인합니다. 웹 브라우저 주소 창에 <code>https://&#x3C;내 깃허브 아이디>.github.io</code>를 치고 들어가면 됩니다.</p>
 <p>아까 localhost로 봤던 템플릿 사이트가 보이나요? 그러면 성공입니다!</p>
 <p>고생하셨습니다. 저희가 이번에 한 일을 정리해봅시다.</p>
@@ -340,13 +341,15 @@ ___ELDER___
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
 
-<footer class="footer svelte-p5qu1m">이 블로그는 <a href="https://svelte.dev/" class="svelte-p5qu1m">Svelte</a>와 <a class="secondary svelte-p5qu1m" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
   <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-p5qu1m">PaperCSS</a>를 기본으로 커스텀했습니다.
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
   <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-p5qu1m">Pretendard</a>를 사용합니다.
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
   <br>
-  <a href="https://pages.github.com/" class="svelte-p5qu1m">Github Pages</a>로 호스팅하고 있습니다.
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
   <br>
   오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
 </footer>
@@ -358,6 +361,19 @@ const $$ejs = (par,eager)=>{
   const $ejs = function(_ejs){return _ejs};
   const prefix = '/_elderjs';
   const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
     const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
     const compProm = import(prefix + '/svelte/components/' + component.component);
 
@@ -390,7 +406,7 @@ const $$ejs = (par,eager)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs({'scrolltopbuttonpmnQZjGvnt' : { 'component' : 'ScrollTopButton.b343f7d4.js', 'props' : {}},'darkcheckboxkpvpzVkrgR' : { 'component' : 'DarkCheckBox.ccdfc737.js', 'props' : {}},})}, {timeout: 1000});</script>
+        $$ejs({'scrolltopbutton-ejs-TyfRTvCjvl' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-kzWKjprrWk' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
     
     
     </body></html>

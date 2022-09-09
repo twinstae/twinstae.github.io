@@ -1,6 +1,5 @@
 <script>
   import BlogList from '../../components/BlogList.svelte';
-  import Search from '../../components/Search.svelte';
   // import TagNav from '../../components/TagNav.svelte';
   import { tagStoreInit } from '../../stores/tag';
 
@@ -51,8 +50,6 @@
     > 페이지를 참고해주세요.
   </p>
 </section>
-
-<Search hydrate-client={{ blog_list: blog_list }} hydrate-options={{ "loading": "eager" }} />
 
 <section class="blog">
   <BlogList

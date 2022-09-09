@@ -1,27 +1,28 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>자바스크립트 JSON vs 객체 무엇이 다른가요?</title><meta name="description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/json-vs-object/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/json-vs-object/" data-svelte="svelte-18tnbae"><meta property="og:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/json-vs-object/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" data-svelte="svelte-1yifjfe"><script data-svelte="svelte-1yifjfe">setTimeout(()=>{
-      const codes = document.getElementsByTagName("pre");
-      console.log(codes);
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>자바스크립트 JSON vs 객체 무엇이 다른가요?</title><meta name="description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/json-vs-object/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/json-vs-object/" data-svelte="svelte-18tnbae"><meta property="og:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/json-vs-object/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
 
-      for (const code of codes){
-        code.addEventListener("dblclick", function(e){
-          navigator.clipboard.writeText(code.innerText)
-            .then(() => {
-              alert('코드를 클립보드에 복사했습니다.')
-            });
-        })
+      for (const code of codes) {
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
       }
-    }, 500)
-  </script><script data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
-    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.b343f7d4.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ccdfc737.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-afab2afd.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-p5qu1m"><div class="darkcheckbox-component" id="darkcheckboxjLVJXzWtvK"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+    }, 500);
+  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-78ff48cc.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-RRFVCmKCxD"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
-  <a href="/" class=" svelte-p5qu1m" style="color: white;">진리의 배 조선소 </a>
-  <a href="/lec/" class=" svelte-p5qu1m" style="color: white;">삶을 풍요롭게 하는 코칭 </a></nav>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
 
-<article class="container svelte-p5qu1m"><!-- HTML_TAG_START -->
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
 
 <a href="/">← Home</a>
 
@@ -33,7 +34,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonwMRTGgJfQm"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-FFbVJqtVXV"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 
 
@@ -45,35 +46,35 @@
 <p>json은 문자열입니다. 글자죠. 제가 종이에 json을 적을 수도 있습니다. 그래서 따옴표( ' )로 감싸놓습니다. 문자열을 감싸는 따옴표와 문자열 안에 있는 따옴표를 구분하기 위해서 \ 역슬래시를 이용해서 escape(빠져나가기, 무시) 처리를 해줍니다. 한국 키보드에서는 엔터 위에 원(화폐단위) 문자로 보이기도 해요.</p>
 <p>이런 문자열은 HTTP 네트워크를 타고 서버나 다른 기기와 데이터를 주고 받을 때에도 쓰이고요. 텍스트 파일로 데이터를 저장할 때도 씁니다. 제가 만든 프메 백업 뷰어도 데이터를 JSON으로 저장하고 있어요.</p>
 <p>다음 코드는 브라우저에서 F12를 누르시면 나오는 개발자 도구 Console 탭에서 직접 쳐보실 수 있어요.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailJson </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #EEFFFF">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
-
-<span class="line"><span style="color: #EEFFFF">sakuMailJson</span></span>
-<span class="line"><span style="color: #545454">// &quot;{\&quot;name\&quot;:\&quot;미야와키 사쿠라\&quot;,\&quot;message\&quot;:\&quot;안녕하세요. \\\\(^ ^\&quot;}&quot; 가 출력됩니다.</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailJson </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">sakuMailJson</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">// &quot;{\&quot;name\&quot;:\&quot;미야와키 사쿠라\&quot;,\&quot;message\&quot;:\&quot;안녕하세요. \\\\(^ ^\&quot;}&quot; 가 출력됩니다.</span></span></code></pre>
 <p>객체(object)는 코드가 아니라 그 코드를 가지고 메모리에 올라간 자료구조에요. 이 객체에서는 key를 가지고 이런저런 값을 꺼낼 수 있죠. 다른 언어에서는 보통 HashMap이나 Dictionary 같은 자료구조로 표현합니다. 보통 따옴표 없이 리터럴로 쓸 수 있지만, 빈 객체에 값을 하나씩 넣어서 만들 수도 있습니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailLiteral </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">message</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #EEFFFF">\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #89DDFF">&quot;</span></span>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailLiteral </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">message</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #89DDFF">&quot;</span></span>
 <span class="line"><span style="color: #89DDFF">}</span></span>
-
-<span class="line"><span style="color: #EEFFFF">sakuMailLiteral</span></span>
-<span class="line"><span style="color: #545454">// {name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;} 가 출력됩니다. 따옴표가 없죠?</span></span>
-
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailFromEmpty </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{};</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// 처음에는 비어 있습니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">sakuMailFromEmpty</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">name </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">  </span><span style="color: #545454">// 값을 넣어줍니다.</span></span>
-<span class="line"><span style="color: #EEFFFF">sakuMailFromEmpty</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">message </span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #EEFFFF">\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #89DDFF">&quot;</span></span>
-
-<span class="line"><span style="color: #EEFFFF">sakuMailFromEmpty</span></span>
-<span class="line"><span style="color: #545454">// {name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;} 가 출력됩니다. 객체를 만들었어요.</span></span></code></pre>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">sakuMailLiteral</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">// {name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;} 가 출력됩니다. 따옴표가 없죠?</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailFromEmpty </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{};</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// 처음에는 비어 있습니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">sakuMailFromEmpty</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">name </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">  </span><span style="color: #676E95; font-style: italic">// 값을 넣어줍니다.</span></span>
+<span class="line"><span style="color: #A6ACCD">sakuMailFromEmpty</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">message </span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">sakuMailFromEmpty</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">// {name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;} 가 출력됩니다. 객체를 만들었어요.</span></span></code></pre>
 <p>보통 API 서버에서 값을 가져오면 JSON 문자열입니다. 이걸 JSON.parse에 넣으면 해석해서 객체로 만들어줍니다. 반대로 JSON.stringify 에 객체를 넣으면 문자열로 직렬화해줍니다. 통신선이나 전파를 타고 이동하려면 문자열처럼 직렬화되어 있어야하거든요.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailJson2 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #EEFFFF">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #EEFFFF">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
-
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailObject </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> JSON</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">parse</span><span style="color: #EEFFFF">(sakuMailJson2)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #EEFFFF">sakuMailObject</span></span>
-<span class="line"><span style="color: #545454">//{name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;}</span></span>
-
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> sakuMailJson3 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> JSON</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">stringify</span><span style="color: #EEFFFF">(sakuMailObject)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #EEFFFF">sakuMailJson3</span></span>
-<span class="line"><span style="color: #545454">// &quot;{\&quot;name\&quot;:\&quot;미야와키 사쿠라\&quot;,\&quot;message\&quot;:\&quot;안녕하세요. \\\\(^ ^\&quot;}&quot;</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailJson2 </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailObject </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> JSON</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">parse</span><span style="color: #A6ACCD">(sakuMailJson2)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">sakuMailObject</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">//{name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailJson3 </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> JSON</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">stringify</span><span style="color: #A6ACCD">(sakuMailObject)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">sakuMailJson3</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic">// &quot;{\&quot;name\&quot;:\&quot;미야와키 사쿠라\&quot;,\&quot;message\&quot;:\&quot;안녕하세요. \\\\(^ ^\&quot;}&quot;</span></span></code></pre>
 <p>요즘 대부분의 언어에서는 JSON을 다룰 수 있는 모듈이나 라이브러리를 제공합니다. JS는 웹 브라우저의 표준 언어고, 왠만한 언어는 모두 서버를 만드니까요. 예를 들어 파이썬에는 json.dumps와 json.loads 가 있고요. 객체보다는 dict (사전) 자료구조를 이용합니다. Java Spring에서는 보통 DTO라는 클래스로 객체를 만들어 넣지만, key-value를 저장하는 HashMap을 선호하는 분도 간혹 있습니다.</p>
 <p>옛날 사람들은 XML을 썼는데요. (그래서 Ajax 라는 말의 x가 xml이라는 뜻입니다) XML은 읽기 어렵고 불편했기 때문에, 점점 JSON이 득세하기 시작했습니다. 하지만 요즘은 또 json이 마음에 안 들었던 구글이 프로토콜버퍼(protobuf)라는 직렬화 방법을 직접 만들어서 gRPC(원격 프로시저 호출)같은 곳에 사용하고 있기도 합니다. gRPC는 <a href="https://blog.banksalad.com/tech/production-ready-grpc-in-golang/">뱅크샐러드</a>를 비롯해 여러 회사들이 쓰고 있어요.</p>
 <p>'직렬화'라는 말이 나왔죠? 어떤 자료구조를 줄줄이 한 줄로 이어지는 문자열이나 바이트 스트림으로 만들면 직렬화 한다고 합니다. 0010111000111 같은 데이터 말이죠. 이런 걸 그래서 '선형적'이라고도 해요. 일직선이니까요.</p>
@@ -88,13 +89,15 @@
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
 
-<footer class="footer svelte-p5qu1m">이 블로그는 <a href="https://svelte.dev/" class="svelte-p5qu1m">Svelte</a>와 <a class="secondary svelte-p5qu1m" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
   <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-p5qu1m">PaperCSS</a>를 기본으로 커스텀했습니다.
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
   <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-p5qu1m">Pretendard</a>를 사용합니다.
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
   <br>
-  <a href="https://pages.github.com/" class="svelte-p5qu1m">Github Pages</a>로 호스팅하고 있습니다.
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
   <br>
   오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
 </footer>
@@ -106,6 +109,19 @@ const $$ejs = (par,eager)=>{
   const $ejs = function(_ejs){return _ejs};
   const prefix = '/_elderjs';
   const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
     const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
     const compProm = import(prefix + '/svelte/components/' + component.component);
 
@@ -138,7 +154,7 @@ const $$ejs = (par,eager)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs({'scrolltopbuttonwMRTGgJfQm' : { 'component' : 'ScrollTopButton.b343f7d4.js', 'props' : {}},'darkcheckboxjLVJXzWtvK' : { 'component' : 'DarkCheckBox.ccdfc737.js', 'props' : {}},})}, {timeout: 1000});</script>
+        $$ejs({'scrolltopbutton-ejs-FFbVJqtVXV' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-RRFVCmKCxD' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
     
     
     </body></html>

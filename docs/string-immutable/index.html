@@ -1,27 +1,28 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열은 왜 불변인가?</title><meta name="description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-immutable/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" data-svelte="svelte-1yifjfe"><script data-svelte="svelte-1yifjfe">setTimeout(()=>{
-      const codes = document.getElementsByTagName("pre");
-      console.log(codes);
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>문자열은 왜 불변인가?</title><meta name="description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/string-immutable/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta property="og:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/string-immutable/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="문자열은 왜 불변인가?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
 
-      for (const code of codes){
-        code.addEventListener("dblclick", function(e){
-          navigator.clipboard.writeText(code.innerText)
-            .then(() => {
-              alert('코드를 클립보드에 복사했습니다.')
-            });
-        })
+      for (const code of codes) {
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
       }
-    }, 500)
-  </script><script data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
-    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.b343f7d4.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ccdfc737.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-afab2afd.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-p5qu1m"><div class="darkcheckbox-component" id="darkcheckboxJFyTnDQQLv"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+    }, 500);
+  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-78ff48cc.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-dLGbsVQjZc"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
-  <a href="/" class=" svelte-p5qu1m" style="color: white;">진리의 배 조선소 </a>
-  <a href="/lec/" class=" svelte-p5qu1m" style="color: white;">삶을 풍요롭게 하는 코칭 </a></nav>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
 
-<article class="container svelte-p5qu1m"><!-- HTML_TAG_START -->
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
 
 <a href="/">← Home</a>
 
@@ -33,7 +34,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonTMQWyWVvKp"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-kDZwmDVqXN"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-s59jxg"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#문자열은-보통-불변입니다" style="color: #868e96;">문자열은 보통 불변입니다.</a>
@@ -50,30 +51,30 @@
 
 <!-- HTML_TAG_START --><h3 id="문자열은-보통-불변입니다">문자열은 보통 불변입니다.</h3>
 <p>대부분의 언어에서 문자열은 불변(Immutable)입니다. 변하지 않는다고 하면 이해하기 어려워하는 사람들이 있을텐데. 정확하게 말하면 문자열을 수정할 때, 새로운 문자열을 복사해서 만든다는 이야기다. 이걸 Copy on Write 라고도 한다. 파이썬에서 가변(mutable)한 자료형인 List와 비교해서 알아보자.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454"># 문자열</span></span>
-<span class="line"><span style="color: #EEFFFF">a </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">hello</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #545454"># 문자 List. 타입은 사실 List[str] 이지만...</span></span>
-<span class="line"><span style="color: #EEFFFF">b </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">h</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">e</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">o</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">]</span></span>
-
-<span class="line"><span style="color: #545454"># 값을 복사한다.</span></span>
-<span class="line"><span style="color: #EEFFFF">a_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> a</span></span>
-<span class="line"><span style="color: #545454"># 레퍼런스를 복사한다.</span></span>
-<span class="line"><span style="color: #EEFFFF">b_copy </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> b</span></span>
-
-<span class="line"><span style="color: #545454"># &quot;, world&quot;를 뒤에 붙인다.</span></span>
-<span class="line"><span style="color: #EEFFFF">a_copy </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">, world</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #545454"># 마찬가지. 이번에는 겹 따옴표를 써봤다.</span></span>
-<span class="line"><span style="color: #EEFFFF">b_copy </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">,</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">o</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">r</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">d</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
-
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic"># 문자열</span></span>
+<span class="line"><span style="color: #A6ACCD">a </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">hello</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 문자 List. 타입은 사실 List[str] 이지만...</span></span>
+<span class="line"><span style="color: #A6ACCD">b </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">h</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">e</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">o</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 값을 복사한다.</span></span>
+<span class="line"><span style="color: #A6ACCD">a_copy </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> a</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 레퍼런스를 복사한다.</span></span>
+<span class="line"><span style="color: #A6ACCD">b_copy </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> b</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># &quot;, world&quot;를 뒤에 붙인다.</span></span>
+<span class="line"><span style="color: #A6ACCD">a_copy </span><span style="color: #89DDFF">+=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">, world</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 마찬가지. 이번에는 겹 따옴표를 써봤다.</span></span>
+<span class="line"><span style="color: #A6ACCD">b_copy </span><span style="color: #89DDFF">+=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">,</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">o</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">r</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">l</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">d</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">a</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #545454"># &quot;hello&quot; 원본은 그대로</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># &quot;hello&quot; 원본은 그대로</span></span>
 <span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">a_copy</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #545454"># &quot;hello, world&quot; 복사본은 수정됐다.</span></span>
-
+<span class="line"><span style="color: #676E95; font-style: italic"># &quot;hello, world&quot; 복사본은 수정됐다.</span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">b</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #545454"># [&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;,&#39;,&#39; &#39;,&#39;w&#39;,&#39;o&#39;,&#39;r&#39;,&#39;l&#39;,&#39;d&#39;] 원본도 같이 변했다!!!</span></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># [&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;,&#39;,&#39; &#39;,&#39;w&#39;,&#39;o&#39;,&#39;r&#39;,&#39;l&#39;,&#39;d&#39;] 원본도 같이 변했다!!!</span></span>
 <span class="line"><span style="color: #82AAFF">print</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">b_copy</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #545454"># [&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;,&#39;,&#39; &#39;,&#39;w&#39;,&#39;o&#39;,&#39;r&#39;,&#39;l&#39;,&#39;d&#39;] </span></span></code></pre>
+<span class="line"><span style="color: #676E95; font-style: italic"># [&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;,&#39;,&#39;,&#39; &#39;,&#39;w&#39;,&#39;o&#39;,&#39;r&#39;,&#39;l&#39;,&#39;d&#39;] </span></span></code></pre>
 <p>변수는 메모리에 특정한 위치를 가리키는 레퍼런스를 들고 있다. 그런데 불변인 값은 메모리의 내용을 수정할 수 없다. 그래서 값을 수정하면 메모리에 새로운 위치에 값을 복사해서 쓰고, 변수에 새로운 위치를 가리키는 레퍼런스를 넣어놓는다. a_copy를 수정해도 a는 예전 위치를 가리키고 있기 때문에, 아무런 영향이 없다.</p>
 <p>반면에 리스트는 메모리의 값을 수정할 수 있어서, 항상 같은 위치를 가리키고 있다. 그러니 복사한 다른 변수가 값을 수정하면 원본도 바뀌는 것입니다.</p>
 <h3 id="불변성의-성능-이슈">불변성의 성능 이슈.</h3>
@@ -81,17 +82,18 @@
 <p>불변 자료형은 매번 값을 새로 쓰기 때문에 성능에 불리한 면이 있었습니다. 내가 책을 하나 새로 샀다고 합시다. 가변 책장이라면 책을 새로 꽂으면 끝납니다. 하지만 불변 책장에서는 책장을 새로 만들어서 기존에 있던 책들을 모두 옮겨야 합니다...</p>
 <p>실제로 매우 많은 문자열을 합칠 때, 이 문제는 심각한 고민입니다. Python에서 문자열을 합칠 때 앞에서 본 + 연산자를 쓸 수 있습니다. 한 두 개는 이래도 괜찮지만, 문자열 수백 수천 개를 합칠 때에는 같은 문자열을 지우고 만들기를 수백 수천 번 반복하니 비효율적일 수 밖에 없습니다.</p>
 <p>그래서 Python에서는 이렇게 많은 문자열을 합칠 때에는 join을 쓰기를 권장합니다. join은 미리 모든 문자열을 합칠 수 있는 공간을 만들어두고, 한 번에 새 문자열을 만들기 때문에 빠릅니다. JS도 비슷하게 for이나 reduce보다 join을 사용하라 합니다. Java에서는 StringBuilder나 StringBuffer를 추천합니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">very_large_data_list </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">장원영</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">홍다희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">나북희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> ...</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">김민주</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
-
-<span class="line"><span style="color: #EEFFFF">result_1 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;&quot;</span></span>
-<span class="line"><span style="color: #89DDFF">for</span><span style="color: #EEFFFF"> name </span><span style="color: #89DDFF">in</span><span style="color: #EEFFFF"> very_large_data_list</span><span style="color: #89DDFF">:</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #545454"># 합쳐서 새 문자열을 만든다.</span></span>
-<span class="line"><span style="color: #EEFFFF">    line </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> name </span><span style="color: #89DDFF">+</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">\n</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #EEFFFF">    </span><span style="color: #545454"># result를 지우고 새 문자열을 또 만든다.</span></span>
-<span class="line"><span style="color: #EEFFFF">    result_1 </span><span style="color: #89DDFF">+=</span><span style="color: #EEFFFF"> line</span></span>
-
-<span class="line"><span style="color: #545454"># 한 번에 모든 문자열을 합친다.</span></span>
-<span class="line"><span style="color: #EEFFFF">result_2 </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #EEFFFF">\n</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">join</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">very_large_data_list</span><span style="color: #89DDFF">)</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">very_large_data_list </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">[</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">장원영</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">홍다희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">나북희</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> ...</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">김민주</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">]</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">result_1 </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;&quot;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">for</span><span style="color: #A6ACCD"> name </span><span style="color: #89DDFF; font-style: italic">in</span><span style="color: #A6ACCD"> very_large_data_list</span><span style="color: #89DDFF">:</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #676E95; font-style: italic"># 합쳐서 새 문자열을 만든다.</span></span>
+<span class="line"><span style="color: #A6ACCD">    line </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> name </span><span style="color: #89DDFF">+</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">\n</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #676E95; font-style: italic"># result를 지우고 새 문자열을 또 만든다.</span></span>
+<span class="line"><span style="color: #A6ACCD">    result_1 </span><span style="color: #89DDFF">+=</span><span style="color: #A6ACCD"> line</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic"># 한 번에 모든 문자열을 합친다.</span></span>
+<span class="line"><span style="color: #A6ACCD">result_2 </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">\n</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">join</span><span style="color: #89DDFF">(</span><span style="color: #82AAFF">very_large_data_list</span><span style="color: #89DDFF">)</span></span>
+<span class="line"></span></code></pre>
 <p>하지만 애초에 String이 가변이었다면 이런 고민은 하지 않아도 됩니다. 그러면 왜 불변성을 유지하는 걸까요?</p>
 <h3 id="불변-자료구조는-해싱-캐싱할-수-있고-안전하다">불변 자료구조는 해싱, 캐싱할 수 있고, 안전하다.</h3>
 <p>앞서 말했듯이 함수형 프로그래밍에서는 적극적으로 불변 자료구조를 쓴다. 심지어 Clojure나 Elixir 같은 언어에서는 기본적으로 불변 Linked List를 사용한다. (대부분 주류 언어에서는 ArrayList를 쓴다.) 흔히 함수형의 장점이라 알려진 것들이 불변성의 장점인 경우가 많다.</p>
@@ -105,13 +107,15 @@
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
 
-<footer class="footer svelte-p5qu1m">이 블로그는 <a href="https://svelte.dev/" class="svelte-p5qu1m">Svelte</a>와 <a class="secondary svelte-p5qu1m" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
   <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-p5qu1m">PaperCSS</a>를 기본으로 커스텀했습니다.
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
   <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-p5qu1m">Pretendard</a>를 사용합니다.
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
   <br>
-  <a href="https://pages.github.com/" class="svelte-p5qu1m">Github Pages</a>로 호스팅하고 있습니다.
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
   <br>
   오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
 </footer>
@@ -123,6 +127,19 @@ const $$ejs = (par,eager)=>{
   const $ejs = function(_ejs){return _ejs};
   const prefix = '/_elderjs';
   const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
     const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
     const compProm = import(prefix + '/svelte/components/' + component.component);
 
@@ -155,7 +172,7 @@ const $$ejs = (par,eager)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs({'scrolltopbuttonTMQWyWVvKp' : { 'component' : 'ScrollTopButton.b343f7d4.js', 'props' : {}},'darkcheckboxJFyTnDQQLv' : { 'component' : 'DarkCheckBox.ccdfc737.js', 'props' : {}},})}, {timeout: 1000});</script>
+        $$ejs({'scrolltopbutton-ejs-kDZwmDVqXN' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-dLGbsVQjZc' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
     
     
     </body></html>

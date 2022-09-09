@@ -1,19 +1,19 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Elder 블로그 커스터마이징 하기</title><meta name="description" content="Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/customize-elder-blog/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/customize-elder-blog/" data-svelte="svelte-18tnbae"><meta property="og:title" content="Elder 블로그 커스터마이징 하기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/customize-elder-blog/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="Elder 블로그 커스터마이징 하기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link href="https://unpkg.com/balloon-css/balloon.min.css" rel="preload" as="style" data-svelte="svelte-1yifjfe"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css" data-svelte="svelte-1yifjfe"><script data-svelte="svelte-1yifjfe">setTimeout(()=>{
-      const codes = document.getElementsByTagName("pre");
-      console.log(codes);
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Elder 블로그 커스터마이징 하기</title><meta name="description" content="Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/customize-elder-blog/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/customize-elder-blog/" data-svelte="svelte-18tnbae"><meta property="og:title" content="Elder 블로그 커스터마이징 하기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/customize-elder-blog/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="Elder 블로그 커스터마이징 하기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
 
-      for (const code of codes){
-        code.addEventListener("dblclick", function(e){
-          navigator.clipboard.writeText(code.innerText)
-            .then(() => {
-              alert('코드를 클립보드에 복사했습니다.')
-            });
-        })
+      for (const code of codes) {
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
       }
-    }, 500)
-  </script><script data-svelte="svelte-1yifjfe">let is_dark = localStorage.getItem("dark") == "true";
-    document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.b343f7d4.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ccdfc737.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-afab2afd.css" media="all" /><style>.tooltip {
+    }, 500);
+  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-78ff48cc.css" media="all" /><style>.tooltip {
   position: relative;
 }
 
@@ -40,14 +40,15 @@
   visibility: visible;
   opacity: 1;
 }</style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-p5qu1m"><div class="darkcheckbox-component" id="darkcheckboxpFtVtJfmNM"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-yzQJRbyfgY"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
-  <a href="/" class=" svelte-p5qu1m" style="color: white;">진리의 배 조선소 </a>
-  <a href="/lec/" class=" svelte-p5qu1m" style="color: white;">삶을 풍요롭게 하는 코칭 </a></nav>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
 
-<article class="container svelte-p5qu1m"><!-- HTML_TAG_START -->
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
 
 <a href="/">← Home</a>
 
@@ -59,7 +60,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbuttonbmxlQDMbGr"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-ycpNbrLVkx"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-s59jxg"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#elderjs-프로젝트-구조" style="color: #868e96;">Elder.js 프로젝트 구조</a>
@@ -133,12 +134,12 @@
 <p>처음 배울 때에는 원래 정신이 없기 마련입니다. 일단 내게 필요한 기능을 만드는데 필요한 부분만 조금씩 배워보겠습니다.</p>
 <h2 id="새로운-글쓰기-불필요한-글-지우기">새로운 글쓰기. 불필요한 글 지우기.</h2>
 <p>먼저 src/routes/blog/route.js 를 열어보면 다음과 같은 내용이 보이실 겁니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">module.exports</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #89DDFF"> </span><span style="color: #545454">// 마크다운 플러그인이</span></span>
-<span class="line"><span style="color: #89DDFF"> </span><span style="color: #545454">// data와 all의 내용을 채워준다는 설명</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">data</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{},</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #82AAFF">all</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">()</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #EEFFFF"> []</span><span style="color: #89DDFF">,</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #F07178">permalink</span><span style="color: #89DDFF">:</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">/:slug/</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">module.exports</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #89DDFF"> </span><span style="color: #676E95; font-style: italic">// 마크다운 플러그인이</span></span>
+<span class="line"><span style="color: #89DDFF"> </span><span style="color: #676E95; font-style: italic">// data와 all의 내용을 채워준다는 설명</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">data</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{},</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #82AAFF">all</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> []</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">permalink</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">/:slug/</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span></span>
 <span class="line"><span style="color: #89DDFF">};</span></span></code></pre>
 <p>일단 permanent link는 앞으로 몇 년 동안 이 페이지로 접근할 수 있는 URL은 이곳임을 알려주는 표시입니다. 검색엔진은 이 URL을 믿고 사람들을 데려오기 때문에 때문에 마음대로 permalink가 바뀌면 안 됩니다. <span class="badge tooltip" style="background-color: var(--primary)">
      SEO
@@ -147,32 +148,32 @@
 <p>여기서는 permanlink 가 /:slug/ 모양이라고 템플릿을 만들어놨습니다. 여기서 slug는 url에 쓸 수 있게 띄어쓰기 대신 - 등으로 연결한 글 제목인데요. 영어로 쓴 마크다운 파일 제목이 slug가 됩니다. 예를들어 <code>getting-started.md</code> 파일은 .md 확장자를 빼버리고 <code>/getting-started/</code>가 url이 됩니다. 중요한 건 파일 이름을 일단 영문 알파벳으로 해줘야한다는 점입니다.</p>
 <p>그러면 Blog.svelte를 살펴보러 가겠습니다. data와 all을 마크다운 플러그인이 어떻게 채워줬을까요?</p>
 <p>코드를 열어보시면 맨 위에 script가 있습니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">export</span><span style="color: #EEFFFF"> </span><span style="color: #C792EA">let</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> request</span><span style="color: #89DDFF">;</span><span style="color: #EEFFFF"> </span><span style="color: #545454">// data의 내용은 markdown plugin이 외부에서 넣어줌.</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> html</span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">;</span></span>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">let</span><span style="color: #A6ACCD"> data</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> request</span><span style="color: #89DDFF">;</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// data의 내용은 markdown plugin이 외부에서 넣어줌.</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #A6ACCD"> html</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> frontmatter </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> data</span><span style="color: #89DDFF">;</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
 <p>export let 으로 data와 request를 선언해놓으면, 마크다운 플러그인이 값을 넣어줍니다. data를 구조 분해할당해서 html과 frontmatter 를 꺼내오는데요. 구조 분해 할당을 잘 모르신다면 다음과 같은 코드를 줄여 쓴거라고 생각하시면 됩니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #545454">// 전통적인 방법.</span></span>
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> html </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">html</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">.</span><span style="color: #EEFFFF">html</span><span style="color: #89DDFF">;</span></span>
-
-<span class="line"><span style="color: #545454">// 구조 분해 할당</span></span>
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">{</span><span style="color: #EEFFFF"> html </span><span style="color: #89DDFF">,</span><span style="color: #EEFFFF"> frontmatter </span><span style="color: #89DDFF">}</span><span style="color: #EEFFFF"> </span><span style="color: #89DDFF">=</span><span style="color: #EEFFFF"> data</span><span style="color: #89DDFF">;</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// 전통적인 방법.</span></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> html </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> data</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">html</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> frontmatter </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> data</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">html</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #676E95; font-style: italic">// 구조 분해 할당</span></span>
+<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #A6ACCD"> html </span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> frontmatter </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> data</span><span style="color: #89DDFF">;</span></span></code></pre>
 <p>그러면 html이랑 frontmatter는 어디서 왔을까요? 마크다운 플러그인이 blog 폴더에 있는 <code>.md</code> 파일들을 찾아서 변환한 겁니다.</p>
 <p><code>getting-started.md</code> 마크다운 파일을 하나 열어보면 이렇게 생겼습니다.</p>
 <p>위에 title부터 author 까지가 frontmatter입니다. 그 다음에 이어지는 본문 마크다운이 html로 변환됩니다. 마크다운은 html을 편리하게 쓰기 위한 문법입니다. 인터넷에 검색해보시면 마크다운 문법을 쓰는 방법을 설명한 글이 많으니, 잘 모르신다면 이번 기회에 한 번 배워보세요.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #EEFFFF">---
-title: &#39;Getting Started with Elder.js&#39;
-excerpt: &#39;You have the starter template of Elder.js running. So what is next? This guide will help you explore the project.&#39;
-date: &#39;2020-03-16T05:35:07.322Z&#39;
-author: Nick Reese
----
-
-Sweet! So you&#39;ve got the Elder.js starter template up and running. What&#39;s next?
-
-## 4 Routes To Explore
-
-This project is structured to follow the required Elder.js folder structure which you can see below, but in short you&#39;ve got several routes in the `./src/routes/` folder.</span></span></code></pre>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">---</span></span>
+<span class="line"><span style="color: #FFCB6B">title</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Getting Started with Elder.js</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #FFCB6B">excerpt</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">You have the starter template of Elder.js running. So what is next? This guide will help you explore the project.</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #FFCB6B">date</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">2020-03-16T05:35:07.322Z</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color: #FFCB6B">author</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> Nick Reese</span></span>
+<span class="line"><span style="color: #89DDFF">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">Sweet</span><span style="color: #89DDFF">!</span><span style="color: #A6ACCD"> So you</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">ve got the Elder.js starter template up and running. What</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">s next</span><span style="color: #89DDFF">?</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">## </span><span style="color: #F78C6C">4</span><span style="color: #A6ACCD"> Routes To Explore</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">This project is structured to follow the required Elder</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">js folder structure which you can see below</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> but </span><span style="color: #89DDFF">in</span><span style="color: #A6ACCD"> short you</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">ve got several routes in the `./src/routes/` folder.</span></span></code></pre>
 <p>그러면 이렇게 변환한 html과 frontmatter로 뭘 어떻게 하는 걸까요? 다시 <code>Blog.svelte</code>로 돌아가 봅시다.</p>
 <p><code>&#x3C;style></code> 태그를 지나치면 <code>&#x3C;svelte:head></code>가 나옵니다. 이 친구는 역시 검색엔진에게 이런저런 정보를 알려주기 위한 정보를 html header에 추가해줍니다.</p>
 <p><code>&#x3C;title></code>은 말 그대로 글의 제목입니다. 탭에 제목이 뜨게 되고, frontmatter에 적어놨던 title을 가져옵니다. svelte에서는 html에 js 값을 넣을 때 {}로 감싸줍니다. 예를 들어 title에 값을 채워넣으면 다음과 같이 렌더링될 겁니다.</p>
@@ -180,18 +181,18 @@ This project is structured to follow the required Elder.js folder structure whic
 <p>다음으로 <code>&#x3C;meta name="description"</code>은 페이지가 어떤 내용인지 설명합니다. 여기서는 frontmatter에 적어놨던 excerpt를 가져옵니다. excerpt는 발췌라는 뜻인데. 보통 글의 첫 부분 내용을 가져옵니다. 검색엔진에 미리보기로 뜨는 그 내용입니다.</p>
 <p>마지막으로 <code>&#x3C;link></code>는 아까 정해뒀던 permanlink를 넣어줍니다. 검색엔진에게 premanlink는 이거라고 알려주는 부분입니다.</p>
 <p>그 다음은 이제 화면의 내용을 HTML로 본격적으로 그리게 됩니다.</p>
-<pre class="shiki" style="background-color: #212121"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">&amp;LeftArrow; Home</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF"> // 블로그 홈으로 돌아가기</span></span>
-
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">a</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">href</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">&amp;LeftArrow; Home</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">a</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> // 블로그 홈으로 돌아가기</span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">div</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">class</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">title</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">{frontmatter.title}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF"> // 제목</span></span>
-<span class="line"><span style="color: #EEFFFF">  {#if frontmatter.author}</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">small</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">By {frontmatter.author}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">small</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">{/if} // 글쓴이가 있으면 표시</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">{frontmatter.title}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> // 제목</span></span>
+<span class="line"><span style="color: #A6ACCD">  {#if frontmatter.author}</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">small</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">By {frontmatter.author}</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">small</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">{/if} // 글쓴이가 있으면 표시</span></span>
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">div</span><span style="color: #89DDFF">&gt;</span></span>
-
-<span class="line"><span style="color: #EEFFFF">{#if html} // html이 있으면</span></span>
-<span class="line"><span style="color: #EEFFFF">  {@html html} // html을 표시</span></span>
-<span class="line"><span style="color: #EEFFFF">{:else}</span></span>
-<span class="line"><span style="color: #EEFFFF">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #EEFFFF">Oops!! Markdown not found!</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #EEFFFF">{/if}</span></span></code></pre>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">{#if html} // html이 있으면</span></span>
+<span class="line"><span style="color: #A6ACCD">  {@html html} // html을 표시</span></span>
+<span class="line"><span style="color: #A6ACCD">{:else}</span></span>
+<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">Oops!! Markdown not found!</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">h1</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">{/if}</span></span></code></pre>
 <p>여기서 중요한 친구는 {#if 조건} 내용 {/if} 구문입니다. 스벨트는 옛날 템플릿 언어들을 닮았습니다. html에 리액트처럼 ? 삼항 연산자나 &#x26;&#x26; 문을 쓰지 않고, 이렇게 if 템플릿 안에 html을 넣어줍니다.</p>
 <p>마찬가지로 frontmatter에서 title과 author를 꺼내서 넣었고요. 아까 같이 data에서 꺼냈던 html도 넣어줬습니다.</p>
 <p>@html 은 html을 있는 그대로 삽입하기 위한 명령어입니다. 시험삼아 @html을 지우고 npm run dev로 서버를 실행해보세요. 글로 들어가면 렌더링 되지 않은 HTML 코드 자체가 보일 겁니다. @html이 있어야 html을 내용 그대로 삽입할 수 있습니다.</p>
@@ -202,13 +203,15 @@ This project is structured to follow the required Elder.js folder structure whic
 <div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
 </div><!-- HTML_TAG_END --></article>
 
-<footer class="footer svelte-p5qu1m">이 블로그는 <a href="https://svelte.dev/" class="svelte-p5qu1m">Svelte</a>와 <a class="secondary svelte-p5qu1m" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
   <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-p5qu1m">PaperCSS</a>를 기본으로 커스텀했습니다.
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
   <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-p5qu1m">Pretendard</a>를 사용합니다.
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
   <br>
-  <a href="https://pages.github.com/" class="svelte-p5qu1m">Github Pages</a>로 호스팅하고 있습니다.
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
   <br>
   오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
 </footer>
@@ -220,6 +223,19 @@ const $$ejs = (par,eager)=>{
   const $ejs = function(_ejs){return _ejs};
   const prefix = '/_elderjs';
   const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
     const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
     const compProm = import(prefix + '/svelte/components/' + component.component);
 
@@ -252,7 +268,7 @@ const $$ejs = (par,eager)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs({'scrolltopbuttonbmxlQDMbGr' : { 'component' : 'ScrollTopButton.b343f7d4.js', 'props' : {}},'darkcheckboxpFtVtJfmNM' : { 'component' : 'DarkCheckBox.ccdfc737.js', 'props' : {}},})}, {timeout: 1000});</script>
+        $$ejs({'scrolltopbutton-ejs-ycpNbrLVkx' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-yzQJRbyfgY' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
     
     
     </body></html>
