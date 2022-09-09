@@ -31,7 +31,7 @@ blockquote {
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
   border: 2px solid var(--muted);
-  box-shadow: 8px 16px 16px -12px var(--muted);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 blockquote p {
@@ -84,4 +84,30 @@ body {
   body {
     font-size: 18px;
   }
+}
+
+:not(pre)>code {
+  background: var(--blockquote-bg);
+  border-radius: 0.3em;
+  color: var(--primary);
+  padding: 0.1em 0.3em;
+}
+
+.admonition {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-left: 4px solid var(--primary);
+  border-radius: 0.25rem;
+}
+
+.admonition-title {
+  border-radius: 0.25rem;
+  background-color: var(--primary-border);
+}
+
+.admonition p {
+  padding: 0.5rem;
+}
+
+.admonition ul {
+  padding: 0 1rem 1rem 2rem;
 }
