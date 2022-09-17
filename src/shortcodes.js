@@ -1,5 +1,6 @@
 var keyword_tooltip = require("./keyword_tooltip.js");
 const katex = require('katex');
+const mermaidParse = require('mermaid-parse');
 /**
  * Shortcodes are a useful way of making content that lives in a CMS or in markdown files dynamic.
  *
@@ -12,7 +13,7 @@ const katex = require('katex');
 module.exports = [
   {
     shortcode: "githubNewRepoButton",
-    run: async ({ props, content}) => {
+    run: async () => {
       return `
       <a href="https://github.com/new" target="_blank" style="padding: 4px; background-color: green; border-radius: 4px; color: white; border-color: transparent">
         <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" style="color: white;">
@@ -80,5 +81,19 @@ module.exports = [
         throwOnError: false
       });
     }
-  }
+  },
+  {
+    shortcode: 'mmd',
+    run: async ({ content }) => {
+      return mermaidParse(`%%{init: {'theme':'base'}}%%\n${content}`, { extension: 'svg' })
+        .then(svg =>svg.replace(/height="18"/g, 'height="30"'))
+    }
+  },
+  {
+    shortcode: 'think',
+    run: async ({ content }) => {
+      return `<div class="admonition note"><p class="admonition-title">✏️ 비판적으로 생각해보기</p>${content}</div>`
+    }
+  },
+  
 ];
