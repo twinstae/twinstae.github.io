@@ -114,13 +114,13 @@ export default function TagsInput<S>({
 	name,
 	labelText,
 	errors,
-	initValue = [],
+	initValue,
 	// ... 생략
 }: {
 	name: string;
 	labelText: string;
 	errors: FieldErrors<S> | undefined;
-	initValue?: string[];
+	initValue: string[];
   // ... 이하 생략
 }){
   // ... 이하 생략
