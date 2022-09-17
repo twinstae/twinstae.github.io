@@ -4,6 +4,45 @@ code {
   font-size: 90%;
 }
 
+.hl-lines-1 + pre code span.line:nth-child(1){
+  background-color: var(--warning-dark);
+}
+.hl-lines-2 + pre code span.line:nth-child(2){
+  background-color: var(--warning-dark);
+}
+.hl-lines-3 + pre code span.line:nth-child(3){
+  background-color: var(--warning-dark);
+}
+.hl-lines-4 + pre code span.line:nth-child(4){
+  background-color: var(--warning-dark);
+}
+.hl-lines-5 + pre code span.line:nth-child(5){
+  background-color: var(--warning-dark);
+}
+.hl-lines-6 + pre code span.line:nth-child(6){
+  background-color: var(--warning-dark);
+}
+.hl-lines-7 + pre code span.line:nth-child(7){
+  background-color: var(--warning-dark);
+}
+.hl-lines-8 + pre code span.line:nth-child(8){
+  background-color: var(--warning-dark);
+}
+.hl-lines-9 + pre code span.line:nth-child(9){
+  background-color: var(--warning-dark);
+}
+.hl-lines-10 + pre code span.line:nth-child(10){
+  background-color: var(--warning-dark);
+}
+.hl-lines-11 + pre code span.line:nth-child(11){
+  background-color: var(--warning-dark);
+}
+.hl-lines-12 + pre code span.line:nth-child(12){
+  background-color: var(--warning-dark);
+}
+.hl-lines-13 + pre code span.line:nth-child(13){
+  background-color: var(--warning-dark);
+}
 pre {
   background: var(--codeblock-background-color);
   padding: 1rem;
