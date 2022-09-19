@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>컴포넌트 테스트 시작하기 - 상태와 효과</title><meta name="description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/component-testing-a11y-state-effect/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/component-testing-a11y-state-effect/" data-svelte="svelte-18tnbae"><meta property="og:title" content="컴포넌트 테스트 시작하기 - 상태와 효과" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/component-testing-a11y-state-effect/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="컴포넌트 테스트 시작하기 - 상태와 효과" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
+
+      for (const code of codes) {
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
+      }
+    }, 500);
+  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-9e96e6d6.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-VprjNjSGZS"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
+  <span class="svelte-ixwbnm"></span>
+</label></div>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
+
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1>컴포넌트 테스트 시작하기 - 상태와 효과</h1>
+  <div><span class="hashtag">#테스트
+        </span><span class="hashtag">#접근성
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-npVLCytJwc"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+<nav class="svelte-s59jxg"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#지난-이야기" style="color: #868e96;">지난 이야기</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#상태와-이벤트" style="color: #868e96;">상태와 이벤트</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#의존성과-효과" style="color: #868e96;">의존성과 효과</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#react-앱-외부의-dom-바꾸기" style="color: #868e96;">react 앱 외부의 dom 바꾸기</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#다음은-브라우저와-서버" style="color: #868e96;">다음은? 브라우저와 서버</a>
+        <ol>
+        </ol>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h2 id="지난-이야기">지난 이야기</h2>
+<p><a href="/component-testing-a11y-markup">컴포넌트 테스트 시작하기 - 마크업</a> 편에서는...</p>
+<ul>
+<li><code>vitest</code>와 <code>@testing-library</code>를 이용한 테스트 환경을 설정해보았습니다.</li>
+<li>테스트 결과에 나오는 성공과 실패 메세지를 읽는 법을 배웠습니다.</li>
+<li>저의 [역량배지] 서비스에서 사용할 다크모드 버튼의 스펙을 인간의 말로 적어봤습니다.</li>
+<li><code>@testing-library/dom</code>이 제공하는 <code>screen.getByRole</code> 같은 쿼리로 element를 찾고 가져오는 법을 배웠습니다.</li>
+<li>WAI-ARIA 접근성 표준을 간단하게 소개했습니다. 접근 가능한 역할(role)과 이름(name)으로 테스트를 작성해봤습니다.</li>
+<li>테스트를 통과하도록 semantic html을 이용해서 markup을 작성했습니다.</li>
+<li>텍스트가 없는 icon에도 aria-label을 달아서 접근 가능하고 테스트하기 쉽게 만들었습니다.</li>
+</ul>
+<h2 id="상태와-이벤트">상태와 이벤트</h2>
+<p>아직 저희가 만든 버튼은 정적인 마크업일 뿐이지, 실제로 작동하진 않아요. 이제 상태와 이벤트로 버튼을 동적으로 만들어볼게요.</p>
+<p>지금 구현할 스펙을 다시 정리해보면 이렇습니다.</p>
+<blockquote>
+<ul>
+<li>클릭하면 테마가 바뀌면서, 아이콘도 같이 바뀌어요.</li>
+</ul>
+</blockquote>
+<p>여기서 <a href="https://testing-library.com/docs/user-event/intro">userEvent</a>을 쓰면 됩니다. 앞서 설명한 것처럼 <code>userEvent</code>는 <code>click</code>과 같은 사용자와의 상호작용(interaction)을 모사해줍니다.</p>
+<p>다음과 같이 테스트를 바꿔볼게요.</p>
+<div class="plus-lines-13 plus-lines-16"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">render</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/dom</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> userEvent </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/user-event</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">./DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #82AAFF">describe</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">it</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">다크 모드 버튼을 클릭하면, 라이트 모드로 바뀐다</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #C792EA">async</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">render</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">DarkModeButton</span><span style="color: #89DDFF"> /&gt;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">button</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getByRole</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> name</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">    </span><span style="color: #676E95; font-style: italic">// button을 클릭하면</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">userEvent</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">click</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">    </span><span style="color: #676E95; font-style: italic">// 버튼은 &#39;현재 라이트 모드&#39;라는 접근 가능한 이름을 가져야 해요.</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAccessibleName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span></code></pre>
+<p>또 낯설고 새로운 게 등장했죠. 하나씩 알아봅시다.</p>
+<p><code>userEvent</code>는 <code>promise</code>를 반환하기 때문에, <code>await</code>을 붙여줘요. 왜냐면 <code>click</code> 이벤트는 이벤트 핸들러를 통해 비동기적으로 처리되기 때문이죠. 그리고 react나 vue 같은 프런트엔드 프레임워크도, 바로 dom을 변경하지 않아요. 자체 스케쥴러나 타이머를 가지고 기다렸다가 모아서 수정하기 때문에, dom이 수정될 때까지 기다려줘야 해요.</p>
+<p><code>jest</code>나 <code>vitest</code>를 써보신 분들은 <code>toHaveAccessibleName</code>라는 matcher를 처음 보셨을지도 모르겠어요. 이는 앞서 설치하고 setupTest.ts에서 import해준 <code>@testing-library/jest-dom</code>이 <code>extend</code> 해준 거에요. 이렇듯 직관적인 matcher를 쓸 수 있어서, 번거롭게 <code>button.getAttribute('aria-label')</code> 같은 코드를 쓰지 않아도 된답니다.</p>
+<p>혹시 테스트가 실패해서 당황하신 분 있나요? 아직 구현을 하지 않았으니, 당연히 실패하는 게 당연합니다.</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests </span><span style="color: #F78C6C">1</span><span style="color: #A6ACCD"> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"><span style="color: #A6ACCD"> ❯ src</span><span style="color: #89DDFF">/</span><span style="color: #A6ACCD">DarkModeButton</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">test</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">tsx:</span><span style="color: #F78C6C">14</span><span style="color: #A6ACCD">:</span><span style="color: #F78C6C">17</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD"> FAIL  src</span><span style="color: #89DDFF">/</span><span style="color: #A6ACCD">DarkModeButton</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">test</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 다크 모드 버튼을 클릭하면</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> 라이트 모드로 바뀐다</span></span>
+<span class="line"><span style="color: #FFCB6B">Error</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">expect</span><span style="color: #A6ACCD">(element)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAccessibleName</span><span style="color: #A6ACCD">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">Expected element to have accessible </span><span style="color: #FFCB6B">name</span><span style="color: #89DDFF">:</span></span>
+<span class="line"><span style="color: #A6ACCD">  현재 라이트 모드</span></span>
+<span class="line"><span style="color: #FFCB6B">Received</span><span style="color: #89DDFF">:</span></span>
+<span class="line"><span style="color: #A6ACCD">  현재 다크 모드</span></span>
+<span class="line"><span style="color: #A6ACCD">     </span><span style="color: #F78C6C">12</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   </span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #A6ACCD"> userEvent</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">click</span><span style="color: #A6ACCD">(button)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">     </span><span style="color: #F78C6C">13</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> </span></span>
+<span class="line"><span style="color: #A6ACCD">     </span><span style="color: #F78C6C">14</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   </span><span style="color: #82AAFF">expect</span><span style="color: #A6ACCD">(button)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAccessibleName</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">       </span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">                 </span><span style="color: #89DDFF">^</span></span>
+<span class="line"><span style="color: #A6ACCD">     </span><span style="color: #F78C6C">15</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">  })</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">     </span><span style="color: #F78C6C">16</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> })</span><span style="color: #89DDFF">;</span></span></code></pre>
+<p>이제 <code>useState</code>를 써서 간단하게 구현을 해줄까요?</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useState</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">isDark</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">setIsDark</span><span style="color: #89DDFF">]</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">useState</span><span style="color: #F07178">(</span><span style="color: #FF9CAC">false</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">label</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">function</span><span style="color: #F07178"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #89DDFF">(){</span></span>
+<span class="line"><span style="color: #F07178">    </span><span style="color: #82AAFF">setIsDark</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">old</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">!</span><span style="color: #A6ACCD">old</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> (</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">aria-label</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">label</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">onClick</span><span style="color: #89DDFF">={()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #A6ACCD">()</span><span style="color: #89DDFF">}&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">MoonIcon</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">className</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w-6 h-6</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">/&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #F07178">	)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
+<p>다시 PASS가 뜨는 초록 막대를 보셨다면 축하합니다!</p>
+<p>혹시라도 테스트가 깨지셨을지도 모르겠어요. 그렇다면 정말 기쁜 일입니다. 테스트가 자기 할 일을 다 하고 있는 거니까요. <code>useState</code>의 초기 값이나, 삼항 연산자의 순서를 살펴보시면 좋을 것 같아요. 아니면 오타가 있을 수도 있고요.</p>
+<h2 id="의존성과-효과">의존성과 효과</h2>
+<p>하지만 아직 정말 끝난 건 아니에요. 버튼의 text만 바뀔 뿐입니다. 아직 테마가 바뀌는 효과(effect)도 없고, 시스템의 다크 모드 설정-의존성(dependency)-을 가져오지도 않았습니다. 스펙을 다시 가져와보면 그렇습니다.</p>
+<blockquote>
+<ul>
+<li>마우스를 올리면(hover) "현재 라이트 모드, 다크 모드로 전환하려면 클릭하세요" 같은 식으로 툴팁(tooltip)이 뜨면 좋겠어요.</li>
+<li>테마의 초기 값은 <code>시스템 설정</code>을 사용하지만, <code>SSR</code>처럼 값을 가져올 수 없을 때에는 fallback으로 <code>dark를 기본 값</code>으로 쓰고 싶어요.</li>
+<li>이렇게 설정한 값은 <code>localStorage</code>에 저장하고, 다시 접속했을 때 가져올 수 있으면 좋겠어요.</li>
+<li>클릭하면 테마가 바뀌면서, 아이콘도 같이 바뀌어요.</li>
+</ul>
+</blockquote>
+<p>이런 부수효과와 의존성은 테스트하기 어려운 경우가 많습니다. 저희의 상황을 예로 들어보죠.</p>
+<ul>
+<li><code>css framework</code>에 따라서, <code>theme</code>를 설정해주는 방법이 다릅니다.
+<ul>
+<li>예를 들어 역량 배지가 사용 중인 <code>tailwind</code> 기반의 <code>daisyui</code>에서는 <code>html</code> 태그에 attribute로 <code>data-theme="emerald"</code>와 같이 달아줘야 해요. 다크 테마는 <code>data-theme="forest"</code>를 달아줘야 합니다.
+<ul>
+<li><code>react</code>는 body 안에 있는 <code>root</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>역량 배지는 nextjs처럼 remix로 SSR을 하는데요. node 서버에서는 사용자의 시스템 설정이나, <code>localStorage</code>에 접근할 수 없습니다.
+<ul>
+<li>이는 jest나 vitest도 마찬가지죠!</li>
+</ul>
+</li>
+</ul>
+<p><code>deno</code>처럼 localStorage 같은 브라우저 api를 지원해주는 경우도 있지만. 역량배지도 그렇고 아직 대부분은 <code>node</code>를 사용하지요. 그러면 저희는 어떻게 테스트를 해야할까요?</p>
+<p>정답은 없지만, 제가 믿는 원칙은 있습니다.</p>
+<ol start="0">
+<li>쉽게 변하지 않는 가정이나 표준에 의존할 것</li>
+<li>추측하기 보다는 조사하고, 귀납적으로 결론을 내릴 것</li>
+<li>되도록 실제 의존성과 부수효과를 테스트할 것
+<ol>
+<li>부수효과는 되도록 알아서 정리하거나 초기화할 것(setup)</li>
+</ol>
+</li>
+<li>테스트를 느리게 만들거나, 부수효과가 다루기 어렵거나, 여러 환경을 지원하는 경우에만, 테스트 대역을 활용할 것.</li>
+</ol>
+<p>이 원칙들은 여러 경험과 책에서 나온 건데요. 제가 왜 이런 원칙들을 믿게 되었는지, 사례를 보면서 설명해보겠습니다. 하나씩 비판적으로 음미해보시죠.</p>
+<h2 id="react-앱-외부의-dom-바꾸기">react 앱 외부의 dom 바꾸기</h2>
+<p>저는 <code>&#x3C;html></code> 태그의 <code>attribute</code>를 변경하는 부수효과는 직접 테스트하려 합니다. 사용자의 클릭과 같은 상호작용은 브라우저에서 일어나고, 브라우저에는 <code>dom</code>이 있습니다. 저희의 테스트 환경에도 <code>jsdom</code>이 있지요. 여러 csr과 ssr, ssg 프레임워크를 경험해본 결과... 이건 쉽게 변하기 어려운 가정 같습니다.</p>
+<p>문제는 <code>&#x3C;html></code>태그가 전역 상태라는 거에요. <code>@testing-library/react</code>는 리액트가 그렇듯이, <code>&#x3C;body></code> 태그 안에 컴포넌트를 렌더합니다. 그리고 테스트가 끝나면 정리해주죠. 하지만 리액트 밖에 있는 <code>&#x3C;html></code>는 수정된 상태로 남습니다.</p>
+<p>이는 뒤의 테스트에도 영향을 줄 수도 있어요. 그러니 테스트가 끝나기 전에 초기화해주면 좋겠습니다.</p>
+<p>다음과 같이 테스트를 짜보겠습니다. 테스트가 효과로 지저분해질 거에요.</p>
+<div class="plus-lines-9 plus-lines-10 plus-lines-15 plus-lines-16"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">render</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/dom</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> userEvent </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/user-event</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">./DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #82AAFF">describe</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">$html</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">document</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getElementsByTagName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">html</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)[</span><span style="color: #F78C6C">0</span><span style="color: #F07178">]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">it</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">다크 모드 버튼을 클릭하면, 라이트 모드로 바뀌고, 다시 클릭하면 다크 모드로 돌아온다</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #C792EA">async</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">render</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">DarkModeButton</span><span style="color: #89DDFF"> /&gt;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">$html</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">button</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getByRole</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> name</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">userEvent</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">click</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAccessibleName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">$html</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">await</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">userEvent</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">click</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAccessibleName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">$html</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">    </span><span style="color: #676E95; font-style: italic">// 정리</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">$html</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">setAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span></code></pre>
+<p>당연히 테스트는 실패합니다.</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 다크 모드 버튼을 클릭하면, 라이트 모드로 바뀌고, 다시 클릭하면 다크 모드로 돌아온다</span></span>
+<span class="line"><span style="color: #A6ACCD"> ❯ src/DarkModeButton.test.tsx:10:16</span></span>
+<span class="line"><span style="color: #A6ACCD">Error: expect</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">element</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD">.toHaveAttribute</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> // element.getAttribute</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> === </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">Expected the element to have attribute:</span></span>
+<span class="line"><span style="color: #A6ACCD">  data-theme=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #A6ACCD">Received:</span></span>
+<span class="line"><span style="color: #A6ACCD">  null</span></span>
+<span class="line"><span style="color: #A6ACCD">      8</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   render</span><span style="color: #89DDFF">(&lt;</span><span style="color: #A6ACCD">DarkModeButton /</span><span style="color: #89DDFF">&gt;);</span></span>
+<span class="line"><span style="color: #A6ACCD">      9</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   const </span><span style="color: #89DDFF">$</span><span style="color: #A6ACCD">html = document.getElementsByTagName</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">html</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">)[</span><span style="color: #A6ACCD">0</span><span style="color: #89DDFF">];</span></span>
+<span class="line"><span style="color: #A6ACCD">     10</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   expect</span><span style="color: #89DDFF">($</span><span style="color: #A6ACCD">html</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD">.toHaveAttribute</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #A6ACCD">       </span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">                ^</span></span>
+<span class="line"><span style="color: #A6ACCD">     11</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> </span></span>
+<span class="line"><span style="color: #A6ACCD">     12</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   const button = screen.getByRole</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">{</span><span style="color: #A6ACCD"> name: </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD"> })</span><span style="color: #89DDFF">;</span></span></code></pre>
+<p><code>&#x3C;html></code> 태그에 <code>data-theme</code>이라는 attribute가 없다고 하죠. 하나씩 고쳐봅시다.</p>
+<p>일단 상태에 무관하게 forest 테마를 설정하는 것부터 해봅시다. react 외부를 건드리고 있으니, <code>useEffect</code>를 써보죠.</p>
+<div class="plus-lines-13 plus-lines-14 plus-lines-15 plus-lines-16"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.tsx</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useEffect</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useState</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">isDark</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">setIsDark</span><span style="color: #89DDFF">]</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">useState</span><span style="color: #F07178">(</span><span style="color: #FF9CAC">true</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">label</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">function</span><span style="color: #F07178"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #89DDFF">(){</span></span>
+<span class="line"><span style="color: #F07178">    </span><span style="color: #82AAFF">setIsDark</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">old</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">!</span><span style="color: #A6ACCD">old</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">useEffect</span><span style="color: #F07178">(</span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">$html</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">document</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getElementsByTagName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">html</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)[</span><span style="color: #F78C6C">0</span><span style="color: #F07178">]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">$html</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">setAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> (</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">aria-label</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">label</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">onClick</span><span style="color: #89DDFF">={()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #A6ACCD">()</span><span style="color: #89DDFF">}&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">MoonIcon</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">className</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w-6 h-6</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">/&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #F07178">	)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
+<p>그러면 여전히 실패하긴 하는데, 실패하는 위치가 달라집니다.</p>
+<div class="hl-lines-10 hl-lines-13"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 다크 모드 버튼을 클릭하면, 라이트 모드로 바뀌고, 다시 클릭하면 다크 모드로 돌아온다</span></span>
+<span class="line"><span style="color: #A6ACCD">Error: expect</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">element</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD">.toHaveAttribute</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> // element.getAttribute</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> === </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">Expected the element to have attribute:</span></span>
+<span class="line"><span style="color: #A6ACCD">  data-theme=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #A6ACCD">Received:</span></span>
+<span class="line"><span style="color: #A6ACCD">  data-theme=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #A6ACCD"> ❯ src/DarkModeButton.test.tsx:16:16</span></span>
+<span class="line"><span style="color: #A6ACCD">     14</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> </span></span>
+<span class="line"><span style="color: #A6ACCD">     15</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   expect</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">button</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD">.toHaveAccessibleName</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #A6ACCD">     16</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   expect</span><span style="color: #89DDFF">($</span><span style="color: #A6ACCD">html</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD">.toHaveAttribute</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #A6ACCD">       </span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">                ^</span></span>
+<span class="line"><span style="color: #A6ACCD">     17</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> </span></span>
+<span class="line"><span style="color: #A6ACCD">     18</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   await userEvent.click</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">button</span><span style="color: #89DDFF">);</span></span></code></pre>
+<p>강조한 부분을 보면 테스트 코드의 16번째 줄에서 에러가 발생했다고 합니다. 16번째 줄을 살펴보면, 처음 한 번 클릭을 하고 라이트 모드로 변하긴 했는데요. <code>data-theme</code>이 <code>"emerald"</code>로 바뀌지 않았다고 하고 있어요.</p>
+<p>useEffect가 상태에 따라 호출되지 않으니 당연?한 일입니다. useEffect의 의존성 배열에 <code>isDark</code>를 넣어주고, 값에 따라 다른 테마를 달아주게 해볼게요.</p>
+<div class="plus-lines-15 plus-lines-16"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.tsx</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useEffect</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useState</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">isDark</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">setIsDark</span><span style="color: #89DDFF">]</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">useState</span><span style="color: #F07178">(</span><span style="color: #FF9CAC">true</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">label</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">function</span><span style="color: #F07178"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #89DDFF">(){</span></span>
+<span class="line"><span style="color: #F07178">    </span><span style="color: #82AAFF">setIsDark</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">old</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">!</span><span style="color: #A6ACCD">old</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">useEffect</span><span style="color: #F07178">(</span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">$html</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">document</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getElementsByTagName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">html</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)[</span><span style="color: #F78C6C">0</span><span style="color: #F07178">]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">$html</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">setAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">},</span><span style="color: #F07178"> [</span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178">])</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> (</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">aria-label</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">label</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">onClick</span><span style="color: #89DDFF">={()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #A6ACCD">()</span><span style="color: #89DDFF">}&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">MoonIcon</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">className</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w-6 h-6</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">/&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #F07178">	)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
+<p>그럼 또 짠! 하고 PASS 초록 막대가 뜰 겁니다. 이번에도 삼항 연산자의 순서에 주의해주세요.</p>
+<h2 id="다음은-브라우저와-서버">다음은? 브라우저와 서버</h2>
+<p>역량 배지는 Server Side Rendering을 하는 Remix로 만들었습니다. 요즘 Next.js를 비롯해서 서버 사이드 렌더링이 유행인데요. node의 테스트 환경은 SSR과 유사합니다.</p>
+<p>그러니 이번에는 브라우저와 서버를 오가는, 하이드레이션 문제를 테스트하는 걸 보여드릴게요.</p>
+<p><a href="/component-testing-a11y-ssr">컴포넌트 테스트 시작하기 - 브라우저와 서버</a></p>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br>
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
+  <br>
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
+  <br>
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
+  <br>
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    
+    <script type="module">
+            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
+      
+const $$ejs = (par,eager)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+  const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
+    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
+    const compProm = import(prefix + '/svelte/components/' + component.component);
+
+    Promise.all([compProm,propProm]).then(([comp,props])=>{
+      new comp.default({ 
+        target: target,
+        props: props,
+        hydrate: true
+      });
+    });
+  };
+  const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        const selected = par[entry.target.id];
+        initComponent(entry.target,selected)
+      }
+    });
+  }, { rootMargin: "200px",threshold: 0}) : undefined;
+  Object.keys(par).forEach(k => {
+    const el = document.getElementById(k);
+    if (!eager && IO) {
+        IO.observe(el);
+    } else {
+        initComponent(el,par[k]);
+    }
+  });
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs({'scrolltopbutton-ejs-npVLCytJwc' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-VprjNjSGZS' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
+    
+    
+    </body></html>

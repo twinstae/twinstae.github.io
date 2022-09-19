@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>컴포넌트 테스트 시작하기 - 브라우저와 서버</title><meta name="description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/component-testing-a11y-ssr/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/component-testing-a11y-ssr/" data-svelte="svelte-18tnbae"><meta property="og:title" content="컴포넌트 테스트 시작하기 - 브라우저와 서버" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/component-testing-a11y-ssr/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="컴포넌트 테스트 시작하기 - 브라우저와 서버" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
+
+      for (const code of codes) {
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
+      }
+    }, 500);
+  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-9e96e6d6.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-VgbKGDDvtp"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
+  <span class="svelte-ixwbnm"></span>
+</label></div>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
+
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1>컴포넌트 테스트 시작하기 - 브라우저와 서버</h1>
+  <div><span class="hashtag">#테스트
+        </span><span class="hashtag">#접근성
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-JNnGctpRMS"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+
+<nav class="svelte-s59jxg"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#지난-이야기" style="color: #868e96;">지난 이야기</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#서버-사이드-렌더링-vs-클라이언트-사이드-렌더링" style="color: #868e96;">서버 사이드 렌더링 vs 클라이언트 사이드 렌더링</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#hydration-mismatch-문제" style="color: #868e96;">hydration mismatch 문제</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#useeffect-is-all-you-need" style="color: #868e96;">useEffect is all you need</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#다음은-커스텀-훅과-context" style="color: #868e96;">다음은? 커스텀 훅과 Context</a>
+        <ol>
+        </ol>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h2 id="지난-이야기">지난 이야기</h2>
+<p><a href="/component-testing-a11y-state-effect">컴포넌트 테스트 시작하기 - 상태와 효과</a> 편에서는...</p>
+<ul>
+<li><code>userEvent</code>를 이용해서 <code>click</code>과 같은 사용자 동작을 처리했습니다.</li>
+<li>상태가 변하면서 dom이 기대하는 모습으로 변했는지를  <code>jest-dom</code>이 제공하는 <code>toHaveAccessibleName</code>처럼 편리한 <code>matcher</code>로 검증했어요.</li>
+<li>react 상태를 외부와 동기화해주는 효과(effect)도 테스트했어요.</li>
+<li>이렇게 변화된 전역 상태를 다시 원래대로 되돌려서 정리해줬습니다.</li>
+</ul>
+<h2 id="서버-사이드-렌더링-vs-클라이언트-사이드-렌더링">서버 사이드 렌더링 vs 클라이언트 사이드 렌더링</h2>
+<p>보통 사용자들은 브라우저나 운영체제에서 원하는 <code>color-scheme</code>을 설정해놓습니다. 다크 모드로 설정해놓은 사용자에게, 밝은 화면을 보여주면 기분이 좋지 않겠죠.</p>
+<p>그래서 보통 <code>window.matchMedia</code> 등으로 브라우저의 <code>prefers-color-scheme</code> 미디어 쿼리를 확인할 수 있습니다. 그리고 이를 isDark 상태의 초기 값으로 넣어주면 되겠죠?</p>
+<div class="plus-lines-5"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.tsx</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useEffect</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useState</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">userPreferDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">window</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">matchMedia</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">(prefers-color-scheme:dark)</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">matches</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">  </span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">isDark</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">setIsDark</span><span style="color: #89DDFF">]</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">useState</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">userPreferDark</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// ... 이하 생략</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
+<p>이러면 테스트가 실패하게 됩니다. ;)</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 다크 모드 버튼을 클릭하면, 라이트 모드로 바뀌고, 다시 클릭하면 다크 모드로 돌아온다</span></span>
+<span class="line"><span style="color: #A6ACCD">TypeError: window.matchMedia is not a function</span></span>
+<span class="line"><span style="color: #A6ACCD"> ❯ DarkModeButton src/DarkModeButton.tsx:4:31</span></span>
+<span class="line"><span style="color: #A6ACCD">      2</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> </span></span>
+<span class="line"><span style="color: #A6ACCD">      3</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">      4</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">  const userPreferDark = window.matchMedia</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">(prefers-color-scheme:d…</span></span>
+<span class="line"><span style="color: #C3E88D">       |                               ^</span></span>
+<span class="line"><span style="color: #C3E88D">      5|   const [isDark, setIsDark] = useState(userPreferDark);</span></span>
+<span class="line"><span style="color: #C3E88D">      6| </span></span></code></pre>
+<p>에러를 읽어보면 <code>window.matchMedia</code>는 함수가 아니라고 합니다. 그러면 뭘까요? 바로 <code>undefined</code>입니다.</p>
+<p><code>node</code>는 물론이고, <code>jsdom</code>에도 matchMedia 함수가 없습니다. 브라우저가 아니니 media query가 없는 게 어떻게 보면 당연합니다.</p>
+<p>이러면 window.matchMedia를 mocking해서 해결하시려는 경우가 많습니다. 아니면 cypress나 playwright, puppeteer 등으로 실제 브라우저에서 테스트를 할 수 있죠. 둘 다 좋은 방법입니다.</p>
+<p>하지만 저희 상황에서는 그것만으로 문제가 해결되진 않아요. 그러면 테스트는 통과할지 모르지만, <code>remix</code>에서 사용하진 못합니다.</p>
+<p>왜냐면 이는 SSR의 문제이기도 하기 때문입니다. 누누히 말씀 드린 것처럼 <code>node</code>의 테스트 환경은, <code>SSR</code>과 유사합니다. <code>remix</code>에서 SSR을 할 때에도 <code>window.matchMedia</code> 함수가 없다는 점은 달라지지 않습니다. 서버에서 이 다크 모드 버튼을 렌더링할 때에도 똑같은 에러가 날 거에요.</p>
+<p>저희가 직접 만들지 않아도 그렇습니다. 프로젝트에서 사용하는 컴포넌트 라이브러리가 내부에서 window.matchMedia를 쓴다면, 이런 고민은 더 커질 겁니다.</p>
+<h2 id="hydration-mismatch-문제">hydration mismatch 문제</h2>
+<p>간단하게 "window 객체에 matchMedia가 있는지 확인하면 되는 거 아니야?"라고 생각하실지도 모르겠어요. 서버 같은 환경에서는 <code>false</code> 같은 fallback을 쓰게 하고요.</p>
+<p>코드를 다음과 같이 바꿔줍시다.</p>
+<div class="plus-lines-5 plus-lines-6"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.tsx</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useEffect</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useState</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">userPreferDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">window</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">matchMedia</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">window</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">matchMedia</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">(prefers-color-scheme:dark)</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">matches</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #FF9CAC">false</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">isDark</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">setIsDark</span><span style="color: #89DDFF">]</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">useState</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">userPreferDark</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// ... 이하 생략</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
+<p>이러면 테스트는 통과합니다. 하지만 이대로 remix 서버를 열고, 브라우저에서 접속하면 에러가 발생합니다.</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">root.tsx:54 Error: Hydration failed because the initial UI does not match what was rendered on the server.
+    at throwOnHydrationMismatch (react-dom.development.js:12507:9)
+    at popHydrationState (react-dom.development.js:12678:9)
+    at completeWork (react-dom.development.js:22176:30)
+    at completeUnitOfWork (react-dom.development.js:26593:16)
+		// 이하 생략</span></span></code></pre>
+<p>테스트에서는 괜찮아 보였는데. 아니 무슨 일이 생긴 걸까요? 그건 테스트 환경과 실제 환경이 다르다는 말입니다.</p>
+<p>이 이슈를 이해하려면 먼저 react의 SSR을 이해해야 합니다. 서버 사이드 렌더링은 어떻게 동작할까요?</p>
+<p>예를 들어 <code>remix</code> 프로젝트에는 <code>entry.server.tsx</code>라는 파일이 있습니다.</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">renderToString</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">react-dom/server</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">type</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">EntryContext</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">@remix-run/node</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">RemixServer</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">@remix-run/react</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">handleRequest</span><span style="color: #89DDFF">(</span></span>
+<span class="line"><span style="color: #A6ACCD">	request</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Request</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">	responseStatusCode</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">number</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">	responseHeaders</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Headers</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #A6ACCD">	remixContext</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">EntryContext</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">markup</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">string</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">renderToString</span><span style="color: #F07178">(</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">RemixServer</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">context</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">remixContext</span><span style="color: #89DDFF">}</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">url</span><span style="color: #89DDFF">={</span><span style="color: #F07178">request.</span><span style="color: #A6ACCD">url</span><span style="color: #89DDFF">}</span><span style="color: #F07178"> </span><span style="color: #89DDFF">/&gt;,</span></span>
+<span class="line"><span style="color: #F07178">	)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #A6ACCD">responseHeaders</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">set</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">Content-Type</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">text/html</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #89DDFF">new</span><span style="color: #F07178"> </span><span style="color: #82AAFF">Response</span><span style="color: #F07178">(</span><span style="color: #89DDFF">`</span><span style="color: #C3E88D">&lt;!DOCTYPE html&gt;</span><span style="color: #89DDFF">${</span><span style="color: #A6ACCD">markup</span><span style="color: #89DDFF">}`</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		status</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">responseStatusCode</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #F07178">		headers</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">responseHeaders</span><span style="color: #89DDFF">,</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
+<p><code>react-dom/server</code> 서버는 <code>renderToString</code>이라는 메서드로 html을 만듭니다. 그러니까 html은 그냥 문자열일 뿐입니다.</p>
+<p>이렇게 만든 html 문자열은 HTTP Response body에 실어서 브라우저로 보냅니다.</p>
+<p>브라우저에서 html을 파싱해서 렌더한 뒤에도 정적인 html일 뿐입니다. 여기에는 상태도 없고 <code>onClick</code> 같은 이벤트 핸들러도 없습니다. js가 필요 없고 0kb js로 만들고 싶다면, 여기서 끝낼 수도 있습니다.</p>
+<p>하지만 보통은 js가 필요합니다. 예를 들어 우리는 다크모드 상태도 필요하고요. 버튼을 클릭하면 상태가 바뀌기도 해야 합니다. 그러면 이미 <code>string</code>으로 바싹 건조된 html을 어떻게 다시 살릴까요?</p>
+<p><code>remix</code>에는 <code>entry.client.tsx</code>도 있습니다. 이름처럼 <code>react-dom/client</code>는 서버가 아니라 브라우저에서 실행됩니다.</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">RemixBrowser</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">@remix-run/react</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">hydrateRoot</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">react-dom/client</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #82AAFF">hydrateRoot</span><span style="color: #A6ACCD">(document</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">RemixBrowser</span><span style="color: #89DDFF"> /&gt;</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span></code></pre>
+<p>이게 바로 <code>hydration</code>입니다. 수화라고도 번역하는데요. 물을 먹인다는 뜻입니다. 건조된 생면을 물에 삶듯이. html에 react로 상태도 붙이고 이벤트 핸들러도 붙여서 동적으로 되살리는 걸 하이드레이션이라 해요. 이제부터는 평범하게? Client Side Rendering을 하는 SPA로 작동하지요.</p>
+<p><code>hydration</code>을 할 때에는 첫 렌더 결과물이 같아야 합니다. 그러니까 서버에서 render한 html 문자열과, 브라우저에서 새로운 상태로 렌더한 결과가 똑같아야 한다는 거죠. 그런데 두 dom 이 다르게 되면 SSR 프레임워크들은 에러를 뿜습니다.</p>
+<p>그러면 이제 배경지식도 생겼으니, 저희 상황을 해석해볼까요?</p>
+<p>저희의 경우에는 서버에서는 <code>isDark</code>가 <code>true</code>인 게 기본 값인데요. 브라우저에서는 <code>prefers-color-scheme</code>을 가져오니 <code>light</code>일 수도 있습니다. 그러면 서버에서는 <code>현재 다크 모드</code>로 렌더링 되고, 브라우저에서는 <code>현재 라이트 모드</code>로 렌더링 되면... 서로 안 맞게 됩니다.</p>
+<p>"아니 뭐 이리 문제가 많아!" 참 머리가 아픕니다. <code>SSR</code>과 접근성이 교차하는 이 문제를 어떻게 풀면 좋을까요?</p>
+<p>이 에러 상황을 재현하고 검증할 수 있는 테스트를 만들어 볼게요. 코드에도 단계별로 주석을 적어두어었으니 참고해주세요.</p>
+<p>먼저 <code>react-dom/server</code>의 <code>renderToString</code>을 써서, 다크 모드 버튼을 html로 렌더링해보겠습니다. 그리고 이걸 브라우저처럼 document에 넣어줘요.</p>
+<p>그리고 저희가 가짜 window.matchMedia를 주입해서 브라우저를 흉내내 보았습니다. 사용자가 light 테마를 선호한다고 설정했다고 해보죠.</p>
+<p>이 상태에서 hydrate를 해주면... 이제 에러가 터질 겁니다.</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">render</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/dom</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> userEvent </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/user-event</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">*</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">as</span><span style="color: #A6ACCD"> ReactDOMServer </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">react-dom/server</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">./DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #82AAFF">describe</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// $html은 어차피 전역 상태이기 때문에 밖으로 빼줍니다</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">$html</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">document</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getElementsByTagName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">html</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)[</span><span style="color: #F78C6C">0</span><span style="color: #F07178">]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span></span>
+<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// ... 기존 테스트</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">function</span><span style="color: #F07178"> </span><span style="color: #82AAFF">renderServerSide</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">element</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">React</span><span style="color: #89DDFF">.</span><span style="color: #FFCB6B">ReactElement</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">any</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">string</span><span style="color: #F07178"> </span><span style="color: #89DDFF">|</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">React</span><span style="color: #89DDFF">.</span><span style="color: #FFCB6B">JSXElementConstructor</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">any</span><span style="color: #89DDFF">&gt;&gt;){</span></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// 렌더해줄 container를 만들어 body에 추가합니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">container</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">document</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">createElement</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">div</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">document</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">body</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">appendChild</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">container</span><span style="color: #F07178">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// container에 SSR로 렌더한 html 문자열을 넣습니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">container</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">innerHTML</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">ReactDOMServer</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">renderToString</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">element</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">container</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">it</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">서버에서는 다크 모드로 렌더되지만, 사용자가 라이트 모드를 선호하면, 라이트 모드 버튼으로 다시 렌더된다</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// html을 렌더한 div element를 가져옵니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">container</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">renderServerSide</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">DarkModeButton</span><span style="color: #89DDFF"> /&gt;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// 처음에는 다크 모드로 렌더링 됩니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">button</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getByRole</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> name</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// matchMedia에 stub을 주입합니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">window</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">matchMedia</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> (</span><span style="color: #89DDFF">{</span><span style="color: #F07178"> matches</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #FF9CAC">false</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178"> </span><span style="color: #89DDFF; font-style: italic">as</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">MediaQueryList</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// @testing-library/react에 hydrate option을 써서 되살립니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">render</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">DarkModeButton</span><span style="color: #89DDFF"> /&gt;,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">container</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> hydrate</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #FF9CAC">true</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// mismatch가 있으면 여기까지 오지 못하고 에러가 납니다</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// 라이트 모드로 다시 렌더링됩니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAccessibleName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">$html</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toHaveAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// matchMedia 메서드를 undefined로 되돌립니다</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #FFCB6B">Object</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">assign</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">window</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> matchMedia</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">undefined</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span></code></pre>
+<p>복잡하군요! hydration이 끼어드니까, 하나도 쉬운 게 없습니다. <code>@testing-library</code>가 친절하게 에러를 보여줄 거에요.</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">Warning: Prop </span><span style="color: #89DDFF">`</span><span style="color: #C3E88D">aria-label</span><span style="color: #89DDFF">`</span><span style="color: #A6ACCD"> did not match. Server: </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD"> Client: </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color: #A6ACCD">    at button</span></span>
+<span class="line"><span style="color: #A6ACCD">    at DarkModeButton </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">/home/taehee/github/skill-badge/app/components/DarkModeButton.tsx:10:53</span><span style="color: #89DDFF">)</span></span></code></pre>
+<h2 id="useeffect-is-all-you-need">useEffect is all you need</h2>
+<p>뜸을 많이 들였지만. 해법은 간단합니다. 무엇이 잘못된 방법인지 알면, 올바른 방법은 생각보다 쉬운 법이죠.</p>
+<p><a href="https://reactjs.org/docs/hooks-reference.html#uselayouteffect">리액트에서 useEffect는 SSR에서는 실행되지 않습니다.</a>, 그러니 <code>useEffect</code>를 이용하면 될 것 같아요.</p>
+<p>개요는 이렇습니다. 브라우저에서 처음 <code>hydration</code>을 할 때에는 <code>isDark</code>가 <code>true</code>인 초기 상태 그대로 렌더합니다. 그러면 서버와 똑같이 다크 모드로 렌더되니까 일치하겠지요.</p>
+<p>그리고 <code>mount</code>가 되고 나면 <code>useEffect</code>로 mediaQuery를 가져와서 상태를 바꿔줍니다. 만약 사용자가 light 테마를 선호한다면, 다시 light 모드로 바뀌게 될 거에요.</p>
+<p>이를 코드로 옮기면 다음과 같습니다.</p>
+<div class="plus-lines-7 plus-lines-8 plus-lines-9 plus-lines-10 plus-lines-11"></div>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">MoonIcon</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@heroicons/react/24/outline</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useEffect</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">useState</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">isDark</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">setIsDark</span><span style="color: #89DDFF">]</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">useState</span><span style="color: #F07178">(</span><span style="color: #FF9CAC">true</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">useEffect</span><span style="color: #F07178">(</span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">if</span><span style="color: #F07178"> (</span><span style="color: #A6ACCD">window</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">matchMedia</span><span style="color: #F07178"> </span><span style="color: #89DDFF">!==</span><span style="color: #F07178"> </span><span style="color: #89DDFF">undefined</span><span style="color: #F07178">) </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">			</span><span style="color: #82AAFF">setIsDark</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">window</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">matchMedia</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">(prefers-color-scheme:dark)</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">?.</span><span style="color: #A6ACCD">matches</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">}</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">},</span><span style="color: #F07178"> [])</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">useEffect</span><span style="color: #F07178">(</span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">$html</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">document</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getElementsByTagName</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">html</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)[</span><span style="color: #F78C6C">0</span><span style="color: #F07178">]</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">$html</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">setAttribute</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">data-theme</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">forest</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">emerald</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">},</span><span style="color: #F07178"> [</span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178">])</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">function</span><span style="color: #F07178"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">setIsDark</span><span style="color: #F07178">(</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">old</span><span style="color: #89DDFF">)</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">!</span><span style="color: #A6ACCD">old</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">label</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">isDark</span><span style="color: #F07178"> </span><span style="color: #89DDFF">?</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 라이트 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> (</span></span>
+<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">aria-label</span><span style="color: #89DDFF">={</span><span style="color: #A6ACCD">label</span><span style="color: #89DDFF">} </span><span style="color: #C792EA">onClick</span><span style="color: #89DDFF">={()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">toggleDark</span><span style="color: #A6ACCD">()</span><span style="color: #89DDFF">}&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">MoonIcon</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">className</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w-6 h-6</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">/&gt;</span></span>
+<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #F07178">	)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
+<p><span style="background-color: rgb(84,206,127); color: rgb(35, 62, 49);"> PASS </span>를 보셨나요? 힘들었으니 스스로를 축하해줍시다.</p>
+<p>보신 바와 같이, 테스트는 복잡하고 헷갈리는 상황을 재현하는데도 훌륭한 도구입니다. 복잡한 SSR과 하이드레이션의 과정도 10줄 남짓이면 재현할 수 있으니 말이죠. 이 교훈은 SSR이 아니라 PWA나 일렉트론, 리액트 네이티브와 같이 브라우저가 아닌 여러 환경에서 코딩을 하실 때에도 도움이 되실 거에요.</p>
+<p>다크모드 버튼을 넘어서 생각하면, 이는 <code>고대비(prefers-contrast)</code> 설정이나, <code>움직임 축소(prefers-reduced-motion)</code> 같이 window.matchMedia나 브라우저 api를 테스트하셔야 하는 경우에 폭 넓게 적용할 수 있는 방법이지 않을까 싶습니다.</p>
+<h2 id="다음은-커스텀-훅과-context">다음은? 커스텀 훅과 Context</h2>
+<p>지금은 다크 모드 버튼 안에 모든 상태가 들어 있습니다.</p>
+<p>하지만 이런 <code>theme</code>은 다른 컴포넌트에서도 필요할지도 모릅니다. css in js로 dark mode인지에 따라 다르게 써야 한다던가요. 앞에서 이야기한 것처럼 <code>reduced-motion</code> 옵션이 켜져 있으면 애니메이션을 꺼주고 싶다던가 말이죠.</p>
+<p>다음에는 <code>Custom Hook</code>으로 상태 로직을 분리하고, <code>Context</code>와 <code>&#x3C;Provider></code>를 이용해서 의존성을 주입하고 테스트하는 법을 다뤄보겠습니다.</p>
+<p><a href="/component-testing-a11y-context">컴포넌트 테스트 시작하기 - 훅과 컨텍스트</a></p>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br>
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
+  <br>
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
+  <br>
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
+  <br>
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    
+    <script type="module">
+            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
+      
+const $$ejs = (par,eager)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+  const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
+    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
+    const compProm = import(prefix + '/svelte/components/' + component.component);
+
+    Promise.all([compProm,propProm]).then(([comp,props])=>{
+      new comp.default({ 
+        target: target,
+        props: props,
+        hydrate: true
+      });
+    });
+  };
+  const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+        const selected = par[entry.target.id];
+        initComponent(entry.target,selected)
+      }
+    });
+  }, { rootMargin: "200px",threshold: 0}) : undefined;
+  Object.keys(par).forEach(k => {
+    const el = document.getElementById(k);
+    if (!eager && IO) {
+        IO.observe(el);
+    } else {
+        initComponent(el,par[k]);
+    }
+  });
+};
+
+      
+      requestIdleCallback(function(){
+        $$ejs({'scrolltopbutton-ejs-JNnGctpRMS' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-VgbKGDDvtp' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
+    
+    
+    </body></html>
