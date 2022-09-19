@@ -3,51 +3,70 @@ code {
   font-family: 'D2Coding', monospace;
   font-size: 90%;
 }
+.hl-lines-1 + pre code span.line:nth-child(1),
+.hl-lines-2 + pre code span.line:nth-child(2),
+.hl-lines-3 + pre code span.line:nth-child(3),
+.hl-lines-4 + pre code span.line:nth-child(4),
+.hl-lines-5 + pre code span.line:nth-child(5),
+.hl-lines-6 + pre code span.line:nth-child(6),
+.hl-lines-7 + pre code span.line:nth-child(7),
+.hl-lines-8 + pre code span.line:nth-child(8),
+.hl-lines-9 + pre code span.line:nth-child(9),
+.hl-lines-10 + pre code span.line:nth-child(10),
+.hl-lines-11 + pre code span.line:nth-child(11),
+.hl-lines-12 + pre code span.line:nth-child(12),
+.hl-lines-13 + pre code span.line:nth-child(13),
+.hl-lines-14 + pre code span.line:nth-child(14),
+.hl-lines-15 + pre code span.line:nth-child(15),
+.hl-lines-16 + pre code span.line:nth-child(16){
+  background-color: rgba(194, 198, 60, 0.213);
+}
 
-.hl-lines-1 + pre code span.line:nth-child(1){
-  background-color: var(--warning-dark);
+.plus-lines-1 + pre code span.line:nth-child(1),
+.plus-lines-2 + pre code span.line:nth-child(2),
+.plus-lines-3 + pre code span.line:nth-child(3),
+.plus-lines-4 + pre code span.line:nth-child(4),
+.plus-lines-5 + pre code span.line:nth-child(5),
+.plus-lines-6 + pre code span.line:nth-child(6),
+.plus-lines-7 + pre code span.line:nth-child(7),
+.plus-lines-8 + pre code span.line:nth-child(8),
+.plus-lines-9 + pre code span.line:nth-child(9),
+.plus-lines-10 + pre code span.line:nth-child(10),
+.plus-lines-11 + pre code span.line:nth-child(11),
+.plus-lines-12 + pre code span.line:nth-child(12),
+.plus-lines-13 + pre code span.line:nth-child(13),
+.plus-lines-14 + pre code span.line:nth-child(14),
+.plus-lines-15 + pre code span.line:nth-child(15),
+.plus-lines-16 + pre code span.line:nth-child(16){
+  background-color: rgba(46,160,67,0.15);
 }
-.hl-lines-2 + pre code span.line:nth-child(2){
-  background-color: var(--warning-dark);
+.plus-lines-1 + pre code span.line:nth-child(1):before,
+.plus-lines-2 + pre code span.line:nth-child(2):before,
+.plus-lines-3 + pre code span.line:nth-child(3):before,
+.plus-lines-4 + pre code span.line:nth-child(4):before,
+.plus-lines-5 + pre code span.line:nth-child(5):before,
+.plus-lines-6 + pre code span.line:nth-child(6):before,
+.plus-lines-7 + pre code span.line:nth-child(7):before,
+.plus-lines-8 + pre code span.line:nth-child(8):before,
+.plus-lines-9 + pre code span.line:nth-child(9):before,
+.plus-lines-10 + pre code span.line:nth-child(10):before,
+.plus-lines-11 + pre code span.line:nth-child(11):before,
+.plus-lines-12 + pre code span.line:nth-child(12):before,
+.plus-lines-13 + pre code span.line:nth-child(13):before,
+.plus-lines-14 + pre code span.line:nth-child(14):before,
+.plus-lines-15 + pre code span.line:nth-child(15):before,
+.plus-lines-16 + pre code span.line:nth-child(16):before{
+  content: '+';
+  color: green;
 }
-.hl-lines-3 + pre code span.line:nth-child(3){
-  background-color: var(--warning-dark);
-}
-.hl-lines-4 + pre code span.line:nth-child(4){
-  background-color: var(--warning-dark);
-}
-.hl-lines-5 + pre code span.line:nth-child(5){
-  background-color: var(--warning-dark);
-}
-.hl-lines-6 + pre code span.line:nth-child(6){
-  background-color: var(--warning-dark);
-}
-.hl-lines-7 + pre code span.line:nth-child(7){
-  background-color: var(--warning-dark);
-}
-.hl-lines-8 + pre code span.line:nth-child(8){
-  background-color: var(--warning-dark);
-}
-.hl-lines-9 + pre code span.line:nth-child(9){
-  background-color: var(--warning-dark);
-}
-.hl-lines-10 + pre code span.line:nth-child(10){
-  background-color: var(--warning-dark);
-}
-.hl-lines-11 + pre code span.line:nth-child(11){
-  background-color: var(--warning-dark);
-}
-.hl-lines-12 + pre code span.line:nth-child(12){
-  background-color: var(--warning-dark);
-}
-.hl-lines-13 + pre code span.line:nth-child(13){
-  background-color: var(--warning-dark);
-}
+
+
 pre {
   background: var(--codeblock-background-color);
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
+  tab-size: 2;
 }
 
 pre:hover:before {

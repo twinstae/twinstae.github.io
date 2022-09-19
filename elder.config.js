@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: {
     '@elderjs/plugin-markdown': {
-      routes: ['blog', 'review'],
+      routes: ['blog'],
       remarkPlugins: [
         frontmatter, // 'remark-frontmatter' package
         [extractFrontmatter, { name: 'frontmatter', yaml: yaml.parse }], // 'remark-extract-frontmatter' and 'yaml' packages.
