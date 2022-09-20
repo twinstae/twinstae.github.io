@@ -95,7 +95,7 @@ function DarkModeButton() {
   }
 	return (
 		<button type="button" aria-label={label} onClick={() => toggleDark()}>
-			<MoonIcon className="w-6 h-6"/>
+			{isDark ? <MoonIcon className="w-6 h-6"/> : <SunIcon className="w-6 h-6"/>}
 		</button>
 	);
 }
@@ -224,7 +224,7 @@ function DarkModeButton() {
 	})
 	return (
 		<button type="button" aria-label={label} onClick={() => toggleDark()}>
-			<MoonIcon className="w-6 h-6"/>
+			{isDark ? <MoonIcon className="w-6 h-6"/> : <SunIcon className="w-6 h-6"/>}
 		</button>
 	);
 }
@@ -278,7 +278,7 @@ function DarkModeButton() {
 	}, [isDark])
 	return (
 		<button type="button" aria-label={label} onClick={() => toggleDark()}>
-			<MoonIcon className="w-6 h-6"/>
+			{isDark ? <MoonIcon className="w-6 h-6"/> : <SunIcon className="w-6 h-6"/>}
 		</button>
 	);
 }

@@ -80,7 +80,7 @@ describe('DarkModeButton', () => {
 
 ```tsx
 // DarkModeButton.tsx
-import { MoonIcon } from '@heroicons/react/24/outline';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
 
 function DarkModeButton() {
@@ -105,7 +105,7 @@ function DarkModeButton() {
 
 	return (
 		<button type="button" aria-label={label} onClick={() => toggleDark()}>
-			<MoonIcon className="w-6 h-6" />
+			{isDark ? <MoonIcon className="w-6 h-6"/> : <SunIcon className="w-6 h-6"/>}
 		</button>
 	);
 }
@@ -286,7 +286,7 @@ describe('DarkModeButton', () => {
 이제 `useDarkMode` hook을 사용하도록 버튼의 구현체도 바꿔줍니다.
 
 ```tsx
-import { MoonIcon } from '@heroicons/react/24/outline';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import { useDarkMode } from './useDarkMode';
 
 function DarkModeButton() {
@@ -298,7 +298,7 @@ function DarkModeButton() {
 
 	return (
 		<button type="button" aria-label={label} onClick={() => toggleDark()}>
-			<MoonIcon className="w-6 h-6" />
+			{isDark ? <MoonIcon className="w-6 h-6"/> : <SunIcon className="w-6 h-6"/>}
 		</button>
 	);
 }
@@ -344,7 +344,7 @@ export function DarkModeProvider({ children }: { children: React.ReactNode }) {
 
 ```tsx
 // DarkModeButton.tsx
-import { MoonIcon } from '@heroicons/react/24/outline';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import { useContext } from 'react';
 import { DarkModeContext } from './DarkModeContext';
 
