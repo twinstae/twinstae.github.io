@@ -13,8 +13,8 @@
     document.getElementsByTagName('html')[0].className = is_dark
       ? 'dark'
       : 'light';
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-06462a22.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-KgFYkMDYxF"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-27305ded.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-wzktCMrXXQ"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -32,7 +32,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-MpyKfVgZrq"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-VRtxNnfJFy"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-s59jxg"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#지난-이야기" style="color: #868e96;">지난 이야기</a>
@@ -313,7 +313,8 @@
 <span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
 <p>고민을 많이 했지만, 분리해놓고 보니 깔끔해서 마음에 듭니다. 이제 앞에서 말한 것처럼 <code>Context</code>로 야망을 펼쳐볼까요.</p>
 <blockquote>
-<p>참고로. 이런 hook을 매번 직접 구현하고 테스트하는 건 고통스러운 일입니다. react에는 <a href="https://usehooks-ts.com/react-hook/use-media-query">usehooks-ts</a>가 있고 vue에는 <a href="https://vueuse.org/">vueuse</a>처럼 유용한 훅과 컴포저블을 -SSR까지 고려해서- 잘 구현해두었습니다. 바퀴를 재발명하지 말고, 잘 가져다 쓰시거나 참고하시면 생산성이 오르실 거에요. (테스트가 고통스럽다는 말도 안 하게 되고요.)</p>
+<p>참고로. 이런 hook을 매번 직접 테스트하고 구현하기는 고통스러운 일입니다. react에는 <a href="https://usehooks-ts.com/">usehooks-ts</a>가 있고 vue에는 <a href="https://vueuse.org/">vueuse</a>처럼 유용한 훅과 컴포저블을 잘 구현해두었습니다. 되도록 바퀴를 재발명하지 말고, 잘 가져다 쓰시거나 참고하시면 생산성이 오르실 거에요.</p>
+<p>물론 이런 라이브러리가 잘못된 경우는 직접 테스트하고 보수를 해야 합니다. 특히 SSR 이슈 등을 잘못 처리한 경우가 많아요. <code>hydration mismatch</code> 이슈를 해결하지 않고 <code>window</code>가 <code>undefined</code>만 확인하는 식으로 말이죠. 저희가 다룬 <code>media-query</code>도 그렇습니다. <a href="https://www.joshwcomeau.com/react/the-perils-of-rehydration/#the-solution">이 문제를 자세히 다룬 글</a>도 있으니, Next.js나 Remix 등으로 SSR을 하신다면 읽어보세요.</p>
 </blockquote>
 <h2 id="context로-의존성-주입하기">Context로 의존성 주입하기</h2>
 <p><a href="https://beta.reactjs.org/learn/passing-data-deeply-with-context#use-cases-for-context">react의 공식 문서</a>에서도 이야기하듯이, context는 theme을 이곳저곳에 주입해주는데 널리 쓰입니다. 특히 저는 키보드로 단축키를 만드는데 도움이 될 것 같아요.</p>
@@ -486,7 +487,7 @@ const $$ejs = (par,eager)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs({'scrolltopbutton-ejs-MpyKfVgZrq' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-KgFYkMDYxF' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
+        $$ejs({'scrolltopbutton-ejs-VRtxNnfJFy' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-wzktCMrXXQ' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
     
     
     </body></html>

@@ -308,7 +308,9 @@ export default DarkModeButton;
 
 고민을 많이 했지만, 분리해놓고 보니 깔끔해서 마음에 듭니다. 이제 앞에서 말한 것처럼 `Context`로 야망을 펼쳐볼까요.
 
-> 참고로. 이런 hook을 매번 직접 구현하고 테스트하는 건 고통스러운 일입니다. react에는 [usehooks-ts](https://usehooks-ts.com/react-hook/use-media-query)가 있고 vue에는 [vueuse](https://vueuse.org/)처럼 유용한 훅과 컴포저블을 -SSR까지 고려해서- 잘 구현해두었습니다. 바퀴를 재발명하지 말고, 잘 가져다 쓰시거나 참고하시면 생산성이 오르실 거에요. (테스트가 고통스럽다는 말도 안 하게 되고요.)
+> 참고로. 이런 hook을 매번 직접 테스트하고 구현하기는 고통스러운 일입니다. react에는 [usehooks-ts](https://usehooks-ts.com/)가 있고 vue에는 [vueuse](https://vueuse.org/)처럼 유용한 훅과 컴포저블을 잘 구현해두었습니다. 되도록 바퀴를 재발명하지 말고, 잘 가져다 쓰시거나 참고하시면 생산성이 오르실 거에요.
+>
+> 물론 이런 라이브러리가 잘못된 경우는 직접 테스트하고 보수를 해야 합니다. 특히 SSR 이슈 등을 잘못 처리한 경우가 많아요. `hydration mismatch` 이슈를 해결하지 않고 `window`가 `undefined`만 확인하는 식으로 말이죠. 저희가 다룬 `media-query`도 그렇습니다. [이 문제를 자세히 다룬 글](https://www.joshwcomeau.com/react/the-perils-of-rehydration/#the-solution)도 있으니, Next.js나 Remix 등으로 SSR을 하신다면 읽어보세요.
 
 ## Context로 의존성 주입하기
 
