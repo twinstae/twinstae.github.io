@@ -308,6 +308,8 @@ export default DarkModeButton;
 
 고민을 많이 했지만, 분리해놓고 보니 깔끔해서 마음에 듭니다. 이제 앞에서 말한 것처럼 `Context`로 야망을 펼쳐볼까요.
 
+> 참고로. 이런 hook을 매번 직접 구현하고 테스트하는 건 고통스러운 일입니다. react에는 [usehooks-ts](https://usehooks-ts.com/react-hook/use-media-query)가 있고 vue에는 [vueuse](https://vueuse.org/)처럼 유용한 훅과 컴포저블을 -SSR까지 고려해서- 잘 구현해두었습니다. 바퀴를 재발명하지 말고, 잘 가져다 쓰시거나 참고하시면 생산성이 오르실 거에요. (테스트가 고통스럽다는 말도 안 하게 되고요.)
+
 ## Context로 의존성 주입하기
 
 [react의 공식 문서](https://beta.reactjs.org/learn/passing-data-deeply-with-context#use-cases-for-context)에서도 이야기하듯이, context는 theme을 이곳저곳에 주입해주는데 널리 쓰입니다. 특히 저는 키보드로 단축키를 만드는데 도움이 될 것 같아요.

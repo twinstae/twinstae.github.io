@@ -312,6 +312,9 @@
 <span class="line"></span>
 <span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
 <p>고민을 많이 했지만, 분리해놓고 보니 깔끔해서 마음에 듭니다. 이제 앞에서 말한 것처럼 <code>Context</code>로 야망을 펼쳐볼까요.</p>
+<blockquote>
+<p>참고로. 이런 hook을 매번 직접 구현하고 테스트하는 건 고통스러운 일입니다. react에는 <a href="https://usehooks-ts.com/react-hook/use-media-query">usehooks-ts</a>가 있고 vue에는 <a href="https://vueuse.org/">vueuse</a>처럼 유용한 훅과 컴포저블을 -SSR까지 고려해서- 잘 구현해두었습니다. 바퀴를 재발명하지 말고, 잘 가져다 쓰시거나 참고하시면 생산성이 오르실 거에요. (테스트가 고통스럽다는 말도 안 하게 되고요.)</p>
+</blockquote>
 <h2 id="context로-의존성-주입하기">Context로 의존성 주입하기</h2>
 <p><a href="https://beta.reactjs.org/learn/passing-data-deeply-with-context#use-cases-for-context">react의 공식 문서</a>에서도 이야기하듯이, context는 theme을 이곳저곳에 주입해주는데 널리 쓰입니다. 특히 저는 키보드로 단축키를 만드는데 도움이 될 것 같아요.</p>
 <p>이번에는 먼저 코드를 보고 테스트를 만드는 신기한 접근법을 써볼게요. 먼저 <code>DarkModeContext.tsx</code>를 만들어볼까요.</p>
