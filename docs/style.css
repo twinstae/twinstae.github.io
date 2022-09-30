@@ -132,6 +132,7 @@ body {
   background-color: var(--main-background);
   color: var(--primary-text);
   transition: background-color 0.5s;
+  word-break: keep-all;
 }
 
 @media (min-width: 768px) {

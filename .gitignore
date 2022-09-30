@@ -3,3 +3,4 @@ ___ELDER___
 .env
 yarn.lock
 package-lock.json
+.yarn

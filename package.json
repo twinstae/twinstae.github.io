@@ -95,5 +95,6 @@
   "bugs": {
     "url": "https://github.com/Elderjs/template/issues"
   },
-  "homepage": "https://github.com/Elderjs/template#readme"
+  "homepage": "https://github.com/Elderjs/template#readme",
+  "packageManager": "yarn@3.2.3"
 }
