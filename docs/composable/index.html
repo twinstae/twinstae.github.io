@@ -13,8 +13,8 @@
     document.getElementsByTagName('html')[0].className = is_dark
       ? 'dark'
       : 'light';
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-50658f80.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-jdKlkmpYCy"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-8bb49559.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-xLNxjwFmxg"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -33,7 +33,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-RVFLrWwmmd"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-bNyvpJkWTS"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
 
 <nav class="svelte-s59jxg"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#객체지향-프로그래머들은-왜-함수형에-빠졌을까" style="color: #868e96;">객체지향 프로그래머들은 왜 함수형에 빠졌을까?</a>
@@ -156,9 +156,9 @@ computers on a network, only able to communicate with messages. (...) I wanted t
 <span class="line"><span style="color: #89DDFF">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #676E95; font-style: italic">// 2022년 9월 30일에 해당하는 값</span></span>
-<span class="line"><span style="color: #82AAFF">isOverEventDay</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">new</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Date</span><span style="color: #A6ACCD">(</span><span style="color: #F78C6C">2022</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">8</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">30</span><span style="color: #A6ACCD">))</span><span style="color: #89DDFF">;</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// false</span></span>
+<span class="line"><span style="color: #82AAFF">isOverEventDay</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">new</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Date</span><span style="color: #A6ACCD">(</span><span style="color: #F78C6C">2022</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">8</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">30</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">valueOf</span><span style="color: #A6ACCD">())</span><span style="color: #89DDFF">;</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// false</span></span>
 <span class="line"><span style="color: #676E95; font-style: italic">// 2022년 10월 1일에 해당하는 값 </span></span>
-<span class="line"><span style="color: #82AAFF">isOverEventDay</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">new</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Date</span><span style="color: #A6ACCD">(</span><span style="color: #F78C6C">2022</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">9</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">1</span><span style="color: #A6ACCD">))</span><span style="color: #89DDFF">;</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// true</span></span></code></pre>
+<span class="line"><span style="color: #82AAFF">isOverEventDay</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">new</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Date</span><span style="color: #A6ACCD">(</span><span style="color: #F78C6C">2022</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">9</span><span style="color: #89DDFF">,</span><span style="color: #F78C6C">1</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">valueOf</span><span style="color: #A6ACCD">())</span><span style="color: #89DDFF">;</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// true</span></span></code></pre>
 <p><code>isOverEventDay</code>는 이제 순수함수입니다. 내가 판정하고 싶은 날짜를 넘겨주면, 항상 올바른 결과를 반환하지요. 1년 뒤에 이 함수를 호출하더라도 똑같은 결과가 나올 거에요. 불순한 <code>Date.now()</code>는 밖으로 밀어냈습니다.</p>
 <p><code>isOverEventDay</code>는 자기 역할에 충실함으로서, 더 범용적인 함수가 되었습니다. 예를 들어 어떤 사용자들이 컴퓨터 시계를 조작해서, 부정한 방법으로 선착순 이벤트에 당첨되었다고 해봅시다. 데이터베이스에 들어 있는 과거 기록에 createdAt처럼 서버 기준으로 요청 시간이 남아 있다면... <code>isOverEventDay</code>를 과거 기록에 돌려보는 것만으로도 부정한 응모 기록을 걸러낼 수 있을 겁니다.</p>
 <p>더 합성하기 쉬워진 것이죠!</p>
@@ -336,6 +336,7 @@ computers on a network, only able to communicate with messages. (...) I wanted t
 <p>아무리 밀어내고 잘 다뤄도 상태는 어딘가에 들어가야 하는데. 객체는 이런 일을 참 잘 합니다. 그래서 아까부터 계속 나오는 리치 히키도 이렇게 말했을 정도입니다.</p>
 <blockquote>
 <p>객체 있죠? 객체는 입출력 장치를 캡슐화하죠. 화면도 캡슐화 해요. 제가 화면을 직접 건드리진 못하죠. 마우스도 있어요. 마우스도 제가 직접 제어하진 못하죠. 이럴 때 쓰려고 객체가 있는 거예요. 이런 데에선 객체가 바른 역할을 합니다. 하지만 정보에 적용하라고 존재한 적은 없어요. 정보를 객체에 적용했다면 그건 명확한 잘못입니다.</p>
+<p><a href="https://muchtrans.com/translations/simple-made-easy.ko.html">Simple Made Easy - Rich Hickey</a></p>
 </blockquote>
 <p>이제 컴퓨터에 마우스와 화면을 연결할 수 있겠어요. Compose의 시대입니다.</p>
 <h2 id="long-live-composition">Long Live Composition</h2>
@@ -427,7 +428,7 @@ const $$ejs = (par,eager)=>{
 
       
       requestIdleCallback(function(){
-        $$ejs({'scrolltopbutton-ejs-RVFLrWwmmd' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-jdKlkmpYCy' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
+        $$ejs({'scrolltopbutton-ejs-bNyvpJkWTS' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-xLNxjwFmxg' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
     
     
     </body></html>

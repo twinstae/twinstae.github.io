@@ -158,9 +158,9 @@ function isOverEventDay(date){
 }
 
 // 2022년 9월 30일에 해당하는 값
-isOverEventDay(new Date(2022,8,30)); // false
+isOverEventDay(new Date(2022,8,30).valueOf()); // false
 // 2022년 10월 1일에 해당하는 값 
-isOverEventDay(new Date(2022,9,1)); // true
+isOverEventDay(new Date(2022,9,1).valueOf()); // true
 ```
 
 `isOverEventDay`는 이제 순수함수입니다. 내가 판정하고 싶은 날짜를 넘겨주면, 항상 올바른 결과를 반환하지요. 1년 뒤에 이 함수를 호출하더라도 똑같은 결과가 나올 거에요. 불순한 `Date.now()`는 밖으로 밀어냈습니다.
