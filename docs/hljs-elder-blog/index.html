@@ -1,7 +1,10 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>shiki로 elder.js 코드블럭 문법 강조하기</title><meta name="description" content="Elder.js 기본 템플릿에 내장된 shiki를 이용해서 코드블럭 문법 강조(syntax highlight)를 해봅시다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/hljs-elder-blog/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/hljs-elder-blog/" data-svelte="svelte-18tnbae"><meta property="og:title" content="shiki로 elder.js 코드블럭 문법 강조하기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="Elder.js 기본 템플릿에 내장된 shiki를 이용해서 코드블럭 문법 강조(syntax highlight)를 해봅시다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/hljs-elder-blog/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="shiki로 elder.js 코드블럭 문법 강조하기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="Elder.js 기본 템플릿에 내장된 shiki를 이용해서 코드블럭 문법 강조(syntax highlight)를 해봅시다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>shiki로 elder.js 코드블럭 문법 강조하기</title><meta name="description" content="Elder.js 기본 템플릿에 내장된 shiki를 이용해서 코드블럭 문법 강조(syntax highlight)를 해봅시다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/hljs-elder-blog/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/hljs-elder-blog/" data-svelte="svelte-18tnbae"><meta property="og:title" content="shiki로 elder.js 코드블럭 문법 강조하기" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="Elder.js 기본 템플릿에 내장된 shiki를 이용해서 코드블럭 문법 강조(syntax highlight)를 해봅시다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/hljs-elder-blog/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="shiki로 elder.js 코드블럭 문법 강조하기" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="Elder.js 기본 템플릿에 내장된 shiki를 이용해서 코드블럭 문법 강조(syntax highlight)를 해봅시다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
       const codes = document.getElementsByTagName('pre');
 
       for (const code of codes) {
+        if (code.parentElement.className.includes('codejar-wrap')){
+          continue;
+        }
         code.addEventListener('dblclick', function (e) {
           navigator.clipboard.writeText(code.innerText).then(() => {
             alert('코드를 클립보드에 복사했습니다.');
@@ -9,12 +12,12 @@
         });
       }
     }, 500);
-  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
     document.getElementsByTagName('html')[0].className = is_dark
       ? 'dark'
       : 'light';
-  </script><link rel="preload" href="/_elderjs/svelte/components/ScrollTopButton.75863d38.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-8bb49559.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-snVwTzrllp"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-d1a5e32f.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-sbJmDdlzkm"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -26,7 +29,7 @@
 
 <a href="/">← Home</a>
 
-<div class="title svelte-7s3agc"><h1>shiki로 elder.js 코드블럭 문법 강조하기</h1>
+<div class="title svelte-7s3agc"><h1 id="title-heading">shiki로 elder.js 코드블럭 문법 강조하기</h1>
   <div><span class="hashtag">#작성 중
         </span><span class="hashtag">#Elder.js
         </span><span class="hashtag">#Blog
@@ -34,7 +37,7 @@
         </span></div>
   <small>By 탐정토끼(Taehee Kim)</small></div>
 
-<div class="scrolltopbutton-component" id="scrolltopbutton-ejs-MVdNYVfzJM"><button id="scroll-top-button" class="svelte-1wifdss">↑ 맨 위로</button></div>
+<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
 
 <nav class="svelte-s59jxg"><div><span>목차</span>
     <ol><li style="font-size: 1.25rem;"><a href="#elderconfigjs-에-shiki-테마-설정하기" style="color: #868e96;">elder.config.js 에 shiki 테마 설정하기</a>
@@ -102,18 +105,10 @@ const $$ejs = (par,eager)=>{
       });
     });
   };
-  const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        observer.unobserve(entry.target);
-        const selected = par[entry.target.id];
-        initComponent(entry.target,selected)
-      }
-    });
-  }, { rootMargin: "200px",threshold: 0}) : undefined;
+  
   Object.keys(par).forEach(k => {
     const el = document.getElementById(k);
-    if (!eager && IO) {
+    if (false) {
         IO.observe(el);
     } else {
         initComponent(el,par[k]);
@@ -121,9 +116,7 @@ const $$ejs = (par,eager)=>{
   });
 };
 
-      
-      requestIdleCallback(function(){
-        $$ejs({'scrolltopbutton-ejs-MVdNYVfzJM' : { 'component' : 'ScrollTopButton.75863d38.js', 'props' : {}},'darkcheckbox-ejs-snVwTzrllp' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
+      $$ejs({'darkcheckbox-ejs-sbJmDdlzkm' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
     
     
     </body></html>

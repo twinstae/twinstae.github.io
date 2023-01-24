@@ -28,7 +28,7 @@ import TableOfContent from "../../components/TableOfContent.svelte";
 <a href="/">&LeftArrow; Home</a>
 
 <div class="title">
-  <h1>{frontmatter.title}</h1>
+  <h1 id="title-heading">{frontmatter.title}</h1>
   <div>
     {#if frontmatter.tag}
       {#each frontmatter.tag.split(", ") as tag}
@@ -41,7 +41,7 @@ import TableOfContent from "../../components/TableOfContent.svelte";
   {#if frontmatter.author}<small>By {frontmatter.author}</small>{/if}
 </div>
 
-<ScrollTopButton hydrate-client={{}} hydrate-options={{ "preload": true }} />
+<ScrollTopButton />
 
 {#if tocTree && tocTree.length > 0}
   <TableOfContent tocTree={tocTree}/>

@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>프런트엔드 상태의 지도 - (3) 서버 상태 동기화</title><meta name="description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/map-of-frontend-state-management-3/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/map-of-frontend-state-management-3/" data-svelte="svelte-18tnbae"><meta property="og:title" content="프런트엔드 상태의 지도 - (3) 서버 상태 동기화" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/map-of-frontend-state-management-3/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="프런트엔드 상태의 지도 - (3) 서버 상태 동기화" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
+
+      for (const code of codes) {
+        if (code.parentElement.className.includes('codejar-wrap')){
+          continue;
+        }
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
+      }
+    }, 500);
+  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-d1a5e32f.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-gRzqVKWfvR"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
+  <span class="svelte-ixwbnm"></span>
+</label></div>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
+
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1 id="title-heading">프런트엔드 상태의 지도 - (3) 서버 상태 동기화</h1>
+  <div><span class="hashtag">#프런트엔드
+        </span><span class="hashtag">#상태
+        </span><span class="hashtag">#지도
+        </span><span class="hashtag">#작성 중
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
+
+<nav class="svelte-s59jxg"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#mount와-cleanup--단순한-방법" style="color: #868e96;">mount와 cleanup : 단순한 방법</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#cache--서버-상태를-대하는-시점-바꾸기" style="color: #868e96;">Cache : 서버 상태를 대하는 시점 바꾸기</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#graphql은-상태-관리-도구인가" style="color: #868e96;">GraphQL은 상태 관리 도구인가?</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#상태를-정규화하고-연결하기" style="color: #868e96;">상태를 정규화하고 연결하기</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#suspense와-hook--효과를-주입하기" style="color: #868e96;">Suspense와 Hook : 효과를 주입하기</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#routing--단순했던-웹으로-돌아가기" style="color: #868e96;">Routing : 단순했던 웹으로 돌아가기</a>
+        <ol>
+        </ol>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h2 id="mount와-cleanup--단순한-방법">mount와 cleanup : 단순한 방법</h2>
+<blockquote>
+<p>여러 탭 간의 동기화
+서로 다른 기기 간의 동기화</p>
+</blockquote>
+<h2 id="cache--서버-상태를-대하는-시점-바꾸기">Cache : 서버 상태를 대하는 시점 바꾸기</h2>
+<p>tanstack-query, SWR, Relay
+query, mutation</p>
+<h2 id="graphql은-상태-관리-도구인가">GraphQL은 상태 관리 도구인가?</h2>
+<h2 id="상태를-정규화하고-연결하기">상태를 정규화하고 연결하기</h2>
+<h2 id="suspense와-hook--효과를-주입하기">Suspense와 Hook : 효과를 주입하기</h2>
+<h2 id="routing--단순했던-웹으로-돌아가기">Routing : 단순했던 웹으로 돌아가기</h2>
+<p>링크 공유하기</p>
+<p>NextJS : getServerSideProps
+Remix, React Router Dom : loader, action</p>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br>
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
+  <br>
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
+  <br>
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
+  <br>
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    
+    <script type="module">
+            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
+      
+const $$ejs = (par,eager)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+  const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
+    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
+    const compProm = import(prefix + '/svelte/components/' + component.component);
+
+    Promise.all([compProm,propProm]).then(([comp,props])=>{
+      new comp.default({ 
+        target: target,
+        props: props,
+        hydrate: true
+      });
+    });
+  };
+  
+  Object.keys(par).forEach(k => {
+    const el = document.getElementById(k);
+    if (false) {
+        IO.observe(el);
+    } else {
+        initComponent(el,par[k]);
+    }
+  });
+};
+
+      $$ejs({'darkcheckbox-ejs-gRzqVKWfvR' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
+    
+    
+    </body></html>

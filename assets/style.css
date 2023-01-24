@@ -61,7 +61,7 @@ code {
 }
 
 
-pre {
+pre:not(.code-wrapper) {
   background: var(--codeblock-background-color);
   padding: 1rem;
   border-radius: 0.5rem;
@@ -69,7 +69,7 @@ pre {
   tab-size: 2;
 }
 
-pre:hover:before {
+pre:not(.code-wrapper):hover:before {
   content: '복사하려면 코드를 더블클릭!';
   position: absolute;
   right: 16px;
@@ -77,6 +77,15 @@ pre:hover:before {
   font-size: 80%;
   color: gray;
   transition: 1s;
+}
+
+pre.code-wrapper[class*=language-] {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.codejar-linenumbers {
+  mix-blend-mode: normal !important;
 }
 
 blockquote {
@@ -119,6 +128,10 @@ h3,
 h4 {
   font-weight: bold;
   line-height: 128%;
+}
+
+:root {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -169,4 +182,27 @@ body {
 
 .admonition ul {
   padding: 0 1rem 1rem 2rem;
+}
+
+table.excel {
+  border-collapse: collapse;
+}
+
+table.excel thead th {
+  border: 1px solid var(--muted);
+  background-color: var(--muted-light);
+  text-align: center;
+}
+
+table.excel tbody th {
+  border: 1px solid var(--muted);
+  background-color: var(--muted-light);
+  width: 3rem;
+}
+
+table.excel tbody td {
+  flex-grow: 1;
+  border: 1px solid var(--muted-light);
+  text-align: right;
+  width: fit-content;
 }

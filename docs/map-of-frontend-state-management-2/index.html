@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>프런트엔드 상태의 지도 - (2) Form 상태</title><meta name="description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/map-of-frontend-state-management-2/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/map-of-frontend-state-management-2/" data-svelte="svelte-18tnbae"><meta property="og:title" content="프런트엔드 상태의 지도 - (2) Form 상태" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/map-of-frontend-state-management-2/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="프런트엔드 상태의 지도 - (2) Form 상태" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
+
+      for (const code of codes) {
+        if (code.parentElement.className.includes('codejar-wrap')){
+          continue;
+        }
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
+      }
+    }, 500);
+  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-d1a5e32f.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-QyqVTMTMcZ"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
+  <span class="svelte-ixwbnm"></span>
+</label></div>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  <a href="/lec/" aria-current="false">삶을 풍요롭게 하는 코칭
+  </a></nav>
+
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1 id="title-heading">프런트엔드 상태의 지도 - (2) Form 상태</h1>
+  <div><span class="hashtag">#프런트엔드
+        </span><span class="hashtag">#상태
+        </span><span class="hashtag">#지도
+        </span><span class="hashtag">#작성 중
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
+
+<nav class="svelte-s59jxg"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#const-let--변수" style="color: #868e96;">const, let : 변수</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#useref--안정적인-참조" style="color: #868e96;">useRef : 안정적인 참조</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#usestate--반응형-상태" style="color: #868e96;">useState : 반응형 상태</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#you-might-not-need-reactive-state" style="color: #868e96;">You might not need Reactive State</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#react-hook-form은-상태-관리-라이브러리인가" style="color: #868e96;">react-hook-form은 상태 관리 라이브러리인가?</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#custom-hook과-캡슐화" style="color: #868e96;">Custom Hook과 캡슐화</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#focus-관리--명령적-vs-함수적" style="color: #868e96;">focus 관리 : 명령적 vs 함수적</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#derived--파생-상태" style="color: #868e96;">Derived : 파생 상태</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#useeffect--리액트-상태를-외부와-동기화하기" style="color: #868e96;">useEffect : 리액트 상태를 외부와 동기화하기</a>
+        <ol>
+        </ol>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h3 id="const-let--변수">const, let : 변수</h3>
+<h3 id="useref--안정적인-참조">useRef : 안정적인 참조</h3>
+<p>dom을 그대로 내버려 두기</p>
+<h3 id="usestate--반응형-상태">useState : 반응형 상태</h3>
+<h3 id="you-might-not-need-reactive-state">You might not need Reactive State</h3>
+<p>event handler를 이용하기</p>
+<h3 id="react-hook-form은-상태-관리-라이브러리인가">react-hook-form은 상태 관리 라이브러리인가?</h3>
+<h3 id="custom-hook과-캡슐화">Custom Hook과 캡슐화</h3>
+<h3 id="focus-관리--명령적-vs-함수적">focus 관리 : 명령적 vs 함수적</h3>
+<h3 id="derived--파생-상태">Derived : 파생 상태</h3>
+<h3 id="useeffect--리액트-상태를-외부와-동기화하기">useEffect : 리액트 상태를 외부와 동기화하기</h3>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br>
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
+  <br>
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
+  <br>
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
+  <br>
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    
+    <script type="module">
+            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
+      
+const $$ejs = (par,eager)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+  const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
+    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
+    const compProm = import(prefix + '/svelte/components/' + component.component);
+
+    Promise.all([compProm,propProm]).then(([comp,props])=>{
+      new comp.default({ 
+        target: target,
+        props: props,
+        hydrate: true
+      });
+    });
+  };
+  
+  Object.keys(par).forEach(k => {
+    const el = document.getElementById(k);
+    if (false) {
+        IO.observe(el);
+    } else {
+        initComponent(el,par[k]);
+    }
+  });
+};
+
+      $$ejs({'darkcheckbox-ejs-QyqVTMTMcZ' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
+    
+    
+    </body></html>

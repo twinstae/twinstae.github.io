@@ -41,7 +41,7 @@ import TableOfContent from "../../components/TableOfContent.svelte";
   {#if frontmatter.author}<small>By {frontmatter.author}</small>{/if}
 </div>
 
-<ScrollTopButton hydrate-client={{}} hydrate-options={{ "preload": true }} />
+<ScrollTopButton />
 
 {#if tocTree && tocTree.length > 0}
   <TableOfContent tocTree={tocTree}/>

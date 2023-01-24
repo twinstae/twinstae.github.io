@@ -15,7 +15,8 @@
       ...blog,
       permanlink: helpers.permalinks.blog({ slug: blog.slug }),
       tags: blog.frontmatter.tag ? blog.frontmatter.tag.split(', ') : [],
-    }));
+    }))
+    .filter(blog => blog.tags.includes('작성 중') === false);
 
   tagStoreInit(blog_list);
 </script>

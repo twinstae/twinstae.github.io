@@ -4,12 +4,14 @@
   let is_dark = false;
 
   function on_dark_change(){
-    localStorage.setItem("dark", is_dark);
+    localStorage.setItem("dark", is_dark ? "dark" : "light");
     document.getElementsByTagName("html")[0].className = is_dark ? "dark" : "light";
   }
 
   onMount(()=>{
-    is_dark = document.getElementsByTagName("html")[0].className == "dark";
+    const init = localStorage.getItem("dark");
+    is_dark = init ? init === 'dark' : matchMedia("(prefers-color-scheme: dark)").matches;
+    on_dark_change()
   })
 </script>
 

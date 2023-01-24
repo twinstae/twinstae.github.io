@@ -18,11 +18,15 @@ tag: '테스트, 접근성'
 - 테스트를 통과하도록 semantic html을 이용해서 markup을 작성했습니다.
 - 텍스트가 없는 icon에도 aria-label을 달아서 접근 가능하고 테스트하기 쉽게 만들었습니다.
 
+이번 글을 끝까지 따라오시면, 다음과 같은 결과가 나옵니다. StackBlitz의 웹 컨테이너를 이용해서, 브라우저에서도 로컬처럼 실습하고 테스트를 해보실 수 있어요. 처음에는 의존성을 다운 받는데 시간이 좀 걸립니다. 
+
+{{ stackblitz url="https://stackblitz.com/edit/testing-library-dark-mode-button" file="src/components/DarkModeButton.test.tsx,src/components/DarkModeButton.tsx" terminal="all" hideExplorer=false /}}
+
 ## 상태와 이벤트
 
 아직 저희가 만든 버튼은 정적인 마크업일 뿐이지, 실제로 작동하진 않아요. 이제 상태와 이벤트로 버튼을 동적으로 만들어볼게요.
 
-지금 구현할 스펙을 다시 정리해보면 이렇습니다.
+구현할 스펙을 다시 정리해보면 이렇습니다.
 
 > - 클릭하면 테마가 바뀌면서, 아이콘도 같이 바뀌어요.
 
@@ -105,7 +109,7 @@ export default DarkModeButton;
 
 다시 PASS가 뜨는 초록 막대를 보셨다면 축하합니다!
 
-혹시라도 테스트가 깨지셨을지도 모르겠어요. 그렇다면 정말 기쁜 일입니다. 테스트가 자기 할 일을 다 하고 있는 거니까요. `useState`의 초기 값이나, 삼항 연산자의 순서를 살펴보시면 좋을 것 같아요. 아니면 오타가 있을 수도 있고요.
+테스트가 깨지셨을지도 모르겠어요. (일부러 에러를 심어놓은 제 코드를 복붙 하셨다던가) 그렇다면 정말 기쁜 일입니다. 테스트가 자기 할 일을 다 하고 있는 거니까요. `useState`의 초기 값이나, 삼항 연산자의 순서를 살펴보시면 좋을 것 같아요. 아니면 오타가 있을 수도 있고요.
 
 ## 의존성과 효과
 
@@ -145,37 +149,28 @@ export default DarkModeButton;
 
 다음과 같이 테스트를 짜보겠습니다. 테스트가 효과로 지저분해질 거에요.
 
-<div class="plus-lines-9 plus-lines-10 plus-lines-15 plus-lines-16"></div>
+<div class="plus-lines-5 plus-lines-11 plus-lines-15"></div>
 
 ```tsx
-import { render } from "@testing-library/react";
-import { screen } from "@testing-library/dom";
-import userEvent from "@testing-library/user-event";
-import DarkModeButton from "./DarkModeButton";
+const $html = document.getElementsByTagName('html')[0];
+it("다크 모드 버튼을 클릭하면, 라이트 모드로 바뀌고, 다시 클릭하면 다크 모드로 돌아온다", async () => {
+  render(<DarkModeButton />);
 
-describe("DarkModeButton", () => {
-  const $html = document.getElementsByTagName('html')[0];
+  expect($html).toHaveAttribute('data-theme', 'forest');
 
-	it("다크 모드 버튼을 클릭하면, 라이트 모드로 바뀌고, 다시 클릭하면 다크 모드로 돌아온다", async () => {
-		render(<DarkModeButton />);
+  const button = screen.getByRole("button", { name: "현재 다크 모드" });
+  await userEvent.click(button);
 
-		expect($html).toHaveAttribute('data-theme', 'forest');
+  expect(button).toHaveAccessibleName('현재 라이트 모드');
+  expect($html).toHaveAttribute('data-theme', 'emerald');
 
-		const button = screen.getByRole("button", { name: "현재 다크 모드" });
-		await userEvent.click(button);
+  await userEvent.click(button);
+  expect(button).toHaveAccessibleName('현재 다크 모드');
+  expect($html).toHaveAttribute('data-theme', 'forest');
 
-		expect(button).toHaveAccessibleName('현재 라이트 모드');
-		expect($html).toHaveAttribute('data-theme', 'emerald');
-
-		await userEvent.click(button);
-		expect(button).toHaveAccessibleName('현재 다크 모드');
-		expect($html).toHaveAttribute('data-theme', 'forest');
-
-    // 정리
-		$html.setAttribute('data-theme', '');
-	});
+  // 정리
+  $html.setAttribute('data-theme', '');
 });
-
 ```
 
 당연히 테스트는 실패합니다.

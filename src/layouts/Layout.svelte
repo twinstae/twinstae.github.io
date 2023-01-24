@@ -20,6 +20,9 @@
       const codes = document.getElementsByTagName('pre');
 
       for (const code of codes) {
+        if (code.parentElement.className.includes('codejar-wrap')){
+          continue;
+        }
         code.addEventListener('dblclick', function (e) {
           navigator.clipboard.writeText(code.innerText).then(() => {
             alert('코드를 클립보드에 복사했습니다.');
@@ -36,7 +39,7 @@
   </script>
 </svelte:head>
 <nav id="top-nav-bar">
-  <DarkCheckBox hydrate-client={{}} />
+  <DarkCheckBox hydrate-client={{}} hydrate-options={{ "loading": "eager" }} />
   <a href="/" aria-current={request.slug === '/'}> 진리의 배 조선소 </a>
   <a href="/lec/" aria-current={request.slug === '/lec/'}>
     삶을 풍요롭게 하는 코칭

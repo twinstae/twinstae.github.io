@@ -92,7 +92,7 @@ MySQL을 쓰다가 PostgreSQL로 갈아타는 건 물론이고, 상황에 따라
 앨런 케이는 분자 생물학과 수학을 전공했다고 합니다. 신경 세포, 근육 세포, 소화 기간과 호흡기의 세포, 백혈구와 적혈구 등등... 다양한 역할을 가진 수 많은 세포들이 협력해서 생물체를 움직이는 걸 상상해보세요.
 
 <div style="display: flex; flex-direction: column; text-align: center;">
-<img src="https://w.namu.la/s/b320045264c71202fb452faa6d20ae697ebf1e22d58dd6c09b57bbcd5e0933e855e1d207a4098a8336bb8d08e1c29cdbcee693050fa5314023777c0be63c17b9c026ba03dfe5ebb14175e319167e5e0ef5b8d10dd36a61231b12efdbb01df9e7e8af2bfe00b03c07b661802f6d4f26bf" alt="애니메이션 일하는 세포의 포스터. 소녀의 모습을 한 적혈구가 택배 상자처럼 생긴 산소를 운반하고 있다. 단검을 든 백혈구가 부서지는 땅에서 나오는 바이러스를 경계하고 있다. 어린아이처럼 생긴 혈소판이 백혈구의 다리에 붙어 있다." width="256" />
+<img src="https://www.themoviedb.org/t/p/original/tIpDmtMA9wIMF08vC1biqzFmw7N.jpg" alt="애니메이션 일하는 세포의 포스터. 소녀의 모습을 한 적혈구가 택배 상자처럼 생긴 산소를 운반하고 있다. 단검을 든 백혈구가 부서지는 땅에서 나오는 바이러스를 경계하고 있다. 어린아이처럼 생긴 혈소판이 백혈구의 다리에 붙어 있다." width="256" />
 <span aria-hidden="true">애니메이션 일하는 세포의 포스터</span>
 </div>
 

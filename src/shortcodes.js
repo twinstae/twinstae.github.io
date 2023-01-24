@@ -1,6 +1,9 @@
-var keyword_tooltip = require("./keyword_tooltip.js");
+const { checksumCache } = require("./checksumCache");
+
+const keyword_tooltip = require("./keyword_tooltip.js");
 const katex = require('katex');
 const mermaidParse = require('mermaid-parse');
+
 /**
  * Shortcodes are a useful way of making content that lives in a CMS or in markdown files dynamic.
  *
@@ -77,16 +80,18 @@ module.exports = [
   {
     shortcode: 'tex',
     run: ({ content }) => {
-      return katex.renderToString(content, {
+      return checksumCache((content) => katex.renderToString(content, {
         throwOnError: false
-      });
+      }))(content);
     }
   },
   {
     shortcode: 'mmd',
     run: async ({ content }) => {
-      return mermaidParse(`%%{init: {'theme':'base'}}%%\n${content}`, { extension: 'svg' })
-        .then(svg =>svg.replace(/height="18"/g, 'height="30"'))
+      const mmdWithCache = checksumCache((content) => mermaidParse(`%%{init: {'theme':'neutral'}}%%\n${content}`, { extension: 'svg' })
+        .then(svg => svg.replace(/height="18"/g, 'height="30"')));
+
+      return mmdWithCache(content);
     }
   },
   {
@@ -95,5 +100,55 @@ module.exports = [
       return `<div class="admonition note"><p class="admonition-title">✏️ 비판적으로 생각해보기</p>${content}</div>`
     }
   },
-  
+  {
+    shortcode: 'codesandbox',
+    run: async ({ url }) => {
+      return `<iframe
+      src="${url}"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>`
+    }
+  },
+  {
+    shortcode: 'stackblitz',
+    run: async ({ props }) => {
+      return `<iframe
+        src="${this.createStackBlitzSrc(props)}"
+        style="transform: translateX(-10%); max-width: 100vw; width:130%; height:600px; border:0; border-radius: 4px; overflow:hidden;"
+      ></iframe>`;
+    }
+  },
 ];
+
+exports.createStackBlitzSrc = function ({
+  url,
+  ctl = true, // Prompts users to “click to load” the embed.
+  file = '', // Specifies the default file to have open in the editor.
+  hideDevTools = false,
+  hideExplorer = true,
+  hideNavigation = false,
+  terminal = '', // Specifies the npm script to run on project load (WebContainers-based projects only).
+  isDark = true,
+  initialPath='', // Specifies the initial URL path (URI encoded) the preview should open.
+}) {
+  const searchParams = new URLSearchParams();
+  searchParams.append('embed', '1')
+  searchParams.append('ctl', Number(ctl).toString());
+  if (file) {
+    searchParams.append('file', file)
+  }
+  searchParams.append('hideDevTools', Number(hideDevTools).toString());
+  searchParams.append('hideExplorer', Number(hideExplorer).toString());
+  searchParams.append('hideNavigation', Number(hideNavigation).toString());
+  if (terminal) {
+    searchParams.append('terminal', terminal);
+  }
+  if (initialPath){
+    searchParams.append('terminal', initialPath);
+  }
+  searchParams.append('theme', isDark ? 'dark' : 'light');
+
+  return `${url}?${searchParams.toString()}`
+}

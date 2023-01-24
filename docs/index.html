@@ -1,7 +1,10 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>진리의 배 조선소</title><meta name="description" content="탐정토끼가 만드는 진리의 배 블로그" data-svelte="svelte-1gryd82"><link href="https:/twinstae.github.io/" rel="canonical" data-svelte="svelte-1gryd82"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-5h1kv4"><script data-svelte="svelte-5h1kv4">setTimeout(() => {
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>진리의 배 조선소</title><meta name="description" content="탐정토끼가 만드는 진리의 배 블로그" data-svelte="svelte-1gryd82"><link href="https:/twinstae.github.io/" rel="canonical" data-svelte="svelte-1gryd82"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
       const codes = document.getElementsByTagName('pre');
 
       for (const code of codes) {
+        if (code.parentElement.className.includes('codejar-wrap')){
+          continue;
+        }
         code.addEventListener('dblclick', function (e) {
           navigator.clipboard.writeText(code.innerText).then(() => {
             alert('코드를 클립보드에 복사했습니다.');
@@ -9,12 +12,12 @@
         });
       }
     }, 500);
-  </script><script data-svelte="svelte-5h1kv4">let is_dark = localStorage.getItem('dark') == 'true';
+  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
     document.getElementsByTagName('html')[0].className = is_dark
       ? 'dark'
       : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/BlogList.d78cd00b.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.ebd650e5.js" as="script"><link rel="prefetch" href="/_elderjs/props/ejs--2085639884.json" as="fetch"><link rel="stylesheet" href="/_elderjs/assets/svelte-8bb49559.css" media="all" /><style></style></head><body class="home">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-cvzSzqvcVJ"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="prefetch" href="/_elderjs/svelte/components/BlogList.3ba2fa8e.js" as="script"><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="prefetch" href="/_elderjs/props/ejs--992741815.json" as="fetch"><link rel="stylesheet" href="/_elderjs/assets/svelte-d1a5e32f.css" media="all" /><style></style></head><body class="home">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-pxpyMdMzpC"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -36,7 +39,14 @@
   <p>코칭이나 강의 공동제작, 채용에 관심 있으시면<a target="_blank" href="./lec"><span class="badge primary">삶을 풍요롭게 하는 코칭</span></a> 페이지를 참고해주세요.
   </p></section>
 
-<section class="blog"><div class="bloglist-component" id="bloglist-ejs-vMxRVsLRWt"><ul class="entries svelte-3diyp8"><li class="blog-teaser svelte-1s3t7ol"><a href="/composable/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">합성으로 연결되는 함수형과 객체지향
+<section class="blog"><div class="bloglist-component" id="bloglist-ejs-NJXMSQWQmp"><ul class="entries svelte-3diyp8"><li class="blog-teaser svelte-1s3t7ol"><a href="/map-of-frontend-state-management-1/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">프런트엔드 상태 관리의 지도 - (1) 상태란 무엇인가
+        </h3>
+      <span class="date-badge svelte-1s3t7ol">2023년 1월 4일 오후 7:20</span>
+      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#프런트엔드        
+          </li><li class="hashtag svelte-1s3t7ol">#상태        
+          </li><li class="hashtag svelte-1s3t7ol">#지도        
+          </li></ul>
+      <p class="excerpt svelte-1s3t7ol">상태관리 서브웨이 안내서. 상태는 리액트의 useState도 리덕스도 아닙니다. 상태는 변하는 모든 것들입니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/composable/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">합성으로 연결되는 함수형과 객체지향
         </h3>
       <span class="date-badge svelte-1s3t7ol">2022년 10월 1일 오전 9:37</span>
       <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#객체지향        
@@ -150,17 +160,7 @@
           </li><li class="hashtag svelte-1s3t7ol">#저작권        
           </li><li class="hashtag svelte-1s3t7ol">#파이썬        
           </li></ul>
-      <p class="excerpt svelte-1s3t7ol">아이즈원 프라이빗 메일을 백업하고 보존하기 위해 팬 개발자들은 여러 프로그램을 만들고 발전시켜왔습니다. 자발적으로 만들어진 오픈소스? 생태계의 한 사례로서 그 계보를 기록해보려 합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/front-map-by-job-posting/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">채용공고로 그려보는 웹 프런트엔드의 지도
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 8월 13일 오전 11:03</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol"></p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/understanding-simple-server-network/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">써보면서 배우는 HTTP 서버와 네트워크
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 8월 12일 오후 7:28</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">0.0.0.0 은 무슨 뜻일까요? IP부터 CORS, method와 status 까지... 면접 질문이 아닙니다. 실제로 필요한 HTTP 네트워크에 대한 지식을 간단한 HTTP 서버를 만들어보며 배워봅시다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/daily-review-guide/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">일일회고 가이드
+      <p class="excerpt svelte-1s3t7ol">아이즈원 프라이빗 메일을 백업하고 보존하기 위해 팬 개발자들은 여러 프로그램을 만들고 발전시켜왔습니다. 자발적으로 만들어진 오픈소스? 생태계의 한 사례로서 그 계보를 기록해보려 합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/daily-review-guide/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">일일회고 가이드
         </h3>
       <span class="date-badge svelte-1s3t7ol">2021년 8월 12일 오전 9:44</span>
       <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#회고        
@@ -173,131 +173,7 @@
       <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#초고        
           </li><li class="hashtag svelte-1s3t7ol">#이야기        
           </li></ul>
-      <p class="excerpt svelte-1s3t7ol">제대로 된 로봇을 코딩하고 싶은 게 시작이었는데. 어쩌다 여기까지 왔는지 이야기해보려 합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/string-escape/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">문자열 escape, format, injection attack
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 17일 오후 12:38</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#문자열        
-          </li><li class="hashtag svelte-1s3t7ol">#escape        
-          </li><li class="hashtag svelte-1s3t7ol">#format        
-          </li><li class="hashtag svelte-1s3t7ol">#injection attack        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">SQL이나 HTML, JSON도 모두 문자열이죠. 코드를 문자열로 만들 때의 편리함과 취약점에 대해 알아봅니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/string-immutable/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">문자열은 왜 불변인가?
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 16일 오후 6:32</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#문자열        
-          </li><li class="hashtag svelte-1s3t7ol">#불변        
-          </li><li class="hashtag svelte-1s3t7ol">#함수형        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">많은 언어에서 문자열은 불변입니다. 불변 자료형은 단점도 있고, 함수형 언어에서나 많이 쓰이는데. 문자열은 어쩌다 불변 객체가 표준이 되었을까요?</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/string-encoding/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">문자, 문자열, 한글 인코딩
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 16일 오후 6:22</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#std        
-          </li><li class="hashtag svelte-1s3t7ol">#문자열        
-          </li><li class="hashtag svelte-1s3t7ol">#인코딩        
-          </li><li class="hashtag svelte-1s3t7ol">#한글        
-          </li><li class="hashtag svelte-1s3t7ol">#유니코드        
-          </li><li class="hashtag svelte-1s3t7ol">#UTF-8        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">한글을 어떻게 컴퓨터에 0101로 저장할 수 있을까요? UTF-8 이 있기까지 인코딩의 역사에 대해 이야기합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/development-environment-15minutes/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">개발환경 구축 지도
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 14일 오전 10:11</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#개발환경        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/persistence-layer/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">영속성 계층
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 13일 오후 7:44</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#DDD        
-          </li><li class="hashtag svelte-1s3t7ol">#계층형 아키텍처        
-          </li><li class="hashtag svelte-1s3t7ol">#영속성        
-          </li><li class="hashtag svelte-1s3t7ol">#파일        
-          </li><li class="hashtag svelte-1s3t7ol">#데이터베이스        
-          </li><li class="hashtag svelte-1s3t7ol">#레포지토리 패턴        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">영속성 계층은 프로그램의 상태와 데이터를 관리, 저장, 복원합니다. 파일부터 데이터베이스, DDD의 레포지토리 패턴도 소개합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/api-layer/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">웹 인터페이스 계층
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 13일 오후 6:30</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#DDD        
-          </li><li class="hashtag svelte-1s3t7ol">#계층형 아키텍처        
-          </li><li class="hashtag svelte-1s3t7ol">#API        
-          </li><li class="hashtag svelte-1s3t7ol">#REST        
-          </li><li class="hashtag svelte-1s3t7ol">#gRPC        
-          </li><li class="hashtag svelte-1s3t7ol">#GraphQL        
-          </li><li class="hashtag svelte-1s3t7ol">#WebSocket        
-          </li><li class="hashtag svelte-1s3t7ol">#PubSub        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">REST, gRPC, GraphQL, Socket, PubSub 등등... API 계층은 외부에서 들어온 요청을 작업으로 변환하고, 결과를 응답으로 변환하고 전달합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/python-async-db/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">파이썬 비동기 DB 비교 - 1. 큰 그림
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 13일 오전 11:23</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#비동기        
-          </li><li class="hashtag svelte-1s3t7ol">#파이썬        
-          </li><li class="hashtag svelte-1s3t7ol">#데이터베이스        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">파이썬에서 비동기 DB를 SQLDriver, ORM, NoSQL까지 다양한 방법으로 구현해보고 비교해보려 합니다. 큰 그림을 그려보면서 시작합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/what-is-asynchronous/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">비동기(asynchronous)
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 13일 오전 11:22</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#비동기        
-          </li><li class="hashtag svelte-1s3t7ol">#동시성        
-          </li><li class="hashtag svelte-1s3t7ol">#병렬성        
-          </li><li class="hashtag svelte-1s3t7ol">#Blocking        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">비동기는 DB나 네트워크 요청 등을 차단 없이 처리할 수 있습니다. 개념을 설명하고, 흔한 오해를 풀어봅니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/hljs-elder-blog/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">shiki로 elder.js 코드블럭 문법 강조하기
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 11일 오후 1:27</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#Elder.js        
-          </li><li class="hashtag svelte-1s3t7ol">#Blog        
-          </li><li class="hashtag svelte-1s3t7ol">#syntax highlighting        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">Elder.js 기본 템플릿에 내장된 shiki를 이용해서 코드블럭 문법 강조(syntax highlight)를 해봅시다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/category-for-functional/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">함수형 프로그래밍을 위한 카테고리 이론
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 10일 오후 7:03</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#함수형        
-          </li><li class="hashtag svelte-1s3t7ol">#카테고리 이론        
-          </li><li class="hashtag svelte-1s3t7ol">#katex        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">수학까지 해야하나? 함수형 프로그래밍의 근간이 되는 카테고리 이론과 학습 자료를 소개합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/string-std/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">문자열 String std 파고들기
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 9일 오전 12:26</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#std        
-          </li><li class="hashtag svelte-1s3t7ol">#문자열        
-          </li><li class="hashtag svelte-1s3t7ol">#표준 라이브러리        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">문자열은 대충 생각하면 문자의 배열이지만, 실제로는 더 복잡합니다. 문자열을 0101 이진수로 저장하는 방법. 유니코드, UTF-8와 같은 인코딩에 대해 알아봅니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/brief-history-of-web-front/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">웹 프런트 엔드의 간략한 역사
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 8일 오후 4:30</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#front-end        
-          </li><li class="hashtag svelte-1s3t7ol">#CSR        
-          </li><li class="hashtag svelte-1s3t7ol">#SPA        
-          </li><li class="hashtag svelte-1s3t7ol">#SSR        
-          </li><li class="hashtag svelte-1s3t7ol">#JAM Stack        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/what-is-trade-off/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">Trade Off 트레이드 오프
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 8일 오후 4:20</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#개념어        
-          </li><li class="hashtag svelte-1s3t7ol">#Trade Off        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">Trade Off란 교환 관계에 있다는 뜻이다. 즉 어떤 언어나 기술을 선택했을 때 얻는 게 있으면, 잃는 것도 있다는 뜻으로 쓴다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/customize-elder-blog/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">Elder 블로그 커스터마이징 하기
-        🚧</h3>
-      <span class="date-badge svelte-1s3t7ol">2021년 7월 8일 오후 2:01</span>
-      <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#작성 중        
-          </li><li class="hashtag svelte-1s3t7ol">#Svelte        
-          </li><li class="hashtag svelte-1s3t7ol">#Elder.js        
-          </li><li class="hashtag svelte-1s3t7ol">#Blog        
-          </li></ul>
-      <p class="excerpt svelte-1s3t7ol">Elder 기본 템플릿에 웹 폰트, 날짜 순 정렬, tooltip 같은 기능들을 추가해봅니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/svelte-elder-create-blog/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">Svelte Elder.js 블로그 만들기
+      <p class="excerpt svelte-1s3t7ol">제대로 된 로봇을 코딩하고 싶은 게 시작이었는데. 어쩌다 여기까지 왔는지 이야기해보려 합니다.</p></div></a></li><li class="blog-teaser svelte-1s3t7ol"><a href="/svelte-elder-create-blog/" class="selected"><div class="entry card svelte-1s3t7ol"><h3 class="svelte-1s3t7ol">Svelte Elder.js 블로그 만들기
         </h3>
       <span class="date-badge svelte-1s3t7ol">2021년 7월 8일 오전 12:01</span>
       <ul class="tag-list svelte-1s3t7ol" style="padding: 0;"><li class="hashtag svelte-1s3t7ol">#Svelte        
@@ -352,18 +228,10 @@ const $$ejs = (par,eager)=>{
       });
     });
   };
-  const IO = ('IntersectionObserver' in window) ? new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        observer.unobserve(entry.target);
-        const selected = par[entry.target.id];
-        initComponent(entry.target,selected)
-      }
-    });
-  }, { rootMargin: "200px",threshold: 0}) : undefined;
+  
   Object.keys(par).forEach(k => {
     const el = document.getElementById(k);
-    if (!eager && IO) {
+    if (false) {
         IO.observe(el);
     } else {
         initComponent(el,par[k]);
@@ -371,9 +239,7 @@ const $$ejs = (par,eager)=>{
   });
 };
 
-      $$ejs({'bloglist-ejs-vMxRVsLRWt' : { 'component' : 'BlogList.d78cd00b.js', 'props' : 'ejs--2085639884.json'},},true)
-      requestIdleCallback(function(){
-        $$ejs({'darkcheckbox-ejs-cvzSzqvcVJ' : { 'component' : 'DarkCheckBox.ebd650e5.js', 'props' : {}},})}, {timeout: 1000});</script>
+      $$ejs({'bloglist-ejs-NJXMSQWQmp' : { 'component' : 'BlogList.3ba2fa8e.js', 'props' : 'ejs--992741815.json'},'darkcheckbox-ejs-pxpyMdMzpC' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
     
     
     </body></html>
