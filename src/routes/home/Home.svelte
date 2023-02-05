@@ -45,11 +45,6 @@
     작은 배를 만드는 조선소로서, 이 블로그를 만들었습니다.
   </p>
 
-  <p>
-    코칭이나 강의 공동제작, 채용에 관심 있으시면<a target="_blank" href="./lec"
-      ><span class="badge primary">삶을 풍요롭게 하는 코칭</span></a
-    > 페이지를 참고해주세요.
-  </p>
 </section>
 
 <section class="blog">

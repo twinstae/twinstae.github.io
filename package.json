@@ -102,5 +102,5 @@
     "url": "https://github.com/Elderjs/template/issues"
   },
   "homepage": "https://github.com/Elderjs/template#readme",
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.3.1"
 }
