@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>에러, 찾지 말고 만드세요!</title><meta name="description" content="에러의 원인을 찾는 건 어렵지만, 직접 만들어 보는 건 쉽습니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/component-testing-a11y-context-copy/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/component-testing-a11y-context-copy/" data-svelte="svelte-18tnbae"><meta property="og:title" content="에러, 찾지 말고 만드세요!" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="에러의 원인을 찾는 건 어렵지만, 직접 만들어 보는 건 쉽습니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/component-testing-a11y-context-copy/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="에러, 찾지 말고 만드세요!" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="에러의 원인을 찾는 건 어렵지만, 직접 만들어 보는 건 쉽습니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
+      const codes = document.getElementsByTagName('pre');
+
+      for (const code of codes) {
+        if (code.parentElement.className.includes('codejar-wrap')){
+          continue;
+        }
+        code.addEventListener('dblclick', function (e) {
+          navigator.clipboard.writeText(code.innerText).then(() => {
+            alert('코드를 클립보드에 복사했습니다.');
+          });
+        });
+      }
+    }, 500);
+  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
+    document.getElementsByTagName('html')[0].className = is_dark
+      ? 'dark'
+      : 'light';
+  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-f20c2180.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-RWRsqKmjFC"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
+  <span class="svelte-ixwbnm"></span>
+</label></div>
+  <a href="/" aria-current="false">진리의 배 조선소 </a>
+  </nav>
+
+<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
+
+<a href="/">← Home</a>
+
+<div class="title svelte-7s3agc"><h1 id="title-heading">에러, 찾지 말고 만드세요!</h1>
+  <div><span class="hashtag">#학습
+        </span><span class="hashtag">#에러
+        </span><span class="hashtag">#테스트
+        </span></div>
+  <small>By 탐정토끼(Taehee Kim)</small></div>
+
+<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
+
+<nav class="svelte-s59jxg"><div><span>목차</span>
+    <ol><li style="font-size: 1.25rem;"><a href="#요약" style="color: #868e96;">요약</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#에러-찾기는-왜-힘들까" style="color: #868e96;">에러 찾기는 왜 힘들까?</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#오타는-멍청한-실수가-아닙니다" style="color: #868e96;">오타는 멍청한 실수가 아닙니다.</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#책-강의-블로그를-똑같이-따라-했는데-안-돼요" style="color: #868e96;">책, 강의, 블로그를 똑같이 따라 했는데 안 돼요!</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#에러를-내보면서-실험을-하자" style="color: #868e96;">에러를 내보면서 실험을 하자</a>
+        <ol>
+        </ol>
+      </li><li style="font-size: 1.25rem;"><a href="#실험-제안" style="color: #868e96;">실험 제안</a>
+        <ol>
+        </ol>
+      </li></ol></div>
+</nav>
+
+<!-- HTML_TAG_START --><h2 id="요약">요약</h2>
+<ul>
+<li>책이나 강의에서는 잘 되는 경우만 알려주지만, 자주 발생하는 에러, 실수를 해결하는 것도 중요한 능력입니다.</li>
+<li>새로운 걸 공부하는 일부러 오타를 내거나, 빼먹거나, 바꿔보면서 에러를 내는 연습을 해봅시다.</li>
+<li>어떤 경우에 어떤 에러가 발생하는지 보고, 생각하고 찾아보면 많은 걸 배울 수 있습니다.</li>
+</ul>
+<h2 id="에러-찾기는-왜-힘들까">에러 찾기는 왜 힘들까?</h2>
+<p>한 <a href="https://www.niss.org/sites/default/files/technicalreports/tr81.pdf">98년도 연구</a>에 따르면, 개발자들은 21%의 시간을 디버깅에 쓴다고도 합니다.</p>
+<p>체계적 훈련을 거친 고수들은 금방 에러를 찾아내지만. 초보자들은 그렇지 않습니다. 에러 하나 때문에 3일 넘게 고민하시는 경우도 많이 보았습니다. 저도 에러 하나 때문에 1주일 동안 삽질한 기억도 있습니다.</p>
+<p>왜 에러 찾기는 어려울까요? 그 이유 중 하나는 잘못된 관점에 고착되기 때문입니다. 전에 <a href="https://twinstae.github.io/fixation-to-insight/">고착에서 빠져나와 창의적 통찰을 얻는 법</a>이라는 글을 쓰면서, 이런 창의적 절망을 탈출하는 법을 다뤘습니다.</p>
+<p>하지만 이번에는 다른 방향으로 이야기를 해보려 합니다. 바로 잘 되는 경우만 배웠지, 실수하고 잘못되는 경우에 대해서는 배우지 못해서 그렇다는 것입니다.</p>
+<h2 id="오타는-멍청한-실수가-아닙니다">오타는 멍청한 실수가 아닙니다.</h2>
+<p>코칭을 하다보면, 디버깅을 해드리는 일이 많습니다. 3일 동안 고생한 문제를 "15분 안에 원인을 찾겠다"고 호언장담을 하고, 해결해드린 적이 여러 번입니다.</p>
+<p>왜 그렇냐면, 보통 에러의 원인이 그렇게 거창하지 않기 때문입니다.</p>
+<ul>
+<li>문자열이나 변수명에 오타를 냈다거나.
+<ul>
+<li><code>response</code>를 <code>respose</code> 로 쓴다거나. <code>form</code>이랑 <code>from</code>을 헷갈린다거나.</li>
+<li><code>user</code>를 <code>uesr</code>으로, <code>name</code>을 <code>nama</code>로</li>
+<li><code>'http://localhost:3000/test'</code>인데 - <code>'http://localhost:3000//test'</code>로 된다거나.</li>
+</ul>
+</li>
+<li><code>number</code> 타입 자리에 <code>string</code> type인 값을 넣었다거나. e.target.value 같은.</li>
+<li>return을 빼먹었다거나. <code>(v) => (v*2)</code>로 쓸 것을 <code>() => {v*2}</code> 로 써서 return이 안 된다거나.</li>
+<li>버전 실수. 책에서는 6버전을 쓰는데, 나는 최신 7버전을 설치했다거나.
+<ul>
+<li>(책에 6버전을 설치하라고 굵은 글씨에 빨간색으로 적혀 있는데도!)</li>
+</ul>
+</li>
+<li>괄호를 엉뚱한 곳에서 닫았다거나.</li>
+<li>HMR이나 서버 재시작이 제대로 이뤄지지 않는데, 착각하고 있다거나.
+<ul>
+<li>개발 서버가 아니라, 배포 서버에 접속한 상태에서 코드 변경 사항이 왜 반영되지 않지? 한다거나.</li>
+</ul>
+</li>
+</ul>
+<p>문제는, 똑같이 실수라고 해도 에러의 종류는 매번 다르다는 것입니다.</p>
+<ul>
+<li>url의 path를 잘못 치면 <code>404 NOT FOUND</code></li>
+<li>변수명에 오타를 내거나, import를 빼먹으면 <code>Uncaught ReferenceError: a is not defined</code></li>
+<li>리액트에서 컴포넌트의 return 문을 빼먹으면 화면에 컴포넌트가 보이지 않습니다.</li>
+<li>최신버전에서 구버전의 함수를 import하려 하면...
+<ul>
+<li><code>Module '"react-router-dom"' has no exported member 'Switch'</code> 처럼 에러가 뜹니다.</li>
+</ul>
+</li>
+<li>모듈을 import하는 경로를 잘못 쓰면
+<ul>
+<li><code>Cannot find module 'src/createDataList' or its corresponding type declarations.</code></li>
+</ul>
+</li>
+<li>테스팅 라이브러리에서 Element를 찾지 못하면
+<ul>
+<li><code>Unable to find an accessible element with the role "button" and name "어둠"</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="책-강의-블로그를-똑같이-따라-했는데-안-돼요">책, 강의, 블로그를 똑같이 따라 했는데 안 돼요!</h2>
+<p>이런 에러를 처음보면 'module'이나 'export', 'reference', '404' 같은 단어들에 주눅 들고 겁을 먹기 쉽습니다.</p>
+<p>코칭을 하다보면 "똑같이 따라했는데 안 된다!"고 말하는 분이 많습니다. 최선을 다해 노력했다고 입증하지 않으면 누가 혼을 내는 모양입니다. (정말 그렇긴 하죠) 전에 보니 "제발 에러 메세지 좀 읽으세요" 훈계하는 영상을 올리신 분도 보았어요.</p>
+<p>책이나 강의에서는 잘 되는 경우만 보여줍니다. 강사나 저자는 척척 문제를 해결하고. 흔히 하는 실수나 오개념은 넘어가고는 합니다.</p>
+<p>그러다보니 초보자는 똑같이 따라한다고 해도 잘 되지 않습니다. 오타를 내고, 해야하는 걸 빼먹고, 에러 메세지를 보면 겁부터 먹고 잘 읽지 않는 것은... 게을러서도 멍청해서도 아닙니다. 아주 자연스러운 반응입니다.</p>
+<p>에러에 대처하는 법을 배운 적이 없으니까요!</p>
+<p>그러면 에러가 났을 때 검색해보는 것보다 나은 방법이 없을까요?</p>
+<h2 id="에러를-내보면서-실험을-하자">에러를 내보면서 실험을 하자</h2>
+<p>제가 예전에 데이터 분석을 공부하던 시절에, 파이썬 책들을 여럿 보았습니다. 그 중에 [Think Python]이라는 책에서는, 각 장이 끝날 때마다 디버깅 연습을 시켰습니다.</p>
+<p>예를 들어 변수 선언하는 법을 처음 배웠다고 해봅시다. 초보자는 변수명에 띄어쓰기를 넣거나, 문자열을 따옴표로 감싸주는 걸 까먹고는 합니다. <code>bad name = Hello world</code> 처럼요. 이러면 python에서는 <code>SyntaxError: invalid syntax</code>가 뜹니다. javascript에서는 어떨까요?</p>
+<p><code>Uncaught SyntaxError: Unexpected identifier 'name'</code> 라고 더 자세히 뜨네요. 변수나 함수의 이름을 말하는 식별자(identifier) 개념을 모르면 왜 <code>name</code>이 unexpected라고 하는지 잘 모를 겁니다. 책에서는 친절하게 띄어쓰기를 넣으면 두 개를 별도의 변수로 취급한다고 설명해줍니다. <code>bad</code>라는 이름과 <code>name</code>이라는 이름이 따로 있는 거라고 생각하는 거죠.</p>
+<p>이렇게 디버깅을 하다 보면 자연스럽게, 그 언어의 중요한 개념을 더 깊이 있게 알게 됩니다. 이해하기도 쉽습니다. 원인을 초래한 게 나 자신이니까요. 물론 책이나 강의에서 이렇게 설명해준다면 더 좋겠지요.</p>
+<p>또 [Python과 Pygame으로 게임 만들기]이라는 책도 봤었는데요. 이 책은 예시 코드 뿐만 아니라, 에러가 있는 코드도 주고 버그를 찾는 연습을 시켰습니다. 그리고 두 코드의 차이를 보여주는 diff 툴을 이용해서, 예시 코드와 자신의 코드에 어떤 차이가 있는지 비교해보라고도 했지요.</p>
+<p>이런 연습은 누구랑도 할 수 있습니다. 두 명이 짝을 지어서, 일부러 에러를 심어놓고 제한 시간 동안 서로 찾아보게 하는 거지요. (너무 오래 삽질하는 걸 예방하기 위하여)</p>
+<p>자기가 한 번 구현한 코드를 지워놓고, 빠르게 다시 구현해보는 것도 방법입니다. 그 뒤에 git diff를 보면 내가 어느 부분을 다르게 구현했고 실수했는지 쉽게 알 수 있겠죠.</p>
+<p><a href="https://loilo.github.io/diffr/">diffr</a>처럼 온라인에서 사용하실 수 있는 diff 도구도 있습니다.</p>
+<h2 id="실험-제안">실험 제안</h2>
+<p>에러 내보기 실험은, 여러모로 좋은 학습 도구입니다. 특히 어떤 문법이나 프레임워크라도 배우고 나면 실수할 가능성을 생각해보세요! 구체적으로 상상이 안 가시는 분들을 위해, 뭉텅이로 아이디어를 늘어놓아 볼게요.</p>
+<ul>
+<li>곳곳에 <code>console.log</code>나 <code>print</code>를 찍어놓고, 망가트려보세요.</li>
+<li><code>[]{}()</code> 같은 괄호를 만나면, 다른 괄호를 치면 무슨 일이 일어나는지 살펴보세요.</li>
+<li>괄호를 두 번 쳐보거나, 지우거나, 혼합해보세요.
+<ul>
+<li><code>[1,2,3,4].map((n) => n*n)</code></li>
+<li><code>[1,2,3,4].map((n) => {square: n*n})</code></li>
+<li><code>[1,2,3,4].map((n) => ({square: n*n}))</code></li>
+</ul>
+</li>
+<li>브라우저에서 F12를 치면 나오는 콘솔에 이것저것 적어보세요</li>
+<li>글자를 지웠을 때 syntax highlighting, 그러니까 코드의 색이 어떻게 변하는지 살펴보세요.</li>
+<li>헷갈리는 다른 값을 넣어보세요.
+<ul>
+<li>"authorId" 자리에 "userId"를 넣는다거나.</li>
+<li>똑같은 이름을 가진 다른 라이브러리의 함수를 잘못 import해보세요.</li>
+</ul>
+</li>
+<li>순서나 대소문자를 바꿔보세요. <code>domain.User.nick</code>을 <code>Domain.User.nick</code>으로 쓴다거나.</li>
+<li>매개변수 개수를 일부러 틀려보세요.</li>
+<li>코드를 망가트렸는데, type도 test도 runtime error도 안 나고 그저 이상한 값만 나오는 경우를 만나 보세요!
+<ul>
+<li>이런 로직 에러를 미리 예방할 방법을 찾아보세요</li>
+<li>예를 들어 typescript를 쓴다면 <code>literal union</code>이나 <code>string template</code>을 알아보세요.</li>
+<li><a href="https://github.com/alexreardon/tiny-invariant">tiny-invariant</a>나 assert, 단언에 대해 알아보세요.</li>
+</ul>
+</li>
+<li>typescript를 사용한다면, type을 배신하는 값을 받아보세요.
+<ul>
+<li>예를 들어 as 쓰는 곳에 잘못된 타입의 값을 넣어보세요.</li>
+<li>zod나 ajv, typia 같은 도구를 알아보세요</li>
+</ul>
+</li>
+<li>자동화 도구도 좋지만 [탐험적 테스팅] 같은 책을 보면서, 체계적으로 수동 테스트 하는 방법을 배워보세요.</li>
+</ul>
+<!-- HTML_TAG_END -->
+
+<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
+</div><!-- HTML_TAG_END --></article>
+
+<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
+  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
+  <br>
+  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
+  커스텀했습니다.
+  <br>
+  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
+  <br>
+  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
+  <br>
+  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
+</footer>
+    
+    <script type="module">
+            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
+      
+const $$ejs = (par,eager)=>{
+  const $ejs = function(_ejs){return _ejs};
+  const prefix = '/_elderjs';
+  const initComponent = (target, component) => {
+
+    if(!!CustomEvent && target.id){
+      const split = target.id.split('-ejs-');
+      document.dispatchEvent(new CustomEvent('ejs', {
+        detail: {
+          category: 'elderjs',
+          action: 'hydrate',
+          target: target,
+          label: split[0] || target.id
+        }
+      }));
+    }
+
+    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
+    const compProm = import(prefix + '/svelte/components/' + component.component);
+
+    Promise.all([compProm,propProm]).then(([comp,props])=>{
+      new comp.default({ 
+        target: target,
+        props: props,
+        hydrate: true
+      });
+    });
+  };
+  
+  Object.keys(par).forEach(k => {
+    const el = document.getElementById(k);
+    if (false) {
+        IO.observe(el);
+    } else {
+        initComponent(el,par[k]);
+    }
+  });
+};
+
+      $$ejs({'darkcheckbox-ejs-RWRsqKmjFC' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
+    
+    
+    </body></html>

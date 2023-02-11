@@ -16,8 +16,8 @@
     document.getElementsByTagName('html')[0].className = is_dark
       ? 'dark'
       : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-68e4ea6a.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-MkNpbzqLDw"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
+  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-f20c2180.css" media="all" /><style></style></head><body class="blog">
+<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-lnJFTrGrGC"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
 <label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
   <span class="svelte-ixwbnm"></span>
 </label></div>
@@ -135,8 +135,8 @@
 <span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">form</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
 <p>일단 이 정도면 될 것 같습니다. 이제 로직을 하나씩 테스트하면서, 상태 관리의 고통을 마주해보겠습니다.</p>
 <h2 id="you-might-not-need-reactive-state">You might not need Reactive State</h2>
-<p>브라우저가 지원하는 내장 기능을 사용하면 복잡한 프레임워크나 상태 없이도 쉽게 form 상태를 처리할 수 있는 경우가 많습니다. 이는 React로 만든 앱에서도 사용할 수 있고요. Remix나 Sveltekit 등에서는 이와 유사한 기능을 SPA와 통합해서 사용할 수 있게 지원해주기도 합니다.</p>
 <p>회사에서 기술 과제를 하다 보면 바닐라 js로 앱을 만들라는 과제를 주곤 합니다. "바닐라"라는 표현을 처음 듣는 분도 계실텐데. 아이스크림의 바닐라맛처럼 프레임워크나 라이브러리 없이 순수한 js만 사용한다고 해서 바닐라 js라고 합니다.</p>
+<p>브라우저가 지원하는 내장 기능을 사용하면 복잡한 프레임워크 상태 없이도 쉽게 form 상태를 처리할 수 있는 경우가 많습니다. 왜냐면 dom 자체도 상태를 가지고 있으니까요. 이는 React로 만든 앱에서도 사용할 수 있지만, 보안 등의 이유로 js를 꺼놓은 사이트에서도 작동합니다. Remix나 Sveltekit 등의 프레임워크에서는 브라우저의 form 기능을 점진적 향상해서 사용하도록 권장하고 있기도 합니다.</p>
 <p>Web 에는 사실 UI를 만드는데 필요한 API들이 이미 다 있습니다. HTML은 대표적인 선언형 언어라서, 우리의 요구사항을 그대로 옮길 수 있어요.</p>
 <pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">form</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">id</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">signup-form</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
 <span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
@@ -262,7 +262,7 @@ const $$ejs = (par,eager)=>{
   });
 };
 
-      $$ejs({'darkcheckbox-ejs-MkNpbzqLDw' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
+      $$ejs({'darkcheckbox-ejs-lnJFTrGrGC' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
     
     
     </body></html>
