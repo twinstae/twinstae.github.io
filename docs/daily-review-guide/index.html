@@ -1,60 +1,14 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>일일회고 가이드</title><meta name="description" content="일일회고는 매일 구체적인 학습 목표를 세우고, &quot;나는 어떤 방식으로 공부하는지? 나는 뭘 알고 뭘 모르는지? 지속적으로 점검하면서 알아차리고 개선&quot;해나갈 수 있게 도와줍니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/daily-review-guide/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/daily-review-guide/" data-svelte="svelte-18tnbae"><meta property="og:title" content="일일회고 가이드" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="일일회고는 매일 구체적인 학습 목표를 세우고, &quot;나는 어떤 방식으로 공부하는지? 나는 뭘 알고 뭘 모르는지? 지속적으로 점검하면서 알아차리고 개선&quot;해나갈 수 있게 도와줍니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/daily-review-guide/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="일일회고 가이드" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="일일회고는 매일 구체적인 학습 목표를 세우고, &quot;나는 어떤 방식으로 공부하는지? 나는 뭘 알고 뭘 모르는지? 지속적으로 점검하면서 알아차리고 개선&quot;해나갈 수 있게 도와줍니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
-      const codes = document.getElementsByTagName('pre');
-
-      for (const code of codes) {
-        if (code.parentElement.className.includes('codejar-wrap')){
-          continue;
+<!DOCTYPE html><html lang="ko-KR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>일일회고 가이드 | 진리의 배 조선소</title><meta name="description" content="일일회고는 매일 구체적인 학습 목표를 세우고, &quot;나는 어떤 방식으로 공부하는지? 나는 뭘 알고 뭘 모르는지? 지속적으로 점검하면서 알아차리고 개선&quot;해나갈 수 있게 도와줍니다."><link rel="canonical" href="https://twinstae.github.io/daily-review-guide/"><link rel="icon" type="image/jpeg" href="/TamjungRabbitProfile.jpg"><meta property="og:site_name" content="진리의 배 조선소"><meta property="og:url" content="https://twinstae.github.io/daily-review-guide/"><meta property="og:title" content="일일회고 가이드"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><meta property="og:description" content="일일회고는 매일 구체적인 학습 목표를 세우고, &quot;나는 어떤 방식으로 공부하는지? 나는 뭘 알고 뭘 모르는지? 지속적으로 점검하면서 알아차리고 개선&quot;해나갈 수 있게 도와줍니다."><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://twinstae.github.io/daily-review-guide/"><meta name="twitter:title" content="일일회고 가이드"><meta name="twitter:description" content="일일회고는 매일 구체적인 학습 목표를 세우고, &quot;나는 어떤 방식으로 공부하는지? 나는 뭘 알고 뭘 모르는지? 지속적으로 점검하면서 알아차리고 개선&quot;해나갈 수 있게 도와줍니다."><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"><script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
         }
-        code.addEventListener('dblclick', function (e) {
-          navigator.clipboard.writeText(code.innerText).then(() => {
-            alert('코드를 클립보드에 복사했습니다.');
-          });
-        });
-      }
-    }, 500);
-  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
-    document.getElementsByTagName('html')[0].className = is_dark
-      ? 'dark'
-      : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-968ab9b4.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-GclYXMFftF"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
-<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
-  <span class="svelte-ixwbnm"></span>
-</label></div>
-  <a href="/" aria-current="false">진리의 배 조선소 </a>
-  </nav>
-
-<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
-
-<a href="/">← Home</a>
-
-<div class="title svelte-7s3agc"><h1 id="title-heading">일일회고 가이드</h1>
-  <div><span class="hashtag">#회고
-        </span><span class="hashtag">#메타인지
-        </span><span class="hashtag">#애자일
-        </span></div>
-  <small>By 탐정토끼(Taehee Kim)</small></div>
-
-<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
-
-<nav class="svelte-s59jxg"><div><span>목차</span>
-    <ol><li style="font-size: 1.25rem;"><a href="#도전적이고-구체적인-목표를-세워보자" style="color: #868e96;">도전적이고 구체적인 목표를 세워보자</a>
-        <ol><li style="font-size: 1rem;"><a href="#내가-모르는-부분-찾기" style="color: #868e96;">내가 모르는 부분 찾기</a>
-            </li><li style="font-size: 1rem;"><a href="#테스트할-수-있는-목표로-만들기" style="color: #868e96;">테스트할 수 있는 목표로 만들기</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#실제로-해보면서-기록하자" style="color: #868e96;">실제로 해보면서 기록하자</a>
-        <ol><li style="font-size: 1rem;"><a href="#궁금한-것들을-기록하자" style="color: #868e96;">궁금한 것들을 기록하자</a>
-            </li><li style="font-size: 1rem;"><a href="#어려웠던-부분을-기록하자" style="color: #868e96;">어려웠던 부분을 기록하자</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#개선하고-실험하고-도전하자" style="color: #868e96;">개선하고, 실험하고, 도전하자!</a>
-        <ol>
-        </ol>
-      </li></ol></div>
-</nav>
-
-<!-- HTML_TAG_START --><p>일일회고는 다음 3가지를 적어보시면 됩니다. 간단하죠.</p>
+      })();
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.DAUUhDCw.css">
+<link rel="stylesheet" href="/_astro/_..1Q-KLuor.css"></head> <body> <nav class="top-nav"> <div class="nav-container"> <a href="/" class="nav-brand">
+🚢 진리의 배 조선소
+</a> <div class="nav-actions"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="128QCz" component-url="/_astro/DarkModeToggle.C-6mm_sq.js" component-export="default" renderer-url="/_astro/client.svelte.Vo9I5Rqb.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;DarkModeToggle&quot;,&quot;value&quot;:true}" await-children><!--[--><button type="button" class="dark-mode-toggle svelte-ckhpf5" aria-label="다크 모드로 전환" title="다크 모드"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button><!--]--><!--astro:end--></astro-island> </div> </div> </nav> <main class="main-container">  <a href="/" class="back-link" data-astro-cid-fzx4jmue>← 홈으로</a> <article class="blog-post" data-astro-cid-fzx4jmue> <header class="post-header" data-astro-cid-fzx4jmue> <h1 class="post-title" data-astro-cid-fzx4jmue>일일회고 가이드</h1> <div class="post-meta" data-astro-cid-fzx4jmue> <time datetime="Thu Aug 12 2021 09:44:35 GMT+0900 (Korean Standard Time)" data-astro-cid-fzx4jmue>2021년 8월 12일 오전 9:44</time> <span class="post-author" data-astro-cid-fzx4jmue>by 탐정토끼(Taehee Kim)</span> </div> <div class="post-tags" data-astro-cid-fzx4jmue> <span class="hashtag" data-astro-cid-fzx4jmue>#회고</span><span class="hashtag" data-astro-cid-fzx4jmue>#메타인지</span><span class="hashtag" data-astro-cid-fzx4jmue>#애자일</span> </div> </header> <nav class="toc" aria-label="목차" data-astro-cid-xvrfupwn><div class="toc-header" data-astro-cid-xvrfupwn>목차</div><ol class="toc-list" data-astro-cid-xvrfupwn><li class="toc-item" data-astro-cid-xvrfupwn><a href="#도전적이고-구체적인-목표를-세워보자" class="toc-link toc-h2" data-astro-cid-xvrfupwn>도전적이고 구체적인 목표를 세워보자</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#내가-모르는-부분-찾기" class="toc-link toc-h3" data-astro-cid-xvrfupwn>내가 모르는 부분 찾기</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#테스트할-수-있는-목표로-만들기" class="toc-link toc-h3" data-astro-cid-xvrfupwn>테스트할 수 있는 목표로 만들기</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#실제로-해보면서-기록하자" class="toc-link toc-h2" data-astro-cid-xvrfupwn>실제로 해보면서 기록하자</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#궁금한-것들을-기록하자" class="toc-link toc-h3" data-astro-cid-xvrfupwn>궁금한 것들을 기록하자</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#어려웠던-부분을-기록하자" class="toc-link toc-h3" data-astro-cid-xvrfupwn>어려웠던 부분을 기록하자</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#개선하고-실험하고-도전하자" class="toc-link toc-h2" data-astro-cid-xvrfupwn>개선하고, 실험하고, 도전하자!</a></li></ol></nav> <div class="post-content" data-astro-cid-fzx4jmue> <p>일일회고는 다음 3가지를 적어보시면 됩니다. 간단하죠.</p>
 <blockquote>
 <ol>
 <li>오늘 어디에 도전해보셨고, 무엇을 배우셨나요?</li>
@@ -67,17 +21,17 @@
 <p>아직 좀 막연하시죠? 이제 예시를 보면서 안내를 드릴게요.</p>
 <h2 id="도전적이고-구체적인-목표를-세워보자">도전적이고 구체적인 목표를 세워보자</h2>
 <p>어떤 목표를 세워야 할까요? 평소에 프로젝트를 하면서 모르거나, 궁금한 부분을 기록해두면 가장 좋습니다. 하지만 당장 아는 것도 없고 떠오르는 것도 없을 수도 있죠. 그런 때에는 채용공고들을 읽으면서, 요구하는 자격 조건들을 살펴보세요.</p>
-<p>예를 들어 프런트 개발자 공고를 보면 대부분 HTML과 CSS 등 마크업에 익숙하신 분을 찾습니다. 그러면 "오늘은 HTML을 배우자!"고 하면 될까요? 이런 목표는 좀 두루뭉술하죠. 뭘 어떻게 공부해야할지 감도 안 잡힙니다. 초보자는 "HTML은 뭘 공부해야해요?"라는 생각이 들 거고요. 또 조금 공부한 사람은 "나는 이미 HTML은 좀 아는데?"라고 자만하겠죠.</p>
+<p>예를 들어 프런트 개발자 공고를 보면 대부분 HTML과 CSS 등 마크업에 익숙하신 분을 찾습니다. 그러면 “오늘은 HTML을 배우자!”고 하면 될까요? 이런 목표는 좀 두루뭉술하죠. 뭘 어떻게 공부해야할지 감도 안 잡힙니다. 초보자는 “HTML은 뭘 공부해야해요?”라는 생각이 들 거고요. 또 조금 공부한 사람은 “나는 이미 HTML은 좀 아는데?”라고 자만하겠죠.</p>
 <h3 id="내가-모르는-부분-찾기">내가 모르는 부분 찾기</h3>
 <p>그렇다면 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN</a>이라던가, <a href="https://www.w3schools.com/html/">W3School</a>의 목차를 한 번 쭉 살펴보세요. 아니면 <a href="https://fastcampus.co.kr/dev_red_jcm">좋은 강의 커리큘럼</a>도 좋습니다. 읽다보면 모르는 단어나, 알고는 있는데 정확하게 설명해보라면 못하겠는 친구가 있을 거에요. 모르는 게 너무 많아도 괜찮습니다. 그 중에 딱 1~3개만 골라보세요.</p>
-<p>예를 들어 저는 head 안에 들어가는 meta 태그가 궁금해졌어요. 최근에 charset을 UTF-8로 안 해줘서 한글이 깨지거나... open graph 설정이 안 되서 트위터에 링크 썸네일이 안 보이거나... viewport를 잘못 설정해서 모바일에서 화면이 깨지는 등등... meta 태그를 잘 몰라서 헤맸던 적이 있었거든요. metadata가 SEO(검색엔진 최적화)에도 중요하다고 하네요. 그래서 다음 3가지 학습 자료를 정했습니다.</p>
+<p>예를 들어 저는 head 안에 들어가는 meta 태그가 궁금해졌어요. 최근에 charset을 UTF-8로 안 해줘서 한글이 깨지거나… open graph 설정이 안 되서 트위터에 링크 썸네일이 안 보이거나… viewport를 잘못 설정해서 모바일에서 화면이 깨지는 등등… meta 태그를 잘 몰라서 헤맸던 적이 있었거든요. metadata가 SEO(검색엔진 최적화)에도 중요하다고 하네요. 그래서 다음 3가지 학습 자료를 정했습니다.</p>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML">MDN : What’s in the head? Metadata in HTML</a></li>
 <li><a href="https://www.w3schools.com/html/html_head.asp">W3School: HTML - The Head Element</a></li>
 <li><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">HTML Living Standard: 4.2.5 The meta element</a></li>
 </ul>
 <h3 id="테스트할-수-있는-목표로-만들기">테스트할 수 있는 목표로 만들기</h3>
-<p>저는 더 나아가서 목표를 측정하거나, 확인할 수 있게 만드시길 권해요. 자료 5페이지 읽기나 30분 공부하기 같은 걸 말하는 게 아니라요. 내가 이 개념을 공부해서, 어떤 문제를 해결할 수 있는 "역량"을 갖췄는지 테스트해보는 겁니다.</p>
+<p>저는 더 나아가서 목표를 측정하거나, 확인할 수 있게 만드시길 권해요. 자료 5페이지 읽기나 30분 공부하기 같은 걸 말하는 게 아니라요. 내가 이 개념을 공부해서, 어떤 문제를 해결할 수 있는 “역량”을 갖췄는지 테스트해보는 겁니다.</p>
 <p>저 같은 경우에는 원래 프로젝트를 하면서 느낀 점들이 있었어요. 그래서 다음과 같이 만들어봤습니다.</p>
 <p><strong>metadata 에는 무엇이 있고, 어떤 용도인지 설명할 수 있다.</strong></p>
 <ul>
@@ -98,13 +52,13 @@
 </ul>
 <h2 id="실제로-해보면서-기록하자">실제로 해보면서 기록하자</h2>
 <h3 id="궁금한-것들을-기록하자">궁금한 것들을 기록하자</h3>
-<p>구체적으로 자료를 읽고, HTML도 만들어보면서 실습하다보면 궁금한 게 생길 겁니다. 이게 뭐지? 자료를 찾아보다보면 의문이 풀리기도 하겠지만. 보통은 모르는 게 훨씬 더 많이 생길 겁니다. 일단은 "이런 게 있구나" 정도만 알아두세요. 그리고 어디 적어두세요. 나중에 새로운 목표가 될 겁니다.</p>
+<p>구체적으로 자료를 읽고, HTML도 만들어보면서 실습하다보면 궁금한 게 생길 겁니다. 이게 뭐지? 자료를 찾아보다보면 의문이 풀리기도 하겠지만. 보통은 모르는 게 훨씬 더 많이 생길 겁니다. 일단은 “이런 게 있구나” 정도만 알아두세요. 그리고 어디 적어두세요. 나중에 새로운 목표가 될 겁니다.</p>
 <h3 id="어려웠던-부분을-기록하자">어려웠던 부분을 기록하자</h3>
 <p>한편으로는 내가 공부하는 방식, 학습 전략도 기록해볼 필요가 있습니다.</p>
 <p>예를 들어 HTML에 대한 문서나 자료를 읽는다면 어떤 것부터 하시나요? 막막하고 이해가 안 가진 않나요?</p>
-<p>무슨 소리인지 모르겠어서 일단 영상이나 실습부터 해본다면... 영상이 없을 때에는 어떻게 할까요?</p>
-<p>이런 어려움과 고통을 "원래 내가 머리가 나빠서"라던가 "아직 배경지식이 없어서" 같이 퉁치고 지나가면 안 됩니다. 생각해보면 특히 이해하기 어려운 부분이 있을 수도 있고요. 그런 친구들은 어떤 특징이 있는지 생각해보세요.</p>
-<p>예를 들어...</p>
+<p>무슨 소리인지 모르겠어서 일단 영상이나 실습부터 해본다면… 영상이 없을 때에는 어떻게 할까요?</p>
+<p>이런 어려움과 고통을 “원래 내가 머리가 나빠서”라던가 “아직 배경지식이 없어서” 같이 퉁치고 지나가면 안 됩니다. 생각해보면 특히 이해하기 어려운 부분이 있을 수도 있고요. 그런 친구들은 어떤 특징이 있는지 생각해보세요.</p>
+<p>예를 들어…</p>
 <ul>
 <li>문서가 어렵다.
 <ul>
@@ -133,68 +87,10 @@
 <li>매일 어제 배운 개념을 테스트하고 복습하면서 시작하자.</li>
 <li>자료를 무작정 읽기만 하지 말자. 중간중간에 질문을 던지고 스스로 설명해보고, 이해했는지 점검하자.</li>
 </ul>
-<p>어려움을 명확하게 파악하기만 하면, 개선 방법을 찾는 건 생각보다 쉽습니다. 하지만 새로운 방법이 잘 떠오르지 않으실 수도 있죠. ㅠㅠ 그런 때에는 저 같은 코치나 다른 사람에게 질문도 해보시고, 도움을 받아보세요. 우리는 혼자가 아니니까요. 적극적으로 질문하고 도움을 구해보세요. 그리고 누군가 도움이 필요하면 여러분도 도움을 줄 수 있게 되시면 좋겠습니다.</p>
-<!-- HTML_TAG_END -->
-
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
-</div><!-- HTML_TAG_END --></article>
-
-<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
-  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
-  커스텀했습니다.
-  <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
-  <br>
-  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
-  <br>
-  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
-</footer>
-    
-    <script type="module">
-            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
-      
-const $$ejs = (par,eager)=>{
-  const $ejs = function(_ejs){return _ejs};
-  const prefix = '/_elderjs';
-  const initComponent = (target, component) => {
-
-    if(!!CustomEvent && target.id){
-      const split = target.id.split('-ejs-');
-      document.dispatchEvent(new CustomEvent('ejs', {
-        detail: {
-          category: 'elderjs',
-          action: 'hydrate',
-          target: target,
-          label: split[0] || target.id
-        }
-      }));
-    }
-
-    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
-    const compProm = import(prefix + '/svelte/components/' + component.component);
-
-    Promise.all([compProm,propProm]).then(([comp,props])=>{
-      new comp.default({ 
-        target: target,
-        props: props,
-        hydrate: true
-      });
-    });
-  };
-  
-  Object.keys(par).forEach(k => {
-    const el = document.getElementById(k);
-    if (false) {
-        IO.observe(el);
-    } else {
-        initComponent(el,par[k]);
-    }
-  });
-};
-
-      $$ejs({'darkcheckbox-ejs-GclYXMFftF' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
-    
-    
-    </body></html>
+<p>어려움을 명확하게 파악하기만 하면, 개선 방법을 찾는 건 생각보다 쉽습니다. 하지만 새로운 방법이 잘 떠오르지 않으실 수도 있죠. ㅠㅠ 그런 때에는 저 같은 코치나 다른 사람에게 질문도 해보시고, 도움을 받아보세요. 우리는 혼자가 아니니까요. 적극적으로 질문하고 도움을 구해보세요. 그리고 누군가 도움이 필요하면 여러분도 도움을 줄 수 있게 되시면 좋겠습니다.</p> </div> </article> <div class="comments-section" data-astro-cid-fzx4jmue> <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async>
+    </script> </div> <button type="button" class="scroll-top-btn" aria-label="맨 위로 스크롤" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-asfligpj>
+↑ 맨 위로
+</button>  </main> <footer class="site-footer"> <div class="footer-container"> <p>
+이 블로그는 <a href="https://astro.build/">Astro</a>와
+<a href="https://svelte.dev/">Svelte</a>로 만들었습니다.
+</p> <p>폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.</p> <p><a href="https://pages.github.com/">GitHub Pages</a>로 호스팅하고 있습니다.</p> <p>오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)</p> </div> </footer> </body></html>

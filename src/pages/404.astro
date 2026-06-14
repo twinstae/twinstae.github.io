@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="페이지를 찾을 수 없습니다" description="요청하신 페이지를 찾을 수 없습니다.">
+  <div class="not-found">
+    <h1>404</h1>
+    <p>이 페이지는 아직 만들어지지 않았거나, 이동되었습니다.</p>
+    <a href="/" class="home-link">← 홈으로 돌아가기</a>
+  </div>
+</Layout>
+
+<style>
+  .not-found {
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+
+  .not-found h1 {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .not-found p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+  }
+
+  .home-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+  }
+
+  .home-link:hover {
+    background-color: var(--primary-dark);
+    text-decoration: none;
+  }
+</style>

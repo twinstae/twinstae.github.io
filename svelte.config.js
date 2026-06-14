@@ -1,11 +1,5 @@
-const sveltePreprocess = require('svelte-preprocess');
+import { vitePreprocess } from '@astrojs/svelte';
 
-module.exports = {
-  preprocess: [
-    sveltePreprocess({
-      postcss: {
-        plugins: [require('autoprefixer')],
-      },
-    }),
-  ],
-};
+export default {
+	preprocess: vitePreprocess(),
+}

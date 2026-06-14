@@ -1,0 +1,324 @@
+/* PaperCSS-inspired card and prose styles */
+
+/* === Cards === */
+.card {
+  transition: all 235ms ease 0s;
+  box-shadow: 15px 28px 25px -18px rgba(0, 0, 0, 0.2);
+  border-color: var(--border-color);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  will-change: transform;
+  word-wrap: break-word;
+  background-color: var(--bg-surface);
+}
+
+.card:hover {
+  transform: translate3d(0, 2px, 0);
+  box-shadow: 2px 8px 8px -5px rgba(0, 0, 0, 0.3);
+}
+
+.card .card-header,
+.card .card-footer {
+  background-color: var(--bg-surface-hover);
+  border-color: var(--border-color);
+  padding: 0.75rem 1.25rem;
+}
+
+.card .card-header {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+}
+
+.card .card-footer {
+  border-top-style: solid;
+  border-top-width: 2px;
+}
+
+.card .card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card .card-body .card-title,
+.card .card-body h4 {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.card .card-body .card-subtitle,
+.card .card-body h5 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.card .card-body .card-text,
+.card .card-body p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.card .card-body .card-link + .card-link,
+.card .card-body a + a {
+  margin-left: 1.25rem;
+}
+
+.card .image-top,
+.card .image-bottom,
+.card img {
+  border: 0;
+  border-radius: 0;
+}
+
+/* === Blockquotes === */
+blockquote {
+  color: var(--text-primary);
+  margin: 1.5rem 0.5rem;
+  padding: 1rem 1.25rem;
+  position: relative;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  background-color: var(--bg-surface);
+  transition: background-color var(--transition-slow), border-color var(--transition-slow);
+}
+
+blockquote p {
+  padding: 0;
+  margin-bottom: 0.5rem;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* === Admonitions === */
+.admonition {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-left: 4px solid var(--primary);
+  border-radius: 0.25rem;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  background-color: var(--bg-surface);
+  transition: background-color var(--transition-slow);
+}
+
+.admonition-title {
+  border-radius: 0.25rem;
+  background-color: var(--primary-bg);
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+}
+
+.admonition p {
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+}
+
+.admonition ul {
+  padding: 0 1rem 1rem 2rem;
+  margin: 0;
+}
+
+/* Admonition variants */
+.admonition-note {
+  border-left-color: var(--secondary);
+}
+.admonition-note .admonition-title {
+  background-color: var(--secondary-light);
+  color: var(--text-inverse);
+}
+
+.admonition-tip {
+  border-left-color: var(--success);
+}
+.admonition-tip .admonition-title {
+  background-color: var(--success-light);
+  color: var(--text-inverse);
+}
+
+.admonition-warning {
+  border-left-color: var(--warning);
+}
+.admonition-warning .admonition-title {
+  background-color: var(--warning-light);
+  color: var(--text-inverse);
+}
+
+.admonition-danger {
+  border-left-color: var(--danger);
+}
+.admonition-danger .admonition-title {
+  background-color: var(--danger-light);
+  color: var(--text-inverse);
+}
+
+.admonition-think {
+  border-left-color: var(--primary);
+}
+.admonition-think .admonition-title {
+  background-color: var(--primary-bg);
+  color: var(--primary);
+}
+
+/* === Hashtags === */
+.hashtag {
+  font-size: 75%;
+  color: var(--primary);
+  margin: 0.25rem 0.125rem;
+  border: 1px solid var(--primary-bg);
+  padding: 0.125rem 0.5rem;
+  border-radius: 1rem;
+  line-height: 150%;
+  transition: 0.25s all;
+  display: inline-block;
+}
+
+/* === Code === */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background-color: var(--bg-code-inline);
+  color: var(--primary);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  transition: background-color var(--transition-slow);
+}
+
+pre {
+  background-color: var(--bg-code);
+  color: var(--text-inverse);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  tab-size: 2;
+  position: relative;
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  transition: border-color var(--transition-slow);
+}
+
+th {
+  background-color: var(--bg-surface);
+  font-weight: 600;
+  transition: background-color var(--transition-slow);
+}
+
+/* Excel-style table */
+table.excel {
+  border-collapse: collapse;
+}
+
+table.excel thead th {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface-hover);
+  text-align: center;
+}
+
+table.excel tbody th {
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface-hover);
+  width: 3rem;
+}
+
+table.excel tbody td {
+  flex-grow: 1;
+  border: 1px solid var(--border-color-light);
+  text-align: right;
+  width: fit-content;
+}
+
+/* === Line highlighting === */
+.hl-lines-1 + pre code span.line:nth-child(1),
+.hl-lines-2 + pre code span.line:nth-child(2),
+.hl-lines-3 + pre code span.line:nth-child(3),
+.hl-lines-4 + pre code span.line:nth-child(4),
+.hl-lines-5 + pre code span.line:nth-child(5),
+.hl-lines-6 + pre code span.line:nth-child(6),
+.hl-lines-7 + pre code span.line:nth-child(7),
+.hl-lines-8 + pre code span.line:nth-child(8),
+.hl-lines-9 + pre code span.line:nth-child(9),
+.hl-lines-10 + pre code span.line:nth-child(10),
+.hl-lines-11 + pre code span.line:nth-child(11),
+.hl-lines-12 + pre code span.line:nth-child(12),
+.hl-lines-13 + pre code span.line:nth-child(13),
+.hl-lines-14 + pre code span.line:nth-child(14),
+.hl-lines-15 + pre code span.line:nth-child(15),
+.hl-lines-16 + pre code span.line:nth-child(16) {
+  background-color: rgba(194, 198, 60, 0.213);
+}
+
+.plus-lines-1 + pre code span.line:nth-child(1),
+.plus-lines-2 + pre code span.line:nth-child(2),
+.plus-lines-3 + pre code span.line:nth-child(3),
+.plus-lines-4 + pre code span.line:nth-child(4),
+.plus-lines-5 + pre code span.line:nth-child(5),
+.plus-lines-6 + pre code span.line:nth-child(6),
+.plus-lines-7 + pre code span.line:nth-child(7),
+.plus-lines-8 + pre code span.line:nth-child(8),
+.plus-lines-9 + pre code span.line:nth-child(9),
+.plus-lines-10 + pre code span.line:nth-child(10),
+.plus-lines-11 + pre code span.line:nth-child(11),
+.plus-lines-12 + pre code span.line:nth-child(12),
+.plus-lines-13 + pre code span.line:nth-child(13),
+.plus-lines-14 + pre code span.line:nth-child(14),
+.plus-lines-15 + pre code span.line:nth-child(15),
+.plus-lines-16 + pre code span.line:nth-child(16) {
+  background-color: rgba(46,160,67,0.15);
+}
+
+.plus-lines-1 + pre code span.line:nth-child(1):before,
+.plus-lines-2 + pre code span.line:nth-child(2):before,
+.plus-lines-3 + pre code span.line:nth-child(3):before,
+.plus-lines-4 + pre code span.line:nth-child(4):before,
+.plus-lines-5 + pre code span.line:nth-child(5):before,
+.plus-lines-6 + pre code span.line:nth-child(6):before,
+.plus-lines-7 + pre code span.line:nth-child(7):before,
+.plus-lines-8 + pre code span.line:nth-child(8):before,
+.plus-lines-9 + pre code span.line:nth-child(9):before,
+.plus-lines-10 + pre code span.line:nth-child(10):before,
+.plus-lines-11 + pre code span.line:nth-child(11):before,
+.plus-lines-12 + pre code span.line:nth-child(12):before,
+.plus-lines-13 + pre code span.line:nth-child(13):before,
+.plus-lines-14 + pre code span.line:nth-child(14):before,
+.plus-lines-15 + pre code span.line:nth-child(15):before,
+.plus-lines-16 + pre code span.line:nth-child(16):before {
+  content: '+';
+  color: green;
+}

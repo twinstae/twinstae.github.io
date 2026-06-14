@@ -1,121 +1,20 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>웹 프런트 엔드의 간략한 역사</title><meta name="description" content="태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/brief-history-of-web-front/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/brief-history-of-web-front/" data-svelte="svelte-18tnbae"><meta property="og:title" content="웹 프런트 엔드의 간략한 역사" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/brief-history-of-web-front/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="웹 프런트 엔드의 간략한 역사" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
-      const codes = document.getElementsByTagName('pre');
-
-      for (const code of codes) {
-        if (code.parentElement.className.includes('codejar-wrap')){
-          continue;
+<!DOCTYPE html><html lang="ko-KR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>웹 프런트 엔드의 간략한 역사 | 진리의 배 조선소</title><meta name="description" content="태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정"><link rel="canonical" href="https://twinstae.github.io/brief-history-of-web-front/"><link rel="icon" type="image/jpeg" href="/TamjungRabbitProfile.jpg"><meta property="og:site_name" content="진리의 배 조선소"><meta property="og:url" content="https://twinstae.github.io/brief-history-of-web-front/"><meta property="og:title" content="웹 프런트 엔드의 간략한 역사"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><meta property="og:description" content="태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정"><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://twinstae.github.io/brief-history-of-web-front/"><meta name="twitter:title" content="웹 프런트 엔드의 간략한 역사"><meta name="twitter:description" content="태초의 HTML 정적 파일부터, 템플릿 엔진, CSR, SPA, SSR, JAM Stack 에 이르기까지 웹 프런트 엔드가 진화해온 과정"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"><script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
         }
-        code.addEventListener('dblclick', function (e) {
-          navigator.clipboard.writeText(code.innerText).then(() => {
-            alert('코드를 클립보드에 복사했습니다.');
-          });
-        });
-      }
-    }, 500);
-  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
-    document.getElementsByTagName('html')[0].className = is_dark
-      ? 'dark'
-      : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-968ab9b4.css" media="all" /><style>.tooltip {
-  position: relative;
-}
-
-.tooltip .tooltiptext {
-  max-width: 32rem;
-  height: auto;
-  text-align: left;
-  line-height: 1.2rem;
-  background-color: #555;
-  color: #fff;
-  border-radius: 6px;
-  padding: 0.5rem;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  transition: opacity 0.3s;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}</style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-ZVJRnZxVvY"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
-<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
-  <span class="svelte-ixwbnm"></span>
-</label></div>
-  <a href="/" aria-current="false">진리의 배 조선소 </a>
-  </nav>
-
-<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
-
-<a href="/">← Home</a>
-
-<div class="title svelte-7s3agc"><h1 id="title-heading">웹 프런트 엔드의 간략한 역사</h1>
-  <div><span class="hashtag">#작성 중
-        </span><span class="hashtag">#front-end
-        </span><span class="hashtag">#CSR
-        </span><span class="hashtag">#SPA
-        </span><span class="hashtag">#SSR
-        </span><span class="hashtag">#JAM Stack
-        </span></div>
-  <small>By 탐정토끼(Taehee Kim)</small></div>
-
-<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
-
-<nav class="svelte-s59jxg"><div><span>목차</span>
-    <ol><li style="font-size: 1.25rem;"><a href="#static-file-정적-파일을-서빙하기---나모-웹-에디터" style="color: #868e96;">Static File 정적 파일을 서빙하기 - 나모 웹 에디터</a>
-        <ol><li style="font-size: 1rem;"><a href="#웹-브라우저-주소-창에-url을-치면-일어나는-일" style="color: #868e96;">웹 브라우저 주소 창에 URL을 치면 일어나는 일</a>
-            </li><li style="font-size: 1rem;"><a href="#정적-파일static-file-html-css-js-이미지" style="color: #868e96;">정적 파일(static file) HTML, CSS, JS, 이미지</a>
-            </li><li style="font-size: 1rem;"><a href="#url과-폴더-기반-라우팅" style="color: #868e96;">url과 폴더 기반 라우팅</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#ssr-서버에서-템플릿-동적으로-렌더링하기---템플릿-엔진" style="color: #868e96;">SSR 서버에서 템플릿 동적으로 렌더링하기 - 템플릿 엔진</a>
-        <ol><li style="font-size: 1rem;"><a href="#실시간으로-변하는-상태state에-따라-다른-내용을-보여주고-싶다" style="color: #868e96;">실시간으로 변하는 상태(state)에 따라 다른 내용을 보여주고 싶다.</a>
-            </li><li style="font-size: 1rem;"><a href="#동적-dynamic-렌더링이란" style="color: #868e96;">동적 (dynamic) 렌더링이란?</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#csr-클라이언트에서-렌더링하기---jquery와-ajax-모던-js" style="color: #868e96;">CSR 클라이언트에서 렌더링하기 - JQuery와 Ajax, 모던 JS</a>
-        <ol><li style="font-size: 1rem;"><a href="#사용자-동작에-따라-반응하게-만들고-싶다" style="color: #868e96;">사용자 동작에 따라 반응하게 만들고 싶다.</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#spa-웹-앱을-만들자---angular-vue-react" style="color: #868e96;">SPA 웹 앱을 만들자 - Angular, Vue, React</a>
-        <ol><li style="font-size: 1rem;"><a href="#새로고침-없이-브라우저에서-동적으로-dom을-그리고-싶다" style="color: #868e96;">새로고침 없이 브라우저에서 동적으로 dom을 그리고 싶다.</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#ssr이-spa와-함께-부활하다---nextjs" style="color: #868e96;">SSR이 SPA와 함께 부활하다 - Next.js</a>
-        <ol><li style="font-size: 1rem;"><a href="#빠르게-사이트를-보여주고-멍청한-검색엔진-크롤러에게-html을-보여주고-싶다" style="color: #868e96;">빠르게 사이트를 보여주고, 멍청한 검색엔진 크롤러에게 HTML을 보여주고 싶다</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#정적-파일이-현대-기술과-함께-돌아오다---jam" style="color: #868e96;">정적 파일이 현대 기술과 함께 돌아오다 - JAM</a>
-        <ol><li style="font-size: 1rem;"><a href="#복잡한-webserver-없이-빠르게-웹-사이트를-보여주고-싶다" style="color: #868e96;">복잡한 WebServer 없이 빠르게 웹 사이트를 보여주고 싶다.</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#진화는-일직선이-아니다" style="color: #868e96;">진화는 일직선이 아니다.</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#각-방식의-장-단점-총-정리" style="color: #868e96;">각 방식의 장, 단점 총 정리</a>
-        <ol>
-        </ol>
-      </li></ol></div>
-</nav>
-
-<!-- HTML_TAG_START --><h2 id="static-file-정적-파일을-서빙하기---나모-웹-에디터">Static File 정적 파일을 서빙하기 - 나모 웹 에디터</h2>
-<p><a href="https://twinstae.github.io/brief-history-of-web-front/#static-file-%EC%A0%95%EC%A0%81-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%84%9C%EB%B9%99%ED%95%98%EA%B8%B0---%EB%82%98%EB%AA%A8-%EC%9B%B9-%EC%97%90%EB%94%94%ED%84%B0" target="_blank"><span class="badge tooltip" style="background-color: var(--primary)">
-     Static File
-     <span class="tooltiptext">HTML, CSS, JS, 이미지처럼 자주 변하지 않는 파일. 덕분에 쉽게 캐싱할 수 있다.</span>
-  </span></a> 을 서빙하기</p>
+      })();
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.DAUUhDCw.css">
+<link rel="stylesheet" href="/_astro/_..1Q-KLuor.css"></head> <body> <nav class="top-nav"> <div class="nav-container"> <a href="/" class="nav-brand">
+🚢 진리의 배 조선소
+</a> <div class="nav-actions"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="128QCz" component-url="/_astro/DarkModeToggle.C-6mm_sq.js" component-export="default" renderer-url="/_astro/client.svelte.Vo9I5Rqb.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;DarkModeToggle&quot;,&quot;value&quot;:true}" await-children><!--[--><button type="button" class="dark-mode-toggle svelte-ckhpf5" aria-label="다크 모드로 전환" title="다크 모드"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button><!--]--><!--astro:end--></astro-island> </div> </div> </nav> <main class="main-container">  <a href="/" class="back-link" data-astro-cid-fzx4jmue>← 홈으로</a> <article class="blog-post" data-astro-cid-fzx4jmue> <header class="post-header" data-astro-cid-fzx4jmue> <h1 class="post-title" data-astro-cid-fzx4jmue>웹 프런트 엔드의 간략한 역사</h1> <div class="post-meta" data-astro-cid-fzx4jmue> <time datetime="Thu Jul 08 2021 16:30:58 GMT+0900 (Korean Standard Time)" data-astro-cid-fzx4jmue>2021년 7월 8일 오후 4:30</time> <span class="post-author" data-astro-cid-fzx4jmue>by 탐정토끼(Taehee Kim)</span> </div> <div class="post-tags" data-astro-cid-fzx4jmue> <span class="hashtag" data-astro-cid-fzx4jmue>#작성 중</span><span class="hashtag" data-astro-cid-fzx4jmue>#front-end</span><span class="hashtag" data-astro-cid-fzx4jmue>#CSR</span><span class="hashtag" data-astro-cid-fzx4jmue>#SPA</span><span class="hashtag" data-astro-cid-fzx4jmue>#SSR</span><span class="hashtag" data-astro-cid-fzx4jmue>#JAM Stack</span> </div> </header> <nav class="toc" aria-label="목차" data-astro-cid-xvrfupwn><div class="toc-header" data-astro-cid-xvrfupwn>목차</div><ol class="toc-list" data-astro-cid-xvrfupwn><li class="toc-item" data-astro-cid-xvrfupwn><a href="#static-file-정적-파일을-서빙하기---나모-웹-에디터" class="toc-link toc-h2" data-astro-cid-xvrfupwn>Static File 정적 파일을 서빙하기 - 나모 웹 에디터</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#웹-브라우저-주소-창에-url을-치면-일어나는-일" class="toc-link toc-h3" data-astro-cid-xvrfupwn>웹 브라우저 주소 창에 URL을 치면 일어나는 일</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#정적-파일static-file-html-css-js-이미지" class="toc-link toc-h3" data-astro-cid-xvrfupwn>정적 파일(static file) HTML, CSS, JS, 이미지</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#url과-폴더-기반-라우팅" class="toc-link toc-h3" data-astro-cid-xvrfupwn>url과 폴더 기반 라우팅</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#ssr-서버에서-템플릿-동적으로-렌더링하기---템플릿-엔진" class="toc-link toc-h2" data-astro-cid-xvrfupwn>SSR 서버에서 템플릿 동적으로 렌더링하기 - 템플릿 엔진</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#실시간으로-변하는-상태state에-따라-다른-내용을-보여주고-싶다" class="toc-link toc-h3" data-astro-cid-xvrfupwn>실시간으로 변하는 상태(state)에 따라 다른 내용을 보여주고 싶다.</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#동적-dynamic-렌더링이란" class="toc-link toc-h3" data-astro-cid-xvrfupwn>동적 (dynamic) 렌더링이란?</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#csr-클라이언트에서-렌더링하기---jquery와-ajax-모던-js" class="toc-link toc-h2" data-astro-cid-xvrfupwn>CSR 클라이언트에서 렌더링하기 - JQuery와 Ajax, 모던 JS</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#사용자-동작에-따라-반응하게-만들고-싶다" class="toc-link toc-h3" data-astro-cid-xvrfupwn>사용자 동작에 따라 반응하게 만들고 싶다.</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#spa-웹-앱을-만들자---angular-vue-react" class="toc-link toc-h2" data-astro-cid-xvrfupwn>SPA 웹 앱을 만들자 - Angular, Vue, React</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#새로고침-없이-브라우저에서-동적으로-dom을-그리고-싶다" class="toc-link toc-h3" data-astro-cid-xvrfupwn>새로고침 없이 브라우저에서 동적으로 dom을 그리고 싶다.</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#ssr이-spa와-함께-부활하다---nextjs" class="toc-link toc-h2" data-astro-cid-xvrfupwn>SSR이 SPA와 함께 부활하다 - Next.js</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#빠르게-사이트를-보여주고-멍청한-검색엔진-크롤러에게-html을-보여주고-싶다" class="toc-link toc-h3" data-astro-cid-xvrfupwn>빠르게 사이트를 보여주고, 멍청한 검색엔진 크롤러에게 HTML을 보여주고 싶다</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#정적-파일이-현대-기술과-함께-돌아오다---jam" class="toc-link toc-h2" data-astro-cid-xvrfupwn>정적 파일이 현대 기술과 함께 돌아오다 - JAM</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#복잡한-webserver-없이-빠르게-웹-사이트를-보여주고-싶다" class="toc-link toc-h3" data-astro-cid-xvrfupwn>복잡한 WebServer 없이 빠르게 웹 사이트를 보여주고 싶다.</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#진화는-일직선이-아니다" class="toc-link toc-h2" data-astro-cid-xvrfupwn>진화는 일직선이 아니다.</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#각-방식의-장-단점-총-정리" class="toc-link toc-h2" data-astro-cid-xvrfupwn>각 방식의 장, 단점 총 정리</a></li></ol></nav> <div class="post-content" data-astro-cid-fzx4jmue> <h2 id="static-file-정적-파일을-서빙하기---나모-웹-에디터">Static File 정적 파일을 서빙하기 - 나모 웹 에디터</h2>
+<p>{{keyword}}Static File{{/keyword}} 을 서빙하기</p>
 <h3 id="웹-브라우저-주소-창에-url을-치면-일어나는-일">웹 브라우저 주소 창에 URL을 치면 일어나는 일</h3>
 <h3 id="정적-파일static-file-html-css-js-이미지">정적 파일(static file) HTML, CSS, JS, 이미지</h3>
 <h3 id="url과-폴더-기반-라우팅">url과 폴더 기반 라우팅</h3>
 <h2 id="ssr-서버에서-템플릿-동적으로-렌더링하기---템플릿-엔진">SSR 서버에서 템플릿 동적으로 렌더링하기 - 템플릿 엔진</h2>
-<p><a href="https://twinstae.github.io/brief-history-of-web-front/#ssr%EC%9D%B4-spa%EC%99%80-%ED%95%A8%EA%BB%98-%EB%B6%80%ED%99%9C%ED%95%98%EB%8B%A4---nextjs" target="_blank"><span class="badge tooltip" style="background-color: var(--primary)">
-     SSR
-     <span class="tooltiptext">Server Side Rendering<br> 서버에서 동적으로 HTML과 CSS를 생성하는 것.</span>
-  </span></a>이란...</p>
+<p>{{keyword}}SSR{{/keyword}}이란…</p>
 <h3 id="실시간으로-변하는-상태state에-따라-다른-내용을-보여주고-싶다">실시간으로 변하는 상태(state)에 따라 다른 내용을 보여주고 싶다.</h3>
 <h3 id="동적-dynamic-렌더링이란">동적 (dynamic) 렌더링이란?</h3>
 <h2 id="csr-클라이언트에서-렌더링하기---jquery와-ajax-모던-js">CSR 클라이언트에서 렌더링하기 - JQuery와 Ajax, 모던 JS</h2>
@@ -134,68 +33,10 @@
 </ul>
 </blockquote>
 <h2 id="진화는-일직선이-아니다">진화는 일직선이 아니다.</h2>
-<h2 id="각-방식의-장-단점-총-정리">각 방식의 장, 단점 총 정리</h2>
-<!-- HTML_TAG_END -->
-
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
-</div><!-- HTML_TAG_END --></article>
-
-<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
-  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
-  커스텀했습니다.
-  <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
-  <br>
-  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
-  <br>
-  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
-</footer>
-    
-    <script type="module">
-            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
-      
-const $$ejs = (par,eager)=>{
-  const $ejs = function(_ejs){return _ejs};
-  const prefix = '/_elderjs';
-  const initComponent = (target, component) => {
-
-    if(!!CustomEvent && target.id){
-      const split = target.id.split('-ejs-');
-      document.dispatchEvent(new CustomEvent('ejs', {
-        detail: {
-          category: 'elderjs',
-          action: 'hydrate',
-          target: target,
-          label: split[0] || target.id
-        }
-      }));
-    }
-
-    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
-    const compProm = import(prefix + '/svelte/components/' + component.component);
-
-    Promise.all([compProm,propProm]).then(([comp,props])=>{
-      new comp.default({ 
-        target: target,
-        props: props,
-        hydrate: true
-      });
-    });
-  };
-  
-  Object.keys(par).forEach(k => {
-    const el = document.getElementById(k);
-    if (false) {
-        IO.observe(el);
-    } else {
-        initComponent(el,par[k]);
-    }
-  });
-};
-
-      $$ejs({'darkcheckbox-ejs-ZVJRnZxVvY' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
-    
-    
-    </body></html>
+<h2 id="각-방식의-장-단점-총-정리">각 방식의 장, 단점 총 정리</h2> </div> </article> <div class="comments-section" data-astro-cid-fzx4jmue> <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async>
+    </script> </div> <button type="button" class="scroll-top-btn" aria-label="맨 위로 스크롤" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-asfligpj>
+↑ 맨 위로
+</button>  </main> <footer class="site-footer"> <div class="footer-container"> <p>
+이 블로그는 <a href="https://astro.build/">Astro</a>와
+<a href="https://svelte.dev/">Svelte</a>로 만들었습니다.
+</p> <p>폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.</p> <p><a href="https://pages.github.com/">GitHub Pages</a>로 호스팅하고 있습니다.</p> <p>오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)</p> </div> </footer> </body></html>

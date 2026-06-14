@@ -1,0 +1,93 @@
+---
+import DarkModeToggle from '../components/DarkModeToggle.svelte';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+}
+
+const { 
+  title, 
+  description = "탐정토끼가 만드는 진리의 배 블로그", 
+  image = "https://twinstae.github.io/TamjungRabbitProfile.jpg",
+  canonical
+} = Astro.props;
+
+const siteUrl = "https://twinstae.github.io";
+const pageTitle = title === "진리의 배 조선소" ? title : `${title} | 진리의 배 조선소`;
+---
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    
+    <link rel="canonical" href={canonical || siteUrl + Astro.url.pathname} />
+    <link rel="icon" type="image/jpeg" href="/TamjungRabbitProfile.jpg" />
+    
+    <meta property="og:site_name" content="진리의 배 조선소" />
+    <meta property="og:url" content={canonical || siteUrl + Astro.url.pathname} />
+    <meta property="og:title" content={title} />
+    <meta property="og:image" content={image} />
+    <meta property="og:description" content={description} />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={canonical || siteUrl + Astro.url.pathname} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" />
+    
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style is:global>
+      @import '../styles/global.css';
+      @import '../styles/prose.css';
+    </style>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="/" class="nav-brand" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>
+          🚢 진리의 배 조선소
+        </a>
+        <div class="nav-actions">
+          <DarkModeToggle client:load />
+        </div>
+      </div>
+    </nav>
+    
+    <main class="main-container">
+      <slot />
+    </main>
+    
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>
+          이 블로그는 <a href="https://astro.build/">Astro</a>와 
+          <a href="https://svelte.dev/">Svelte</a>로 만들었습니다.
+        </p>
+        <p>폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.</p>
+        <p><a href="https://pages.github.com/">GitHub Pages</a>로 호스팅하고 있습니다.</p>
+        <p>오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)</p>
+      </div>
+    </footer>
+  </body>
+</html>

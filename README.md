@@ -1,64 +1,36 @@
-# Elder.js Template Project
+# 진리의 배 조선소
 
-<img src="https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Node&query=engines.node&url=https%3A%2F%2Fraw.githubusercontent.com%2Felderjs%2Ftemplate%2Fmaster%2Fpackage.json" alt="node version" />
+탐정토끼가 만드는 진리의 배 블로그
 
-This is a project template for [Elder.js](https://elderguide.com/tech/elderjs/) apps. The template lives at https://github.com/elderjs/template and the Elder.js source is here: https://github.com/elderjs/elderjs
+이 블로그는 [Astro](https://astro.build/)와 [Svelte](https://svelte.dev/)로 만들었습니다. 
+폰트는 [Pretendard](https://cactus.tistory.com/306)를 사용합니다.
+[GitHub Pages](https://pages.github.com/)로 호스팅하고 있습니다.
 
-Here is a demo of the template: [https://elderjs.pages.dev/](https://elderjs.pages.dev/)
-
-## Get started
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+## Development
 
 ```bash
-npx degit Elderjs/template elderjs-app
-cd elderjs-app
+npm install
+npm run dev
 ```
 
-### Install the dependencies:
-
-```bash
-npm install # or just yarn
-```
-
-### Start Project:
-
-```bash
-npm start # or npm run dev
-```
-
-Navigate to [localhost:3000](http://localhost:3000). You should see your app running.
-
-This spawns a development server, so simply edit a file in `src`, save it, and reload the page to see your changes.
-
-You can also see a live demo of this template: [https://elderjs.pages.dev/](https://elderjs.pages.dev/)
-
-#### What to Expect
-
-- A dev server is watching your files for changes. It will restart when it needs to.
-- Rollup is watching your files for changes. It will restart when it needs to.
-- If your `elder.config.js` has `@elderjs/plugin-browser-reload': {}` in it's plugins, your browser will automatically restart after the server restarts.
-
-**esbuild**
-
-If you are looking for a faster development experience run `npm run esbuild` this is experimental but will be improving rapidly.
-
-### To Build HTML for Production:
+## Build
 
 ```bash
 npm run build
 ```
 
-Let the build finish. It will put all of your statically generated files in `./public`.
+Build output goes to `docs/` for GitHub Pages.
 
-If you wish to preview you can use:
+## Structure
 
-```bash
-npx sirv-cli public
-```
+- `src/content/blog/` - Blog posts (Markdown)
+- `src/pages/` - Astro pages
+- `src/components/` - Astro & Svelte components
+- `src/layouts/` - Astro layouts
+- `src/styles/` - Global CSS
+- `public/` - Static assets
+- `docs/` - Build output (GitHub Pages)
 
-### To Run in SSR Mode for Production:
+## Old URL Redirects
 
-```bash
-npm run serve
-```
+Old blog URLs (`https://twinstae.github.io/:slug/`) are automatically redirected to new URLs (`https://twinstae.github.io/blog/:slug/`) via redirect pages.
