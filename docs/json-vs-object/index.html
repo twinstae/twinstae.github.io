@@ -1,152 +1,62 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>자바스크립트 JSON vs 객체 무엇이 다른가요?</title><meta name="description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/json-vs-object/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/json-vs-object/" data-svelte="svelte-18tnbae"><meta property="og:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/json-vs-object/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
-      const codes = document.getElementsByTagName('pre');
-
-      for (const code of codes) {
-        if (code.parentElement.className.includes('codejar-wrap')){
-          continue;
+<!DOCTYPE html><html lang="ko-KR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>자바스크립트 JSON vs 객체 무엇이 다른가요? | 진리의 배 조선소</title><meta name="description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다."><link rel="canonical" href="https://twinstae.github.io/json-vs-object/"><link rel="icon" type="image/jpeg" href="/TamjungRabbitProfile.jpg"><meta property="og:site_name" content="진리의 배 조선소"><meta property="og:url" content="https://twinstae.github.io/json-vs-object/"><meta property="og:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><meta property="og:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다."><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://twinstae.github.io/json-vs-object/"><meta name="twitter:title" content="자바스크립트 JSON vs 객체 무엇이 다른가요?"><meta name="twitter:description" content="한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다."><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"><script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
         }
-        code.addEventListener('dblclick', function (e) {
-          navigator.clipboard.writeText(code.innerText).then(() => {
-            alert('코드를 클립보드에 복사했습니다.');
-          });
-        });
-      }
-    }, 500);
-  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
-    document.getElementsByTagName('html')[0].className = is_dark
-      ? 'dark'
-      : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-968ab9b4.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-fNJxdnbMjd"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
-<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
-  <span class="svelte-ixwbnm"></span>
-</label></div>
-  <a href="/" aria-current="false">진리의 배 조선소 </a>
-  </nav>
-
-<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
-
-<a href="/">← Home</a>
-
-<div class="title svelte-7s3agc"><h1 id="title-heading">자바스크립트 JSON vs 객체 무엇이 다른가요?</h1>
-  <div><span class="hashtag">#자바스크립트
-        </span><span class="hashtag">#객체
-        </span><span class="hashtag">#JSON
-        </span><span class="hashtag">#문자열
-        </span></div>
-  <small>By 탐정토끼(Taehee Kim)</small></div>
-
-<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
-
-
-
-<!-- HTML_TAG_START --><p>한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다.</p>
+      })();
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.DAUUhDCw.css">
+<link rel="stylesheet" href="/_astro/_..1Q-KLuor.css"></head> <body> <nav class="top-nav"> <div class="nav-container"> <a href="/" class="nav-brand">
+🚢 진리의 배 조선소
+</a> <div class="nav-actions"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="128QCz" component-url="/_astro/DarkModeToggle.C-6mm_sq.js" component-export="default" renderer-url="/_astro/client.svelte.Vo9I5Rqb.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;DarkModeToggle&quot;,&quot;value&quot;:true}" await-children><!--[--><button type="button" class="dark-mode-toggle svelte-ckhpf5" aria-label="다크 모드로 전환" title="다크 모드"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button><!--]--><!--astro:end--></astro-island> </div> </div> </nav> <main class="main-container">  <a href="/" class="back-link" data-astro-cid-fzx4jmue>← 홈으로</a> <article class="blog-post" data-astro-cid-fzx4jmue> <header class="post-header" data-astro-cid-fzx4jmue> <h1 class="post-title" data-astro-cid-fzx4jmue>자바스크립트 JSON vs 객체 무엇이 다른가요?</h1> <div class="post-meta" data-astro-cid-fzx4jmue> <time datetime="Tue Sep 07 2021 11:28:48 GMT+0900 (Korean Standard Time)" data-astro-cid-fzx4jmue>2021년 9월 7일 오전 11:28</time> <span class="post-author" data-astro-cid-fzx4jmue>by 탐정토끼(Taehee Kim)</span> </div> <div class="post-tags" data-astro-cid-fzx4jmue> <span class="hashtag" data-astro-cid-fzx4jmue>#자바스크립트</span><span class="hashtag" data-astro-cid-fzx4jmue>#객체</span><span class="hashtag" data-astro-cid-fzx4jmue>#JSON</span><span class="hashtag" data-astro-cid-fzx4jmue>#문자열</span> </div> </header>  <div class="post-content" data-astro-cid-fzx4jmue> <p>한 줄 요약 : JSON, 즉 Java Script Object Notation(자바스크립트 객체 표기법)은 js 객체를 문자열로 쓰는 방법입니다.</p>
 <blockquote>
-<p>하지만 도대체 json하고 객체하고 넘 비슷하게생겻는데 모가다르단거에요 ㅡㅡ........책보다보면 나오겟지..</p>
+<p>하지만 도대체 json하고 객체하고 넘 비슷하게생겻는데 모가다르단거에요 ㅡㅡ…책보다보면 나오겟지..</p>
 </blockquote>
 <p>트위터에서 이런 고민을 하는 트친님을 봤습니다. 그래서 json이 뭔지 좀 적어볼게요.</p>
-<p>json은 문자열입니다. 글자죠. 제가 종이에 json을 적을 수도 있습니다. 그래서 따옴표( ' )로 감싸놓습니다. 문자열을 감싸는 따옴표와 문자열 안에 있는 따옴표를 구분하기 위해서 \ 역슬래시를 이용해서 escape(빠져나가기, 무시) 처리를 해줍니다. 한국 키보드에서는 엔터 위에 원(화폐단위) 문자로 보이기도 해요.</p>
+<p>json은 문자열입니다. 글자죠. 제가 종이에 json을 적을 수도 있습니다. 그래서 따옴표( ’ )로 감싸놓습니다. 문자열을 감싸는 따옴표와 문자열 안에 있는 따옴표를 구분하기 위해서 \ 역슬래시를 이용해서 escape(빠져나가기, 무시) 처리를 해줍니다. 한국 키보드에서는 엔터 위에 원(화폐단위) 문자로 보이기도 해요.</p>
 <p>이런 문자열은 HTTP 네트워크를 타고 서버나 다른 기기와 데이터를 주고 받을 때에도 쓰이고요. 텍스트 파일로 데이터를 저장할 때도 씁니다. 제가 만든 프메 백업 뷰어도 데이터를 JSON으로 저장하고 있어요.</p>
 <p>다음 코드는 브라우저에서 F12를 누르시면 나오는 개발자 도구 Console 탭에서 직접 쳐보실 수 있어요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailJson </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF79C6">const</span><span style="color:#F8F8F2"> sakuMailJson </span><span style="color:#FF79C6">=</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">{</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">name</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">:</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">미야와키 사쿠라</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">,</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">message</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">:</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">안녕하세요. </span><span style="color:#FF79C6">\\\\</span><span style="color:#F1FA8C">(^ ^</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">}</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">sakuMailJson</span></span>
-<span class="line"><span style="color: #676E95; font-style: italic">// &quot;{\&quot;name\&quot;:\&quot;미야와키 사쿠라\&quot;,\&quot;message\&quot;:\&quot;안녕하세요. \\\\(^ ^\&quot;}&quot; 가 출력됩니다.</span></span></code></pre>
+<span class="line"><span style="color:#F8F8F2">sakuMailJson</span></span>
+<span class="line"><span style="color:#6272A4">// "{\"name\":\"미야와키 사쿠라\",\"message\":\"안녕하세요. \\\\(^ ^\"}" 가 출력됩니다.</span></span></code></pre>
 <p>객체(object)는 코드가 아니라 그 코드를 가지고 메모리에 올라간 자료구조에요. 이 객체에서는 key를 가지고 이런저런 값을 꺼낼 수 있죠. 다른 언어에서는 보통 HashMap이나 Dictionary 같은 자료구조로 표현합니다. 보통 따옴표 없이 리터럴로 쓸 수 있지만, 빈 객체에 값을 하나씩 넣어서 만들 수도 있습니다.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailLiteral </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">name</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span></span>
-<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #F07178">message</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF79C6">const</span><span style="color:#F8F8F2"> sakuMailLiteral </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#F8F8F2">  name</span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">미야와키 사쿠라</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#F8F8F2">  message</span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">안녕하세요. </span><span style="color:#FF79C6">\\</span><span style="color:#F1FA8C">(^ ^</span><span style="color:#E9F284">"</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">sakuMailLiteral</span></span>
-<span class="line"><span style="color: #676E95; font-style: italic">// {name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;} 가 출력됩니다. 따옴표가 없죠?</span></span>
+<span class="line"><span style="color:#F8F8F2">sakuMailLiteral</span></span>
+<span class="line"><span style="color:#6272A4">// {name: "미야와키 사쿠라", message: "안녕하세요. \(^ ^"} 가 출력됩니다. 따옴표가 없죠?</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailFromEmpty </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{};</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// 처음에는 비어 있습니다.</span></span>
-<span class="line"><span style="color: #A6ACCD">sakuMailFromEmpty</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">name </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">  </span><span style="color: #676E95; font-style: italic">// 값을 넣어줍니다.</span></span>
-<span class="line"><span style="color: #A6ACCD">sakuMailFromEmpty</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">message </span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color:#FF79C6">const</span><span style="color:#F8F8F2"> sakuMailFromEmpty </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> {}; </span><span style="color:#6272A4">// 처음에는 비어 있습니다.</span></span>
+<span class="line"><span style="color:#F8F8F2">sakuMailFromEmpty.name </span><span style="color:#FF79C6">=</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">미야와키 사쿠라</span><span style="color:#E9F284">"</span><span style="color:#6272A4">  // 값을 넣어줍니다.</span></span>
+<span class="line"><span style="color:#F8F8F2">sakuMailFromEmpty.message </span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">안녕하세요. </span><span style="color:#FF79C6">\\</span><span style="color:#F1FA8C">(^ ^</span><span style="color:#E9F284">"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">sakuMailFromEmpty</span></span>
-<span class="line"><span style="color: #676E95; font-style: italic">// {name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;} 가 출력됩니다. 객체를 만들었어요.</span></span></code></pre>
+<span class="line"><span style="color:#F8F8F2">sakuMailFromEmpty</span></span>
+<span class="line"><span style="color:#6272A4">// {name: "미야와키 사쿠라", message: "안녕하세요. \(^ ^"} 가 출력됩니다. 객체를 만들었어요.</span></span></code></pre>
 <p>보통 API 서버에서 값을 가져오면 JSON 문자열입니다. 이걸 JSON.parse에 넣으면 해석해서 객체로 만들어줍니다. 반대로 JSON.stringify 에 객체를 넣으면 문자열로 직렬화해줍니다. 통신선이나 전파를 타고 이동하려면 문자열처럼 직렬화되어 있어야하거든요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailJson2 </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">{</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">name</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">미야와키 사쿠라</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">,</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">message</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">:</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">안녕하세요. </span><span style="color: #A6ACCD">\\\\</span><span style="color: #C3E88D">(^ ^</span><span style="color: #A6ACCD">\&quot;</span><span style="color: #C3E88D">}</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#FF79C6">const</span><span style="color:#F8F8F2"> sakuMailJson2 </span><span style="color:#FF79C6">=</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">{</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">name</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">:</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">미야와키 사쿠라</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">,</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">message</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">:</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">안녕하세요. </span><span style="color:#FF79C6">\\\\</span><span style="color:#F1FA8C">(^ ^</span><span style="color:#FF79C6">\"</span><span style="color:#F1FA8C">}</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailObject </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> JSON</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">parse</span><span style="color: #A6ACCD">(sakuMailJson2)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #A6ACCD">sakuMailObject</span></span>
-<span class="line"><span style="color: #676E95; font-style: italic">//{name: &quot;미야와키 사쿠라&quot;, message: &quot;안녕하세요. \(^ ^&quot;}</span></span>
+<span class="line"><span style="color:#FF79C6">const</span><span style="color:#F8F8F2"> sakuMailObject </span><span style="color:#FF79C6">=</span><span style="color:#BD93F9"> JSON</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">parse</span><span style="color:#F8F8F2">(sakuMailJson2);</span></span>
+<span class="line"><span style="color:#F8F8F2">sakuMailObject</span></span>
+<span class="line"><span style="color:#6272A4">//{name: "미야와키 사쿠라", message: "안녕하세요. \(^ ^"}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> sakuMailJson3 </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> JSON</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">stringify</span><span style="color: #A6ACCD">(sakuMailObject)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #A6ACCD">sakuMailJson3</span></span>
-<span class="line"><span style="color: #676E95; font-style: italic">// &quot;{\&quot;name\&quot;:\&quot;미야와키 사쿠라\&quot;,\&quot;message\&quot;:\&quot;안녕하세요. \\\\(^ ^\&quot;}&quot;</span></span></code></pre>
+<span class="line"><span style="color:#FF79C6">const</span><span style="color:#F8F8F2"> sakuMailJson3 </span><span style="color:#FF79C6">=</span><span style="color:#BD93F9"> JSON</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">stringify</span><span style="color:#F8F8F2">(sakuMailObject);</span></span>
+<span class="line"><span style="color:#F8F8F2">sakuMailJson3</span></span>
+<span class="line"><span style="color:#6272A4">// "{\"name\":\"미야와키 사쿠라\",\"message\":\"안녕하세요. \\\\(^ ^\"}"</span></span></code></pre>
 <p>요즘 대부분의 언어에서는 JSON을 다룰 수 있는 모듈이나 라이브러리를 제공합니다. JS는 웹 브라우저의 표준 언어고, 왠만한 언어는 모두 서버를 만드니까요. 예를 들어 파이썬에는 json.dumps와 json.loads 가 있고요. 객체보다는 dict (사전) 자료구조를 이용합니다. Java Spring에서는 보통 DTO라는 클래스로 객체를 만들어 넣지만, key-value를 저장하는 HashMap을 선호하는 분도 간혹 있습니다.</p>
 <p>옛날 사람들은 XML을 썼는데요. (그래서 Ajax 라는 말의 x가 xml이라는 뜻입니다) XML은 읽기 어렵고 불편했기 때문에, 점점 JSON이 득세하기 시작했습니다. 하지만 요즘은 또 json이 마음에 안 들었던 구글이 프로토콜버퍼(protobuf)라는 직렬화 방법을 직접 만들어서 gRPC(원격 프로시저 호출)같은 곳에 사용하고 있기도 합니다. gRPC는 <a href="https://blog.banksalad.com/tech/production-ready-grpc-in-golang/">뱅크샐러드</a>를 비롯해 여러 회사들이 쓰고 있어요.</p>
-<p>'직렬화'라는 말이 나왔죠? 어떤 자료구조를 줄줄이 한 줄로 이어지는 문자열이나 바이트 스트림으로 만들면 직렬화 한다고 합니다. 0010111000111 같은 데이터 말이죠. 이런 걸 그래서 '선형적'이라고도 해요. 일직선이니까요.</p>
+<p>‘직렬화’라는 말이 나왔죠? 어떤 자료구조를 줄줄이 한 줄로 이어지는 문자열이나 바이트 스트림으로 만들면 직렬화 한다고 합니다. 0010111000111 같은 데이터 말이죠. 이런 걸 그래서 ‘선형적’이라고도 해요. 일직선이니까요.</p>
 <p>잠깐, json도 줄이 바뀌는 걸 보신 적이 있을텐데요. 줄이 바뀐 것처럼 보여도 사실 \n 줄바꿈 문자가 저장된 걸 해석해서 보여줄 뿐입니다. 자료구조는 메모리 곳곳에 파편화된 걸, 참조를 통해서 연결해놓는 경우가 많아요. 이런 게 비선형적인 데이터인데요. 네트워크 통신선이나 전파를 타고 데이터를 전송하려면 데이터가 하나씩 직렬화된 상태로 만들어야합니다.</p>
 <p>이쯤이면 당장 필요한 지식은 충분합니다. 하지만 JSON을 쓰다보면 여러 문제를 마주치실 거에요. 내가 쓰는 언어의 JSON 모듈 문서를 찾아보시는 것도 좋은 방법입니다.</p>
 <p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON">MDN : JavaScript와 JSON의 차이</a></p>
 <p><a href="https://www.json.org/json-ko.html">ECMA-404 The JSON Data Interchange Standard</a></p>
 <p><a href="https://docs.python.org/ko/3/library/json.html">파이썬 : json — JSON 인코더와 디코더</a></p>
-<p>더 궁금하신 게 있으시면 댓글로 달아주세요.</p>
-<!-- HTML_TAG_END -->
-
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
-</div><!-- HTML_TAG_END --></article>
-
-<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
-  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
-  커스텀했습니다.
-  <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
-  <br>
-  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
-  <br>
-  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
-</footer>
-    
-    <script type="module">
-            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
-      
-const $$ejs = (par,eager)=>{
-  const $ejs = function(_ejs){return _ejs};
-  const prefix = '/_elderjs';
-  const initComponent = (target, component) => {
-
-    if(!!CustomEvent && target.id){
-      const split = target.id.split('-ejs-');
-      document.dispatchEvent(new CustomEvent('ejs', {
-        detail: {
-          category: 'elderjs',
-          action: 'hydrate',
-          target: target,
-          label: split[0] || target.id
-        }
-      }));
-    }
-
-    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
-    const compProm = import(prefix + '/svelte/components/' + component.component);
-
-    Promise.all([compProm,propProm]).then(([comp,props])=>{
-      new comp.default({ 
-        target: target,
-        props: props,
-        hydrate: true
-      });
-    });
-  };
-  
-  Object.keys(par).forEach(k => {
-    const el = document.getElementById(k);
-    if (false) {
-        IO.observe(el);
-    } else {
-        initComponent(el,par[k]);
-    }
-  });
-};
-
-      $$ejs({'darkcheckbox-ejs-fNJxdnbMjd' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
-    
-    
-    </body></html>
+<p>더 궁금하신 게 있으시면 댓글로 달아주세요.</p> </div> </article> <div class="comments-section" data-astro-cid-fzx4jmue> <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async>
+    </script> </div> <button type="button" class="scroll-top-btn" aria-label="맨 위로 스크롤" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-asfligpj>
+↑ 맨 위로
+</button>  </main> <footer class="site-footer"> <div class="footer-container"> <p>
+이 블로그는 <a href="https://astro.build/">Astro</a>와
+<a href="https://svelte.dev/">Svelte</a>로 만들었습니다.
+</p> <p>폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.</p> <p><a href="https://pages.github.com/">GitHub Pages</a>로 호스팅하고 있습니다.</p> <p>오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)</p> </div> </footer> </body></html>

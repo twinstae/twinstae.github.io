@@ -1,6 +1,12 @@
 node_modules
-___ELDER___
 .env
+
+# Astro
+.astro/
+dist/
+
+# Package managers
 yarn.lock
 package-lock.json
+pnpm-lock.yaml
 .yarn

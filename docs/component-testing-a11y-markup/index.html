@@ -1,75 +1,14 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>컴포넌트 테스트 시작하기 - 마크업</title><meta name="description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/component-testing-a11y-markup/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/component-testing-a11y-markup/" data-svelte="svelte-18tnbae"><meta property="og:title" content="컴포넌트 테스트 시작하기 - 마크업" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/component-testing-a11y-markup/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="컴포넌트 테스트 시작하기 - 마크업" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
-      const codes = document.getElementsByTagName('pre');
-
-      for (const code of codes) {
-        if (code.parentElement.className.includes('codejar-wrap')){
-          continue;
+<!DOCTYPE html><html lang="ko-KR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>컴포넌트 테스트 시작하기 - 마크업 | 진리의 배 조선소</title><meta name="description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다."><link rel="canonical" href="https://twinstae.github.io/component-testing-a11y-markup/"><link rel="icon" type="image/jpeg" href="/TamjungRabbitProfile.jpg"><meta property="og:site_name" content="진리의 배 조선소"><meta property="og:url" content="https://twinstae.github.io/component-testing-a11y-markup/"><meta property="og:title" content="컴포넌트 테스트 시작하기 - 마크업"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><meta property="og:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다."><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://twinstae.github.io/component-testing-a11y-markup/"><meta name="twitter:title" content="컴포넌트 테스트 시작하기 - 마크업"><meta name="twitter:description" content="@testing-library로 사용자 관점에서 직관적으로 컴포넌트 테스트를 만들어봅시다. 기초부터 SSR까지 실전을 다룹니다."><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"><script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
         }
-        code.addEventListener('dblclick', function (e) {
-          navigator.clipboard.writeText(code.innerText).then(() => {
-            alert('코드를 클립보드에 복사했습니다.');
-          });
-        });
-      }
-    }, 500);
-  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
-    document.getElementsByTagName('html')[0].className = is_dark
-      ? 'dark'
-      : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-968ab9b4.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-CFVvqVgMnS"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
-<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
-  <span class="svelte-ixwbnm"></span>
-</label></div>
-  <a href="/" aria-current="false">진리의 배 조선소 </a>
-  </nav>
-
-<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
-
-<a href="/">← Home</a>
-
-<div class="title svelte-7s3agc"><h1 id="title-heading">컴포넌트 테스트 시작하기 - 마크업</h1>
-  <div><span class="hashtag">#테스트
-        </span><span class="hashtag">#접근성
-        </span></div>
-  <small>By 탐정토끼(Taehee Kim)</small></div>
-
-<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
-
-<nav class="svelte-s59jxg"><div><span>목차</span>
-    <ol><li style="font-size: 1.25rem;"><a href="#testing-library는-개발자와-사용자를-모두-행복하게-해줍니다" style="color: #868e96;">testing-library는 개발자와 사용자를 모두 행복하게 해줍니다</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#testing-library-설치하기" style="color: #868e96;">@testing-library 설치하기</a>
-        <ol><li style="font-size: 1rem;"><a href="#npm" style="color: #868e96;">npm</a>
-            </li><li style="font-size: 1rem;"><a href="#yarn" style="color: #868e96;">yarn</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#jsdom-설정하기" style="color: #868e96;">JSDOM 설정하기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#테스트의-성공과-실패에-익숙해지기" style="color: #868e96;">테스트의 성공과 실패에 익숙해지기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#인간의-말로-적어보기" style="color: #868e96;">인간의 말로 적어보기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#dom-가져오기와-마크업" style="color: #868e96;">DOM 가져오기와 마크업</a>
-        <ol><li style="font-size: 1rem;"><a href="#role은-요소에-의미있는-역할을-달아주는-거에요" style="color: #868e96;">role은 요소에 의미있는 역할을 달아주는 거에요</a>
-            </li><li style="font-size: 1rem;"><a href="#css보다-role이-더-직관적이고-안정적이에요" style="color: #868e96;">CSS보다 role이 더 직관적이고 안정적이에요</a>
-            </li><li style="font-size: 1rem;"><a href="#접근-가능한-이름을-달아주기" style="color: #868e96;">접근 가능한 이름을 달아주기</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#아이콘과-aria-label" style="color: #868e96;">아이콘과 aria-label</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#다음은-상태와-효과" style="color: #868e96;">다음은? 상태와 효과</a>
-        <ol>
-        </ol>
-      </li></ol></div>
-</nav>
-
-<!-- HTML_TAG_START --><h2 id="testing-library는-개발자와-사용자를-모두-행복하게-해줍니다">testing-library는 개발자와 사용자를 모두 행복하게 해줍니다</h2>
+      })();
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.DAUUhDCw.css">
+<link rel="stylesheet" href="/_astro/_..1Q-KLuor.css"></head> <body> <nav class="top-nav"> <div class="nav-container"> <a href="/" class="nav-brand">
+🚢 진리의 배 조선소
+</a> <div class="nav-actions"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="128QCz" component-url="/_astro/DarkModeToggle.C-6mm_sq.js" component-export="default" renderer-url="/_astro/client.svelte.Vo9I5Rqb.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;DarkModeToggle&quot;,&quot;value&quot;:true}" await-children><!--[--><button type="button" class="dark-mode-toggle svelte-ckhpf5" aria-label="다크 모드로 전환" title="다크 모드"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button><!--]--><!--astro:end--></astro-island> </div> </div> </nav> <main class="main-container">  <a href="/" class="back-link" data-astro-cid-fzx4jmue>← 홈으로</a> <article class="blog-post" data-astro-cid-fzx4jmue> <header class="post-header" data-astro-cid-fzx4jmue> <h1 class="post-title" data-astro-cid-fzx4jmue>컴포넌트 테스트 시작하기 - 마크업</h1> <div class="post-meta" data-astro-cid-fzx4jmue> <time datetime="Sat Sep 17 2022 21:28:02 GMT+0900 (Korean Standard Time)" data-astro-cid-fzx4jmue>2022년 9월 17일 오후 9:28</time> <span class="post-author" data-astro-cid-fzx4jmue>by 탐정토끼(Taehee Kim)</span> </div> <div class="post-tags" data-astro-cid-fzx4jmue> <span class="hashtag" data-astro-cid-fzx4jmue>#테스트</span><span class="hashtag" data-astro-cid-fzx4jmue>#접근성</span> </div> </header> <nav class="toc" aria-label="목차" data-astro-cid-xvrfupwn><div class="toc-header" data-astro-cid-xvrfupwn>목차</div><ol class="toc-list" data-astro-cid-xvrfupwn><li class="toc-item" data-astro-cid-xvrfupwn><a href="#testing-library는-개발자와-사용자를-모두-행복하게-해줍니다" class="toc-link toc-h2" data-astro-cid-xvrfupwn>testing-library는 개발자와 사용자를 모두 행복하게 해줍니다</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#testing-library-설치하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>@testing-library 설치하기</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#npm" class="toc-link toc-h3" data-astro-cid-xvrfupwn>npm</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#yarn" class="toc-link toc-h3" data-astro-cid-xvrfupwn>yarn</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#jsdom-설정하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>JSDOM 설정하기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#테스트의-성공과-실패에-익숙해지기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>테스트의 성공과 실패에 익숙해지기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#인간의-말로-적어보기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>인간의 말로 적어보기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#dom-가져오기와-마크업" class="toc-link toc-h2" data-astro-cid-xvrfupwn>DOM 가져오기와 마크업</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#role은-요소에-의미있는-역할을-달아주는-거에요" class="toc-link toc-h3" data-astro-cid-xvrfupwn>role은 요소에 의미있는 역할을 달아주는 거에요</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#css보다-role이-더-직관적이고-안정적이에요" class="toc-link toc-h3" data-astro-cid-xvrfupwn>CSS보다 role이 더 직관적이고 안정적이에요</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#접근-가능한-이름을-달아주기" class="toc-link toc-h3" data-astro-cid-xvrfupwn>접근 가능한 이름을 달아주기</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#아이콘과-aria-label" class="toc-link toc-h2" data-astro-cid-xvrfupwn>아이콘과 aria-label</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#다음은-상태와-효과" class="toc-link toc-h2" data-astro-cid-xvrfupwn>다음은? 상태와 효과</a></li></ol></nav> <div class="post-content" data-astro-cid-fzx4jmue> <h2 id="testing-library는-개발자와-사용자를-모두-행복하게-해줍니다">testing-library는 개발자와 사용자를 모두 행복하게 해줍니다</h2>
 <p><a href="https://twinstae.github.io/why-frontend-testing/">우리에게는 프런트 테스트가 필요할지도 모릅니다.</a>에서 이야기한 것처럼, 테스트를 짜면 좋은 점이 많습니다.</p>
 <p>특히 이번에 소개할 <code>@testing-library</code>는 접근성을 기반으로, 사용자 관점에서 직관적으로 테스트를 작성할 수 있게 도와줍니다. 테스트하기 쉬운 컴포넌트를 만들다 보면, 누구나 <a href="https://www.apple.com/kr/accessibility/">손쉽게 사용</a>할 수 있게 되는 경우가 많습니다. 시각 장애인이 접근하기 어려운 앱은, 테스팅 라이브러리도 접근하기 어렵기 때문입니다.</p>
 <p>테스트를 짜면 브라우저를 열지 않고도 빠르게 개발이 가능합니다. 예를 들어 <code>vitest</code>와 <code>jsdom</code>을 이용하면, 5개의 폼에 값을 입력하고 제출하는 것 같이 귀찮은 경우도 1초도 안 되는 시간에 테스트해볼 수 있어요.</p>
@@ -105,30 +44,30 @@
 </ul>
 <p>여러분이 사용하는 package manager를 이용해서 devDependency로 설치해주세요.</p>
 <h3 id="npm">npm</h3>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">npm install --save-dev @testing-library/react @testing-library/dom @testing-library/user-event @testing-library/jest-dom</span></span></code></pre>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B">npm</span><span style="color:#F1FA8C"> install</span><span style="color:#BD93F9"> --save-dev</span><span style="color:#F1FA8C"> @testing-library/react</span><span style="color:#F1FA8C"> @testing-library/dom</span><span style="color:#F1FA8C"> @testing-library/user-event</span><span style="color:#F1FA8C"> @testing-library/jest-dom</span></span></code></pre>
 <h3 id="yarn">yarn</h3>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">yarn add </span><span style="color: #89DDFF">--</span><span style="color: #A6ACCD">dev </span><span style="color: #89DDFF">@</span><span style="color: #A6ACCD">testing</span><span style="color: #89DDFF">-</span><span style="color: #A6ACCD">library</span><span style="color: #89DDFF">/</span><span style="color: #A6ACCD">react </span><span style="color: #89DDFF">@</span><span style="color: #A6ACCD">testing</span><span style="color: #89DDFF">-</span><span style="color: #A6ACCD">library</span><span style="color: #89DDFF">/</span><span style="color: #A6ACCD">dom </span><span style="color: #89DDFF">@</span><span style="color: #A6ACCD">testing</span><span style="color: #89DDFF">-</span><span style="color: #A6ACCD">library</span><span style="color: #89DDFF">/</span><span style="color: #A6ACCD">user</span><span style="color: #89DDFF">-</span><span style="color: #A6ACCD">event </span><span style="color: #89DDFF">@</span><span style="color: #A6ACCD">testing</span><span style="color: #89DDFF">-</span><span style="color: #A6ACCD">library</span><span style="color: #89DDFF">/</span><span style="color: #A6ACCD">jest</span><span style="color: #89DDFF">-</span><span style="color: #A6ACCD">dom</span></span></code></pre>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>yarn add --dev @testing-library/react @testing-library/dom @testing-library/user-event @testing-library/jest-dom</span></span></code></pre>
 <h2 id="jsdom-설정하기">JSDOM 설정하기</h2>
 <p>testing-library는 dom이 있는 환경에서만 돌아갑니다. 그래서 브라우저에서도 실행할 수 있어요.</p>
 <p>하지만 브라우저에서는 느리기 때문에, 보통 <code>jest</code>나 <code>vitest</code> 같은 테스트 러너를 이용해서 node 환경에서 돌립니다. 저는 이 둘 중 하나를 사용하고 계실거라 가정하고 계속 진행하겠습니다. 특히 <code>create-react-app</code>을 쓰고 계신다면 jest가 이미 세팅되어 있을 겁니다.</p>
 <p>템플릿 없이 직접 jest를 세팅하는 건 글 하나를 써야할 정도로 번거롭기 때문에 생략합니다. jest config를 만들고, babel을 써서 코드를 변환해야 하고, 설정 하는 중에 당황스러운 에러를 만나는 경우도 많습니다.</p>
 <p>새로운 프로젝트를 만드신다면 <code>vite</code> 템플릿으로 세팅하시길 권해드립니다. <a href="https://vitest.dev/guide/">vitest</a>는 jest와 api가 호환될 뿐만 아니라, vite 플러그인을 이용하면 별다른 설정도 필요 없습니다. 공식 문서와 testing-library 설정 예시를 참고해주시면 어렵지 않을 거에요. 다음처럼 vite.config에 test라는 옵션만 추가해주면 되거든요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">/// </span><span style="color: #89DDFF; font-style: italic">&lt;</span><span style="color: #F07178; font-style: italic">reference</span><span style="color: #89DDFF; font-style: italic"> </span><span style="color: #C792EA; font-style: italic">types</span><span style="color: #89DDFF; font-style: italic">=</span><span style="color: #89DDFF; font-style: italic">&quot;</span><span style="color: #C3E88D; font-style: italic">vitest</span><span style="color: #89DDFF; font-style: italic">&quot;</span><span style="color: #89DDFF; font-style: italic"> /&gt;</span></span>
-<span class="line"><span style="color: #676E95; font-style: italic">/// </span><span style="color: #89DDFF; font-style: italic">&lt;</span><span style="color: #F07178; font-style: italic">reference</span><span style="color: #89DDFF; font-style: italic"> </span><span style="color: #C792EA; font-style: italic">types</span><span style="color: #89DDFF; font-style: italic">=</span><span style="color: #89DDFF; font-style: italic">&quot;</span><span style="color: #C3E88D; font-style: italic">vite/client</span><span style="color: #89DDFF; font-style: italic">&quot;</span><span style="color: #89DDFF; font-style: italic"> /&gt;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6272A4">/// &#x3C;</span><span style="color:#FF79C6">reference</span><span style="color:#50FA7B;font-style:italic"> types</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">vitest</span><span style="color:#E9F284">"</span><span style="color:#6272A4"> /></span></span>
+<span class="line"><span style="color:#6272A4">/// &#x3C;</span><span style="color:#FF79C6">reference</span><span style="color:#50FA7B;font-style:italic"> types</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">vite/client</span><span style="color:#E9F284">"</span><span style="color:#6272A4"> /></span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> react </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">@vitejs/plugin-react</span><span style="color: #89DDFF">&#39;</span></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">defineConfig</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">vite</span><span style="color: #89DDFF">&#39;</span></span>
+<span class="line"><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> react </span><span style="color:#FF79C6">from</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">@vitejs/plugin-react</span><span style="color:#E9F284">'</span></span>
+<span class="line"><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> { defineConfig } </span><span style="color:#FF79C6">from</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">vite</span><span style="color:#E9F284">'</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #676E95; font-style: italic">// https://vitejs.dev/config/</span></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">defineConfig</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #F07178">plugins</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> [</span><span style="color: #82AAFF">react</span><span style="color: #A6ACCD">()]</span><span style="color: #89DDFF">,</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #F07178">test</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">globals</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FF9CAC">true</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// describe, it, expect와 같은 의존성을 자동으로 import 해줍니다.</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">environment</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">jsdom</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// node에는 dom이 없기 때문에, js로 된 dom 구현체를 사용합니다</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">setupFiles</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">./src/setupTest.ts</span><span style="color: #89DDFF">&#39;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// setup.ts 파일을 테스트 전마다 실행해줍니다</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">css</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #FF9CAC">false</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #676E95; font-style: italic">// css를 import해야 하는 테스트라면 true로 켜주세요</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">},</span></span>
-<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span></span></code></pre>
+<span class="line"><span style="color:#6272A4">// https://vitejs.dev/config/</span></span>
+<span class="line"><span style="color:#FF79C6">export</span><span style="color:#FF79C6"> default</span><span style="color:#50FA7B"> defineConfig</span><span style="color:#F8F8F2">({</span></span>
+<span class="line"><span style="color:#F8F8F2">	plugins</span><span style="color:#FF79C6">:</span><span style="color:#F8F8F2"> [</span><span style="color:#50FA7B">react</span><span style="color:#F8F8F2">()],</span></span>
+<span class="line"><span style="color:#F8F8F2">	test</span><span style="color:#FF79C6">:</span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#F8F8F2">		globals</span><span style="color:#FF79C6">:</span><span style="color:#BD93F9"> true</span><span style="color:#F8F8F2">, </span><span style="color:#6272A4">// describe, it, expect와 같은 의존성을 자동으로 import 해줍니다.</span></span>
+<span class="line"><span style="color:#F8F8F2">		environment</span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">jsdom</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">, </span><span style="color:#6272A4">// node에는 dom이 없기 때문에, js로 된 dom 구현체를 사용합니다</span></span>
+<span class="line"><span style="color:#F8F8F2">		setupFiles</span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">./src/setupTest.ts</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">, </span><span style="color:#6272A4">// setup.ts 파일을 테스트 전마다 실행해줍니다</span></span>
+<span class="line"><span style="color:#F8F8F2">		css</span><span style="color:#FF79C6">:</span><span style="color:#BD93F9"> false</span><span style="color:#F8F8F2">, </span><span style="color:#6272A4">// css를 import해야 하는 테스트라면 true로 켜주세요</span></span>
+<span class="line"><span style="color:#F8F8F2">	},</span></span>
+<span class="line"><span style="color:#F8F8F2">})</span></span></code></pre>
 <p>어쨌든 node에는 dom이 없기 때문에 <code>jsdom</code>이라는 라이브러리로 돔 구현체를 주입해줘야 합니다. vitest는 설정에 jsdom 환경을 설정해주면, 알아서 설치할 거냐고 물어보기까지 합니다.</p>
 <p>jsdom 환경을 설정하면, node에도 <code>document</code> 객체가 생깁니다. 이제 브라우저와 비슷하게 대부분의 기능을 테스트할 수 있어요. 물론 SSR과 유사하게 <code>localStorage</code>와 같이 브라우저에만 존재하는 api는 사용할 수 없습니다. 이런 문제를 처리하는 방법도 의존성 주입을 다루는 시리즈에서 다뤄볼게요.</p>
 <p>다른 테스트 프레임워크에서 jsdom을 설정하는 방법도 일단 생략하고 지나가겠습니다. 도움이 필요하시면 댓글을 남겨주세요!</p>
@@ -139,94 +78,94 @@
 <p>기존에 만들어진 테스트 파일이 있다면 <code>watch</code> 모드로 들어가면서, 테스트 파일이 변경될 때마다 다시 실행하고 결과를 보여줍니다.</p>
 <p>아직 테스트 파일을 만들지 않았다면, 테스트를 찾지 못했다고 나올 겁니다. 다음처럼요!</p>
 <div class="hl-lines-7 hl-lines-11"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">taehee@taehee-MS-7B89:</span><span style="color: #89DDFF">~</span><span style="color: #A6ACCD">/github/testing-for-all$ yarn vitest</span></span>
-<span class="line"><span style="color: #A6ACCD">yarn run v1.22.19</span></span>
-<span class="line"><span style="color: #A6ACCD">$ /home/taehee/github/testing-for-all/node_modules/.bin/vitest</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B">taehee@taehee-MS-7B89:~/github/testing-for-all$</span><span style="color:#F1FA8C"> yarn</span><span style="color:#F1FA8C"> vitest</span></span>
+<span class="line"><span style="color:#50FA7B">yarn</span><span style="color:#F1FA8C"> run</span><span style="color:#F1FA8C"> v1.22.19</span></span>
+<span class="line"><span style="color:#50FA7B">$</span><span style="color:#F1FA8C"> /home/taehee/github/testing-for-all/node_modules/.bin/vitest</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> DEV  v0.23.2 /home/taehee/github/testing-for-all</span></span>
+<span class="line"><span style="color:#50FA7B"> DEV</span><span style="color:#F1FA8C">  v0.23.2</span><span style="color:#F1FA8C"> /home/taehee/github/testing-for-all</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">include: </span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">/</span><span style="color: #89DDFF">*</span><span style="color: #A6ACCD">.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}</span></span>
-<span class="line"><span style="color: #A6ACCD">exclude:  </span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">/node_modules/</span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">/dist/</span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">/cypress/</span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">/.{idea,git,cache,output,temp}/</span><span style="color: #89DDFF">**</span></span>
-<span class="line"><span style="color: #A6ACCD">watch exclude:  </span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">/node_modules/</span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">**</span><span style="color: #A6ACCD">/dist/</span><span style="color: #89DDFF">**</span></span>
+<span class="line"><span style="color:#50FA7B">include:</span><span style="color:#BD93F9;font-style:italic"> **</span><span style="color:#F1FA8C">/</span><span style="color:#BD93F9;font-style:italic">*</span><span style="color:#F1FA8C">.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}</span></span>
+<span class="line"><span style="color:#50FA7B">exclude:</span><span style="color:#BD93F9;font-style:italic">  **</span><span style="color:#F1FA8C">/node_modules/</span><span style="color:#BD93F9;font-style:italic">**</span><span style="color:#F1FA8C">,</span><span style="color:#BD93F9;font-style:italic"> **</span><span style="color:#F1FA8C">/dist/</span><span style="color:#BD93F9;font-style:italic">**</span><span style="color:#F1FA8C">,</span><span style="color:#BD93F9;font-style:italic"> **</span><span style="color:#F1FA8C">/cypress/</span><span style="color:#BD93F9;font-style:italic">**</span><span style="color:#F1FA8C">,</span><span style="color:#BD93F9;font-style:italic"> **</span><span style="color:#F1FA8C">/.{idea,git,cache,output,temp}/</span><span style="color:#BD93F9;font-style:italic">**</span></span>
+<span class="line"><span style="color:#50FA7B">watch</span><span style="color:#F1FA8C"> exclude:</span><span style="color:#BD93F9;font-style:italic">  **</span><span style="color:#F1FA8C">/node_modules/</span><span style="color:#BD93F9;font-style:italic">**</span><span style="color:#F1FA8C">,</span><span style="color:#BD93F9;font-style:italic"> **</span><span style="color:#F1FA8C">/dist/</span><span style="color:#BD93F9;font-style:italic">**</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">No </span><span style="color: #82AAFF">test</span><span style="color: #A6ACCD"> files found, exiting with code 1</span></span>
-<span class="line"><span style="color: #A6ACCD">error Command failed with </span><span style="color: #82AAFF">exit</span><span style="color: #A6ACCD"> code 1.</span></span>
-<span class="line"><span style="color: #A6ACCD">info Visit https://yarnpkg.com/en/docs/cli/run </span><span style="color: #89DDFF; font-style: italic">for</span><span style="color: #A6ACCD"> documentation about this command.</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B">No</span><span style="color:#F1FA8C"> test</span><span style="color:#F1FA8C"> files</span><span style="color:#F1FA8C"> found,</span><span style="color:#F1FA8C"> exiting</span><span style="color:#F1FA8C"> with</span><span style="color:#F1FA8C"> code</span><span style="color:#BD93F9"> 1</span></span>
+<span class="line"><span style="color:#50FA7B">error</span><span style="color:#F1FA8C"> Command</span><span style="color:#F1FA8C"> failed</span><span style="color:#F1FA8C"> with</span><span style="color:#F1FA8C"> exit</span><span style="color:#F1FA8C"> code</span><span style="color:#F1FA8C"> 1.</span></span>
+<span class="line"><span style="color:#50FA7B">info</span><span style="color:#F1FA8C"> Visit</span><span style="color:#F1FA8C"> https://yarnpkg.com/en/docs/cli/run</span><span style="color:#F1FA8C"> for</span><span style="color:#F1FA8C"> documentation</span><span style="color:#F1FA8C"> about</span><span style="color:#F1FA8C"> this</span><span style="color:#F1FA8C"> command.</span></span></code></pre>
 <p>jest나 vitest의 기본 설정은 <code>test.tsx</code>나 <code>spec.tsx</code>로 끝나는 파일을 찾아서 알아서 실행해줍니다. 정확히는 나와있듯이 <code>js,mjs,cjs,ts,mts,cts,jsx,tsx</code> 등의 확장자를 모두 지원합니다.</p>
 <p>파일을 만들고, 뼈대부터 잡아볼까요? 다음처럼 <code>DarkModeButton.test.tsx</code>를 만들어주세요.</p>
 <p>(vue나 svelte도 비슷하게 할 수 있는데, 나중에 예시를 추가해보겠습니다.)</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.test.tsx</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6272A4">// DarkModeButton.test.tsx</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #676E95; font-style: italic">// describe는 여러 it으로 된 테스트를 묶어주는 역할을 합니다.</span></span>
-<span class="line"><span style="color: #82AAFF">describe</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// it은 테스트하고 싶은 하나의 케이스입니다</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">it</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">1+1은 2이다</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// expect는 실제 값(received)이 기대하는(expected) 결과와 같은지 검증합니다.</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">+</span><span style="color: #F78C6C">1</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toBe</span><span style="color: #F07178">(</span><span style="color: #F78C6C">2</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span></span>
-<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span></span></code></pre>
+<span class="line"><span style="color:#6272A4">// describe는 여러 it으로 된 테스트를 묶어주는 역할을 합니다.</span></span>
+<span class="line"><span style="color:#50FA7B">describe</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">DarkModeButton</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#6272A4">	// it은 테스트하고 싶은 하나의 케이스입니다</span></span>
+<span class="line"><span style="color:#50FA7B">	it</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">1+1은 2이다</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#6272A4">		// expect는 실제 값(received)이 기대하는(expected) 결과와 같은지 검증합니다.</span></span>
+<span class="line"><span style="color:#50FA7B">		expect</span><span style="color:#F8F8F2">(</span><span style="color:#BD93F9">1</span><span style="color:#FF79C6">+</span><span style="color:#BD93F9">1</span><span style="color:#F8F8F2">).</span><span style="color:#50FA7B">toBe</span><span style="color:#F8F8F2">(</span><span style="color:#BD93F9">2</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#F8F8F2">	})</span></span>
+<span class="line"><span style="color:#F8F8F2">})</span></span></code></pre>
 <p>그러면 콘솔에 다음과 같이 떠야 합니다.</p>
 <div class="hl-lines-9"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD"> ✓ src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B"> ✓</span><span style="color:#F1FA8C"> src/DarkModeButton.test.tsx</span><span style="color:#F8F8F2"> (1)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Test Files  1 passed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">     Tests  1 passed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">  Start at  22:37:34</span></span>
-<span class="line"><span style="color: #A6ACCD">  Duration  1.20s </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">transform 399ms, setup 80ms, collect 53ms, tests 3ms</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color:#50FA7B">Test</span><span style="color:#F1FA8C"> Files</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> passed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">     Tests</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> passed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">  Start</span><span style="color:#F1FA8C"> at</span><span style="color:#F1FA8C">  22:37:34</span></span>
+<span class="line"><span style="color:#50FA7B">  Duration</span><span style="color:#F1FA8C">  1.20s</span><span style="color:#F8F8F2"> (transform </span><span style="color:#F1FA8C">399ms,</span><span style="color:#F1FA8C"> setup</span><span style="color:#F1FA8C"> 80ms,</span><span style="color:#F1FA8C"> collect</span><span style="color:#F1FA8C"> 53ms,</span><span style="color:#F1FA8C"> tests</span><span style="color:#F1FA8C"> 3ms</span><span style="color:#F8F8F2">)</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> PASS  Waiting </span><span style="color: #89DDFF; font-style: italic">for</span><span style="color: #A6ACCD"> file changes...</span></span>
-<span class="line"><span style="color: #A6ACCD">       press h to show help, press q to quit</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B"> PASS</span><span style="color:#F1FA8C">  Waiting</span><span style="color:#F1FA8C"> for</span><span style="color:#F1FA8C"> file</span><span style="color:#F1FA8C"> changes...</span></span>
+<span class="line"><span style="color:#50FA7B">       press</span><span style="color:#F1FA8C"> h</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> show</span><span style="color:#F1FA8C"> help,</span><span style="color:#F1FA8C"> press</span><span style="color:#F1FA8C"> q</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> quit</span></span></code></pre>
 <p>1+1이라는 당연해보이는 테스트를 짜는 이유이기도 합니다. 만약에 여전히 테스트를 찾지 못한다면 뭔가 잘못되었다는 뜻이거든요.</p>
 <p>예를 들어 <code>setupTest.ts</code> 파일이 없으면 다음과 같은 에러가 뜹니다.</p>
 <div class="hl-lines-7 hl-lines-8"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD"> DEV  v0.23.2 /home/taehee/github/testing-for-all</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B"> DEV</span><span style="color:#F1FA8C">  v0.23.2</span><span style="color:#F1FA8C"> /home/taehee/github/testing-for-all</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> ❯ src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">0</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color:#50FA7B"> ❯</span><span style="color:#F1FA8C"> src/DarkModeButton.test.tsx</span><span style="color:#F8F8F2"> (0)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color:#F1FA8C"> Failed</span><span style="color:#F1FA8C"> Tests</span><span style="color:#BD93F9"> 1</span><span style="color:#F1FA8C"> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD"> src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">]</span></span>
-<span class="line"><span style="color: #A6ACCD">Error: </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">vite-node</span><span style="color: #89DDFF">]</span><span style="color: #A6ACCD"> Failed to load /home/taehee/github/testing-for-all/src/setupTest.ts</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B"> FAIL</span><span style="color:#F1FA8C">  src/DarkModeButton.test.tsx</span><span style="color:#F8F8F2"> [ </span><span style="color:#F1FA8C">src/DarkModeButton.test.tsx</span><span style="color:#F1FA8C"> ]</span></span>
+<span class="line"><span style="color:#50FA7B">Error:</span><span style="color:#F8F8F2"> [vite-node] Failed to load /home/taehee/github/testing-</span><span style="color:#FF79C6">for</span><span style="color:#F8F8F2">-all/src/setupTest.ts</span></span></code></pre>
 <p>src에 다음과 같이 setupTest.ts 파일을 만들고 저장해주세요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/jest-dom</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#FF79C6">import</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">@testing-library/jest-dom</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
 <span class="line"></span></code></pre>
 <p>만약 에러가 없이 테스트가 PASS했다면, 이번에는 일부러 테스트를 실패시켜 보세요. 예를 들어 1+1이 1은 1이라고 어처구니 없는 테스트를 짠다면?</p>
 <div class="plus-lines-6"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.test.tsx</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6272A4">// DarkModeButton.test.tsx</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #82AAFF">describe</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">it</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">1+1은 1이다???</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// expect(received).toBe(expected)</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #F78C6C">1</span><span style="color: #89DDFF">+</span><span style="color: #F78C6C">1</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toBe</span><span style="color: #F07178">(</span><span style="color: #F78C6C">1</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span></span>
-<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B">describe</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">DarkModeButton</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#50FA7B">	it</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">1+1은 1이다???</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#6272A4">		// expect(received).toBe(expected)</span></span>
+<span class="line"><span style="color:#50FA7B">		expect</span><span style="color:#F8F8F2">(</span><span style="color:#BD93F9">1</span><span style="color:#FF79C6">+</span><span style="color:#BD93F9">1</span><span style="color:#F8F8F2">).</span><span style="color:#50FA7B">toBe</span><span style="color:#F8F8F2">(</span><span style="color:#BD93F9">1</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#F8F8F2">	})</span></span>
+<span class="line"><span style="color:#F8F8F2">})</span></span></code></pre>
 <p>당연히 실패해야겠죠?</p>
 <div class="hl-lines-8 hl-lines-13 hl-lines-14"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color:#F1FA8C"> Failed</span><span style="color:#F1FA8C"> Tests</span><span style="color:#BD93F9"> 1</span><span style="color:#F1FA8C"> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 1+1은 1이다</span><span style="color: #89DDFF">???</span></span>
-<span class="line"><span style="color: #A6ACCD">AssertionError: expected 2 to be 1 // Object.is equality</span></span>
-<span class="line"><span style="color: #A6ACCD"> ❯ src/DarkModeButton.test.tsx:9:16</span></span>
-<span class="line"><span style="color: #A6ACCD">      7</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   it</span><span style="color: #89DDFF">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">1+1은 1이다???</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">, </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> =</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #A6ACCD">      8</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">     // expect는 실제 값</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">actual</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD">이 기대하는</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">expected</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> 결과와 같은지 검증합니다.</span></span>
-<span class="line"><span style="color: #A6ACCD">      9</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">     expect</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1+1</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD">.toBe</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">);</span></span>
-<span class="line"><span style="color: #A6ACCD">       </span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">                ^</span></span>
-<span class="line"><span style="color: #A6ACCD">     10</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD">   })</span></span>
-<span class="line"><span style="color: #A6ACCD">     11</span><span style="color: #89DDFF">|</span><span style="color: #A6ACCD"> })</span></span>
+<span class="line"><span style="color:#50FA7B"> FAIL</span><span style="color:#F1FA8C">  src/DarkModeButton.test.tsx</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> DarkModeButton</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> 1+1은</span><span style="color:#F1FA8C"> 1이다???</span></span>
+<span class="line"><span style="color:#50FA7B">AssertionError:</span><span style="color:#F1FA8C"> expected</span><span style="color:#BD93F9"> 2</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> be</span><span style="color:#BD93F9"> 1</span><span style="color:#F1FA8C"> //</span><span style="color:#F1FA8C"> Object.is</span><span style="color:#F1FA8C"> equality</span></span>
+<span class="line"><span style="color:#50FA7B"> ❯</span><span style="color:#F1FA8C"> src/DarkModeButton.test.tsx:9:16</span></span>
+<span class="line"><span style="color:#50FA7B">      7</span><span style="color:#FF79C6">|</span><span style="color:#50FA7B">   it(</span><span style="color:#50FA7B">"1+1은 1이다???"</span><span style="color:#50FA7B">,</span><span style="color:#F8F8F2"> () => {</span></span>
+<span class="line"><span style="color:#50FA7B">      8</span><span style="color:#FF79C6">|</span><span style="color:#50FA7B">     //</span><span style="color:#F1FA8C"> expect는</span><span style="color:#F1FA8C"> 실제</span><span style="color:#F1FA8C"> 값</span><span style="color:#F8F8F2">(</span><span style="color:#50FA7B">actual</span><span style="color:#F8F8F2">)</span><span style="color:#F1FA8C">이</span><span style="color:#F1FA8C"> 기대하는</span><span style="color:#F8F8F2">(</span><span style="color:#50FA7B">expected</span><span style="color:#F8F8F2">) </span><span style="color:#F1FA8C">결과와</span><span style="color:#F1FA8C"> 같은지</span><span style="color:#F1FA8C"> 검증합니다.</span></span>
+<span class="line"><span style="color:#50FA7B">      9</span><span style="color:#FF79C6">|</span><span style="color:#50FA7B">     expect(1+1</span><span style="color:#F8F8F2">).toBe(</span><span style="color:#50FA7B">1</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#FF79C6">       |</span><span style="color:#50FA7B">                ^</span></span>
+<span class="line"><span style="color:#50FA7B">     10</span><span style="color:#FF79C6">|</span><span style="color:#F8F8F2">   })</span></span>
+<span class="line"><span style="color:#50FA7B">     11</span><span style="color:#FF79C6">|</span><span style="color:#F8F8F2"> })</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">  - Expected   </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">1</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #A6ACCD">  + Received   </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">2</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color:#50FA7B">  -</span><span style="color:#F1FA8C"> Expected</span><span style="color:#E9F284">   "</span><span style="color:#F1FA8C">1</span><span style="color:#E9F284">"</span></span>
+<span class="line"><span style="color:#50FA7B">  +</span><span style="color:#F1FA8C"> Received</span><span style="color:#E9F284">   "</span><span style="color:#F1FA8C">2</span><span style="color:#E9F284">"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Test Files  1 failed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">1/1</span><span style="color: #89DDFF">]</span><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"><span style="color:#50FA7B">Test</span><span style="color:#F1FA8C"> Files</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> failed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">     Tests  1 failed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">  Start at  22:43:01</span></span>
-<span class="line"><span style="color: #A6ACCD">  Duration  96ms</span></span>
+<span class="line"><span style="color:#50FA7B">     Tests</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> failed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">  Start</span><span style="color:#F1FA8C"> at</span><span style="color:#F1FA8C">  22:43:01</span></span>
+<span class="line"><span style="color:#50FA7B">  Duration</span><span style="color:#F1FA8C">  96ms</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> FAIL  Tests failed. Watching </span><span style="color: #89DDFF; font-style: italic">for</span><span style="color: #A6ACCD"> file changes...</span></span>
-<span class="line"><span style="color: #A6ACCD">       press h to show help, press q to quit</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B"> FAIL</span><span style="color:#F1FA8C">  Tests</span><span style="color:#F1FA8C"> failed.</span><span style="color:#F1FA8C"> Watching</span><span style="color:#F1FA8C"> for</span><span style="color:#F1FA8C"> file</span><span style="color:#F1FA8C"> changes...</span></span>
+<span class="line"><span style="color:#50FA7B">       press</span><span style="color:#F1FA8C"> h</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> show</span><span style="color:#F1FA8C"> help,</span><span style="color:#F1FA8C"> press</span><span style="color:#F1FA8C"> q</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> quit</span></span></code></pre>
 <p>이 <code>AssertionError</code> 메세지 읽는 법을 간단하게 설명해볼게요. <code>toBe(1)</code> 그러니까 <code>1</code>이길 기대했는데, 실제로는 <code>1+1</code> 즉 <code>2</code>가 와서 실패했다는 거죠.</p>
 <p>이제 기본적인 걸 배웠으니, 본격적으로 다크 모드 버튼을 만들어 봅시다.</p>
 <h2 id="인간의-말로-적어보기">인간의 말로 적어보기</h2>
@@ -235,7 +174,7 @@
 <ul>
 <li>제 역량배지 서비스는 현재 <code>light 테마</code>가 기본이에요. 밤에 밝은 테마의 사이트를 보면 눈이 부시죠. 그래서 <code>dark 테마</code>도 지원하고 싶어요.</li>
 <li><code>button</code> 은 라이트일 때 해 모양, 다크일 때에는 달 모양의 아이콘이에요.</li>
-<li>마우스를 올리면(hover) "현재 라이트 모드, 다크 모드로 전환하려면 클릭하세요" 같은 식으로 툴팁(tooltip)이 뜨면 좋겠어요.</li>
+<li>마우스를 올리면(hover) “현재 라이트 모드, 다크 모드로 전환하려면 클릭하세요” 같은 식으로 툴팁(tooltip)이 뜨면 좋겠어요.</li>
 <li>테마의 초기 값은 <code>시스템 설정</code>을 사용하지만, <code>SSR</code>처럼 값을 가져올 수 없을 때에는 fallback으로 <code>dark를 기본 값</code>으로 쓰고 싶어요.</li>
 <li>이렇게 설정한 값은 <code>localStorage</code>에 저장하고, 다시 접속했을 때 가져올 수 있으면 좋겠어요.</li>
 <li>클릭하면 테마가 바뀌면서, 아이콘도 같이 바뀌어요.</li>
@@ -247,64 +186,64 @@
 <p>TDD, 즉 테스트 주도 개발에서는 작은 보폭으로 조금씩 확인하면서 개발하는 걸 중요하게 생각합니다. 그래서 저도 한 번에 다크모드 버튼을 구현하기 보다는, 작게 하나씩 @testing-libary의 기능을 소개하면서 가보려 해요.</p>
 <p>먼저 dom이 잘 그려지는지를 테스트하고, 그에 맞게 마크업을 만들어 볼게요.</p>
 <p>일단 <code>button</code>을 하나 만들고, 그 안에 <code>현재 다크 모드</code>라는 <code>textContent</code>가 보이면 좋겠어요. 이를 테스트로 표현하면 다음처럼 될 거에요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.test.tsx</span></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">render</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/react</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">@testing-library/dom</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">./DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6272A4">// DarkModeButton.test.tsx</span></span>
+<span class="line"><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> { render } </span><span style="color:#FF79C6">from</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">@testing-library/react</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> { screen } </span><span style="color:#FF79C6">from</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">@testing-library/dom</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> DarkModeButton </span><span style="color:#FF79C6">from</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">./DarkModeButton</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #82AAFF">describe</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">it</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">다크 모드 버튼을 렌더할 수 있다</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// 다크 모드 버튼을 document에 렌더해요.</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">render</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">DarkModeButton</span><span style="color: #89DDFF"> /&gt;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color:#50FA7B">describe</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">DarkModeButton</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#50FA7B">	it</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">다크 모드 버튼을 렌더할 수 있다</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#6272A4">		// 다크 모드 버튼을 document에 렌더해요.</span></span>
+<span class="line"><span style="color:#50FA7B">		render</span><span style="color:#F8F8F2">(&#x3C;</span><span style="color:#8BE9FD;font-style:italic">DarkModeButton</span><span style="color:#F8F8F2"> />);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// dom에서 button role을 가지고</span></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// &quot;현재 다크 모드&quot;라는 접근 가능한 이름(name)을 가진 element를 가져와요.</span></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// getBy는 요소를 찾지 못하면 에러가 나고 테스트가 실패해요.</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">button</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">screen</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getByRole</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> name</span><span style="color: #89DDFF">:</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color:#6272A4">		// dom에서 button role을 가지고</span></span>
+<span class="line"><span style="color:#6272A4">		// "현재 다크 모드"라는 접근 가능한 이름(name)을 가진 element를 가져와요.</span></span>
+<span class="line"><span style="color:#6272A4">		// getBy는 요소를 찾지 못하면 에러가 나고 테스트가 실패해요.</span></span>
+<span class="line"><span style="color:#FF79C6">		const</span><span style="color:#F8F8F2"> button </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> screen.</span><span style="color:#50FA7B">getByRole</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, { name</span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">현재 다크 모드</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2"> });</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// 이 버튼이 document에 있는지 확인해요. 생략할 수 있어요.</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">button</span><span style="color: #F07178">)</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toBeInTheDocument</span><span style="color: #F07178">()</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span></code></pre>
+<span class="line"><span style="color:#6272A4">		// 이 버튼이 document에 있는지 확인해요. 생략할 수 있어요.</span></span>
+<span class="line"><span style="color:#50FA7B">		expect</span><span style="color:#F8F8F2">(button).</span><span style="color:#50FA7B">toBeInTheDocument</span><span style="color:#F8F8F2">();</span></span>
+<span class="line"><span style="color:#F8F8F2">	});</span></span>
+<span class="line"><span style="color:#F8F8F2">});</span></span></code></pre>
 <p>아직 <code>DarkModeButton.tsx</code> 파일을 만들지 않았으니, 타입스크립트라면 타입 에러도 나고 테스트도 실패할 거에요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color:#F1FA8C"> Failed</span><span style="color:#F1FA8C"> Suites</span><span style="color:#BD93F9"> 1</span><span style="color:#F1FA8C"> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD"> src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">]</span></span>
-<span class="line"><span style="color: #A6ACCD"> ❯ async /home/taehee/github/testing-for-all/src/DarkModeButton.test.tsx:8:31</span></span>
-<span class="line"><span style="color: #A6ACCD">Error: </span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">vite-node</span><span style="color: #89DDFF">]</span><span style="color: #A6ACCD"> Failed to load ./DarkModeButton</span></span>
+<span class="line"><span style="color:#50FA7B"> FAIL</span><span style="color:#F1FA8C">  src/DarkModeButton.test.tsx</span><span style="color:#F8F8F2"> [ </span><span style="color:#F1FA8C">src/DarkModeButton.test.tsx</span><span style="color:#F1FA8C"> ]</span></span>
+<span class="line"><span style="color:#50FA7B"> ❯</span><span style="color:#F1FA8C"> async</span><span style="color:#F1FA8C"> /home/taehee/github/testing-for-all/src/DarkModeButton.test.tsx:8:31</span></span>
+<span class="line"><span style="color:#50FA7B">Error:</span><span style="color:#F8F8F2"> [vite-node] Failed to load ./DarkModeButton</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color: #89DDFF">[</span><span style="color: #A6ACCD">1/1</span><span style="color: #89DDFF">]</span><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Test Files  1 failed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B">Test</span><span style="color:#F1FA8C"> Files</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> failed</span><span style="color:#F8F8F2"> (1)</span></span></code></pre>
 <p>구현도 다음처럼 최소한의 파일만 만들어볼까요?</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.tsx</span></span>
-<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">(){</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #89DDFF">null;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6272A4">// DarkModeButton.tsx</span></span>
+<span class="line"><span style="color:#FF79C6">function</span><span style="color:#50FA7B"> DarkModeButton</span><span style="color:#F8F8F2">(){</span></span>
+<span class="line"><span style="color:#FF79C6">	return</span><span style="color:#BD93F9"> null</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
+<span class="line"><span style="color:#FF79C6">export</span><span style="color:#FF79C6"> default</span><span style="color:#F8F8F2"> DarkModeButton;</span></span></code></pre>
 <p>아직 button이 없으니 여전히 에러가 나겠지만, 이번에는 새로운 에러일 거에요!</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD"> ❯ src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">   ❯ DarkModeButton </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">     × 다크 모드 버튼을 렌더할 수 있다</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B"> ❯</span><span style="color:#F1FA8C"> src/DarkModeButton.test.tsx</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">   ❯</span><span style="color:#F1FA8C"> DarkModeButton</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">     ×</span><span style="color:#F1FA8C"> 다크</span><span style="color:#F1FA8C"> 모드</span><span style="color:#F1FA8C"> 버튼을</span><span style="color:#F1FA8C"> 렌더할</span><span style="color:#F1FA8C"> 수</span><span style="color:#F1FA8C"> 있다</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color:#F1FA8C"> Failed</span><span style="color:#F1FA8C"> Tests</span><span style="color:#BD93F9"> 1</span><span style="color:#F1FA8C"> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 다크 모드 버튼을 렌더할 수 있다</span></span>
-<span class="line"><span style="color: #A6ACCD">TestingLibraryElementError: Unable to find an accessible element with the role </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD"> and name </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color:#50FA7B"> FAIL</span><span style="color:#F1FA8C">  src/DarkModeButton.test.tsx</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> DarkModeButton</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> 다크</span><span style="color:#F1FA8C"> 모드</span><span style="color:#F1FA8C"> 버튼을</span><span style="color:#F1FA8C"> 렌더할</span><span style="color:#F1FA8C"> 수</span><span style="color:#F1FA8C"> 있다</span></span>
+<span class="line"><span style="color:#50FA7B">TestingLibraryElementError:</span><span style="color:#F1FA8C"> Unable</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> find</span><span style="color:#F1FA8C"> an</span><span style="color:#F1FA8C"> accessible</span><span style="color:#F1FA8C"> element</span><span style="color:#F1FA8C"> with</span><span style="color:#F1FA8C"> the</span><span style="color:#F1FA8C"> role</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C"> and</span><span style="color:#F1FA8C"> name</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">현재 다크 모드</span><span style="color:#E9F284">"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, </span><span style="color: #89DDFF; font-style: italic">then</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">set</span><span style="color: #A6ACCD"> the </span><span style="color: #89DDFF">`</span><span style="color: #C3E88D">hidden</span><span style="color: #89DDFF">`</span><span style="color: #A6ACCD"> option to </span><span style="color: #89DDFF">`</span><span style="color: #C3E88D">true</span><span style="color: #89DDFF">`</span><span style="color: #A6ACCD">. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole</span></span>
+<span class="line"><span style="color:#50FA7B">There</span><span style="color:#F1FA8C"> are</span><span style="color:#F1FA8C"> no</span><span style="color:#F1FA8C"> accessible</span><span style="color:#F1FA8C"> roles.</span><span style="color:#F1FA8C"> But</span><span style="color:#F1FA8C"> there</span><span style="color:#F1FA8C"> might</span><span style="color:#F1FA8C"> be</span><span style="color:#F1FA8C"> some</span><span style="color:#F1FA8C"> inaccessible</span><span style="color:#F1FA8C"> roles.</span><span style="color:#F1FA8C"> If</span><span style="color:#F1FA8C"> you</span><span style="color:#F1FA8C"> wish</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> access</span><span style="color:#F1FA8C"> them,</span><span style="color:#F1FA8C"> then</span><span style="color:#F1FA8C"> set</span><span style="color:#F1FA8C"> the</span><span style="color:#F1FA8C"> `</span><span style="color:#50FA7B">hidden</span><span style="color:#F1FA8C">`</span><span style="color:#50FA7B"> option</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> `</span><span style="color:#8BE9FD">true</span><span style="color:#F1FA8C">`</span><span style="color:#8BE9FD">.</span><span style="color:#F1FA8C"> Learn</span><span style="color:#F1FA8C"> more</span><span style="color:#F1FA8C"> about</span><span style="color:#F1FA8C"> this</span><span style="color:#F1FA8C"> here:</span><span style="color:#F1FA8C"> https://testing-library.com/docs/dom-testing-library/api-queries#byrole</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Ignored nodes: comments, script, style</span></span>
+<span class="line"><span style="color:#50FA7B">Ignored</span><span style="color:#F1FA8C"> nodes:</span><span style="color:#F1FA8C"> comments,</span><span style="color:#F1FA8C"> script,</span><span style="color:#F1FA8C"> style</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">body</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">div /</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">/body</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
+<span class="line"><span style="color:#FF79C6">&#x3C;</span><span style="color:#F8F8F2">body</span><span style="color:#FF79C6">></span></span>
+<span class="line"><span style="color:#FF79C6">  &#x3C;</span><span style="color:#50FA7B">div</span><span style="color:#F8F8F2"> /</span><span style="color:#FF79C6">></span></span>
+<span class="line"><span style="color:#FF79C6">&#x3C;</span><span style="color:#F8F8F2">/body</span><span style="color:#FF79C6">></span></span></code></pre>
 <p>당황하지 말고 이 에러를 하나씩 읽어보죠.</p>
 <blockquote>
-<p>TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "현재 다크 모드"</p>
+<p>TestingLibraryElementError: Unable to find an accessible element with the role “button” and name “현재 다크 모드”</p>
 </blockquote>
-<p>먼저 "현재 다크 모드"라는 <code>name</code>에 <code>button</code> <code>role</code>을 가진 element를 찾지 못했다고 해요.</p>
+<p>먼저 “현재 다크 모드”라는 <code>name</code>에 <code>button</code> <code>role</code>을 가진 element를 찾지 못했다고 해요.</p>
 <blockquote>
 <p>There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the hidden option to true.</p>
 </blockquote>
@@ -333,200 +272,142 @@
 <p>div와 달리 요소들의 기본 css가 불편하다면, 이런 요소의 <a href="https://www.joshwcomeau.com/css/custom-css-reset/">기본 css를 reset</a>시켜서 사용하는 경우도 많아요.</p>
 <h3 id="css보다-role이-더-직관적이고-안정적이에요">CSS보다 role이 더 직관적이고 안정적이에요</h3>
 <p>우리의 @testing-library도 웹 표준인 role을 이용해서 요소를 찾는데. 혹시 기존에 css를 이용해서 요소를 찾는 테스트 도구를 써보신 적이 있나요? css 선택자를 쓰면 되는데, 왜 role을 배워야하나 의문이실지도 모르겠어요. 예를 들어 <code>enzyme</code>에서는, 앞에서 짠 테스트를 다음과 같이 할 수 있지요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.test.tsx</span></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">render</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">enzyme</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">import</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF; font-style: italic">from</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">./DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6272A4">// DarkModeButton.test.tsx</span></span>
+<span class="line"><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> { render } </span><span style="color:#FF79C6">from</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">enzyme</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#FF79C6">import</span><span style="color:#F8F8F2"> DarkModeButton </span><span style="color:#FF79C6">from</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">./DarkModeButton</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">;</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #82AAFF">describe</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">DarkModeButton</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #82AAFF">it</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">다크 모드 버튼을 렌더할 수 있다</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #89DDFF">()</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">wrapper</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #82AAFF">render</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">DarkModeButton</span><span style="color: #89DDFF"> /&gt;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color:#50FA7B">describe</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">DarkModeButton</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#50FA7B">	it</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">다크 모드 버튼을 렌더할 수 있다</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, () </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#FF79C6">		const</span><span style="color:#F8F8F2"> wrapper </span><span style="color:#FF79C6">=</span><span style="color:#50FA7B"> render</span><span style="color:#F8F8F2">(&#x3C;</span><span style="color:#8BE9FD;font-style:italic">DarkModeButton</span><span style="color:#F8F8F2"> />);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">button</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">wrapper</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">find</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color:#FF79C6">		const</span><span style="color:#F8F8F2"> button </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> wrapper.</span><span style="color:#50FA7B">find</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">'</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF">		</span><span style="color: #676E95; font-style: italic">// 텍스트가 무엇인지는 또 확인을 해야 해요.</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #82AAFF">expect</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">wrapper</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">text</span><span style="color: #F07178">())</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">toBe</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&#39;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span></code></pre>
+<span class="line"><span style="color:#6272A4">		// 텍스트가 무엇인지는 또 확인을 해야 해요.</span></span>
+<span class="line"><span style="color:#50FA7B">		expect</span><span style="color:#F8F8F2">(wrapper.</span><span style="color:#50FA7B">text</span><span style="color:#F8F8F2">()).</span><span style="color:#50FA7B">toBe</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">'</span><span style="color:#F1FA8C">현재 다크 모드</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#F8F8F2">	});</span></span>
+<span class="line"><span style="color:#F8F8F2">});</span></span></code></pre>
 <p>css 선택자에 의존하는 테스트는 불안정해요. id나 class name은 사람마다 다르게 정해요. 클래스 이름을 정하는 방법론은 매우 많죠. <code>tailwind</code>처럼 알아보기 어려운 경우도 있어요. 클래스명이 충돌 나거나 디자인에 따라 바뀌기도 해요.</p>
 <p>role은 웹 표준이라서, 제대로 알고 지키기만 하면 어디서나 일관적으로 사용할 수 있어요. 또 <code>list</code>나 <code>heading</code> 같은 role은 <code>ul</code>이나 <code>ol</code>, <code>h1</code>, <code>h2</code>보다 느슨해서 쉽게 깨지지 않지요. 거꾸로 <code>input[type="text"]</code>나 <code>input[type="checkbox"]</code>처럼 역할이 다른데도 똑같은 태그를 쓰는 경우에는 <code>textbox</code>나 <code>checkbox</code>처럼 간결하고 직관적으로 쓸 수 있지요.</p>
 <h3 id="접근-가능한-이름을-달아주기">접근 가능한 이름을 달아주기</h3>
 <p>그러면 이 많은 role을 하나하나 외워야 할까요? semantic html을 잘 쓴다면 괜찮아요. <code>@testing-library</code>는 요소를 찾지 못했을 때, 화면에 있는 접근 가능한 role을 가진 요소들의 목록을 띄워주거든요.</p>
 <p>앞의 테스트를 딱 통과하지 못할 정도로만 구현을 해볼게요. <code>button</code>을 만들고, 잘못된 text를 넣어볼 거에요.</p>
 <div class="plus-lines-3"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.tsx</span></span>
-<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">(){</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">어둠의 버튼</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6272A4">// DarkModeButton.tsx</span></span>
+<span class="line"><span style="color:#FF79C6">function</span><span style="color:#50FA7B"> DarkModeButton</span><span style="color:#F8F8F2">(){</span></span>
+<span class="line"><span style="color:#FF79C6">	return</span><span style="color:#F8F8F2"> &#x3C;</span><span style="color:#FF79C6">button</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">>어둠의 버튼&#x3C;/</span><span style="color:#FF79C6">button</span><span style="color:#F8F8F2">>;</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
+<span class="line"><span style="color:#FF79C6">export</span><span style="color:#FF79C6"> default</span><span style="color:#F8F8F2"> DarkModeButton;</span></span></code></pre>
 <p>그러면 다음처럼 에러가 발생해요!</p>
 <div class="hl-lines-8 hl-lines-10 hl-lines-11"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color:#F1FA8C"> Failed</span><span style="color:#F1FA8C"> Tests</span><span style="color:#BD93F9"> 1</span><span style="color:#F1FA8C"> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 다크 모드 버튼을 렌더할 수 있다</span></span>
-<span class="line"><span style="color: #A6ACCD">TestingLibraryElementError: Unable to find an accessible element with the role </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD"> and name </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span></span>
+<span class="line"><span style="color:#50FA7B"> FAIL</span><span style="color:#F1FA8C">  src/DarkModeButton.test.tsx</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> DarkModeButton</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> 다크</span><span style="color:#F1FA8C"> 모드</span><span style="color:#F1FA8C"> 버튼을</span><span style="color:#F1FA8C"> 렌더할</span><span style="color:#F1FA8C"> 수</span><span style="color:#F1FA8C"> 있다</span></span>
+<span class="line"><span style="color:#50FA7B">TestingLibraryElementError:</span><span style="color:#F1FA8C"> Unable</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> find</span><span style="color:#F1FA8C"> an</span><span style="color:#F1FA8C"> accessible</span><span style="color:#F1FA8C"> element</span><span style="color:#F1FA8C"> with</span><span style="color:#F1FA8C"> the</span><span style="color:#F1FA8C"> role</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C"> and</span><span style="color:#F1FA8C"> name</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">현재 다크 모드</span><span style="color:#E9F284">"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Here are the accessible roles:</span></span>
+<span class="line"><span style="color:#50FA7B">Here</span><span style="color:#F1FA8C"> are</span><span style="color:#F1FA8C"> the</span><span style="color:#F1FA8C"> accessible</span><span style="color:#F1FA8C"> roles:</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">  button:</span></span>
+<span class="line"><span style="color:#50FA7B">  button:</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">  Name </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">어둠의 버튼</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">:</span></span>
-<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">button /</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color:#50FA7B">  Name</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">어둠의 버튼</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">:</span></span>
+<span class="line"><span style="color:#FF79C6">  &#x3C;</span><span style="color:#50FA7B">button</span><span style="color:#F8F8F2"> /</span><span style="color:#FF79C6">></span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">  --------------------------------------------------</span></span>
+<span class="line"><span style="color:#50FA7B">  --------------------------------------------------</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Ignored nodes: comments, script, style</span></span>
-<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">body</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">div</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">button</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">      어둠의 버튼</span></span>
-<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">/button</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">/div</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">/body</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B">Ignored</span><span style="color:#F1FA8C"> nodes:</span><span style="color:#F1FA8C"> comments,</span><span style="color:#F1FA8C"> script,</span><span style="color:#F1FA8C"> style</span></span>
+<span class="line"><span style="color:#FF79C6">&#x3C;</span><span style="color:#F8F8F2">body</span><span style="color:#FF79C6">></span></span>
+<span class="line"><span style="color:#FF79C6">  &#x3C;</span><span style="color:#50FA7B">div</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#FF79C6">    &#x3C;</span><span style="color:#50FA7B">button</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#50FA7B">      어둠의</span><span style="color:#F1FA8C"> 버튼</span></span>
+<span class="line"><span style="color:#FF79C6">    &#x3C;</span><span style="color:#50FA7B">/button</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#FF79C6">  &#x3C;</span><span style="color:#50FA7B">/div</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#FF79C6">&#x3C;</span><span style="color:#F8F8F2">/body</span><span style="color:#FF79C6">></span></span></code></pre>
 <p>보면 button이 있긴 한데, <code>name</code>이 다르다고 하고 있죠? <code>accessible name</code> 그러니까 접근 가능한 이름은, 스크린 리더가 읽어주는 해당 요소의 이름이에요.</p>
 <p><code>&#x3C;a></code>나 <code>&#x3C;button></code> 태그라면 요소의 <code>textContent</code>가 접근 가능한 이름이에요. 여기서는 <code>"어둠의 버튼"</code>이겠죠.</p>
 <p>앞의 테스트를 통과 시키려면, 버튼의 textContent를 <code>"현재 다크 모드"</code>로 바꿔주면 될 겁니다.</p>
 <div class="plus-lines-3"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #676E95; font-style: italic">// DarkModeButton.tsx</span></span>
-<span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">(){</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> </span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">현재 다크 모드</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6272A4">// DarkModeButton.tsx</span></span>
+<span class="line"><span style="color:#FF79C6">function</span><span style="color:#50FA7B"> DarkModeButton</span><span style="color:#F8F8F2">(){</span></span>
+<span class="line"><span style="color:#FF79C6">	return</span><span style="color:#F8F8F2"> &#x3C;</span><span style="color:#FF79C6">button</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">>현재 다크 모드&#x3C;/</span><span style="color:#FF79C6">button</span><span style="color:#F8F8F2">>;</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
+<span class="line"><span style="color:#FF79C6">export</span><span style="color:#FF79C6"> default</span><span style="color:#F8F8F2"> DarkModeButton;</span></span></code></pre>
 <p>그러면 드디어 테스트가 통과해요! 와와!</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD"> ✓ src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B"> ✓</span><span style="color:#F1FA8C"> src/DarkModeButton.test.tsx</span><span style="color:#F8F8F2"> (1)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Test Files  1 passed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">     Tests  1 passed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">  Start at  16:11:36</span></span>
-<span class="line"><span style="color: #A6ACCD">  Duration  227ms</span></span>
+<span class="line"><span style="color:#50FA7B">Test</span><span style="color:#F1FA8C"> Files</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> passed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">     Tests</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> passed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">  Start</span><span style="color:#F1FA8C"> at</span><span style="color:#F1FA8C">  16:11:36</span></span>
+<span class="line"><span style="color:#50FA7B">  Duration</span><span style="color:#F1FA8C">  227ms</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> PASS  Waiting </span><span style="color: #89DDFF; font-style: italic">for</span><span style="color: #A6ACCD"> file changes...</span></span>
-<span class="line"><span style="color: #A6ACCD">       press h to show help, press q to quit</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B"> PASS</span><span style="color:#F1FA8C">  Waiting</span><span style="color:#F1FA8C"> for</span><span style="color:#F1FA8C"> file</span><span style="color:#F1FA8C"> changes...</span></span>
+<span class="line"><span style="color:#50FA7B">       press</span><span style="color:#F1FA8C"> h</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> show</span><span style="color:#F1FA8C"> help,</span><span style="color:#F1FA8C"> press</span><span style="color:#F1FA8C"> q</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> quit</span></span></code></pre>
 <h2 id="아이콘과-aria-label">아이콘과 aria-label</h2>
 <p>스펙을 더 구현해볼까요? 우리는 다크 모드 버튼을 해와 달 아이콘을 써서 만들고 싶었어요.</p>
 <blockquote>
 <p><code>button</code> 은 라이트일 때 해 모양, 다크일 때에는 달 모양의 아이콘이에요.</p>
 </blockquote>
 <p>그러면 <code>tailwind</code>에서 만든 <a href="https://heroicons.com/">HeroIcons</a>에서 moon icon을 찾아서 넣어주었어요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> (</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">MoonIcon</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">className</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w-6 h-6</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">/&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #F07178">	)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#FF79C6">function</span><span style="color:#50FA7B"> DarkModeButton</span><span style="color:#F8F8F2">() {</span></span>
+<span class="line"><span style="color:#FF79C6">	return</span><span style="color:#F8F8F2"> (</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">button</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">			&#x3C;</span><span style="color:#8BE9FD;font-style:italic">MoonIcon</span><span style="color:#50FA7B;font-style:italic"> className</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">w-6 h-6</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">/></span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;/</span><span style="color:#FF79C6">button</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	);</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF; font-style: italic">export</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF; font-style: italic">default</span><span style="color: #A6ACCD"> DarkModeButton</span><span style="color: #89DDFF">;</span></span></code></pre>
+<span class="line"><span style="color:#FF79C6">export</span><span style="color:#FF79C6"> default</span><span style="color:#F8F8F2"> DarkModeButton;</span></span></code></pre>
 <p>앗 이러니 테스트가 실패합니다.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
-<span class="line"><span style="color: #A6ACCD"> FAIL  src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> DarkModeButton </span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> 다크 모드 버튼을 렌더할 수 있다</span></span>
-<span class="line"><span style="color: #A6ACCD">TestingLibraryElementError: Unable to find an accessible element with the role </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD"> and name </span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B">⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span><span style="color:#F1FA8C"> Failed</span><span style="color:#F1FA8C"> Tests</span><span style="color:#BD93F9"> 1</span><span style="color:#F1FA8C"> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯</span></span>
+<span class="line"><span style="color:#50FA7B"> FAIL</span><span style="color:#F1FA8C">  src/DarkModeButton.test.tsx</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> DarkModeButton</span><span style="color:#FF79C6"> ></span><span style="color:#F1FA8C"> 다크</span><span style="color:#F1FA8C"> 모드</span><span style="color:#F1FA8C"> 버튼을</span><span style="color:#F1FA8C"> 렌더할</span><span style="color:#F1FA8C"> 수</span><span style="color:#F1FA8C"> 있다</span></span>
+<span class="line"><span style="color:#50FA7B">TestingLibraryElementError:</span><span style="color:#F1FA8C"> Unable</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> find</span><span style="color:#F1FA8C"> an</span><span style="color:#F1FA8C"> accessible</span><span style="color:#F1FA8C"> element</span><span style="color:#F1FA8C"> with</span><span style="color:#F1FA8C"> the</span><span style="color:#F1FA8C"> role</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C"> and</span><span style="color:#F1FA8C"> name</span><span style="color:#E9F284"> "</span><span style="color:#F1FA8C">현재 다크 모드</span><span style="color:#E9F284">"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Here are the accessible roles:</span></span>
+<span class="line"><span style="color:#50FA7B">Here</span><span style="color:#F1FA8C"> are</span><span style="color:#F1FA8C"> the</span><span style="color:#F1FA8C"> accessible</span><span style="color:#F1FA8C"> roles:</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">  button:</span></span>
+<span class="line"><span style="color:#50FA7B">  button:</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">  Name </span><span style="color: #89DDFF">&quot;&quot;</span><span style="color: #A6ACCD">:</span></span>
-<span class="line"><span style="color: #A6ACCD">  </span><span style="color: #89DDFF">&lt;</span><span style="color: #A6ACCD">button /</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B">  Name</span><span style="color:#E9F284"> ""</span><span style="color:#F1FA8C">:</span></span>
+<span class="line"><span style="color:#FF79C6">  &#x3C;</span><span style="color:#50FA7B">button</span><span style="color:#F8F8F2"> /</span><span style="color:#FF79C6">></span></span></code></pre>
 <p>에러를 읽어보니, button에 name이 비어 있는 걸로 나와요. 당연하지만 텍스트를 없애버렸기 때문이에요.</p>
 <p>아이콘은 텍스트가 아니니까 접근 가능한 이름이 존재하지 않아요. 이건 이미지도 마찬가지에요.</p>
 <p>이는 특히 시각 장애인 분들이 앱을 사용할 때 불편해요. 제가 스크린 리더를 사용해보니 정말 어쩌라는 건가 싶을 정도였어요. 메뉴에 있는 아이콘을 아무리 넘겨도, 스크린 리더는 읽어줄 수 있는 게 없거든요.</p>
 <blockquote>
-<p>"라벨이 지정되지 않음"
-"라벨이 지정되지 않음"
-"라벨이 지정되지 않음"
-"라벨이 지정되지 않음"</p>
+<p>“라벨이 지정되지 않음”
+“라벨이 지정되지 않음”
+“라벨이 지정되지 않음”
+“라벨이 지정되지 않음”</p>
 </blockquote>
 <p>그러면 어떻게 해야할까요? <code>&#x3C;img></code>라면 <code>alt="대체 텍스트"</code> 같은 alt attribute를 달아주면 됩니다. twitter를 하시는 분들은 이따금 이미지에 ALT 가 달린 걸 보셨을 거에요.</p>
 <p>아이콘도 마찬가지입니다. <code>aria-label</code>을 이용해서 라벨을 달아주면 됩니다. 이 아이콘 대신 텍스트가 있었다면 무엇이 있었을지 적어주시면 되어요.</p>
 <p>이러면 테스트도 쉬워요. icon을 id나 class name으로 가져오는 것보다는, 사용자처럼 접근할 수 있는 이름으로 가져오는 게 더 직관적이니까요.</p>
 <p>자, 설명은 이쯤 하고 코드를 고쳐봅시다.</p>
 <div class="plus-lines-3"></div>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">function</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">DarkModeButton</span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #F07178"> (</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">button</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">aria-label</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">현재 다크 모드</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">MoonIcon</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">className</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">w-6 h-6</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">/&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #F07178">	)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#FF79C6">function</span><span style="color:#50FA7B"> DarkModeButton</span><span style="color:#F8F8F2">() {</span></span>
+<span class="line"><span style="color:#FF79C6">	return</span><span style="color:#F8F8F2"> (</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">button</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">button</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> aria-label</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">현재 다크 모드</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">			&#x3C;</span><span style="color:#8BE9FD;font-style:italic">MoonIcon</span><span style="color:#50FA7B;font-style:italic"> className</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">w-6 h-6</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">/></span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;/</span><span style="color:#FF79C6">button</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	);</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span></code></pre>
 <p>그러면 다시 멋진 초록 막대(PASS)를 보실 수 있어요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #A6ACCD"> ✓ src/DarkModeButton.test.tsx </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#50FA7B"> ✓</span><span style="color:#F1FA8C"> src/DarkModeButton.test.tsx</span><span style="color:#F8F8F2"> (1)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">Test Files  1 passed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">     Tests  1 passed </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">1</span><span style="color: #89DDFF">)</span></span>
-<span class="line"><span style="color: #A6ACCD">  Start at  16:26:05</span></span>
-<span class="line"><span style="color: #A6ACCD">  Duration  229ms</span></span>
+<span class="line"><span style="color:#50FA7B">Test</span><span style="color:#F1FA8C"> Files</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> passed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">     Tests</span><span style="color:#BD93F9">  1</span><span style="color:#F1FA8C"> passed</span><span style="color:#F8F8F2"> (1)</span></span>
+<span class="line"><span style="color:#50FA7B">  Start</span><span style="color:#F1FA8C"> at</span><span style="color:#F1FA8C">  16:26:05</span></span>
+<span class="line"><span style="color:#50FA7B">  Duration</span><span style="color:#F1FA8C">  229ms</span></span>
 <span class="line"></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD"> PASS  Waiting </span><span style="color: #89DDFF; font-style: italic">for</span><span style="color: #A6ACCD"> file changes...</span></span>
-<span class="line"><span style="color: #A6ACCD">       press h to show help, press q to quit</span></span></code></pre>
+<span class="line"><span style="color:#50FA7B"> PASS</span><span style="color:#F1FA8C">  Waiting</span><span style="color:#F1FA8C"> for</span><span style="color:#F1FA8C"> file</span><span style="color:#F1FA8C"> changes...</span></span>
+<span class="line"><span style="color:#50FA7B">       press</span><span style="color:#F1FA8C"> h</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> show</span><span style="color:#F1FA8C"> help,</span><span style="color:#F1FA8C"> press</span><span style="color:#F1FA8C"> q</span><span style="color:#F1FA8C"> to</span><span style="color:#F1FA8C"> quit</span></span></code></pre>
 <p>간단한 한 줄로 테스트도 더 쉽고, 더 접근 가능한 버튼이 되었습니다. :)</p>
 <h2 id="다음은-상태와-효과">다음은? 상태와 효과</h2>
 <p>사용자의 click과 같은 상호작용(interaction)으로 상태(state)가 바뀌고, react 외부에 효과(effect)를 일으키는 걸 테스트하는 법을 다뤄보겠습니다.</p>
-<p><a href="/component-testing-a11y-state-effect">컴포넌트 테스트 시작하기 - 상태와 효과</a></p>
-<!-- HTML_TAG_END -->
-
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
-</div><!-- HTML_TAG_END --></article>
-
-<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
-  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
-  커스텀했습니다.
-  <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
-  <br>
-  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
-  <br>
-  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
-</footer>
-    
-    <script type="module">
-            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
-      
-const $$ejs = (par,eager)=>{
-  const $ejs = function(_ejs){return _ejs};
-  const prefix = '/_elderjs';
-  const initComponent = (target, component) => {
-
-    if(!!CustomEvent && target.id){
-      const split = target.id.split('-ejs-');
-      document.dispatchEvent(new CustomEvent('ejs', {
-        detail: {
-          category: 'elderjs',
-          action: 'hydrate',
-          target: target,
-          label: split[0] || target.id
-        }
-      }));
-    }
-
-    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
-    const compProm = import(prefix + '/svelte/components/' + component.component);
-
-    Promise.all([compProm,propProm]).then(([comp,props])=>{
-      new comp.default({ 
-        target: target,
-        props: props,
-        hydrate: true
-      });
-    });
-  };
-  
-  Object.keys(par).forEach(k => {
-    const el = document.getElementById(k);
-    if (false) {
-        IO.observe(el);
-    } else {
-        initComponent(el,par[k]);
-    }
-  });
-};
-
-      $$ejs({'darkcheckbox-ejs-CFVvqVgMnS' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
-    
-    
-    </body></html>
+<p><a href="/component-testing-a11y-state-effect">컴포넌트 테스트 시작하기 - 상태와 효과</a></p> </div> </article> <div class="comments-section" data-astro-cid-fzx4jmue> <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async>
+    </script> </div> <button type="button" class="scroll-top-btn" aria-label="맨 위로 스크롤" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-asfligpj>
+↑ 맨 위로
+</button>  </main> <footer class="site-footer"> <div class="footer-container"> <p>
+이 블로그는 <a href="https://astro.build/">Astro</a>와
+<a href="https://svelte.dev/">Svelte</a>로 만들었습니다.
+</p> <p>폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.</p> <p><a href="https://pages.github.com/">GitHub Pages</a>로 호스팅하고 있습니다.</p> <p>오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)</p> </div> </footer> </body></html>

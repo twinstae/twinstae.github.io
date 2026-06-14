@@ -1,141 +1,14 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>개발환경 구축 지도</title><meta name="description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다." data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/development-environment-15minutes/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/development-environment-15minutes/" data-svelte="svelte-18tnbae"><meta property="og:title" content="개발환경 구축 지도" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다." data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/development-environment-15minutes/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="개발환경 구축 지도" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다." data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
-      const codes = document.getElementsByTagName('pre');
-
-      for (const code of codes) {
-        if (code.parentElement.className.includes('codejar-wrap')){
-          continue;
+<!DOCTYPE html><html lang="ko-KR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>개발환경 구축 지도 | 진리의 배 조선소</title><meta name="description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다."><link rel="canonical" href="https://twinstae.github.io/development-environment-15minutes/"><link rel="icon" type="image/jpeg" href="/TamjungRabbitProfile.jpg"><meta property="og:site_name" content="진리의 배 조선소"><meta property="og:url" content="https://twinstae.github.io/development-environment-15minutes/"><meta property="og:title" content="개발환경 구축 지도"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><meta property="og:description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다."><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://twinstae.github.io/development-environment-15minutes/"><meta name="twitter:title" content="개발환경 구축 지도"><meta name="twitter:description" content="개발환경을 구축하는데 필요한 다양한 개념들을 정리하고, 큰 그림을 그립니다."><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"><script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
         }
-        code.addEventListener('dblclick', function (e) {
-          navigator.clipboard.writeText(code.innerText).then(() => {
-            alert('코드를 클립보드에 복사했습니다.');
-          });
-        });
-      }
-    }, 500);
-  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
-    document.getElementsByTagName('html')[0].className = is_dark
-      ? 'dark'
-      : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-968ab9b4.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-VmGJxprcmR"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
-<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
-  <span class="svelte-ixwbnm"></span>
-</label></div>
-  <a href="/" aria-current="false">진리의 배 조선소 </a>
-  </nav>
-
-<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
-
-<a href="/">← Home</a>
-
-<div class="title svelte-7s3agc"><h1 id="title-heading">개발환경 구축 지도</h1>
-  <div><span class="hashtag">#작성 중
-        </span><span class="hashtag">#개발환경
-        </span></div>
-  <small>By 탐정토끼(Taehee Kim)</small></div>
-
-<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
-
-<nav class="svelte-s59jxg"><div><span>목차</span>
-    <ol><li style="font-size: 1.25rem;"><a href="#지도를-챙기고-필요한만큼-배우자" style="color: #868e96;">지도를 챙기고, 필요한만큼 배우자</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#내가-이해할-수-있고-감당할-수-있나" style="color: #868e96;">내가 이해할 수 있고 감당할 수 있나?</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#작고-단순한-것부터-시작하자" style="color: #868e96;">작고 단순한 것부터 시작하자</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#가설을-세우고-실험으로-검증하기" style="color: #868e96;">가설을 세우고 실험으로 검증하기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#일반적이고-보편적인-개념을-배우자" style="color: #868e96;">일반적이고 보편적인 개념을 배우자</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#프로그램을-어디에서도-실행하게-해주는-환경변수-path" style="color: #868e96;">프로그램을 어디에서도 실행하게 해주는 환경변수 PATH</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#운영체제와-cpu에-맞는-프로그램-설치하기" style="color: #868e96;">운영체제와 CPU에 맞는 프로그램 설치하기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#사용하는-버전-확인하기" style="color: #868e96;">사용하는 버전 확인하기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#명령줄-command-line" style="color: #868e96;">명령줄 Command Line</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#컴파일러-인터프리터-런타임" style="color: #868e96;">컴파일러, 인터프리터, 런타임</a>
-        <ol><li style="font-size: 1rem;"><a href="#gcc-리눅스-진영의-c-컴파일러" style="color: #868e96;">GCC: 리눅스 진영의 C 컴파일러</a>
-            </li><li style="font-size: 1rem;"><a href="#javac-자바-컴파일러" style="color: #868e96;">javac: 자바 컴파일러</a>
-            </li><li style="font-size: 1rem;"><a href="#cpython-파이썬-공식-인터프리터-구현체" style="color: #868e96;">CPython: 파이썬 공식 인터프리터 구현체</a>
-            </li><li style="font-size: 1rem;"><a href="#node-js-런타임" style="color: #868e96;">Node: js 런타임</a>
-            </li><li style="font-size: 1rem;"><a href="#babel-모던-자바스크립트를-위한-트랜스파일러" style="color: #868e96;">Babel: 모던 자바스크립트를 위한 트랜스파일러</a>
-            </li><li style="font-size: 1rem;"><a href="#tsc-타입스크립트-트랜스파일러" style="color: #868e96;">TSC: 타입스크립트 트랜스파일러</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#repl-console-명령줄에서-코드-실험하기" style="color: #868e96;">Repl, Console: 명령줄에서 코드 실험하기</a>
-        <ol><li style="font-size: 1rem;"><a href="#python" style="color: #868e96;">Python</a>
-            </li><li style="font-size: 1rem;"><a href="#브라우저-개발자-도구-console" style="color: #868e96;">브라우저 개발자 도구 Console</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#빌드-패키지-의존성-관리-도구" style="color: #868e96;">빌드, 패키지, 의존성 관리 도구</a>
-        <ol><li style="font-size: 1rem;"><a href="#gradle-java-패키지-관리-빌드-도구" style="color: #868e96;">gradle: Java 패키지 관리, 빌드 도구</a>
-            </li><li style="font-size: 1rem;"><a href="#npm-yarn-js-패키지-관리-도구" style="color: #868e96;">npm, yarn: js 패키지 관리 도구</a>
-            </li><li style="font-size: 1rem;"><a href="#webpack-rollup-vite-js-모듈-번들러" style="color: #868e96;">webpack, rollup, vite: js 모듈 번들러</a>
-            </li><li style="font-size: 1rem;"><a href="#pip-파이썬-기본-패키지-관리-도구" style="color: #868e96;">pip: 파이썬 기본 패키지 관리 도구</a>
-            </li><li style="font-size: 1rem;"><a href="#poetry-현대적인-파이썬-패키지-관리-도구" style="color: #868e96;">poetry: 현대적인 파이썬 패키지 관리 도구</a>
-            </li><li style="font-size: 1rem;"><a href="#apt-get-우분투-리눅스-패키지-관리-도구" style="color: #868e96;">apt-get: 우분투 리눅스 패키지 관리 도구</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#curl-wget-인터넷에서-파일-다운-받기" style="color: #868e96;">curl, wget: 인터넷에서 파일 다운 받기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#sh-쉘-스크립트" style="color: #868e96;">sh: 쉘 스크립트</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#프로젝트-템플릿" style="color: #868e96;">프로젝트 템플릿</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#프레임워크-라이브러리-모듈" style="color: #868e96;">프레임워크, 라이브러리, 모듈</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#서로-다른-프로젝트-간에-버전-관리하기" style="color: #868e96;">서로 다른 프로젝트 간에 버전 관리하기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#docker-개발환경을-컨테이너-째로-다운-받으세요" style="color: #868e96;">Docker: 개발환경을 컨테이너 째로 다운 받으세요.</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#각종-설정-config-파일" style="color: #868e96;">각종 설정 config 파일</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#텍스트-편집기" style="color: #868e96;">텍스트 편집기</a>
-        <ol><li style="font-size: 1rem;"><a href="#vs-code-오픈소스-텍스트-에디터-플러그인-생태계" style="color: #868e96;">VS Code: 오픈소스 텍스트 에디터, 플러그인 생태계</a>
-            </li><li style="font-size: 1rem;"><a href="#jetbrain-똑똑한-통합-개발-환경" style="color: #868e96;">JetBrain: 똑똑한 통합 개발 환경</a>
-            </li><li style="font-size: 1rem;"><a href="#vim-강력한-단축키-커맨드-라인-최적화" style="color: #868e96;">Vim: 강력한 단축키, 커맨드 라인 최적화</a>
-            </li><li style="font-size: 1rem;"><a href="#그-외-emacs-sublime-text-notepad-메모장" style="color: #868e96;">그 외: Emacs, Sublime Text, Notepad++, 메모장...</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#문법-검사와-lsp" style="color: #868e96;">문법 검사와 LSP</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#git-프로젝트-버전-관리" style="color: #868e96;">Git: 프로젝트 버전 관리</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#배포-자동화" style="color: #868e96;">배포 자동화</a>
-        <ol><li style="font-size: 1rem;"><a href="#github-action" style="color: #868e96;">GitHub Action</a>
-            </li><li style="font-size: 1rem;"><a href="#jenkins" style="color: #868e96;">Jenkins</a>
-            </li>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#브라우저-에뮬레이터" style="color: #868e96;">브라우저, 에뮬레이터</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#테스트-도구" style="color: #868e96;">테스트 도구</a>
-        <ol>
-        </ol>
-      </li></ol></div>
-</nav>
-
-<!-- HTML_TAG_START --><h2 id="지도를-챙기고-필요한만큼-배우자">지도를 챙기고, 필요한만큼 배우자</h2>
+      })();
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.DAUUhDCw.css">
+<link rel="stylesheet" href="/_astro/_..1Q-KLuor.css"></head> <body> <nav class="top-nav"> <div class="nav-container"> <a href="/" class="nav-brand">
+🚢 진리의 배 조선소
+</a> <div class="nav-actions"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="128QCz" component-url="/_astro/DarkModeToggle.C-6mm_sq.js" component-export="default" renderer-url="/_astro/client.svelte.Vo9I5Rqb.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;DarkModeToggle&quot;,&quot;value&quot;:true}" await-children><!--[--><button type="button" class="dark-mode-toggle svelte-ckhpf5" aria-label="다크 모드로 전환" title="다크 모드"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button><!--]--><!--astro:end--></astro-island> </div> </div> </nav> <main class="main-container">  <a href="/" class="back-link" data-astro-cid-fzx4jmue>← 홈으로</a> <article class="blog-post" data-astro-cid-fzx4jmue> <header class="post-header" data-astro-cid-fzx4jmue> <h1 class="post-title" data-astro-cid-fzx4jmue>개발환경 구축 지도</h1> <div class="post-meta" data-astro-cid-fzx4jmue> <time datetime="Wed Jul 14 2021 10:11:26 GMT+0900 (Korean Standard Time)" data-astro-cid-fzx4jmue>2021년 7월 14일 오전 10:11</time> <span class="post-author" data-astro-cid-fzx4jmue>by 탐정토끼(Taehee Kim)</span> </div> <div class="post-tags" data-astro-cid-fzx4jmue> <span class="hashtag" data-astro-cid-fzx4jmue>#작성 중</span><span class="hashtag" data-astro-cid-fzx4jmue>#개발환경</span> </div> </header> <nav class="toc" aria-label="목차" data-astro-cid-xvrfupwn><div class="toc-header" data-astro-cid-xvrfupwn>목차</div><ol class="toc-list" data-astro-cid-xvrfupwn><li class="toc-item" data-astro-cid-xvrfupwn><a href="#지도를-챙기고-필요한만큼-배우자" class="toc-link toc-h2" data-astro-cid-xvrfupwn>지도를 챙기고, 필요한만큼 배우자</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#내가-이해할-수-있고-감당할-수-있나" class="toc-link toc-h2" data-astro-cid-xvrfupwn>내가 이해할 수 있고 감당할 수 있나?</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#작고-단순한-것부터-시작하자" class="toc-link toc-h2" data-astro-cid-xvrfupwn>작고 단순한 것부터 시작하자</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#가설을-세우고-실험으로-검증하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>가설을 세우고 실험으로 검증하기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#일반적이고-보편적인-개념을-배우자" class="toc-link toc-h2" data-astro-cid-xvrfupwn>일반적이고 보편적인 개념을 배우자</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#프로그램을-어디에서도-실행하게-해주는-환경변수-path" class="toc-link toc-h2" data-astro-cid-xvrfupwn>프로그램을 어디에서도 실행하게 해주는 환경변수 PATH</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#운영체제와-cpu에-맞는-프로그램-설치하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>운영체제와 CPU에 맞는 프로그램 설치하기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#사용하는-버전-확인하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>사용하는 버전 확인하기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#명령줄-command-line" class="toc-link toc-h2" data-astro-cid-xvrfupwn>명령줄 Command Line</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#컴파일러-인터프리터-런타임" class="toc-link toc-h2" data-astro-cid-xvrfupwn>컴파일러, 인터프리터, 런타임</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#gcc-리눅스-진영의-c-컴파일러" class="toc-link toc-h3" data-astro-cid-xvrfupwn>GCC: 리눅스 진영의 C 컴파일러</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#javac-자바-컴파일러" class="toc-link toc-h3" data-astro-cid-xvrfupwn>javac: 자바 컴파일러</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#cpython-파이썬-공식-인터프리터-구현체" class="toc-link toc-h3" data-astro-cid-xvrfupwn>CPython: 파이썬 공식 인터프리터 구현체</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#node-js-런타임" class="toc-link toc-h3" data-astro-cid-xvrfupwn>Node: js 런타임</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#babel-모던-자바스크립트를-위한-트랜스파일러" class="toc-link toc-h3" data-astro-cid-xvrfupwn>Babel: 모던 자바스크립트를 위한 트랜스파일러</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#tsc-타입스크립트-트랜스파일러" class="toc-link toc-h3" data-astro-cid-xvrfupwn>TSC: 타입스크립트 트랜스파일러</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#repl-console-명령줄에서-코드-실험하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>Repl, Console: 명령줄에서 코드 실험하기</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#python" class="toc-link toc-h3" data-astro-cid-xvrfupwn>Python</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#브라우저-개발자-도구-console" class="toc-link toc-h3" data-astro-cid-xvrfupwn>브라우저 개발자 도구 Console</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#빌드-패키지-의존성-관리-도구" class="toc-link toc-h2" data-astro-cid-xvrfupwn>빌드, 패키지, 의존성 관리 도구</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#gradle-java-패키지-관리-빌드-도구" class="toc-link toc-h3" data-astro-cid-xvrfupwn>gradle: Java 패키지 관리, 빌드 도구</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#npm-yarn-js-패키지-관리-도구" class="toc-link toc-h3" data-astro-cid-xvrfupwn>npm, yarn: js 패키지 관리 도구</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#webpack-rollup-vite-js-모듈-번들러" class="toc-link toc-h3" data-astro-cid-xvrfupwn>webpack, rollup, vite: js 모듈 번들러</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#pip-파이썬-기본-패키지-관리-도구" class="toc-link toc-h3" data-astro-cid-xvrfupwn>pip: 파이썬 기본 패키지 관리 도구</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#poetry-현대적인-파이썬-패키지-관리-도구" class="toc-link toc-h3" data-astro-cid-xvrfupwn>poetry: 현대적인 파이썬 패키지 관리 도구</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#apt-get-우분투-리눅스-패키지-관리-도구" class="toc-link toc-h3" data-astro-cid-xvrfupwn>apt-get: 우분투 리눅스 패키지 관리 도구</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#curl-wget-인터넷에서-파일-다운-받기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>curl, wget: 인터넷에서 파일 다운 받기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#sh-쉘-스크립트" class="toc-link toc-h2" data-astro-cid-xvrfupwn>sh: 쉘 스크립트</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#프로젝트-템플릿" class="toc-link toc-h2" data-astro-cid-xvrfupwn>프로젝트 템플릿</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#프레임워크-라이브러리-모듈" class="toc-link toc-h2" data-astro-cid-xvrfupwn>프레임워크, 라이브러리, 모듈</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#서로-다른-프로젝트-간에-버전-관리하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>서로 다른 프로젝트 간에 버전 관리하기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#docker-개발환경을-컨테이너-째로-다운-받으세요" class="toc-link toc-h2" data-astro-cid-xvrfupwn>Docker: 개발환경을 컨테이너 째로 다운 받으세요.</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#각종-설정-config-파일" class="toc-link toc-h2" data-astro-cid-xvrfupwn>각종 설정 config 파일</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#텍스트-편집기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>텍스트 편집기</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#vs-code-오픈소스-텍스트-에디터-플러그인-생태계" class="toc-link toc-h3" data-astro-cid-xvrfupwn>VS Code: 오픈소스 텍스트 에디터, 플러그인 생태계</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#jetbrain-똑똑한-통합-개발-환경" class="toc-link toc-h3" data-astro-cid-xvrfupwn>JetBrain: 똑똑한 통합 개발 환경</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#vim-강력한-단축키-커맨드-라인-최적화" class="toc-link toc-h3" data-astro-cid-xvrfupwn>Vim: 강력한 단축키, 커맨드 라인 최적화</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#그-외-emacs-sublime-text-notepad-메모장" class="toc-link toc-h3" data-astro-cid-xvrfupwn>그 외: Emacs, Sublime Text, Notepad++, 메모장…</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#문법-검사와-lsp" class="toc-link toc-h2" data-astro-cid-xvrfupwn>문법 검사와 LSP</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#git-프로젝트-버전-관리" class="toc-link toc-h2" data-astro-cid-xvrfupwn>Git: 프로젝트 버전 관리</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#배포-자동화" class="toc-link toc-h2" data-astro-cid-xvrfupwn>배포 자동화</a><ol class="toc-sublist" data-astro-cid-xvrfupwn><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#github-action" class="toc-link toc-h3" data-astro-cid-xvrfupwn>GitHub Action</a></li><li class="toc-subitem" data-astro-cid-xvrfupwn><a href="#jenkins" class="toc-link toc-h3" data-astro-cid-xvrfupwn>Jenkins</a></li></ol></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#브라우저-에뮬레이터" class="toc-link toc-h2" data-astro-cid-xvrfupwn>브라우저, 에뮬레이터</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#테스트-도구" class="toc-link toc-h2" data-astro-cid-xvrfupwn>테스트 도구</a></li></ol></nav> <div class="post-content" data-astro-cid-fzx4jmue> <h2 id="지도를-챙기고-필요한만큼-배우자">지도를 챙기고, 필요한만큼 배우자</h2>
 <h2 id="내가-이해할-수-있고-감당할-수-있나">내가 이해할 수 있고 감당할 수 있나?</h2>
 <h2 id="작고-단순한-것부터-시작하자">작고 단순한 것부터 시작하자</h2>
 <h2 id="가설을-세우고-실험으로-검증하기">가설을 세우고 실험으로 검증하기</h2>
@@ -175,75 +48,17 @@
 <h3 id="vs-code-오픈소스-텍스트-에디터-플러그인-생태계">VS Code: 오픈소스 텍스트 에디터, 플러그인 생태계</h3>
 <h3 id="jetbrain-똑똑한-통합-개발-환경">JetBrain: 똑똑한 통합 개발 환경</h3>
 <h3 id="vim-강력한-단축키-커맨드-라인-최적화">Vim: 강력한 단축키, 커맨드 라인 최적화</h3>
-<h3 id="그-외-emacs-sublime-text-notepad-메모장">그 외: Emacs, Sublime Text, Notepad++, 메모장...</h3>
+<h3 id="그-외-emacs-sublime-text-notepad-메모장">그 외: Emacs, Sublime Text, Notepad++, 메모장…</h3>
 <h2 id="문법-검사와-lsp">문법 검사와 LSP</h2>
 <h2 id="git-프로젝트-버전-관리">Git: 프로젝트 버전 관리</h2>
 <h2 id="배포-자동화">배포 자동화</h2>
 <h3 id="github-action">GitHub Action</h3>
 <h3 id="jenkins">Jenkins</h3>
 <h2 id="브라우저-에뮬레이터">브라우저, 에뮬레이터</h2>
-<h2 id="테스트-도구">테스트 도구</h2>
-<!-- HTML_TAG_END -->
-
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
-</div><!-- HTML_TAG_END --></article>
-
-<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
-  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
-  커스텀했습니다.
-  <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
-  <br>
-  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
-  <br>
-  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
-</footer>
-    
-    <script type="module">
-            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
-      
-const $$ejs = (par,eager)=>{
-  const $ejs = function(_ejs){return _ejs};
-  const prefix = '/_elderjs';
-  const initComponent = (target, component) => {
-
-    if(!!CustomEvent && target.id){
-      const split = target.id.split('-ejs-');
-      document.dispatchEvent(new CustomEvent('ejs', {
-        detail: {
-          category: 'elderjs',
-          action: 'hydrate',
-          target: target,
-          label: split[0] || target.id
-        }
-      }));
-    }
-
-    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
-    const compProm = import(prefix + '/svelte/components/' + component.component);
-
-    Promise.all([compProm,propProm]).then(([comp,props])=>{
-      new comp.default({ 
-        target: target,
-        props: props,
-        hydrate: true
-      });
-    });
-  };
-  
-  Object.keys(par).forEach(k => {
-    const el = document.getElementById(k);
-    if (false) {
-        IO.observe(el);
-    } else {
-        initComponent(el,par[k]);
-    }
-  });
-};
-
-      $$ejs({'darkcheckbox-ejs-VmGJxprcmR' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
-    
-    
-    </body></html>
+<h2 id="테스트-도구">테스트 도구</h2> </div> </article> <div class="comments-section" data-astro-cid-fzx4jmue> <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async>
+    </script> </div> <button type="button" class="scroll-top-btn" aria-label="맨 위로 스크롤" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-asfligpj>
+↑ 맨 위로
+</button>  </main> <footer class="site-footer"> <div class="footer-container"> <p>
+이 블로그는 <a href="https://astro.build/">Astro</a>와
+<a href="https://svelte.dev/">Svelte</a>로 만들었습니다.
+</p> <p>폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.</p> <p><a href="https://pages.github.com/">GitHub Pages</a>로 호스팅하고 있습니다.</p> <p>오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)</p> </div> </footer> </body></html>

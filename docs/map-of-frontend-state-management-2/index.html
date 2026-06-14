@@ -1,90 +1,20 @@
-<!DOCTYPE html><html lang="ko-KR"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>프런트엔드 상태의 지도 - (2) Form 상태</title><meta name="description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><link href="https://twinstae.github.io/map-of-frontend-state-management-2/" rel="canonical" data-svelte="svelte-18tnbae"><meta property="og:site_name" content="진리의 배 조선소" data-svelte="svelte-18tnbae"><meta property="og:url" content="https://twinstae.github.io/map-of-frontend-state-management-2/" data-svelte="svelte-18tnbae"><meta property="og:title" content="프런트엔드 상태의 지도 - (2) Form 상태" data-svelte="svelte-18tnbae"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><meta property="og:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><meta name="twitter:card" content="summary" data-svelte="svelte-18tnbae"><meta name="twitter:url" content="https://twinstae.github.io/map-of-frontend-state-management-2/" data-svelte="svelte-18tnbae"><meta name="twitter:title" content="프런트엔드 상태의 지도 - (2) Form 상태" data-svelte="svelte-18tnbae"><meta name="twitter:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?" data-svelte="svelte-18tnbae"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg" data-svelte="svelte-18tnbae"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous" data-svelte="svelte-y2267v"><script data-svelte="svelte-y2267v">setTimeout(() => {
-      const codes = document.getElementsByTagName('pre');
-
-      for (const code of codes) {
-        if (code.parentElement.className.includes('codejar-wrap')){
-          continue;
+<!DOCTYPE html><html lang="ko-KR"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>프런트엔드 상태의 지도 - (2) Form 상태 | 진리의 배 조선소</title><meta name="description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?"><link rel="canonical" href="https://twinstae.github.io/map-of-frontend-state-management-2/"><link rel="icon" type="image/jpeg" href="/TamjungRabbitProfile.jpg"><meta property="og:site_name" content="진리의 배 조선소"><meta property="og:url" content="https://twinstae.github.io/map-of-frontend-state-management-2/"><meta property="og:title" content="프런트엔드 상태의 지도 - (2) Form 상태"><meta property="og:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><meta property="og:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?"><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://twinstae.github.io/map-of-frontend-state-management-2/"><meta name="twitter:title" content="프런트엔드 상태의 지도 - (2) Form 상태"><meta name="twitter:description" content="상태관리 서브웨이 안내서. 모던 프런트엔드는 수 많은 반응형 상태관리 방법으로 넘쳐나고 있습니다. 어떤 대안들이 있으며, 뭐가 다른 걸까요?"><meta name="twitter:image" content="https://twinstae.github.io/TamjungRabbitProfile.jpg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous"><script>
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
         }
-        code.addEventListener('dblclick', function (e) {
-          navigator.clipboard.writeText(code.innerText).then(() => {
-            alert('코드를 클립보드에 복사했습니다.');
-          });
-        });
-      }
-    }, 500);
-  </script><script data-svelte="svelte-y2267v">let is_dark = localStorage.getItem('dark') == 'true';
-    document.getElementsByTagName('html')[0].className = is_dark
-      ? 'dark'
-      : 'light';
-  </script><link rel="prefetch" href="/_elderjs/svelte/components/DarkCheckBox.d7e8c32b.js" as="script"><link rel="stylesheet" href="/_elderjs/assets/svelte-968ab9b4.css" media="all" /><style></style></head><body class="blog">
-<nav id="top-nav-bar" class="svelte-d4ohrk"><div class="darkcheckbox-component" id="darkcheckbox-ejs-FVTYXWQYSD"><input type="checkbox" id="darkmode-checkbox" class="svelte-ixwbnm">
-<label for="darkmode-checkbox" class="svelte-ixwbnm"><span class="svelte-ixwbnm"></span>
-  <span class="svelte-ixwbnm"></span>
-</label></div>
-  <a href="/" aria-current="false">진리의 배 조선소 </a>
-  </nav>
-
-<article class="container svelte-d4ohrk"><!-- HTML_TAG_START -->
-
-<a href="/">← Home</a>
-
-<div class="title svelte-7s3agc"><h1 id="title-heading">프런트엔드 상태의 지도 - (2) Form 상태</h1>
-  <div><span class="hashtag">#작성 중
-        </span><span class="hashtag">#프런트엔드
-        </span><span class="hashtag">#상태
-        </span><span class="hashtag">#지도
-        </span></div>
-  <small>By 탐정토끼(Taehee Kim)</small></div>
-
-<a id="scroll-top-button" href="#title-heading" class="svelte-12gmvis">↑ 맨 위로</a>
-
-<nav class="svelte-s59jxg"><div><span>목차</span>
-    <ol><li style="font-size: 1.25rem;"><a href="#사용자-입력을-마주하기" style="color: #868e96;">사용자 입력을 마주하기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#회원가입-form에서-아이디-중복-확인하기" style="color: #868e96;">회원가입 form에서 아이디 중복 확인하기</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#you-might-not-need-reactive-state" style="color: #868e96;">You might not need Reactive State</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#usestate--반응형-상태" style="color: #868e96;">useState : 반응형 상태</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#리렌더-성능" style="color: #868e96;">리렌더 성능</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#명령적-dom-api의-한계" style="color: #868e96;">명령적 dom api의 한계</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#그래서-어떤-방식을-써야-하나요" style="color: #868e96;">"그래서 어떤 방식을 써야 하나요?"</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#react-hook-form은-상태-관리-라이브러리인가" style="color: #868e96;">react-hook-form은 상태 관리 라이브러리인가?</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#custom-hook과-캡슐화" style="color: #868e96;">Custom Hook과 캡슐화</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#focus-관리--명령적-vs-함수적" style="color: #868e96;">focus 관리 : 명령적 vs 함수적</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#derived--파생-상태" style="color: #868e96;">Derived : 파생 상태</a>
-        <ol>
-        </ol>
-      </li><li style="font-size: 1.25rem;"><a href="#useeffect--리액트-상태를-외부와-동기화하기" style="color: #868e96;">useEffect : 리액트 상태를 외부와 동기화하기</a>
-        <ol>
-        </ol>
-      </li></ol></div>
-</nav>
-
-<!-- HTML_TAG_START --><p>이번에는 다양한 Form의 사례를 다루고, 테스트해보면서, 리액트를 비롯한 반응형 상태 관리 도구로 form을 다루는 법을 이야기해보려 합니다.</p>
+      })();
+    </script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/Layout.DAUUhDCw.css">
+<link rel="stylesheet" href="/_astro/_..1Q-KLuor.css"></head> <body> <nav class="top-nav"> <div class="nav-container"> <a href="/" class="nav-brand">
+🚢 진리의 배 조선소
+</a> <div class="nav-actions"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script><astro-island uid="128QCz" component-url="/_astro/DarkModeToggle.C-6mm_sq.js" component-export="default" renderer-url="/_astro/client.svelte.Vo9I5Rqb.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;DarkModeToggle&quot;,&quot;value&quot;:true}" await-children><!--[--><button type="button" class="dark-mode-toggle svelte-ckhpf5" aria-label="다크 모드로 전환" title="다크 모드"><!--[-1--><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><!--]--></button><!--]--><!--astro:end--></astro-island> </div> </div> </nav> <main class="main-container">  <a href="/" class="back-link" data-astro-cid-fzx4jmue>← 홈으로</a> <article class="blog-post" data-astro-cid-fzx4jmue> <header class="post-header" data-astro-cid-fzx4jmue> <h1 class="post-title" data-astro-cid-fzx4jmue>프런트엔드 상태의 지도 - (2) Form 상태</h1> <div class="post-meta" data-astro-cid-fzx4jmue> <time datetime="Mon Jan 30 2023 19:20:44 GMT+0900 (Korean Standard Time)" data-astro-cid-fzx4jmue>2023년 1월 30일 오후 7:20</time> <span class="post-author" data-astro-cid-fzx4jmue>by 탐정토끼(Taehee Kim)</span> </div> <div class="post-tags" data-astro-cid-fzx4jmue> <span class="hashtag" data-astro-cid-fzx4jmue>#작성 중</span><span class="hashtag" data-astro-cid-fzx4jmue>#프런트엔드</span><span class="hashtag" data-astro-cid-fzx4jmue>#상태</span><span class="hashtag" data-astro-cid-fzx4jmue>#지도</span> </div> </header> <nav class="toc" aria-label="목차" data-astro-cid-xvrfupwn><div class="toc-header" data-astro-cid-xvrfupwn>목차</div><ol class="toc-list" data-astro-cid-xvrfupwn><li class="toc-item" data-astro-cid-xvrfupwn><a href="#사용자-입력을-마주하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>사용자 입력을 마주하기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#회원가입-form에서-아이디-중복-확인하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>회원가입 form에서 아이디 중복 확인하기</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#you-might-not-need-reactive-state" class="toc-link toc-h2" data-astro-cid-xvrfupwn>You might not need Reactive State</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#usestate--반응형-상태" class="toc-link toc-h2" data-astro-cid-xvrfupwn>useState : 반응형 상태</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#리렌더-성능" class="toc-link toc-h2" data-astro-cid-xvrfupwn>리렌더 성능</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#명령적-dom-api의-한계" class="toc-link toc-h2" data-astro-cid-xvrfupwn>명령적 dom api의 한계</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#그래서-어떤-방식을-써야-하나요" class="toc-link toc-h2" data-astro-cid-xvrfupwn>”그래서 어떤 방식을 써야 하나요?“</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#react-hook-form은-상태-관리-라이브러리인가" class="toc-link toc-h2" data-astro-cid-xvrfupwn>react-hook-form은 상태 관리 라이브러리인가?</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#custom-hook과-캡슐화" class="toc-link toc-h2" data-astro-cid-xvrfupwn>Custom Hook과 캡슐화</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#focus-관리--명령적-vs-함수적" class="toc-link toc-h2" data-astro-cid-xvrfupwn>focus 관리 : 명령적 vs 함수적</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#derived--파생-상태" class="toc-link toc-h2" data-astro-cid-xvrfupwn>Derived : 파생 상태</a></li><li class="toc-item" data-astro-cid-xvrfupwn><a href="#useeffect--리액트-상태를-외부와-동기화하기" class="toc-link toc-h2" data-astro-cid-xvrfupwn>useEffect : 리액트 상태를 외부와 동기화하기</a></li></ol></nav> <div class="post-content" data-astro-cid-fzx4jmue> <p>이번에는 다양한 Form의 사례를 다루고, 테스트해보면서, 리액트를 비롯한 반응형 상태 관리 도구로 form을 다루는 법을 이야기해보려 합니다.</p>
 <p>잠시 지난 글의 내용을 복습해봅시다.</p>
 <ol>
 <li><strong>상태</strong>는 useState나 redux 뿐만 아니라, 원래 더 넓은 의미를 가지고 있었습니다. 앞서 일어난 <strong>이벤트</strong>나 <strong>사용자의 입력</strong>에 따라서 상태는 계속해서 변합니다.</li>
 <li>세상은 상태로 가득 차 있습니다! 변수, 방문기록, 파일이나 DB, 로컬 스토리지에 저장된 데이터, 캐시, dom, 현재 시간이나 무작위 값이 모두 상태입니다.</li>
-<li>이런 상태를 직접 '<strong>어떻게</strong>' 조작하고 변경할지, 즉 '<strong>효과(effect)</strong>'를 일으키는데 집중하는 게 고전적인 <strong>명령형</strong> 프로그래밍입니다.</li>
-<li>처음에 명령형은 직관적이고 단순해보이지만...</li>
+<li>이런 상태를 직접 ‘<strong>어떻게</strong>’ 조작하고 변경할지, 즉 ‘<strong>효과(effect)</strong>‘를 일으키는데 집중하는 게 고전적인 <strong>명령형</strong> 프로그래밍입니다.</li>
+<li>처음에 명령형은 직관적이고 단순해보이지만…</li>
 <li>상태가 <strong>분산되고 공유</strong>되기 시작하면 서로 모순되고 무결성이 깨진 걸, <strong>동기화</strong>하느라 고통 받게 됩니다!</li>
 <li>내가 기대하는 게 <strong>무엇</strong>인지에 집중하는 <strong>선언형</strong> 프로그래밍의 한 가지인</li>
 <li><strong>함수형</strong> 프로그래밍은 값을 계산하는 순수 함수를 조합하고</li>
@@ -96,7 +26,7 @@
 <p>물론 매우 다양합니다! 프런트엔드 개발자라는 말이 널리 쓰이기 전부터, 터치와 클릭, GUI가 없을 때에도 <strong>입력Input</strong>은 있었습니다. 튜링 머신에 들어가는 명령어 띠부터, 천공카드, 유닉스 계열 커맨드라인에서 쓰이는 것과 같은 표준 입력 문자열도 있습니다.</p>
 <p>프로그램 안에 모든 데이터가 다 들어 있는 경우는 별로 없습니다. 대부분의 프로그램은 동적으로 들어오는 사용자의 입력에 반응해서 출력을 내놓고, 상호작용합니다.</p>
 <p>웹 개발을 비롯한 GUI에서 Form 은 사용자가 무언가를 제출할 수 있는 양식입니다. textbox, checkbox, select, datepicker 등 여러 input을 통해 사용자의 입력을 받지요.</p>
-<p>여기에 어떤 '상태'들이 있고 무엇이 고민인지... 하나씩 사례를 탐구해봅시다.</p>
+<p>여기에 어떤 ‘상태’들이 있고 무엇이 고민인지… 하나씩 사례를 탐구해봅시다.</p>
 <h2 id="회원가입-form에서-아이디-중복-확인하기">회원가입 form에서 아이디 중복 확인하기</h2>
 <p>회원가입은 전환의 가장 중요한 길목 중 하나입니다. 사용자가 회원가입을 해야 회사의 서비스를 사고 돈을 내지 않겠어요? 회원가입이 불편하거나 귀찮으면, 회사들은 돈을 벌지 못할 겁니다.</p>
 <p>일단 로직을 사람의 말로 써봅시다.</p>
@@ -107,7 +37,7 @@
 <li>아이디는 최소 3글자 이상이어야 합니다.</li>
 <li>비밀번호는 최소 8 글자 이상이어야 하고, 숫자와 알파벳, 특수문자가 하나 이상 포함되어 있어야 합니다.</li>
 <li>비밀번호에 오타를 낼 수도 있기 때문에, 비밀번호를 두 번 입력해서 확인하고, 그 둘은 일치해야 합니다.</li>
-<li>사용자가 form을 다 채우고 "가입하기" 버튼을 클릭하면, 서버에 회원가입 요청이 날아가고...</li>
+<li>사용자가 form을 다 채우고 “가입하기” 버튼을 클릭하면, 서버에 회원가입 요청이 날아가고…</li>
 <li>여기서 중복 여부를 확인합니다. 아이디가 중복이면 서버에서 409 Conflict status code로 응답을 줍니다.
 <ul>
 <li>이때 아이디 input이 invalid 하다고 사용자에게 붉은 테두리로 보여주고</li>
@@ -118,151 +48,93 @@
 </ul>
 </blockquote>
 <p>일단 이 정도면 될 것 같습니다. 간단하게 HTML도 생각해둘까요?</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">form</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">id</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">signup-form</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		아이디</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">input</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">text</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">name</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">id</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		비밀번호</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">input</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">name</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		비밀번호 확인</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">input</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">name</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password-confirm</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">submit</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">가입하기</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">form</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#F8F8F2">&#x3C;</span><span style="color:#FF79C6">form</span><span style="color:#50FA7B;font-style:italic"> id</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">signup-form</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">		아이디</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">input</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">text</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> name</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">id</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2"> /></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;/</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">		비밀번호</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">input</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> name</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2"> /></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;/</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">		비밀번호 확인</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">input</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> name</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password-confirm</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2"> /></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;/</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">button</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">submit</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">>가입하기&#x3C;/</span><span style="color:#FF79C6">button</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">&#x3C;/</span><span style="color:#FF79C6">form</span><span style="color:#F8F8F2">></span></span></code></pre>
 <p>일단 이 정도면 될 것 같습니다. 이제 로직을 하나씩 테스트하면서, 상태 관리의 고통을 마주해보겠습니다.</p>
 <h2 id="you-might-not-need-reactive-state">You might not need Reactive State</h2>
-<p>회사에서 기술 과제를 하다 보면 바닐라 js로 앱을 만들라는 과제를 주곤 합니다. "바닐라"라는 표현을 처음 듣는 분도 계실텐데. 아이스크림의 바닐라맛처럼 프레임워크나 라이브러리 없이 순수한 js만 사용한다고 해서 바닐라 js라고 합니다.</p>
-<p>브라우저가 지원하는 내장 기능을 사용하면 복잡한 프레임워크 상태 없이도 쉽게 form 상태를 처리할 수 있는 경우가 많습니다. 왜냐면 dom 자체도 상태를 가지고 있으니까요. 이는 React로 만든 앱에서도 사용할 수 있지만, 보안 등의 이유로 js를 꺼놓은 사이트에서도 작동합니다. Remix나 Sveltekit 등의 프레임워크에서는 브라우저의 form 기능을 점진적 향상해서 사용하도록 권장하고 있기도 합니다.</p>
+<p>브라우저가 지원하는 내장 기능을 사용하면 복잡한 프레임워크나 상태 없이도 쉽게 form 상태를 처리할 수 있는 경우가 많습니다. 이는 React로 만든 앱에서도 사용할 수 있고요. Remix나 Sveltekit 등에서는 이와 유사한 기능을 SPA와 통합해서 사용할 수 있게 지원해주기도 합니다.</p>
+<p>회사에서 기술 과제를 하다 보면 바닐라 js로 앱을 만들라는 과제를 주곤 합니다. “바닐라”라는 표현을 처음 듣는 분도 계실텐데. 아이스크림의 바닐라맛처럼 프레임워크나 라이브러리 없이 순수한 js만 사용한다고 해서 바닐라 js라고 합니다.</p>
 <p>Web 에는 사실 UI를 만드는데 필요한 API들이 이미 다 있습니다. HTML은 대표적인 선언형 언어라서, 우리의 요구사항을 그대로 옮길 수 있어요.</p>
-<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">form</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">id</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">signup-form</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		아이디</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">input</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">text</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">name</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">id</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">required</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">minlength</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">4</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		비밀번호</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">input</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">name</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">required</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">minlength</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">8</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">		비밀번호 확인</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">input</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">name</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">password-confirm</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">required</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">minlength</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">8</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF"> /&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">label</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">button</span><span style="color: #89DDFF"> </span><span style="color: #C792EA">type</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">submit</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD">가입하기</span><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">button</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">form</span><span style="color: #89DDFF">&gt;</span></span>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#F8F8F2">&#x3C;</span><span style="color:#FF79C6">form</span><span style="color:#50FA7B;font-style:italic"> id</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">signup-form</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">		아이디</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">input</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">text</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> name</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">id</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> required</span><span style="color:#50FA7B;font-style:italic"> minlength</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">4</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2"> /></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;/</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">		비밀번호</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">input</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> name</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> required</span><span style="color:#50FA7B;font-style:italic"> minlength</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">8</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2"> /></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;/</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">		비밀번호 확인</span></span>
+<span class="line"><span style="color:#F8F8F2">		&#x3C;</span><span style="color:#FF79C6">input</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> name</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">password-confirm</span><span style="color:#E9F284">"</span><span style="color:#50FA7B;font-style:italic"> required</span><span style="color:#50FA7B;font-style:italic"> minlength</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">8</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2"> /></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;/</span><span style="color:#FF79C6">label</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">	&#x3C;</span><span style="color:#FF79C6">button</span><span style="color:#50FA7B;font-style:italic"> type</span><span style="color:#FF79C6">=</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">submit</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">>가입하기&#x3C;/</span><span style="color:#FF79C6">button</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#F8F8F2">&#x3C;/</span><span style="color:#FF79C6">form</span><span style="color:#F8F8F2">></span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #89DDFF">	</span><span style="color: #676E95; font-style: italic">// fake dependencies</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">class</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">AlreadySignupError</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">extends</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">Error</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{}</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> fakeDB </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> [</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">twinstae</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">]</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> myAlert </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> alert</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> redirect </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">()</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">alert</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&#39;</span><span style="color: #C3E88D">회원가입 성공! 메인 페이지로 이동합니다.</span><span style="color: #89DDFF">&#39;</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> api </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #F07178">auth</span><span style="color: #89DDFF">:</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #A6ACCD">			</span><span style="color: #C792EA">async</span><span style="color: #A6ACCD"> </span><span style="color: #F07178">signUp</span><span style="color: #89DDFF">({</span><span style="color: #A6ACCD"> userId </span><span style="color: #89DDFF">})</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF; font-style: italic">if</span><span style="color: #F07178"> (</span><span style="color: #A6ACCD">fakeDB</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">includes</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">userId</span><span style="color: #F07178">)) </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">					</span><span style="color: #89DDFF; font-style: italic">throw</span><span style="color: #F07178"> </span><span style="color: #82AAFF">AlreadySignupError</span><span style="color: #F07178">()</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF">}</span></span>
-<span class="line"><span style="color: #F07178">				</span><span style="color: #A6ACCD">fakeDB</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">push</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">userId</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">}</span></span>
-<span class="line"><span style="color: #A6ACCD">		</span><span style="color: #89DDFF">}</span></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #89DDFF">};</span></span>
+<span class="line"><span style="color:#F8F8F2">&#x3C;</span><span style="color:#FF79C6">script</span><span style="color:#F8F8F2">></span></span>
+<span class="line"><span style="color:#6272A4">	// fake dependencies</span></span>
+<span class="line"><span style="color:#FF79C6">	class</span><span style="color:#8BE9FD"> AlreadySignupError</span><span style="color:#FF79C6"> extends</span><span style="color:#8BE9FD;font-style:italic"> Error</span><span style="color:#F8F8F2"> {}</span></span>
+<span class="line"><span style="color:#FF79C6">	const</span><span style="color:#F8F8F2"> fakeDB </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> [</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">twinstae</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">];</span></span>
+<span class="line"><span style="color:#FF79C6">	const</span><span style="color:#F8F8F2"> myAlert </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> alert;</span></span>
+<span class="line"><span style="color:#FF79C6">	const</span><span style="color:#50FA7B"> redirect</span><span style="color:#FF79C6"> =</span><span style="color:#F8F8F2"> () </span><span style="color:#FF79C6">=></span><span style="color:#50FA7B"> alert</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">'</span><span style="color:#F1FA8C">회원가입 성공! 메인 페이지로 이동합니다.</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#FF79C6">	const</span><span style="color:#F8F8F2"> api </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#F8F8F2">		auth</span><span style="color:#FF79C6">:</span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#FF79C6">			async</span><span style="color:#50FA7B"> signUp</span><span style="color:#F8F8F2">({ </span><span style="color:#FFB86C;font-style:italic">userId</span><span style="color:#F8F8F2"> }) {</span></span>
+<span class="line"><span style="color:#FF79C6">				if</span><span style="color:#F8F8F2"> (fakeDB.</span><span style="color:#50FA7B">includes</span><span style="color:#F8F8F2">(userId)) {</span></span>
+<span class="line"><span style="color:#FF79C6">					throw</span><span style="color:#50FA7B"> AlreadySignupError</span><span style="color:#F8F8F2">();</span></span>
+<span class="line"><span style="color:#F8F8F2">				}</span></span>
+<span class="line"><span style="color:#F8F8F2">				fakeDB.</span><span style="color:#50FA7B">push</span><span style="color:#F8F8F2">(userId);</span></span>
+<span class="line"><span style="color:#F8F8F2">			}</span></span>
+<span class="line"><span style="color:#F8F8F2">		}</span></span>
+<span class="line"><span style="color:#F8F8F2">	};</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">	</span><span style="color: #C792EA">const</span><span style="color: #A6ACCD"> form </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> document</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">getElementById</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">signup-form</span><span style="color: #89DDFF">&quot;</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color:#FF79C6">	const</span><span style="color:#F8F8F2"> form </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> document.</span><span style="color:#50FA7B">getElementById</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">signup-form</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">);</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #A6ACCD">	form</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">addEventListener</span><span style="color: #A6ACCD">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">submit</span><span style="color: #89DDFF">&quot;</span><span style="color: #89DDFF">,</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">event</span><span style="color: #89DDFF">)</span><span style="color: #A6ACCD"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">event</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">preventDefault</span><span style="color: #F07178">()</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #C792EA">const</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">userId</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">password</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">passwordConfirm</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178"> </span><span style="color: #89DDFF">=</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">Object</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">fromEntries</span><span style="color: #F07178">(</span><span style="color: #89DDFF">new</span><span style="color: #F07178"> </span><span style="color: #82AAFF">FormData</span><span style="color: #F07178">(</span><span style="color: #A6ACCD">form</span><span style="color: #F07178">))</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color:#F8F8F2">	form.</span><span style="color:#50FA7B">addEventListener</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">submit</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">, (</span><span style="color:#FFB86C;font-style:italic">event</span><span style="color:#F8F8F2">) </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#F8F8F2">		event.</span><span style="color:#50FA7B">preventDefault</span><span style="color:#F8F8F2">();</span></span>
+<span class="line"><span style="color:#FF79C6">		const</span><span style="color:#F8F8F2"> { userId, password, passwordConfirm } </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> Object.</span><span style="color:#50FA7B">fromEntries</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6;font-weight:bold">new</span><span style="color:#50FA7B"> FormData</span><span style="color:#F8F8F2">(form));</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF; font-style: italic">if</span><span style="color: #F07178"> (</span><span style="color: #A6ACCD">password</span><span style="color: #F07178"> </span><span style="color: #89DDFF">!==</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">passwordConfirm</span><span style="color: #F07178">) </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #82AAFF">myAlert</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">비밀번호가 다릅니다</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #89DDFF">}</span></span>
-<span class="line"><span style="color: #F07178">		</span><span style="color: #A6ACCD">api</span><span style="color: #89DDFF">.</span><span style="color: #A6ACCD">auth</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">signUp</span><span style="color: #F07178">(</span><span style="color: #89DDFF">{</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">userId</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">password</span><span style="color: #89DDFF">,</span><span style="color: #F07178"> </span><span style="color: #A6ACCD">passwordConfirm</span><span style="color: #F07178"> </span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">catch</span><span style="color: #F07178">(</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">e</span><span style="color: #89DDFF">)</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF; font-style: italic">if</span><span style="color: #F07178"> (</span><span style="color: #A6ACCD">e</span><span style="color: #F07178"> </span><span style="color: #89DDFF">instanceof</span><span style="color: #F07178"> </span><span style="color: #FFCB6B">AlreadySignupError</span><span style="color: #F07178">) </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">					</span><span style="color: #82AAFF">myAlert</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">이미 가입된 아이디입니다</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">				</span><span style="color: #89DDFF">}</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">then</span><span style="color: #F07178">(</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">e</span><span style="color: #89DDFF">)</span><span style="color: #F07178"> </span><span style="color: #C792EA">=&gt;</span><span style="color: #F07178"> </span><span style="color: #89DDFF">{</span></span>
-<span class="line"><span style="color: #F07178">				</span><span style="color: #82AAFF">redirect</span><span style="color: #F07178">(</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">/</span><span style="color: #89DDFF">&quot;</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">			</span><span style="color: #89DDFF">}</span><span style="color: #F07178">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #F07178">	</span><span style="color: #89DDFF">}</span><span style="color: #A6ACCD">)</span><span style="color: #89DDFF">;</span></span>
-<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">script</span><span style="color: #89DDFF">&gt;</span></span></code></pre>
+<span class="line"><span style="color:#FF79C6">		if</span><span style="color:#F8F8F2"> (password </span><span style="color:#FF79C6">!==</span><span style="color:#F8F8F2"> passwordConfirm) {</span></span>
+<span class="line"><span style="color:#50FA7B">			myAlert</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">비밀번호가 다릅니다</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#FF79C6">			return</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#F8F8F2">		}</span></span>
+<span class="line"><span style="color:#F8F8F2">		api.auth</span></span>
+<span class="line"><span style="color:#F8F8F2">			.</span><span style="color:#50FA7B">signUp</span><span style="color:#F8F8F2">({ userId, password, passwordConfirm })</span></span>
+<span class="line"><span style="color:#F8F8F2">			.</span><span style="color:#50FA7B">catch</span><span style="color:#F8F8F2">((</span><span style="color:#FFB86C;font-style:italic">e</span><span style="color:#F8F8F2">) </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#FF79C6">				if</span><span style="color:#F8F8F2"> (e </span><span style="color:#FF79C6">instanceof</span><span style="color:#8BE9FD;font-style:italic"> AlreadySignupError</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#50FA7B">					myAlert</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">이미 가입된 아이디입니다</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#F8F8F2">				}</span></span>
+<span class="line"><span style="color:#F8F8F2">			})</span></span>
+<span class="line"><span style="color:#F8F8F2">			.</span><span style="color:#50FA7B">then</span><span style="color:#F8F8F2">((</span><span style="color:#FFB86C;font-style:italic">e</span><span style="color:#F8F8F2">) </span><span style="color:#FF79C6">=></span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#50FA7B">				redirect</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">"</span><span style="color:#F1FA8C">/</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#F8F8F2">			});</span></span>
+<span class="line"><span style="color:#F8F8F2">	});</span></span>
+<span class="line"><span style="color:#F8F8F2">&#x3C;/</span><span style="color:#FF79C6">script</span><span style="color:#F8F8F2">></span></span></code></pre>
 <h2 id="usestate--반응형-상태">useState : 반응형 상태</h2>
 <h2 id="리렌더-성능">리렌더 성능</h2>
 <h2 id="명령적-dom-api의-한계">명령적 dom api의 한계</h2>
-<h2 id="그래서-어떤-방식을-써야-하나요">"그래서 어떤 방식을 써야 하나요?"</h2>
+<h2 id="그래서-어떤-방식을-써야-하나요">”그래서 어떤 방식을 써야 하나요?“</h2>
 <h2 id="react-hook-form은-상태-관리-라이브러리인가">react-hook-form은 상태 관리 라이브러리인가?</h2>
 <h2 id="custom-hook과-캡슐화">Custom Hook과 캡슐화</h2>
 <h2 id="focus-관리--명령적-vs-함수적">focus 관리 : 명령적 vs 함수적</h2>
 <h2 id="derived--파생-상태">Derived : 파생 상태</h2>
-<h2 id="useeffect--리액트-상태를-외부와-동기화하기">useEffect : 리액트 상태를 외부와 동기화하기</h2>
-<!-- HTML_TAG_END -->
-
-<div><script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async=""></script>
-</div><!-- HTML_TAG_END --></article>
-
-<footer class="footer svelte-d4ohrk">이 블로그는 <a href="https://svelte.dev/" class="svelte-d4ohrk">Svelte</a>와
-  <a class="secondary svelte-d4ohrk" href="https://elderguide.com/tech/elderjs/">Elder.js</a>로 만들었습니다.
-  <br>
-  디자인은 <a href="https://www.getpapercss.com/docs/" class="svelte-d4ohrk">PaperCSS</a>를 기본으로
-  커스텀했습니다.
-  <br>
-  폰트는 <a href="https://cactus.tistory.com/306" class="svelte-d4ohrk">Pretendard</a>를 사용합니다.
-  <br>
-  <a href="https://pages.github.com/" class="svelte-d4ohrk">Github Pages</a>로 호스팅하고 있습니다.
-  <br>
-  오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)
-</footer>
-    
-    <script type="module">
-            const requestIdleCallback = window.requestIdleCallback || ( cb => window.setTimeout(cb,1) );
-      
-const $$ejs = (par,eager)=>{
-  const $ejs = function(_ejs){return _ejs};
-  const prefix = '/_elderjs';
-  const initComponent = (target, component) => {
-
-    if(!!CustomEvent && target.id){
-      const split = target.id.split('-ejs-');
-      document.dispatchEvent(new CustomEvent('ejs', {
-        detail: {
-          category: 'elderjs',
-          action: 'hydrate',
-          target: target,
-          label: split[0] || target.id
-        }
-      }));
-    }
-
-    const propProm = ((typeof component.props === 'string') ? fetch(prefix+'/props/'+ component.props).then(p => p.json()).then(r => $ejs(r)) : new Promise((resolve) => resolve($ejs(component.props))));
-    const compProm = import(prefix + '/svelte/components/' + component.component);
-
-    Promise.all([compProm,propProm]).then(([comp,props])=>{
-      new comp.default({ 
-        target: target,
-        props: props,
-        hydrate: true
-      });
-    });
-  };
-  
-  Object.keys(par).forEach(k => {
-    const el = document.getElementById(k);
-    if (false) {
-        IO.observe(el);
-    } else {
-        initComponent(el,par[k]);
-    }
-  });
-};
-
-      $$ejs({'darkcheckbox-ejs-FVTYXWQYSD' : { 'component' : 'DarkCheckBox.d7e8c32b.js', 'props' : {}},},true)</script>
-    
-    
-    </body></html>
+<h2 id="useeffect--리액트-상태를-외부와-동기화하기">useEffect : 리액트 상태를 외부와 동기화하기</h2> </div> </article> <div class="comments-section" data-astro-cid-fzx4jmue> <script src="https://utteranc.es/client.js" repo="twinstae/twinstae.github.io" issue-term="pathname" label="댓글" theme="github-dark-orange" crossorigin="anonymous" async>
+    </script> </div> <button type="button" class="scroll-top-btn" aria-label="맨 위로 스크롤" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" data-astro-cid-asfligpj>
+↑ 맨 위로
+</button>  </main> <footer class="site-footer"> <div class="footer-container"> <p>
+이 블로그는 <a href="https://astro.build/">Astro</a>와
+<a href="https://svelte.dev/">Svelte</a>로 만들었습니다.
+</p> <p>폰트는 <a href="https://cactus.tistory.com/306">Pretendard</a>를 사용합니다.</p> <p><a href="https://pages.github.com/">GitHub Pages</a>로 호스팅하고 있습니다.</p> <p>오픈소스 개발자분들과 무료 호스팅 서비스에 감사드립니다. :)</p> </div> </footer> </body></html>
